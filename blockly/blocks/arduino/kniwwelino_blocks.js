@@ -277,7 +277,7 @@ Blockly.Blocks['kniwwelino_MATRIXwrite'] = {
 Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
    init: function() {
      this.appendDummyInput()
-         .appendField(Blockly.Msg.KNIWWELINO_SETBRIGHTNESS)
+         .appendField(Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS)
          .appendField(new Blockly.FieldNumber(10, 0, 15, 0), 'BRIGHTNESS');
      this.setPreviousStatement(true, null);
      this.setNextStatement(true, null);
@@ -288,7 +288,7 @@ Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
 
    onchange: function() {
      if (this.getFieldValue('BRIGHTNESS') < 0 | this.getFieldValue('BRIGHTNESS') > 15) {
-       this.setWarningText(Blockly.Msg.KNIWWELINO_SETBRIGHTNESS_ALERT);
+       this.setWarningText(Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT);
        if (this.getFieldValue('BRIGHTNESS') < 0) {
          this.setFieldValue(0, 'BRIGHTNESS');
        } else if (this.getFieldValue('BRIGHTNESS') > 15) {
@@ -304,7 +304,7 @@ Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
 Blockly.Blocks['kniwwelino_MATRIXsetBlinkRate'] = {
 		   init: function() {
 		     this.appendDummyInput()
-		        .appendField(Blockly.Msg.KNIWWELINO_BLINKRATE)
+		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE)
 		        .appendField(new Blockly.FieldDropdown(
 		            [["on","MATRIX_STATIC"],
 		            ["1/2Hz","MATRIX_BLINK_HALFHZ"],
@@ -313,7 +313,7 @@ Blockly.Blocks['kniwwelino_MATRIXsetBlinkRate'] = {
 		     this.setPreviousStatement(true, null);
 		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
-		     this.setTooltip(Blockly.Msg.KNIWWELINO_BLINKRATE_TIP);
+		     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP);
 		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
 		   }
 		};
@@ -321,11 +321,11 @@ Blockly.Blocks['kniwwelino_MATRIXsetBlinkRate'] = {
 Blockly.Blocks['kniwwelino_MATRIXclear'] = {
    init: function() {
      this.appendDummyInput()
-         .appendField(Blockly.Msg.KNIWWELINO_CLEAR);
+         .appendField(Blockly.Msg.KNIWWELINO_MATRIX_CLEAR);
      this.setPreviousStatement(true, null);
      this.setNextStatement(true, null);
      this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
-     this.setTooltip(Blockly.Msg.KNIWWELINO_CLEAR_TIP);
+     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP);
      this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
    }
 };
@@ -333,12 +333,18 @@ Blockly.Blocks['kniwwelino_MATRIXclear'] = {
 //==== Onboard Button functions ==============================================
 
 
-Blockly.Blocks['kniwwelino_BUTTONAdown'] = {
+Blockly.Blocks['kniwwelino_BUTTONdown'] = {
 		  init: function() {
 		    this.appendDummyInput()
-		    	.appendField("Button A is pressed");
+		    .appendField(Blockly.Msg.KNIWWELINO_BUTTON)
+		        .appendField(new Blockly.FieldDropdown(
+		    [["A","A"],
+		    ["B","B"],
+		    ["A and B","AandB"],
+		    ["A or B","AorB"]]), "BUTTON")
+		    .appendField(Blockly.Msg.KNIWWELINO_BUTTON_DOWN);
 		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
-		    this.setTooltip('');
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP);
 		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
 		  },getBlockType: function() {
@@ -346,12 +352,18 @@ Blockly.Blocks['kniwwelino_BUTTONAdown'] = {
 		  }
 };
 
-Blockly.Blocks['kniwwelino_BUTTONBdown'] = {
+Blockly.Blocks['kniwwelino_BUTTONclicked'] = {
 		  init: function() {
 		    this.appendDummyInput()
-		    	.appendField("Button B is pressed");
+		    .appendField(Blockly.Msg.KNIWWELINO_BUTTON)
+		        .appendField(new Blockly.FieldDropdown(
+		    [["A","A"],
+		    ["B","B"],
+		    ["A and B","AandB"],
+		    ["A or B","AorB"]]), "BUTTON")
+		    .appendField(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED);
 		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
-		    this.setTooltip('');
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP);
 		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
 		  },getBlockType: function() {
@@ -359,45 +371,6 @@ Blockly.Blocks['kniwwelino_BUTTONBdown'] = {
 		  }
 };
 
-
-Blockly.Blocks['kniwwelino_BUTTONABdown'] = {
-		  init: function() {
-		    this.appendDummyInput()
-		    	.appendField("Buttons A and B are pressed");
-		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
-		    this.setTooltip('');
-		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
-		  },getBlockType: function() {
-			    return Blockly.Types.BOOLEAN;
-		  }
-};
-
-Blockly.Blocks['kniwwelino_BUTTONAclicked'] = {
-		  init: function() {
-		    this.appendDummyInput()
-		    	.appendField("Button A is clicked");
-		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
-		    this.setTooltip('');
-		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
-		  },getBlockType: function() {
-			    return Blockly.Types.BOOLEAN;
-		  }
-};
-
-Blockly.Blocks['kniwwelino_BUTTONBclicked'] = {
-		  init: function() {
-		    this.appendDummyInput()
-		    	.appendField("Button B is clicked");
-		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
-		    this.setTooltip('');
-		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
-		  },getBlockType: function() {
-			    return Blockly.Types.BOOLEAN;
-		  }
-};
 
 //==== IOT functions ==============================================
 
@@ -406,9 +379,9 @@ Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 		   init: function() {
 				 this.setInputsInline(true);
 			     this.appendValueInput("GROUP")
-			         .appendField("Set MQTT Group");
-			     this.setPreviousStatement(true, null);
-			     this.setNextStatement(true, null);
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_GROUP);
+//			     this.setPreviousStatement(true, null);
+//			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
@@ -419,8 +392,8 @@ Blockly.Blocks['kniwwelino_MQTTconnectRGB'] = {
 		   init: function() {
 		     this.appendDummyInput()
 		         .appendField("Connect RGB Led to Messaging");
-		     this.setPreviousStatement(true, null);
-		     this.setNextStatement(true, null);
+//		     this.setPreviousStatement(true, null);
+//		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_CLEAR_TIP);
 		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
@@ -431,8 +404,8 @@ Blockly.Blocks['kniwwelino_MQTTconnectMATRIX'] = {
 		   init: function() {
 		     this.appendDummyInput()
 		         .appendField("Connect MATRIX to Messaging");
-		     this.setPreviousStatement(true, null);
-		     this.setNextStatement(true, null);
+//		     this.setPreviousStatement(true, null);
+//		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_CLEAR_TIP);
 		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
@@ -465,8 +438,8 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 			         .appendField("Attach").appendField(new Blockly.FieldVariable("item"), "VAR")
 			         .appendField("to Message Topic");
 			     
-			     this.setPreviousStatement(true, null);
-			     this.setNextStatement(true, null);
+//			     this.setPreviousStatement(true, null);
+//			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');

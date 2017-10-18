@@ -59,6 +59,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MATRIXdrawIconChooser"></block>' +
+'    <block type="kniwwelino_MATRIXclear"></block>' +
 '    <block type="kniwwelino_MATRIXdrawIcon">' +
 '    <value name="TEXT">' +
 '        <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
@@ -67,31 +68,17 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
 '    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
 '    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
-'    <block type="kniwwelino_MATRIXclear"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 
 '  <category id="catButtons" name="BUTTONS">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
-'    		<block type="kniwwelino_BUTTONAdown"></block>' +
+'    		<block type="kniwwelino_BUTTONdown"></block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="controls_if">' +
-'      <value name="IF0">' +
-'    		<block type="kniwwelino_BUTTONBdown"></block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="controls_if">' +
-'      <value name="IF0">' +
-'    		<block type="kniwwelino_BUTTONABdown"></block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_BUTTONAdown"></block>' +
-'    <block type="kniwwelino_BUTTONBdown"></block>' +
-'    <block type="kniwwelino_BUTTONABdown"></block>' +
-'    <block type="kniwwelino_BUTTONAclicked"></block>' +
-'    <block type="kniwwelino_BUTTONBclicked"></block>' +
+'    <block type="kniwwelino_BUTTONdown"></block>' +
+'    <block type="kniwwelino_BUTTONclicked"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 

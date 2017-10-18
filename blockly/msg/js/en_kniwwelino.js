@@ -39,9 +39,13 @@ Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Write the given Text on the Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'Scroll';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_WAIT = 'Wait';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_ONCE = 'Once';
-//matrix
-Blockly.Msg.KNIWWELINO_DRAWICON = 'Draw an icon on the LED matrix';
-Blockly.Msg.KNIWWELINO_DRAWICON_TIP = 'Draw an icon on the LED matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE = 'MATRIX Blinkrate';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Set blink rate of LED matrix (range 0-3)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'MATRIX Brightness';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Set the brightness of the LED matrix (0-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT = 'Value out of range (0-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_CLEAR = 'MATRIX Clear';
+Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP = 'Clear the content of the LED matrix';
 Blockly.Msg.KNIWWELINO_DRAWICON_HEART = "Heart";
 Blockly.Msg.KNIWWELINO_DRAWICON_SMILE = "Smile";
 Blockly.Msg.KNIWWELINO_DRAWICON_SAD = "Sad";
@@ -49,15 +53,15 @@ Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP = "Arrow up";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN = "Arrow down";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT = "Arrow left";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT = "Arrow right";
-Blockly.Msg.KNIWWELINO_TEXTDISPLAY = 'Text to display on the LED matrix';
-Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP = 'Diplay a text on the LED matrix';
-Blockly.Msg.KNIWWELINO_BLINKRATE = 'Set blink rate of LED matrix to';
-Blockly.Msg.KNIWWELINO_BLINKRATE_TIP = 'Set blink rate of LED matrix (range 0-3)';
-Blockly.Msg.KNIWWELINO_SETBRIGHTNESS = 'Set the brightness of the LED matrix to';
-Blockly.Msg.KNIWWELINO_SETBRIGHTNESS_TIP = 'Set the brightness of the LED matrix (range 0-15)';
-Blockly.Msg.KNIWWELINO_SETBRIGHTNESS_ALERT = 'Value out of range (0-15)';
-Blockly.Msg.KNIWWELINO_CLEAR = 'Clear the content of the LED matrix';
-Blockly.Msg.KNIWWELINO_CLEAR_TIP = 'Clear the content of the LED matrix';
+// BUTTONS
+Blockly.Msg.KNIWWELINO_BUTTON = "BUTTON";
+Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "is pressed";
+Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Returns if the Button is pressed down";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "was clicked";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Returns if the Button was clicked since the last check";
+// MQTT - MESSAGING
+Blockly.Msg.KNIWWELINO_MQTT_GROUP = "MESSAGING Group";
+
 
 // overwrite default labels
 Blockly.Msg.ARD_HIGH = "ON";

@@ -184,30 +184,28 @@ Blockly.Arduino['kniwwelino_MATRIXclear'] = function(block) {
 
 //==== Onboard Button functions ==============================================
 
-Blockly.Arduino['kniwwelino_BUTTONAdown'] = function(block) {
+Blockly.Arduino['kniwwelino_BUTTONdown'] = function(block) {
 	kniwwelinoBaseCode();
-	return ['Kniwwelino.BUTTONAdown()', Blockly.Arduino.ORDER_ATOMIC];
+	var button = block.getFieldValue('BUTTON');
+	if (button == 'AandB')  {
+		return ['Kniwwelino.BUTTONAdown() && Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];		
+	} else if (button == 'AorB')  {
+		return ['Kniwwelino.BUTTONAdown() || Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];		
+	} else {
+		return ['Kniwwelino.BUTTON'+button+'down()', Blockly.Arduino.ORDER_ATOMIC];		
+	}
 };
 
-Blockly.Arduino['kniwwelino_BUTTONBdown'] = function(block) {
+Blockly.Arduino['kniwwelino_BUTTONclicked'] = function(block) {
 	kniwwelinoBaseCode();
-	return ['Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Arduino['kniwwelino_BUTTONABdown'] = function(block) {
-	kniwwelinoBaseCode();
-	return ['Kniwwelino.BUTTONAdown() && Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];
-};
-
-
-Blockly.Arduino['kniwwelino_BUTTONAclicked'] = function(block) {
-	kniwwelinoBaseCode();
-	return ['Kniwwelino.BUTTONAclicked()', Blockly.Arduino.ORDER_ATOMIC];
-};
-
-Blockly.Arduino['kniwwelino_BUTTONBclicked'] = function(block) {
-	kniwwelinoBaseCode();
-	return ['Kniwwelino.BUTTONBclicked()', Blockly.Arduino.ORDER_ATOMIC];
+	var button = block.getFieldValue('BUTTON');
+	if (button == 'AandB')  {
+		return ['Kniwwelino.BUTTONAclicked() && Kniwwelino.BUTTONBclicked()', Blockly.Arduino.ORDER_ATOMIC];		
+	} else if (button == 'AorB')  {
+		return ['Kniwwelino.BUTTONAclicked() || Kniwwelino.BUTTONBclicked()', Blockly.Arduino.ORDER_ATOMIC];		
+	} else {
+		return ['Kniwwelino.BUTTON'+button+'clicked()', Blockly.Arduino.ORDER_ATOMIC];
+	}
 };
 
 
