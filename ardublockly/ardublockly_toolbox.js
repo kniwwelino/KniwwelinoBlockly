@@ -12,6 +12,128 @@ var Ardublockly = Ardublockly || {};
 Ardublockly.TOOLBOX_XML =
 '<xml>' +
 '  <sep></sep>' +
+//'  <category id="catLogic" name="Logic">' +
+//'    <block type="controls_if"></block>' +
+//'    <block type="logic_compare"></block>' +
+//'    <block type="logic_operation"></block>' +
+//'    <block type="logic_negate"></block>' +
+//'    <block type="logic_boolean"></block>' +
+//'    <block type="logic_null"></block>' +
+//'    <block type="logic_ternary"></block>' +
+//'  </category>' +
+//'  <sep></sep>' +
+'  <category id="catKniwwelino" name="KNIWWELINO">' +
+'    <block type="kniwwelino_sleep">' +
+'      <value name="DELAY_TIME_MILI">' +
+'        <block type="math_number">' +
+'          <field name="NUM">1000</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_getID"></block>' +
+'    <block type="kniwwelino_getName"></block>' +
+'    <block type="kniwwelino_getIP"></block>' +
+'    <block type="kniwwelino_getMAC"></block>' +
+'  </category>' +
+'  <sep></sep>' +
+'  <category id="catRGB" name="LED">' +
+//'    <block type="kniwwelino_RGBsetColor"></block>' +
+'    <block type="kniwwelino_RGBsetColorEffect"></block>' +
+'    <block type="kniwwelino_RGBclear"></block>' +
+'    <block type="kniwwelino_RGBselectColor"></block>' +
+'    <block type="kniwwelino_RGBsetColorFromString">' +
+'      <value name="COLOR">' +
+'        <block type="text">' +
+'          <field name="TEXT">FF0000</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'  </category>' +
+'  <sep></sep>' +
+'  <category id="catMatrix" name="MATRIX">' +
+'    <block type="kniwwelino_MATRIXwrite">' +
+'      <value name="TEXT">' +
+'        <block type="text">' +
+'          <field name="TEXT">Hello Kniwwelino</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MATRIXdrawIconChooser"></block>' +
+'    <block type="kniwwelino_MATRIXdrawIcon">' +
+'    <value name="TEXT">' +
+'        <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
+'    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
+'    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
+'    <block type="kniwwelino_MATRIXclear"></block>' +
+'  </category>' +
+'  <sep></sep>' +
+
+'  <category id="catButtons" name="BUTTONS">' +
+'    <block type="controls_if">' +
+'      <value name="IF0">' +
+'    		<block type="kniwwelino_BUTTONAdown"></block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="controls_if">' +
+'      <value name="IF0">' +
+'    		<block type="kniwwelino_BUTTONBdown"></block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="controls_if">' +
+'      <value name="IF0">' +
+'    		<block type="kniwwelino_BUTTONABdown"></block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_BUTTONAdown"></block>' +
+'    <block type="kniwwelino_BUTTONBdown"></block>' +
+'    <block type="kniwwelino_BUTTONABdown"></block>' +
+'    <block type="kniwwelino_BUTTONAclicked"></block>' +
+'    <block type="kniwwelino_BUTTONBclicked"></block>' +
+'  </category>' +
+'  <sep></sep>' +
+
+'  <category id="catMQTT" name="MESSAGES">' +
+'    <block type="kniwwelino_MQTTsetGroup">' +
+'      <value name="GROUP">' +
+'        <block type="text">' +
+'          <field name="TEXT">myFriends</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MQTTconnectRGB"></block>' +
+'    <block type="kniwwelino_MQTTconnectMATRIX"></block>' +
+'    <block type="kniwwelino_MQTTpublishSimple">' +
+'      <value name="MESSAGE">' +
+'        <block type="text">' +
+'          <field name="TEXT">Hello World!</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MQTTsubscribe">' +
+'      <value name="TOPIC">' +
+'        <block type="text">' +
+'          <field name="TEXT">/MATRIX/TEXT</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MQTTpublish">' +
+'      <value name="TOPIC">' +
+'        <block type="text">' +
+'          <field name="TEXT">/MATRIX/TEXT</field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="MESSAGE">' +
+'        <block type="text">' +
+'          <field name="TEXT">Hello World!</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'  </category>' +
+
+'  <sep></sep>' +
 '  <category id="catLogic" name="Logic">' +
 '    <block type="controls_if"></block>' +
 '    <block type="logic_compare"></block>' +
@@ -153,82 +275,82 @@ Ardublockly.TOOLBOX_XML =
 '      </value>'+
 '    </block>' +
 '  </category>' +
-'  <sep></sep>' +
-'  <category id="catTime" name="Time">' +
-'    <block type="time_delay">' +
-'      <value name="DELAY_TIME_MILI">' +
-'        <block type="math_number">' +
-'          <field name="NUM">1000</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="time_delaymicros">' +
-'      <value name="DELAY_TIME_MICRO">' +
-'        <block type="math_number">' +
-'          <field name="NUM">100</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="time_millis"></block>' +
-'    <block type="time_micros"></block>' +
-'    <block type="infinite_loop"></block>' +
-'  </category>' +
-'  <sep></sep>' +
-'  <category id="catAudio" name="Audio">' +
-'    <block type="io_tone">' +
-'      <field name="TONEPIN">0</field>' +
-'      <value name="FREQUENCY">' +
-'        <shadow type="math_number">' +
-'          <field name="NUM">220</field>' +
-'        </shadow>' +
-'      </value>' +
-'    </block>' +
-'    <block type="io_notone"></block>' +
-'  </category>' +
-'  <sep></sep>' +
-'  <category id="catMotors" name="Motors">' +
-'    <block type="servo_write">' +
-'      <value name="SERVO_ANGLE">' +
-'        <block type="math_number">' +
-'          <field name="NUM">90</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="servo_read"></block>' +
-'    <block type="stepper_config">' +
-'      <field name="STEPPER_NUMBER_OF_PINS">2</field>' +
-'      <field name="STEPPER_PIN1">1</field>' +
-'      <field name="STEPPER_PIN2">2</field>' +
-'      <value name="STEPPER_STEPS">' +
-'        <block type="math_number">' +
-'          <field name="NUM">100</field>' +
-'        </block>' +
-'      </value>' +
-'      <value name="STEPPER_SPEED">' +
-'        <block type="math_number">' +
-'          <field name="NUM">10</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="stepper_step">' +
-'      <value name="STEPPER_STEPS">' +
-'        <block type="math_number">' +
-'          <field name="NUM">10</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'  </category>' +
-'  <sep></sep>' +
-'  <category id="catComms" name="Comms">' +
-'    <block type="serial_setup"></block>' +
-'    <block type="serial_print"></block>' +
-'    <block type="text_prompt_ext">' +
-'      <value name="TEXT">' +
-'        <block type="text"></block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="spi_setup"></block>' +
-'    <block type="spi_transfer"></block>' +
-'    <block type="spi_transfer_return"></block>' +
-'  </category>' +
+//'  <sep></sep>' +
+//'  <category id="catTime" name="Time">' +
+//'    <block type="time_delay">' +
+//'      <value name="DELAY_TIME_MILI">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">1000</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="time_delaymicros">' +
+//'      <value name="DELAY_TIME_MICRO">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">100</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="time_millis"></block>' +
+//'    <block type="time_micros"></block>' +
+//'    <block type="infinite_loop"></block>' +
+//'  </category>' +
+//'  <sep></sep>' +
+//'  <category id="catAudio" name="Audio">' +
+//'    <block type="io_tone">' +
+//'      <field name="TONEPIN">0</field>' +
+//'      <value name="FREQUENCY">' +
+//'        <shadow type="math_number">' +
+//'          <field name="NUM">220</field>' +
+//'        </shadow>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="io_notone"></block>' +
+//'  </category>' +
+//'  <sep></sep>' +
+//'  <category id="catMotors" name="Motors">' +
+//'    <block type="servo_write">' +
+//'      <value name="SERVO_ANGLE">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">90</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="servo_read"></block>' +
+//'    <block type="stepper_config">' +
+//'      <field name="STEPPER_NUMBER_OF_PINS">2</field>' +
+//'      <field name="STEPPER_PIN1">1</field>' +
+//'      <field name="STEPPER_PIN2">2</field>' +
+//'      <value name="STEPPER_STEPS">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">100</field>' +
+//'        </block>' +
+//'      </value>' +
+//'      <value name="STEPPER_SPEED">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">10</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="stepper_step">' +
+//'      <value name="STEPPER_STEPS">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">10</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'  </category>' +
+//'  <sep></sep>' +
+//'  <category id="catComms" name="Comms">' +
+//'    <block type="serial_setup"></block>' +
+//'    <block type="serial_print"></block>' +
+//'    <block type="text_prompt_ext">' +
+//'      <value name="TEXT">' +
+//'        <block type="text"></block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="spi_setup"></block>' +
+//'    <block type="spi_transfer"></block>' +
+//'    <block type="spi_transfer_return"></block>' +
+//'  </category>' +
 '</xml>';

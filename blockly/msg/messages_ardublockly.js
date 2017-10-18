@@ -176,3 +176,9 @@ Blockly.Msg.RENAME_INSTANCE = 'Rename instance...';
 Blockly.Msg.NEW_INSTANCE_TITLE = 'New instance name:';
 /// Instances - Confirmation message that a number of instances will be renamed to a new name
 Blockly.Msg.RENAME_INSTANCE_TITLE = 'Rename all "%1" instances to:';
+
+/**
+* Kniwwelino related section
+*/
+Blockly.Msg.ARD_KNIWWELINO_SETCOLOR = 'Set the color of the RGB LED to';
+Blockly.Msg.ARD_KNIWWELINO_SETCOLOR_TIP = 'Set the color of the RGB LED';

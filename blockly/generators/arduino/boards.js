@@ -25,7 +25,7 @@ goog.require('Blockly.Arduino');
 Blockly.Arduino.Boards.generateDigitalIo = function(pinStart, pinEnd) {
   var digitalIo = [];
   for (var i = pinStart; i < (pinEnd + 1); i++) {
-    digitalIo.push([i.toString(), i.toString()]);
+    digitalIo.push(['D' + i.toString(), 'D' + i.toString()]);
   }
   return digitalIo;
 };
@@ -310,13 +310,34 @@ Blockly.Arduino.Boards.profiles.esp8266_wemos_d1 = {
   i2c: [['I2C', 'Wire']],
   i2cPins: { Wire: [['SDA', 'D2'], ['SCL', 'D1']] },
   i2cSpeed: Blockly.Arduino.Boards.profiles.uno.i2cSpeed,
-  builtinLed: [['BUILTIN_1', 'D4']],
+  builtinLed: [['BUILDIN_LED', 'D4']],
   interrupt: [['D0', 'D0'], ['D1', 'D1'], ['D2', 'D2'], ['D3', 'D3'],
               ['D4', 'D4'], ['D5', 'D5'], ['D6', 'D7'], ['D8', 'D8']]
 };
 
+/** ESP8266 for the Wemos D1 R2. */
+Blockly.Arduino.Boards.profiles.esp8266_kniwwelino = {
+  name: 'Kniwwelino',
+  description: 'Kniwwelino',
+  compilerFlag: 'esp8266:esp8266:generic',
+  analogPins: [['A0', 'A0']],
+  digitalPins: [['D0', 'D0'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']],
+  pwmPins:   [['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']],
+  serial: [['serial', 'Serial']],
+  serialPins: { Serial: [['RX', 'RX'], ['TX', 'TX']] },
+  serialSpeed: [['115200', '115200'], ['9600', '9600']],
+  spi: [['SPI', 'SPI']],
+  spiPins: { SPI: [['MOSI', 'D7'], ['MISO', 'D6'], ['SCK', 'D5']] },
+  spiClockDivide: Blockly.Arduino.Boards.profiles.uno.spiClockDivide,
+  i2c: [['I2C', 'Wire']],
+  i2cPins: { Wire: [['SDA', 'D2'], ['SCL', 'D1']] },
+  i2cSpeed: Blockly.Arduino.Boards.profiles.uno.i2cSpeed,
+  builtinLed: [['BUILDIN_LED', 'D4']],
+  interrupt: [['D0', 'D0'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']]
+};
+
 /** Set default profile to Arduino standard-compatible board */
-Blockly.Arduino.Boards.selected = Blockly.Arduino.Boards.profiles.uno;
+Blockly.Arduino.Boards.selected = Blockly.Arduino.Boards.profiles.esp8266_kniwwelino;
 
 /**
  * Changes the Arduino board profile selected, which trigger a refresh of the
