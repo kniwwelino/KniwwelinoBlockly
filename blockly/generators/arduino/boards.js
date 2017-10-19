@@ -315,7 +315,7 @@ Blockly.Arduino.Boards.profiles.esp8266_wemos_d1 = {
               ['D4', 'D4'], ['D5', 'D5'], ['D6', 'D7'], ['D8', 'D8']]
 };
 
-/** ESP8266 for the Wemos D1 R2. */
+/** ESP8266 for the Kniwwelino. */
 Blockly.Arduino.Boards.profiles.esp8266_kniwwelino = {
   name: 'Kniwwelino',
   description: 'Kniwwelino',
