@@ -104,6 +104,20 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_MQTTpublishSimple">' +
+'      <value name="MESSAGE">' +
+'        <block type="kniwwelino_MATRIXdrawIconCreator">' +
+'          <field name="TEXT"></field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MQTTpublishSimple">' +
+'      <value name="MESSAGE">' +
+'        <block type="kniwwelino_RGBselectColor">' +
+'          <field name="TEXT"></field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_MQTTsubscribe">' +
 '      <value name="TOPIC">' +
 '        <block type="text">' +

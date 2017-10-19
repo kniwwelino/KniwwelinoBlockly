@@ -64,13 +64,13 @@ Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Returns if the Button was clicked s
 // MQTT - MESSAGING
 Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Messaging Group";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Set the group for your Messaging";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "Messaging Connect RGB Led";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "Messaging: Connect RGB Led";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connect RGB Led to Messaging";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "Messaging Connect MATRIX";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "Messaging: Connect MATRIX";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connect MATRIX to Messaging";
-Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "Sent Message";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "Sent";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Sent the given Message to the specified message Topic";
-Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to Message Topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to Topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Attach Variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected Variable (String) to the specified message topic";
 

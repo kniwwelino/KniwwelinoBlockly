@@ -207,8 +207,8 @@ Blockly.Blocks['kniwwelino_RGBclear'] = {
 
 Blockly.Blocks['kniwwelino_MATRIXdrawIconCreator'] = {
   init: function() {
-    this.appendDummyInput()
-        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR);
+//    this.appendDummyInput()
+//        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR);
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_CENTRE)
         .appendField(new Blockly.FieldCheckbox("FALSE"), "1_1")
@@ -244,7 +244,7 @@ Blockly.Blocks['kniwwelino_MATRIXdrawIconCreator'] = {
         .appendField(new Blockly.FieldCheckbox("FALSE"), "5_3")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "5_4")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "5_5");
-    this.appendDummyInput();
+//    this.appendDummyInput();
 	this.setOutput(true, Blockly.Types.TEXT.output);
     this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP);
@@ -453,8 +453,8 @@ Blockly.Blocks['kniwwelino_MQTTpublishSimple'] = {
 			 		.appendField(Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC)
 			 		.appendField(new Blockly.FieldDropdown([
 			 			["MATRIX/TEXT","MATRIX/TEXT"],
-			 			["RGB/COLOR","RGB/COLOR"],
-			 			["MATRIX/ICON","MATRIX/ICON"]])
+			 			["MATRIX/ICON","MATRIX/ICON"],
+			 			["RGB/COLOR","RGB/COLOR"]])
 			      , "TOPIC");
 			     this.setPreviousStatement(true, null);
 			     this.setNextStatement(true, null);
