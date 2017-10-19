@@ -39,7 +39,7 @@ body {
 /* Category Icons */
 /******************/
 #catKniwwelino\.label:before {
-  content: "\f0a9";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  content: "\f2db";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
@@ -75,6 +75,48 @@ body {
 
 #catLogic\.label:before {
   content: "\f12e";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catLoops\.label:before {
+  content: "\f01e";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catMath\.label:before {
+  content: "\f1ec";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catText\.label:before {
+  content: "\f15c";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catVariables\.label:before {
+  content: "\f1de";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catFunctions\.label:before {
+  content: "\f0b0";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catInputOutput\.label:before {
+  content: "\f07e";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
