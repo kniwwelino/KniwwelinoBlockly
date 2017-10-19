@@ -91,6 +91,21 @@ Blockly.Blocks['kniwwelino_sleep'] = {
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  }
 };
+
+Blockly.Blocks['kniwwelino_PINsetEffect'] = {
+		  init: function() {
+		    this.appendDummyInput()
+		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_EFFECT)
+		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
+		    	.appendField(Blockly.Msg.ARD_WRITE_TO)
+		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"]]), "EFFECT");
+		    this.setPreviousStatement(true, null);
+		    this.setNextStatement(true, null);
+		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL);
+		  }
+		};
 		
 
 //==== RGB LED  functions ====================================================
@@ -113,18 +128,18 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
-Blockly.Blocks['kniwwelino_RGBsetColor'] = {
-		   init: function() {
-		     this.appendDummyInput()
-		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOR)
-		         .appendField(new Blockly.FieldColour("#ff0000"), "COLOR");
-		     this.setPreviousStatement(true, null);
-		     this.setNextStatement(true, null);
-		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
-		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
-		   }
-		};
+//Blockly.Blocks['kniwwelino_RGBsetColor'] = {
+//		   init: function() {
+//		     this.appendDummyInput()
+//		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOR)
+//		         .appendField(new Blockly.FieldColour("#ff0000"), "COLOR");
+//		     this.setPreviousStatement(true, null);
+//		     this.setNextStatement(true, null);
+//		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+//		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP);
+//		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+//		   }
+//		};
 
 Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		  init: function() {
@@ -140,12 +155,30 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		  }
 		};
 
+Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
+		  init: function() {
+			this.setInputsInline(true);
+			this.appendValueInput("COLOR")
+			         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING)
+				     .setCheck(Blockly.Types.TEXT.checkList)
+		    this.appendDummyInput()
+//		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
+//		        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR")
+		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"]]), "EFFECT");
+		    this.setPreviousStatement(true, null);
+		    this.setNextStatement(true, null);
+		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		  }
+		};
+
 Blockly.Blocks['kniwwelino_RGBsetColorFromString'] = {
 		   init: function() {
 			 this.setInputsInline(true);
 		     this.appendValueInput("COLOR")
 		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING)
-			     .setCheck(Blockly.Types.TEXT.checkList)
+			     .setCheck(Blockly.Types.TEXT.checkList);
 		     this.setPreviousStatement(true, null);
 		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -383,7 +416,7 @@ Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 //			     this.setPreviousStatement(true, null);
 //			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
-			     this.setTooltip(Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP);
+			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 		};
@@ -391,11 +424,11 @@ Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 Blockly.Blocks['kniwwelino_MQTTconnectRGB'] = {
 		   init: function() {
 		     this.appendDummyInput()
-		         .appendField("Connect RGB Led to Messaging");
+		         .appendField(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB);
 //		     this.setPreviousStatement(true, null);
 //		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
-		     this.setTooltip(Blockly.Msg.KNIWWELINO_CLEAR_TIP);
+		     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP);
 		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
@@ -403,11 +436,11 @@ Blockly.Blocks['kniwwelino_MQTTconnectRGB'] = {
 Blockly.Blocks['kniwwelino_MQTTconnectMATRIX'] = {
 		   init: function() {
 		     this.appendDummyInput()
-		         .appendField("Connect MATRIX to Messaging");
+		         .appendField(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX);
 //		     this.setPreviousStatement(true, null);
 //		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
-		     this.setTooltip(Blockly.Msg.KNIWWELINO_CLEAR_TIP);
+		     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP);
 		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
@@ -415,18 +448,18 @@ Blockly.Blocks['kniwwelino_MQTTconnectMATRIX'] = {
 Blockly.Blocks['kniwwelino_MQTTpublishSimple'] = {
 		   init: function() {
 				 this.setInputsInline(true);
-			     this.appendValueInput("MESSAGE").appendField("Sent Message ");
+			     this.appendValueInput("MESSAGE").appendField(Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE);
 			     this.appendDummyInput()
-			 		.appendField("to Message Topic")
+			 		.appendField(Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC)
 			 		.appendField(new Blockly.FieldDropdown([
-			 			["/MATRIX/TEXT","/MATRIX/TEXT"],
-			 			["/RGB/COLOR","/RGB/COLOR"],
-			 			["/MATRIX/ICON","/MATRIX/ICON"]])
+			 			["MATRIX/TEXT","MATRIX/TEXT"],
+			 			["RGB/COLOR","RGB/COLOR"],
+			 			["MATRIX/ICON","MATRIX/ICON"]])
 			      , "TOPIC");
 			     this.setPreviousStatement(true, null);
 			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
-			     this.setTooltip(Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP);
+			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
@@ -435,13 +468,12 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 		   init: function() {
 				 this.setInputsInline(true);
 			     this.appendValueInput("TOPIC")
-			         .appendField("Attach").appendField(new Blockly.FieldVariable("item"), "VAR")
-			         .appendField("to Message Topic");
-			     
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_ATTACH).appendField(new Blockly.FieldVariable("item"), "VAR")
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC);
 //			     this.setPreviousStatement(true, null);
 //			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
-			     this.setTooltip(Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP);
+			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
@@ -449,12 +481,12 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 		   init: function() {
 				 this.setInputsInline(true);
-			     this.appendValueInput("MESSAGE").appendField("Sent Message ");
-				 this.appendValueInput("TOPIC").appendField("to MQTT Topic");
+			     this.appendValueInput("MESSAGE").appendField(Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE);
+				 this.appendValueInput("TOPIC").appendField(Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC);
 			     this.setPreviousStatement(true, null);
 			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
-			     this.setTooltip(Blockly.Msg.KNIWWELINO_TEXTDISPLAY_TIP);
+			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };

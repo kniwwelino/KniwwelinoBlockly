@@ -22,7 +22,7 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="logic_ternary"></block>' +
 //'  </category>' +
 //'  <sep></sep>' +
-'  <category id="catKniwwelino" name="KNIWWELINO">' +
+'  <category id="catKniwwelino" name="Kniwwelino">' +
 '    <block type="kniwwelino_sleep">' +
 '      <value name="DELAY_TIME_MILI">' +
 '        <block type="math_number">' +
@@ -30,6 +30,7 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_PINsetEffect"></block>' +
 '    <block type="kniwwelino_getID"></block>' +
 '    <block type="kniwwelino_getName"></block>' +
 '    <block type="kniwwelino_getIP"></block>' +
@@ -38,7 +39,11 @@ Ardublockly.TOOLBOX_XML =
 '  <sep></sep>' +
 '  <category id="catRGB" name="LED">' +
 //'    <block type="kniwwelino_RGBsetColor"></block>' +
-'    <block type="kniwwelino_RGBsetColorEffect"></block>' +
+'    <block type="kniwwelino_RGBsetColorEffect">' +
+'      <value name="COLOR">' +
+'        <block type="kniwwelino_RGBselectColor"></block>' +
+'      </value>' +
+'  </block>' +
 '    <block type="kniwwelino_RGBclear"></block>' +
 '    <block type="kniwwelino_RGBselectColor"></block>' +
 '    <block type="kniwwelino_RGBsetColorFromString">' +
@@ -50,7 +55,7 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '  </category>' +
 '  <sep></sep>' +
-'  <category id="catMatrix" name="MATRIX">' +
+'  <category id="catMatrix" name="Matrix">' +
 '    <block type="kniwwelino_MATRIXwrite">' +
 '      <value name="TEXT">' +
 '        <block type="text">' +
@@ -71,7 +76,7 @@ Ardublockly.TOOLBOX_XML =
 '  </category>' +
 '  <sep></sep>' +
 
-'  <category id="catButtons" name="BUTTONS">' +
+'  <category id="catButtons" name="Buttons">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
 '    		<block type="kniwwelino_BUTTONdown"></block>' +
@@ -82,7 +87,7 @@ Ardublockly.TOOLBOX_XML =
 '  </category>' +
 '  <sep></sep>' +
 
-'  <category id="catMQTT" name="MESSAGES">' +
+'  <category id="catMQTT" name="Messages">' +
 '    <block type="kniwwelino_MQTTsetGroup">' +
 '      <value name="GROUP">' +
 '        <block type="text">' +
@@ -102,14 +107,14 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MQTTsubscribe">' +
 '      <value name="TOPIC">' +
 '        <block type="text">' +
-'          <field name="TEXT">/MATRIX/TEXT</field>' +
+'          <field name="TEXT">MATRIX/TEXT</field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MQTTpublish">' +
 '      <value name="TOPIC">' +
 '        <block type="text">' +
-'          <field name="TEXT">/MATRIX/TEXT</field>' +
+'          <field name="TEXT">MATRIX/TEXT</field>' +
 '        </block>' +
 '      </value>' +
 '      <value name="MESSAGE">' +
