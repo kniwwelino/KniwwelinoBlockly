@@ -212,7 +212,7 @@ Ardublockly.changeBlocklyArduinoBoard = function(newBoard) {
 
 /** Update the toolbox categories language. */
 Ardublockly.updateToolboxLanguage = function() {
-  var categories = ['catLogic', 'catLoops', 'catMath', 'catText',
+  var categories = ['catKniwwelino','catLogic', 'catLoops', 'catMath', 'catText',
                     'catVariables', 'catFunctions', 'catInputOutput',
                     'catTime', 'catAudio', 'catMotors', 'catComms'];
   var categoryNodes = Ardublockly.xmlTree.getElementsByTagName('category');

@@ -91,6 +91,7 @@ Ardublockly.LOCALISED_TEXT = {
   arduinoSourceCode: "Arduino Source Code",
   blocksXml: "Blocks XML",
   /* Toolbox Categories*/
+  catKniwwelino: "Kniwwelino",
   catLogic: "Logic",
   catLoops: "Loops",
   catMath: "Math",
