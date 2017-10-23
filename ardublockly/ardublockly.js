@@ -26,6 +26,9 @@ Ardublockly.init = function() {
   Ardublockly.bindActionFunctions();
   Ardublockly.bindBlocklyEventListeners();
 
+  Blockly.HSV_SATURATION = 0.70;
+  Blockly.HSV_VALUE = 0.70;
+
   // Hackish way to check if not running locally
   if (document.location.hostname != 'localhost') {
     Ardublockly.openNotConnectedModal();
