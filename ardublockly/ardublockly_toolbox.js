@@ -97,28 +97,12 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '    <block type="kniwwelino_MQTTconnectRGB"></block>' +
 '    <block type="kniwwelino_MQTTconnectMATRIX"></block>' +
-'    <block type="kniwwelino_MQTTpublishSimple">' +
+'    <block type="kniwwelino_MQTTpublish">' +
 '      <value name="MESSAGE">' +
 '        <block type="text">' +
 '          <field name="TEXT">Hello World!</field>' +
 '        </block>' +
 '      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_MQTTpublishSimple">' +
-'      <value name="MESSAGE">' +
-'        <block type="kniwwelino_MATRIXdrawIconCreator">' +
-'          <field name="TEXT"></field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_MQTTpublishSimple">' +
-'      <value name="MESSAGE">' +
-'        <block type="kniwwelino_RGBselectColor">' +
-'          <field name="TEXT"></field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_MQTTsubscribe">' +
 '      <value name="TOPIC">' +
 '        <block type="text">' +
 '          <field name="TEXT">MATRIX/TEXT</field>' +
@@ -126,14 +110,33 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MQTTpublish">' +
+'      <value name="MESSAGE">' +
+'        <block type="kniwwelino_MATRIXdrawIconCreator">' +
+'          <field name="TEXT"></field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="TOPIC">' +
+'        <block type="text">' +
+'          <field name="TEXT">MATRIX/ICON</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MQTTpublish">' +
+'      <value name="MESSAGE">' +
+'        <block type="kniwwelino_RGBselectColor">' +
+'          <field name="TEXT"></field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="TOPIC">' +
+'        <block type="text">' +
+'          <field name="TEXT">RGB/COLOR</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MQTTsubscribe">' +
 '      <value name="TOPIC">' +
 '        <block type="text">' +
 '          <field name="TEXT">MATRIX/TEXT</field>' +
-'        </block>' +
-'      </value>' +
-'      <value name="MESSAGE">' +
-'        <block type="text">' +
-'          <field name="TEXT">Hello World!</field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
