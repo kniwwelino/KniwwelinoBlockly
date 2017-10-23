@@ -16,14 +16,12 @@ goog.require('Blockly.Arduino');
 
 //Create a dictionary 
 var MQTTSubscriptions_ = {};
-function addMQTTSubscription(topic, variable) {
-	  //if (Blockly.Arduino.definitions_[topic] === undefined) {
+//var MQTTSubscriptionsVars_ = {};
+function addMQTTSubscription(block, topic, variable) {
 		  MQTTSubscriptions_[variable] = topic;
-	  //}
+		  //MQTTSubscriptionsVars_[block] = variable;
 };
-Blockly.Arduino['kniwwelinoClear'] = function(block) {
-	MQTTSubscriptions_ = {};
-};
+
 
 function kniwwelinoBaseCode() {
 	Blockly.Arduino.addInclude('kniwwelino', '#include <Kniwwelino.h>');
@@ -40,6 +38,12 @@ function kniwwelinoMQTTCode() {
 	
 	var subs = "";
 	var cond = '  if ';
+//	for(var block in MQTTSubscriptions_){
+//		  subs += cond+'(topic==' + MQTTSubscriptions_[block] +') {\n' +
+//		  '    ' + MQTTSubscriptionsVars_[block] + ' = payload;\n' +
+//		  '  }';		  
+//		  cond = ' else if ';
+//	}
 	for(var variable in MQTTSubscriptions_){
 		  subs += cond+'(topic==' + MQTTSubscriptions_[variable] +') {\n' +
 		  '    ' + variable + ' = payload;\n' +
@@ -47,7 +51,6 @@ function kniwwelinoMQTTCode() {
 		  cond = ' else if ';
 	}
 	Blockly.Arduino.addFunction('MQTTonMessage', 'static void messageReceived(String &topic, String &payload) {\n'+
-			'  Serial.println("incoming: " + topic + " - " + payload);\n'+
 		    subs + 
 			'\n}\n', true);
 }
@@ -83,6 +86,21 @@ Blockly.Arduino['kniwwelino_sleep'] = function(block) {
 	return 'Kniwwelino.sleep(' + delayTime + ');\n' ;
 };
 
+Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
+	kniwwelinoBaseCode();
+	
+	var pin = block.getFieldValue('PIN');
+	Blockly.Arduino.reservePin(block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Digital Write');
+
+	var pinSetupCode = 'pinMode(' + pin + ', OUTPUT);';
+	Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
+	
+	return 'Kniwwelino.PINsetEffect(' + pin + ', ' + 
+		 block.getFieldValue('EFFECT') + ');\n';
+};	
+
+
+
 //==== RGB LED  functions ====================================================
 
 Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
@@ -91,22 +109,19 @@ Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
 };
 
 
-Blockly.Arduino['kniwwelino_RGBsetColor'] = function(block) {
-	kniwwelinoBaseCode();
-	var color = block.getFieldValue('COLOR').replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-	             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
-	    .substring(1).match(/.{2}/g)
-	    .map(x => parseInt(x, 16)) ;
-	return 'Kniwwelino.RGBsetColor(' + color[0] + ', ' + color[1] + ', ' + color[2] + ');\n';
-};
+//Blockly.Arduino['kniwwelino_RGBsetColor'] = function(block) {
+//	kniwwelinoBaseCode();
+//	var color = block.getFieldValue('COLOR').replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
+//	             ,(m, r, g, b) => '#' + r + r + g + g + b + b)
+//	    .substring(1).match(/.{2}/g)
+//	    .map(x => parseInt(x, 16)) ;
+//	return 'Kniwwelino.RGBsetColor(' + color[0] + ', ' + color[1] + ', ' + color[2] + ');\n';
+//};
 
 Blockly.Arduino['kniwwelino_RGBsetColorEffect'] = function(block) {
 	kniwwelinoBaseCode();
-	var color = block.getFieldValue('COLOR').replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-		         ,(m, r, g, b) => '#' + r + r + g + g + b + b)
-		    .substring(1).match(/.{2}/g)
-		    .map(x => parseInt(x, 16)) ;
-	return 'Kniwwelino.RGBsetColorEffect(' + color[0] + ', ' + color[1] + ', ' + color[2] + ', ' + 
+	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return 'Kniwwelino.RGBsetColorEffect(String(' + color + '), ' + 
 		 block.getFieldValue('EFFECT') + ', -1' +');\n';
 };	
 	
@@ -247,7 +262,7 @@ Blockly.Arduino['kniwwelino_MQTTsubscribe'] = function(block) {
 	var topic = Blockly.Arduino.valueToCode(block, 'TOPIC',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	var varName = Blockly.Arduino.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
 
-	addMQTTSubscription(topic, varName);
+	addMQTTSubscription(block, topic, varName);
 	
 	Blockly.Arduino.addSetup('kniwwelino_MQTTsubscribe','Kniwwelino.MQTTsubscribe(' + topic + ');', true);
 	return '';

@@ -186,7 +186,7 @@ Blockly.Arduino.finish = function(code) {
   Blockly.Arduino.variableDB_.reset();
   
   var allDefs = includes.join('\n') + variables.join('\n') +
-      definitions.join('\n') + functions.join('\n\n');
+      definitions.join('\n') 
   var setup = 'void setup() {' + setups.join('\n  ') + '\n}\n\n';
   
   if (allDefs.includes("Kniwwelino.h")) {
@@ -194,7 +194,7 @@ Blockly.Arduino.finish = function(code) {
   } 
   
   var loop = 'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
-  return allDefs + setup + loop;
+  return allDefs + setup + loop + "\n\n" + functions.join('\n\n');;
 };
 
 /**

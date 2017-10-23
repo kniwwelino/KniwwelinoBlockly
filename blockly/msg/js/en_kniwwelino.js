@@ -16,8 +16,10 @@ Blockly.Msg.KNIWWELINO_GETIP = 'WIFI IP Address'
 Blockly.Msg.KNIWWELINO_GETIP_TIP = 'Returns the Devices WIFI IP Address'
 Blockly.Msg.KNIWWELINO_GETMAC = 'WIFI MAC Address'
 Blockly.Msg.KNIWWELINO_GETMAC_TIP = 'Returns the Devices WIFI MAC Address'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'IO Pin'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Set the selected IO Pin to ON/BLink/Flash'
 // RGB Led
-Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = 'Color'
+Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Select a Color and return it as HEX String'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'RGB Led Color'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP = 'Set RGB Led to Color'
@@ -28,7 +30,7 @@ Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP = 'Set RGB Led Color from HEX 
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'RGB Led OFF'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Switch off the RGB LED'
 // MATRIX
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = 'Icon';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Design an Icon';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = 'MATRIX Show Icon';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = 'Show the selected Icon on the Matrix';
@@ -60,7 +62,17 @@ Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Returns if the Button is pressed down"
 Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "was clicked";
 Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Returns if the Button was clicked since the last check";
 // MQTT - MESSAGING
-Blockly.Msg.KNIWWELINO_MQTT_GROUP = "MESSAGING Group";
+Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Messaging Group";
+Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Set the group for your Messaging";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "Messaging: Connect RGB Led";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connect RGB Led to Messaging";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "Messaging: Connect MATRIX";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connect MATRIX to Messaging";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "Sent";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Sent the given Message to the specified message Topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to Topic";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Attach Variable";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected Variable (String) to the specified message topic";
 
 
 // overwrite default labels
