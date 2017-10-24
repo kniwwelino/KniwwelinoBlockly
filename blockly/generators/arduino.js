@@ -106,6 +106,10 @@ Blockly.Arduino.init = function(workspace) {
   Blockly.Arduino.setups_ = Object.create(null);
   // Create a dictionary of pins to check if their use conflicts
   Blockly.Arduino.pins_ = Object.create(null);
+  // kniwwelino
+  Blockly.Arduino.kniwwelino_subs_ = Object.create(null);
+  Blockly.Arduino.kniwwelino_vartypes_ = Object.create(null);
+  
 
   if (!Blockly.Arduino.variableDB_) {
     Blockly.Arduino.variableDB_ =
@@ -123,6 +127,8 @@ Blockly.Arduino.init = function(workspace) {
     Blockly.Arduino.addVariable(varName,
         Blockly.Arduino.getArduinoType_(varsWithTypes[varName]) +' ' +
         Blockly.Arduino.variableDB_.getName(varName, Blockly.Variables.NAME_TYPE) + ';');
+    
+    Blockly.Arduino.kniwwelino_vartypes_[varName] = Blockly.Arduino.getArduinoType_(varsWithTypes[varName]);
   }
 };
 
@@ -161,6 +167,9 @@ Blockly.Arduino.finish = function(code) {
   if (functions.length) {
     functions.push('\n');
   }
+  
+  
+  var received = createMQTTSubstriptions();
 
   // userSetupCode added at the end of the setup function without leading spaces
   var setups = [''], userSetupCode= '';
@@ -173,7 +182,7 @@ Blockly.Arduino.finish = function(code) {
   }
   if (userSetupCode) {
     setups.push(userSetupCode);
-  }
+  }  
 
   // Clean up temporary data
   delete Blockly.Arduino.includes_;
@@ -184,9 +193,12 @@ Blockly.Arduino.finish = function(code) {
   delete Blockly.Arduino.setups_;
   delete Blockly.Arduino.pins_;
   Blockly.Arduino.variableDB_.reset();
+  // kniwwelino
+  delete Blockly.Arduino.kniwwelino_subs_;
+  delete Blockly.Arduino.kniwwelino_vartypes_;
   
   var allDefs = includes.join('\n') + variables.join('\n') +
-      definitions.join('\n') 
+      definitions.join('\n') + functions.join('\n\n');
   var setup = 'void setup() {' + setups.join('\n  ') + '\n}\n\n';
   
   if (allDefs.includes("Kniwwelino.h")) {
@@ -194,8 +206,38 @@ Blockly.Arduino.finish = function(code) {
   } 
   
   var loop = 'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
-  return allDefs + setup + loop + "\n\n" + functions.join('\n\n');;
+  
+  return allDefs + setup + loop + received + "\n\n" ;
 };
+
+
+// kniwwelino
+Blockly.Arduino.addKniwwelinoSub = function(subscr, code) {
+	Blockly.Arduino.kniwwelino_subs_[subscr] = code;
+};
+
+function createMQTTSubstriptions() {
+	var subs = "";
+	var cond = '  if ';
+	for(var variable in Blockly.Arduino.kniwwelino_subs_) {
+		
+		subs += cond+'(topic==' + Blockly.Arduino.kniwwelino_subs_[variable] +') {\n';
+		if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'float') {
+			subs += '    ' + variable + ' = payload.toFloat();\n';
+		} else if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'int') {
+			subs += '    ' + variable + ' = payload.toInt();\n';
+		} else {
+			subs += '    ' + variable + ' = payload;\n';
+		}
+		subs += '  }';		  
+		cond = ' else if ';
+	}
+	return '\n\nstatic void messageReceived(String &topic, String &payload) {\n'+
+    		subs + 
+    		'\n}\n';
+}
+
+
 
 /**
  * Adds a string of "include" code to be added to the sketch.
