@@ -2,11 +2,11 @@
 
 'use strict';
 
-goog.provide('Blockly.Msg.en:kniwwelino');
+goog.provide('Blockly.Msg.de:kniwwelino');
 
 goog.require('Blockly.Msg');
 
-Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/en/reference/";
+Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/de/reference/";
 //Kniwwelino
 Blockly.Msg.KNIWWELINO_GETID = 'Device ID'
 Blockly.Msg.KNIWWELINO_GETID_TIP = 'Returns the Device ID'
@@ -21,13 +21,13 @@ Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Set the selected IO Pin to ON/BLink/Fla
 // RGB Led
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Select a Color and return it as HEX String'
-Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'RGB Led Color'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'RGB Led Farbe'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP = 'Set RGB Led to Color'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT = 'RGB Led Color'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP = 'Set RGB Led to Color and Effect'
-Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'RGB Led Color'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'RGB Led Farbe'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP = 'Set RGB Led Color from HEX String'
-Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'RGB Led OFF'
+Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'RGB Led AUS'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Switch off the RGB LED'
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';

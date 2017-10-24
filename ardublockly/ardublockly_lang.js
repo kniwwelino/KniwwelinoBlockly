@@ -13,12 +13,12 @@ var Ardublockly = Ardublockly || {};
 Ardublockly.LANGUAGE_NAME = {
   'de': 'Deutsch',
   'fr': 'Français',
-  'en': 'English',
-  'es': 'Español',
-  'nl': 'Nederlands',
-  'pt': 'Português',
-  'it': 'Italiano',
-  'ru': 'Русский'
+  'en': 'English'//,
+  // 'es': 'Español',
+  // 'nl': 'Nederlands',
+  // 'pt': 'Português',
+  // 'it': 'Italiano',
+  // 'ru': 'Русский'
 };
 
 /**

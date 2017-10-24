@@ -1,7 +1,7 @@
 var Ardublockly = Ardublockly || {};
 Ardublockly.LOCALISED_TEXT = {
   translationLanguage: "Nederlands",
-  title: "Ardublockly",
+  title: "Kniwwelino",
   blocks: "Blocks",
   /* Menu */
   open: "Open",

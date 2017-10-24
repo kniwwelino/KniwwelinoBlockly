@@ -1,16 +1,16 @@
 var Ardublockly = Ardublockly || {};
 Ardublockly.LOCALISED_TEXT = {
-  translationLanguage: "English",
+  translationLanguage: "Deutsch",
   title: "Kniwwelino",
-  blocks: "Blocks",
+  blocks: "Blöcke",
   /* Menu */
-  open: "Open",
-  save: "Save",
-  deleteAll: "Delete All",
-  settings: "Settings",
-  documentation: "Documentation",
-  reportBug: "Report Bug",
-  examples: "Examples",
+  open: "öffnen",
+  save: "speichern",
+  deleteAll: "alles löschen",
+  settings: "Einstellungen",
+  documentation: "Dokumentation",
+  reportBug: "Fehler melden",
+  examples: "Beispiele",
   /* Settings */
   compilerLocation: "Compiler Location",
   compilerLocationDefault: "Compiler Location unknown",
@@ -102,4 +102,5 @@ Ardublockly.LOCALISED_TEXT = {
   catAudio: "Audio",
   catMotors: "Motors",
   catComms: "Comms",
+  catMQTT: "Nachrichten",
 };
