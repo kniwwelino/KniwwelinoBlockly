@@ -14,13 +14,13 @@ goog.provide('Blockly.Arduino.kniwwelino');
 goog.require('Blockly.Arduino');
 
 
-//Create a dictionary 
-var MQTTSubscriptions_ = {};
-//var MQTTSubscriptionsVars_ = {};
-function addMQTTSubscription(block, topic, variable) {
-		  MQTTSubscriptions_[variable] = topic;
-		  //MQTTSubscriptionsVars_[block] = variable;
-};
+////Create a dictionary 
+//var MQTTSubscriptions_ = {};
+////var MQTTSubscriptionsVars_ = {};
+//function addMQTTSubscription(block, topic, variable) {
+//		  MQTTSubscriptions_[variable] = topic;
+//		  //MQTTSubscriptionsVars_[block] = variable;
+//};
 
 
 function kniwwelinoBaseCode() {
@@ -35,24 +35,6 @@ function kniwwelinoBaseCode() {
 
 function kniwwelinoMQTTCode() {    
 	Blockly.Arduino.addSetup('MQTTonMessage', 'Kniwwelino.MQTTonMessage(messageReceived);', true);
-	
-	var subs = "";
-	var cond = '  if ';
-//	for(var block in MQTTSubscriptions_){
-//		  subs += cond+'(topic==' + MQTTSubscriptions_[block] +') {\n' +
-//		  '    ' + MQTTSubscriptionsVars_[block] + ' = payload;\n' +
-//		  '  }';		  
-//		  cond = ' else if ';
-//	}
-	for(var variable in MQTTSubscriptions_){
-		  subs += cond+'(topic==' + MQTTSubscriptions_[variable] +') {\n' +
-		  '    ' + variable + ' = payload;\n' +
-		  '  }';		  
-		  cond = ' else if ';
-	}
-	Blockly.Arduino.addFunction('MQTTonMessage', 'static void messageReceived(String &topic, String &payload) {\n'+
-		    subs + 
-			'\n}\n', true);
 }
 
 
@@ -262,9 +244,8 @@ Blockly.Arduino['kniwwelino_MQTTsubscribe'] = function(block) {
 	var topic = Blockly.Arduino.valueToCode(block, 'TOPIC',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	var varName = Blockly.Arduino.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
 
-	addMQTTSubscription(block, topic, varName);
-	
-	Blockly.Arduino.addSetup('kniwwelino_MQTTsubscribe','Kniwwelino.MQTTsubscribe(' + topic + ');', true);
+	Blockly.Arduino.addKniwwelinoSub(varName, topic);
+	Blockly.Arduino.addSetup('kniwwelino_MQTTsubscribe'+topic,'Kniwwelino.MQTTsubscribe(' + topic + ');', true);
 	return '';
 };
 
