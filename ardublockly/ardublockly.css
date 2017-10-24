@@ -38,6 +38,7 @@ body {
 /******************/
 /* Category Icons */
 /******************/
+
 #catKniwwelino\.label:before {
   content: "\f2db";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;

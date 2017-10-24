@@ -20,10 +20,10 @@ goog.require('Blockly.Types');
 
 /** Common HSV hue for all blocks in this category. */
 Blockly.Blocks.kniwwelino_Kniwwelino.HUE = 5;
-Blockly.Blocks.kniwwelino_RGB.HUE = 5;
-Blockly.Blocks.kniwwelino_MATRIX.HUE = 5;
-Blockly.Blocks.kniwwelino_BUTTONS.HUE = 5;
-Blockly.Blocks.kniwwelino_MQTT.HUE = 5;
+Blockly.Blocks.kniwwelino_RGB.HUE = 290;
+Blockly.Blocks.kniwwelino_MATRIX.HUE = 270;
+Blockly.Blocks.kniwwelino_BUTTONS.HUE = 250;
+Blockly.Blocks.kniwwelino_MQTT.HUE = 65;
 
 //==== Kniwwelino functions===================================================
 
@@ -106,7 +106,7 @@ Blockly.Blocks['kniwwelino_PINsetEffect'] = {
 			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL);
 		  }
 		};
-		
+
 
 //==== RGB LED  functions ====================================================
 //void RGBsetColor(uint32 color);
@@ -490,5 +490,3 @@ Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
-
-
