@@ -98,10 +98,10 @@ Blockly.Blocks['kniwwelino_PINsetEffect'] = {
 		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_EFFECT)
 		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
 		    	.appendField(Blockly.Msg.ARD_WRITE_TO)
-		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"], ["OFF","RGB_OFF"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
-		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+		    this.setColour(Blockly.Blocks.kniwwelino_Kniwwelino.HUE);
 			this.setTooltip(Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP);
 			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL);
 		  }

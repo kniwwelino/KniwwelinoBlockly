@@ -510,3 +510,8 @@ Blockly.Msg.NEW_INSTANCE = "New instance...";  // untranslated
 Blockly.Msg.NEW_INSTANCE_TITLE = "New instance name:";  // untranslated
 Blockly.Msg.RENAME_INSTANCE = "Rename instance...";  // untranslated
 Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untranslated
+
+
+//Kniwwelino
+
+Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/de/reference/";
