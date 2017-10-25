@@ -12,81 +12,81 @@ Ardublockly.LOCALISED_TEXT = {
   reportBug: "Fehler melden",
   examples: "Beispiele",
   /* Settings */
-  compilerLocation: "Compiler Location",
-  compilerLocationDefault: "Compiler Location unknown",
-  sketchFolder: "Sketch Folder",
-  sketchFolderDefault: "Sketch Folder unknown",
+  compilerLocation: "Kompiler Location",
+  compilerLocationDefault: "Kompiler Location unbekannt",
+  sketchFolder: "Sketch Ordner",
+  sketchFolderDefault: "Sketch Ordner unbekannt",
   arduinoBoard: "Arduino Board",
-  arduinoBoardDefault: "Arduino Board unknown",
+  arduinoBoardDefault: "Arduino Board unbekannt",
   comPort: "COM Port",
-  comPortDefault: "COM Port unknown",
-  defaultIdeButton: "Default IDE Button",
-  defaultIdeButtonDefault: "IDE options unknown",
-  language: "Language",
-  languageDefault: "Language unknown",
+  comPortDefault: "COM Port unbekannt",
+  defaultIdeButton: "Standard IDE Knopf",
+  defaultIdeButtonDefault: "IDE Option unbekannt",
+  language: "Sprache",
+  languageDefault: "Sprache unbekannt",
   sketchName: "Sketch Name",
   /* Arduino console output */
   arduinoOpMainTitle: "Arduino IDE Ausgabe",
-  arduinoOpWaiting: "Waiting for the IDE output...",
+  arduinoOpWaiting: "Warte auf Arduino IDE Ausgabe...",
   arduinoOpUploadedTitle: "Sketch erfolgreich hochgeladen",
   arduinoOpVerifiedTitle: "Sketch erfolgreich verifiziert",
-  arduinoOpOpenedTitle: "Sketch opened in IDE",
-  arduinoOpOpenedBody: "The sketch should be loaded in the Arduino IDE.",
-  arduinoOpErrorTitle: "There has been an error",
+  arduinoOpOpenedTitle: "Sketch wurde in Arduino IDE geöffnet",
+  arduinoOpOpenedBody: "Der Sketch sollte in der Arduino IDE geladen sein.",
+  arduinoOpErrorTitle: "Es ist ein Fehler aufgetreten",
   arduinoOpErrorIdContext_0: "Kein Fehler.",
-  arduinoOpErrorIdContext_1: "Build or Upload failed.",
+  arduinoOpErrorIdContext_1: "Kompilieren oder Hochladen ist fehlgeschlagen.",
   arduinoOpErrorIdContext_2: "Sketch nicht gefunden.",
-  arduinoOpErrorIdContext_3: "Invalid command line argument.",
-  arduinoOpErrorIdContext_4: "Preference passed to 'get-pref' flag does not exist.",
-  arduinoOpErrorIdContext_5: "Not Clear, but Arduino IDE sometimes errors with this.",
-  arduinoOpErrorIdContext_50: "Unexpected error code from Arduino IDE",
-  arduinoOpErrorIdContext_51: "Could not create sketch file",
-  arduinoOpErrorIdContext_52: "Invalid path to internally created sketch file",
+  arduinoOpErrorIdContext_3: "Ungültiges Befehlszeilenargument.",
+  arduinoOpErrorIdContext_4: "Einstellung, die an das Flag 'get-pref' übergeben wurde, existiert nicht.",
+  arduinoOpErrorIdContext_5: "Nicht klar, aber Arduino IDE meldet manchmal diesen Fehler.",
+  arduinoOpErrorIdContext_50: "Unerwarteter Fehler von Arduino IDE",
+  arduinoOpErrorIdContext_51: "Sketch-Datei konnte nicht erstellt werden",
+  arduinoOpErrorIdContext_52: "Ungültiger Pfad zur intern erstellten Sketch-Datei",
   arduinoOpErrorIdContext_53: "Unable to find Arduino IDE<br>" +
                               "The compiler directory has not been set correctly.<br>" +
                               "Please ensure the path is correct in the Settings.",
-  arduinoOpErrorIdContext_54: "What should we do with the Sketch?<br>" +
-                              "The launch IDE option has not been set.<br>" +
-                              "Please select an IDE option in the Settings.",
-  arduinoOpErrorIdContext_55: "Serial Port unavailable<br>" +
-                              "The Serial Port is not accessible.<br>" +
-                              "Please check if the Arduino is correctly connected to the PC and select the Serial Port in the Settings.",
-  arduinoOpErrorIdContext_56: "Unknown Arduino Board<br>" +
-                              "The Arduino Board has not been set.<br>" +
-                              "Please select the appropriate Arduino Board from the settings.",
-  arduinoOpErrorIdContext_52: "Unexpected server error.",
+  arduinoOpErrorIdContext_54: "Was sollen wir mit der Sketch machen?<br>" +
+                              "Die IDE-Startoption wurde nicht festgelegt.<br>" +
+                              "Bitte wählen Sie eine IDE-Option in den Einstellungen.",
+  arduinoOpErrorIdContext_55: "Serielle Schnittstelle nicht verfügbar<br>" +
+                              "Die Serielle Schnittstelle ist nicht verfügbar.<br>" +
+                              "Bitte überprüfen Sie, ob das Kniwwelino korrekt an den PC angeschlossen ist, und wählen Sie in den Einstellungen den seriellen Anschluss aus.",
+  arduinoOpErrorIdContext_56: "Unbekanntes Arduino Board<br>" +
+                              "Es wurde noch kein Kniwwelino Board eingestellt.<br>" +
+                              "Bitte wähle das Kniwwelino Board in den Einstellungen.",
+  arduinoOpErrorIdContext_52: "Unerwarteter Server-Fehler.",
   arduinoOpErrorIdContext_64: "Unable to parse sent JSON.",
-  arduinoOpErrorUnknown: "Unexpected error",
+  arduinoOpErrorUnknown: "Unerwarteter Fehler",
   /* Modals */
-  noServerTitle: "Ardublockly app not running",
-  noServerTitleBody: "<p>For all the Ardublockly features to be enabled, the Ardublockly desktop application must be running locally on your computer.</p>" +
-                     "<p>If you are using an online version you will not be able to configure the settings nor load the blocks code into an Arduino.</p>" +
-                     "<p>Installation instruction can be found in the <a href=\"https://github.com/carlosperate/ardublockly\">Ardublockly repository</a>.</p>" +
-                     "<p>If you have Ardublockly already installed, make sure the application is running correctly.</p>",
-  noServerNoLangBody: "If the Ardublockly application is not running the language cannot be fully changed.",
-  addBlocksTitle: "Additional Blocks",
+  noServerTitle: "Kniwwelino-Blockly ist nicht gestartet.",
+  noServerTitleBody: "<p>Damit alle Kniwwelino-Blockly Funktionen aktiviert sind, muss die Kniwwelino-Blockly Computer Anwendung auf deinem Computer gestartet sein.</p>" +
+                     "<p>Wenn Du eine Online-Version verwendst, kannst Du die Einstellungen nicht konfigurieren und den Blockcode nicht in einen Kniwwelino laden.</p>" +
+                     "<p>Eine Installationsanleitung findest Du im <a href=\"http://doku.kniwwelino.lu/de/installation\">Kniwwelino Documentation Wiki</a>.</p>" +
+                     "<p>Wenn Kniwwelino-Blockly bereits installiert ist, stelle sicher, dass die Anwendung ordnungsgemäß gestartet wird.</p>",
+  noServerNoLangBody: "Wenn die Kniwwelino-Blockly Anwendung nicht gestartet ist, kann die Sprache nicht vollständig geändert werden.",
+  addBlocksTitle: "Zusätzliche Blöcke",
   /* Alerts */
-  loadNewBlocksTitle: "Load new blocks?",
-  loadNewBlocksBody: "Loading a new XML file will replace the current blocks from the workspace.<br>" +
-                     "Are you sure you want to proceed?",
-  discardBlocksTitle: "Delete blocks?",
-  discardBlocksBody: "There are %1 blocks on the workspace.<br>" +
-                     "Are you sure you want to delete them?",
-  invalidXmlTitle: "Invalid XML",
-  invalidXmlBody: "The XML file was not successfully parsed into blocks. Please review the XML code and try again.",
+  loadNewBlocksTitle: "Neue Blöcke laden?",
+  loadNewBlocksBody: "Beim Laden einer neuen XML-Datei werden die aktuellen Blöcke aus dem Arbeitsbereich entfernt.<br>" +
+                     "Sind Sie sicher, dass Sie fortfahren möchten?",
+  discardBlocksTitle: "Blöcke löschen?",
+  discardBlocksBody: "Es gibt %1 Blöcke auf dem Arbeitsbereich.<br>" +
+                     "Sind Sie sicher, dass Sie sie löschen möchten?",
+  invalidXmlTitle: "Fehlerhaftes XML",
+  invalidXmlBody: "Die XML-Datei wurde nicht erfolgreich in Blöcke umgewandelt. Bitte überprüfen Sie den XML-Code und versuchen Sie es erneut.",
   /* Tooltips */
-  uploadingSketch: "Uploading Sketch into Arduino...",
-  uploadSketch: "Upload Sketch to the Arduino",
-  verifyingSketch: "Verifying Sketch...",
-  verifySketch: "Verify the Sketch",
-  openingSketch: "Opening Sketch in the Arduino IDE...",
-  openSketch: "Open Sketch in IDE",
-  notImplemented: "Function not yet implemented",
+  uploadingSketch: "Sketch wird in Kniwwelino geladen...",
+  uploadSketch: "Sketch in Kniwwelino laden",
+  verifyingSketch: "Sketch überprüfen...",
+  verifySketch: "Überprüfe dem Sketch",
+  openingSketch: "Öffne Sketch in Arduino IDE...",
+  openSketch: "Sketch in Arduino IDE öffnen",
+  notImplemented: "Funktion noch nicht Verfügbar",
   /* Prompts */
   ok: "OK",
   okay: "Okay",
-  cancel: "Cancel",
-  return: "Return",
+  cancel: "Abbrechen",
+  return: "Zurück",
   /* Cards */
   arduinoSourceCode: "Arduino Quellcode",
   blocksXml: "Blöcke als XML",

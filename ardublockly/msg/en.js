@@ -50,20 +50,20 @@ Ardublockly.LOCALISED_TEXT = {
                               "Please select an IDE option in the Settings.",
   arduinoOpErrorIdContext_55: "Serial Port unavailable<br>" +
                               "The Serial Port is not accessible.<br>" +
-                              "Please check if the Arduino is correctly connected to the PC and select the Serial Port in the Settings.",
+                              "Please check if the Kniwwelino is correctly connected to the PC and select the Serial Port in the Settings.",
   arduinoOpErrorIdContext_56: "Unknown Arduino Board<br>" +
-                              "The Arduino Board has not been set.<br>" +
-                              "Please select the appropriate Arduino Board from the settings.",
+                              "The Kniwwelino Board has not been set.<br>" +
+                              "Please select the appropriate Kniwwelino Board from the settings.",
   arduinoOpErrorIdContext_52: "Unexpected server error.",
   arduinoOpErrorIdContext_64: "Unable to parse sent JSON.",
   arduinoOpErrorUnknown: "Unexpected error",
   /* Modals */
-  noServerTitle: "Ardublockly app not running",
-  noServerTitleBody: "<p>For all the Ardublockly features to be enabled, the Ardublockly desktop application must be running locally on your computer.</p>" +
-                     "<p>If you are using an online version you will not be able to configure the settings nor load the blocks code into an Arduino.</p>" +
-                     "<p>Installation instruction can be found in the <a href=\"https://github.com/carlosperate/ardublockly\">Ardublockly repository</a>.</p>" +
-                     "<p>If you have Ardublockly already installed, make sure the application is running correctly.</p>",
-  noServerNoLangBody: "If the Ardublockly application is not running the language cannot be fully changed.",
+  noServerTitle: "Kniwwelino-Blockly app not running",
+  noServerTitleBody: "<p>For all the Kniwwelino-Blockly features to be enabled, the Kniwwelino-Blockly desktop application must be running locally on your computer.</p>" +
+                     "<p>If you are using an online version you will not be able to configure the settings nor load the blocks code into an Kniwwelino.</p>" +
+                     "<p>Installation instruction can be found in the <a href=\"http://doku.kniwwelino.lu/en/installation\">Kniwwelino Documentation Wiki</a>.</p>" +
+                     "<p>If you have Kniwwelino-Blockly already installed, make sure the application is running correctly.</p>",
+  noServerNoLangBody: "If the Kniwwelino-Blockly application is not running the language cannot be fully changed.",
   addBlocksTitle: "Additional Blocks",
   /* Alerts */
   loadNewBlocksTitle: "Load new blocks?",
@@ -75,8 +75,8 @@ Ardublockly.LOCALISED_TEXT = {
   invalidXmlTitle: "Invalid XML",
   invalidXmlBody: "The XML file was not successfully parsed into blocks. Please review the XML code and try again.",
   /* Tooltips */
-  uploadingSketch: "Uploading Sketch into Arduino...",
-  uploadSketch: "Upload Sketch to the Arduino",
+  uploadingSketch: "Uploading Sketch into Kniwwelino...",
+  uploadSketch: "Upload Sketch to the Kniwwelino",
   verifyingSketch: "Verifying Sketch...",
   verifySketch: "Verify the Sketch",
   openingSketch: "Opening Sketch in the Arduino IDE...",
