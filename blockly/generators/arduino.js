@@ -109,7 +109,7 @@ Blockly.Arduino.init = function(workspace) {
   // kniwwelino
   Blockly.Arduino.kniwwelino_subs_ = Object.create(null);
   Blockly.Arduino.kniwwelino_vartypes_ = Object.create(null);
-  
+
 
   if (!Blockly.Arduino.variableDB_) {
     Blockly.Arduino.variableDB_ =
@@ -127,7 +127,7 @@ Blockly.Arduino.init = function(workspace) {
     Blockly.Arduino.addVariable(varName,
         Blockly.Arduino.getArduinoType_(varsWithTypes[varName]) +' ' +
         Blockly.Arduino.variableDB_.getName(varName, Blockly.Variables.NAME_TYPE) + ';');
-    
+
     Blockly.Arduino.kniwwelino_vartypes_[varName] = Blockly.Arduino.getArduinoType_(varsWithTypes[varName]);
   }
 };
@@ -167,8 +167,8 @@ Blockly.Arduino.finish = function(code) {
   if (functions.length) {
     functions.push('\n');
   }
-  
-  
+
+
   var received = createMQTTSubstriptions();
 
   // userSetupCode added at the end of the setup function without leading spaces
@@ -182,7 +182,7 @@ Blockly.Arduino.finish = function(code) {
   }
   if (userSetupCode) {
     setups.push(userSetupCode);
-  }  
+  }
 
   // Clean up temporary data
   delete Blockly.Arduino.includes_;
@@ -196,17 +196,17 @@ Blockly.Arduino.finish = function(code) {
   // kniwwelino
   delete Blockly.Arduino.kniwwelino_subs_;
   delete Blockly.Arduino.kniwwelino_vartypes_;
-  
+
   var allDefs = includes.join('\n') + variables.join('\n') +
       definitions.join('\n') + functions.join('\n\n');
   var setup = 'void setup() {' + setups.join('\n  ') + '\n}\n\n';
-  
+
   if (allDefs.includes("Kniwwelino.h")) {
-	  code = code + '\nKniwwelino.loop(); // do background stuff...';	  	  
-  } 
-  
+	  code = code + '\nKniwwelino.loop(); // do background stuff...';
+  }
+
   var loop = 'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
-  
+
   return allDefs + setup + loop + received + "\n\n" ;
 };
 
@@ -220,7 +220,7 @@ function createMQTTSubstriptions() {
 	var subs = "";
 	var cond = '  if ';
 	for(var variable in Blockly.Arduino.kniwwelino_subs_) {
-		
+
 		subs += cond+'(topic==' + Blockly.Arduino.kniwwelino_subs_[variable] +') {\n';
 		if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'float') {
 			subs += '    ' + variable + ' = payload.toFloat();\n';
@@ -229,11 +229,15 @@ function createMQTTSubstriptions() {
 		} else {
 			subs += '    ' + variable + ' = payload;\n';
 		}
-		subs += '  }';		  
+		subs += '  }';
 		cond = ' else if ';
 	}
+
+  if (subs.length == 0){
+    return '';
+  }
 	return '\n\nstatic void messageReceived(String &topic, String &payload) {\n'+
-    		subs + 
+    		subs +
     		'\n}\n';
 }
 

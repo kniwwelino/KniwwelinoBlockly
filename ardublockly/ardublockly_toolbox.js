@@ -254,6 +254,18 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
 '  <sep></sep>' +
 '  <category id="catInputOutput" name="Input/Output">' +
+'    <block type="controls_if">' +
+'      <value name="IF0">' +
+'        <block type="logic_compare">' +
+'          <value name="A">' +
+'            <block type="io_digitalread"></block>' +
+'          </value>' +
+'          <value name="B">' +
+'            <block type="io_highlow"></block>' +
+'          </value>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="io_digitalwrite">' +
 '      <value name="STATE">' +
 '        <block type="io_highlow"></block>' +
