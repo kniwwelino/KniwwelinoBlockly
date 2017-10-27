@@ -64,7 +64,7 @@ class ServerCompilerSettings(object):
                        'Atmel atmega328pb Xplained mini':
                                'atmel:avr:atmega328pb_xplained_mini',
                        'ESP8266 Huzzah': 'esp8266:esp8266:generic',
-                       'ESP8266 WeMos D1': 'esp8266:esp8266:generic',
+                       'ESP8266 WeMos D1': 'esp8266:esp8266:d1_mini',
                        'Kniwwelino': 'esp8266:esp8266:kniwwelino'}
 
     # Class dictionary to contain the computer COM ports, dynamic content
