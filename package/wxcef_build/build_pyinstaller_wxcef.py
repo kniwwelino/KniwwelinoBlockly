@@ -41,7 +41,7 @@ import cefpython3
 import wx
 
 
-exec_folder_name = "arduexec"
+exec_folder_name = "KniwwelinoBlockly"
 script_tag = "[Ardublockly build] "
 script_tab = "                    "
 

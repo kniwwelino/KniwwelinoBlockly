@@ -46,7 +46,7 @@ project_root_dir = \
     os.path.dirname(                                  # going up 1 level
         os.path.dirname(os.path.realpath(__file__)))  # folder dir of this
 
-# This script copies the ardublockly folder with a different name on the same 
+# This script copies the ardublockly folder with a different name on the same
 # directory level to easily filter what to included in the packed version
 copy_dir_name = None
 copied_project_dir = None
@@ -63,11 +63,11 @@ def set_tag(tag):
     print(script_tag + "Setting the Ardublockly package tag to '%s'" % tag)
     global copy_dir_name
     global copied_project_dir
-    copy_dir_name = "ardublockly_%s" % tag
+    copy_dir_name = "KniwwelinoBlockly_%s" % tag
     # In OSX everything goes into the folder path Ardublockly.app/Contents/
     if platform.system() == "Darwin":
         copy_dir_name = os.path.join(
-            copy_dir_name, 'Ardublockly.app', 'Contents')
+            copy_dir_name, 'KniwwelinoBlockly.app', 'Contents')
         print(script_tab + 'Packing for Mac OS X, final folder structure: %s' %
               copy_dir_name)
     copied_project_dir = os.path.join(os.path.dirname(project_root_dir),
@@ -248,7 +248,7 @@ def zip_ardublockly_copy(name_append):
     """
     zip_file_dir = os.path.join(project_root_dir, "releases")
     zip_file_location = os.path.join(
-        zip_file_dir, "ardublockly_%s.zip" % name_append)
+        zip_file_dir, "KniwwelinoBlockly_%s.zip" % name_append)
 
     # First ensure the releases folder exists
     if not os.path.exists(zip_file_dir):
@@ -308,7 +308,7 @@ def pack_ardublockly(tag):
     remove_directory(os.path.join(copied_project_dir, "releases"))
 
     print(script_tag + "Removing Electron session app data files:")
-    remove_directory(os.path.join(copied_project_dir, "arduexec", "appdata"))
+    remove_directory(os.path.join(copied_project_dir, "KniwwelinoBlockly", "appdata"))
 
     print(script_tag + "Removing Python .pyc files:")
     remove_file_type_from(file_extension="pyc", scan_path=copied_project_dir)

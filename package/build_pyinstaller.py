@@ -34,7 +34,7 @@ sys.path.append(project_root_dir)
 
 
 spec_coll_name = "server"
-exec_folder_name = "arduexec"
+exec_folder_name = "KniwwelinoBlockly"
 py_exec_folder = os.path.join(exec_folder_name, spec_coll_name)
 script_tag = "[Ardublockly build] "
 script_tab = "                    "
@@ -148,12 +148,12 @@ def create_shell_file(os_type):
                      'DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )\n' \
                      'echo "[Shell Launch Script] Executing from: $DIR"\n' \
                      './%s' % os.path.join(exec_folder_name, "ardublockly")
-        shell_location = os.path.join(project_root_dir, "ardublockly_run.sh")
+        shell_location = os.path.join(project_root_dir, "KniwwelinoBlockly_run.sh")
     elif os_type == "windows":
         shell_text = "@echo off\n" + \
                      "start %s" % os.path.join(exec_folder_name,
                                                "ardublockly.exe")
-        shell_location = os.path.join(project_root_dir, "ardublockly_run.bat")
+        shell_location = os.path.join(project_root_dir, "KniwwelinoBlockly_run.bat")
     else:
         # macOS doesn't need a shell file, any other OS type is unexpected
         print(script_tab + "No shell file created.")

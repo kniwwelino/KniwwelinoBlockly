@@ -23,9 +23,9 @@
   },
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/carlosperate/ardublockly.git"
+    "url" : "https://git.list.lu/BeeCreative4Kids/KniwwelinoBlockly"
   },
   "bugs" : {
-    "url" : "https://github.com/carlosperate/ardublockly/issues"
+    "url" : "https://git.list.lu/BeeCreative4Kids/KniwwelinoBlockly/issues"
   }
 }

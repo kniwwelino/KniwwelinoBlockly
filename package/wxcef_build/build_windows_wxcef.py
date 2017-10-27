@@ -33,7 +33,7 @@ except ImportError:
     raise SystemExit("You need to have cefpython3, and py2exe installed!")
 
 
-exec_folder_name = "arduexec"
+exec_folder_name = "KniwwelinoBlockly"
 script_tag = "[Ardublockly build] "
 script_tab = "                    "
 

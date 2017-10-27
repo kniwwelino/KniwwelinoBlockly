@@ -221,44 +221,20 @@ var getExamplesMenuData = function() {
         label: 'Examples',
         submenu: [
             {
-                label: 'Blinky',
+                label: 'Best Friends',
                 click: function() {
                      BrowserWindow.getFocusedWindow().webContents
                         .executeJavaScript(
                             'Ardublockly.loadServerXmlFile("../examples/' +
-                            'blink.xml");');
+                            'bf_writsband.xml");');
                 }
             }, {
-                label: 'Serial Print',
+                label: 'Rock Paper Scissors',
                 click: function() {
                      BrowserWindow.getFocusedWindow().webContents
                         .executeJavaScript(
                             'Ardublockly.loadServerXmlFile("../examples/' +
-                            'serial_print_ascii.xml");');
-                }
-            }, {
-                label: 'Serial Repeat Game',
-                click: function() {
-                     BrowserWindow.getFocusedWindow().webContents
-                        .executeJavaScript(
-                            'Ardublockly.loadServerXmlFile("../examples/' +
-                            'serial_repeat_game.xml");');
-                }
-            }, {
-                label: 'Servo Knob',
-                click: function() {
-                     BrowserWindow.getFocusedWindow().webContents
-                        .executeJavaScript(
-                            'Ardublockly.loadServerXmlFile("../examples/' +
-                            'servo_knob.xml");');
-                }
-            }, {
-                label: 'Stepper Knob',
-                click: function() {
-                     BrowserWindow.getFocusedWindow().webContents
-                        .executeJavaScript(
-                            'Ardublockly.loadServerXmlFile("../examples/' +
-                            'stepper_knob.xml");');
+                            'rock_paper_scissors.xml");');
                 }
             }
         ]
@@ -325,38 +301,19 @@ var getHelpMenuData = function() {
                 label: 'Quick Start',
                 click: function() {
                     shell.openExternal(
-                        'http://localhost:8000/docs/Quick-Start');
+                        'http://doku.kniwwelino.lu/quickstart/');
                 }
             }, {
                 label: 'Manual',
                 click: function() {
-                    shell.openExternal('http://localhost:8000/docs/');
+                    shell.openExternal('http://doku.kniwwelino.lu');
                 }
             }, {
                 type: 'separator'
             }, {
                 label: 'Website',
                 click: function() {
-                    shell.openExternal('http://ardublockly.embeddedlog.com');
-                }
-            }, {
-                label: 'Source code',
-                click: function() {
-                    shell.openExternal(
-                        'https://github.com/carlosperate/ardublockly');
-                }
-            }, {
-                label: 'Report a bug',
-                click: function() {
-                    shell.openExternal(
-                        'https://github.com/carlosperate/ardublockly/issues');
-                }
-            }, {
-                type: 'separator'
-            },  {
-                label: 'About',
-                click: function() {
-                    shell.openExternal('http://localhost:8000/docs/About');
+                    shell.openExternal('http://www.kniwwelino.lu');
                 }
             }
         ]

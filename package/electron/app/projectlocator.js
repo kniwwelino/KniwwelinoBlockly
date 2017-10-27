@@ -10,7 +10,7 @@ const jetpack = require('fs-jetpack');
 
 // Name of the folder containing the electron executable, needs to be synced
 // with the name set in the Python server and Electron build files.
-const execFolderName = 'arduexec';
+const execFolderName = 'KniwwelinoBlockly';
 const serverExecFolderName = 'server';
 const serverExecName = 'start';
 module.exports.ardublocklyExecFolderName = execFolderName;
