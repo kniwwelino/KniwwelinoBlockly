@@ -568,8 +568,8 @@ Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT = "Pfeil rechts";
 Blockly.Msg.KNIWWELINO_BUTTON = "Knopf";
 Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "gedrückt ist";
 Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Gibt zurück ob ein Knopf gedrückt ist";
-Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "gedrückt war";
-Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Gibt zurück ob der Knopf seit der letzten Überprüfung gedrückt war";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "gedrückt wurde";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Gibt zurück ob der Knopf gedrückt wurde";
 // MQTT - MESSAGING
 Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Gruppe für Nachrichten";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Setzt die Gruppe für die deine Nachrichten bestimmt sind";
