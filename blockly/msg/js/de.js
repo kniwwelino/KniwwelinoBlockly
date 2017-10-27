@@ -394,17 +394,17 @@ Blockly.Msg.LISTS_INDEX_OF_INPUT_IN_LIST = Blockly.Msg.LISTS_INLIST;
 Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT = Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT;
 
 // Ardublockly strings
-Blockly.Msg.ARD_ANALOGREAD = "read analog pin#";  // untranslated
+Blockly.Msg.ARD_ANALOGREAD = "Lese analogen Pin#";  // untranslated
 Blockly.Msg.ARD_ANALOGREAD_TIP = "Return value between 0 and 1024";  // untranslated
-Blockly.Msg.ARD_ANALOGWRITE = "set analog pin#";  // untranslated
+Blockly.Msg.ARD_ANALOGWRITE = "Setze analogen Pin#";  // untranslated
 Blockly.Msg.ARD_ANALOGWRITE_TIP = "Write analog value between 0 and 255 to a specific PWM Port";  // untranslated
-Blockly.Msg.ARD_BUILTIN_LED = "set built-in LED";  // untranslated
+Blockly.Msg.ARD_BUILTIN_LED = "Setze eingebaute LED";  // untranslated
 Blockly.Msg.ARD_BUILTIN_LED_TIP = "Light on or off for the built-in LED of the Arduino";  // untranslated
 Blockly.Msg.ARD_COMPONENT_WARN1 = "A %1 configuration block with the same %2 name must be added to use this block!";  // untranslated
 Blockly.Msg.ARD_DEFINE = "Define";  // untranslated
-Blockly.Msg.ARD_DIGITALREAD = "read digital pin#";  // untranslated
+Blockly.Msg.ARD_DIGITALREAD = "Lese digitalen Pin#";  // untranslated
 Blockly.Msg.ARD_DIGITALREAD_TIP = "Read digital value on a pin: HIGH or LOW";  // untranslated
-Blockly.Msg.ARD_DIGITALWRITE = "set digitial pin#";  // untranslated
+Blockly.Msg.ARD_DIGITALWRITE = "Setze digitalen Pin#";  // untranslated
 Blockly.Msg.ARD_DIGITALWRITE_TIP = "Write digital value HIGH or LOW to a specific Port";  // untranslated
 Blockly.Msg.ARD_FUN_RUN_LOOP = "Arduino loop forever:";  // untranslated
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Arduino run first:";  // untranslated
@@ -421,8 +421,8 @@ Blockly.Msg.ARD_NOTONE_PIN_TIP = "Stop generating a tone on a pin";  // untransl
 Blockly.Msg.ARD_NOTONE_TIP = "Turns the tone off on the selected pin";  // untranslated
 Blockly.Msg.ARD_PIN_WARN1 = "Pin %1 is needed for %2 as pin %3. Already used as %4.";  // untranslated
 Blockly.Msg.ARD_PULSETIMEOUT_TIP = "Measures the duration of a pulse on the selected pin, if it is within the time-out in microseconds.";  // untranslated
-Blockly.Msg.ARD_PULSE_READ = "measure %1 pulse on pin #%2";  // untranslated
-Blockly.Msg.ARD_PULSE_READ_TIMEOUT = "measure %1 pulse on pin #%2 (timeout after %3 μs)";  // untranslated
+Blockly.Msg.ARD_PULSE_READ = "Messe %1 Pulse an Pin #%2";  // untranslated
+Blockly.Msg.ARD_PULSE_READ_TIMEOUT = "Messe %1 Pulse an Pin #%2 (abbrechen nach %3 μs)";  // untranslated
 Blockly.Msg.ARD_PULSE_TIP = "Measures the duration of a pulse on the selected pin.";  // untranslated
 Blockly.Msg.ARD_SERIAL_BPS = "bps";  // untranslated
 Blockly.Msg.ARD_SERIAL_PRINT = "print";  // untranslated
@@ -437,7 +437,7 @@ Blockly.Msg.ARD_SERVO_READ_TIP = "Read a Servo angle";  // untranslated
 Blockly.Msg.ARD_SERVO_WRITE = "set SERVO from Pin";  // untranslated
 Blockly.Msg.ARD_SERVO_WRITE_DEG_180 = "Degrees (0~180)";  // untranslated
 Blockly.Msg.ARD_SERVO_WRITE_TIP = "Set a Servo to an specified angle";  // untranslated
-Blockly.Msg.ARD_SERVO_WRITE_TO = "to";  // untranslated
+Blockly.Msg.ARD_SERVO_WRITE_TO = "auf";  // untranslated
 Blockly.Msg.ARD_SETTONE = "Set tone on pin #";  // untranslated
 Blockly.Msg.ARD_SPI_SETUP = "Setup";  // untranslated
 Blockly.Msg.ARD_SPI_SETUP_CONF = "configuration:";  // untranslated
@@ -475,7 +475,7 @@ Blockly.Msg.ARD_STEPPER_STEP = "move stepper";  // untranslated
 Blockly.Msg.ARD_STEPPER_STEPS = "steps";  // untranslated
 Blockly.Msg.ARD_STEPPER_STEP_TIP = "Turns the stepper motor a specific number of steps.";  // untranslated
 Blockly.Msg.ARD_STEPPER_TWO_PINS = "2";  // untranslated
-Blockly.Msg.ARD_TIME_DELAY = "wait";  // untranslated
+Blockly.Msg.ARD_TIME_DELAY = "Warte";
 Blockly.Msg.ARD_TIME_DELAY_MICROS = "microseconds";  // untranslated
 Blockly.Msg.ARD_TIME_DELAY_MICRO_TIP = "Wait specific time in microseconds";  // untranslated
 Blockly.Msg.ARD_TIME_DELAY_TIP = "Wait specific time in milliseconds";  // untranslated
@@ -485,7 +485,7 @@ Blockly.Msg.ARD_TIME_MICROS = "current elapsed Time (microseconds)";  // untrans
 Blockly.Msg.ARD_TIME_MICROS_TIP = "Returns the number of microseconds since the Arduino board began running the current program. Has to be stored in a positive long integer";  // untranslated
 Blockly.Msg.ARD_TIME_MILLIS = "current elapsed Time (milliseconds)";  // untranslated
 Blockly.Msg.ARD_TIME_MILLIS_TIP = "Returns the number of milliseconds since the Arduino board began running the current program. Has to be stored in a positive long integer";  // untranslated
-Blockly.Msg.ARD_TIME_MS = "milliseconds";  // untranslated
+Blockly.Msg.ARD_TIME_MS = "Millisekunden";
 Blockly.Msg.ARD_TONEFREQ = "at frequency";  // untranslated
 Blockly.Msg.ARD_TONE_FREQ = "frequency";  // untranslated
 Blockly.Msg.ARD_TONE_PIN = "Tone PIN#";  // untranslated
@@ -505,13 +505,85 @@ Blockly.Msg.ARD_TYPE_TEXT = "Text";  // untranslated
 Blockly.Msg.ARD_TYPE_UNDEF = "Undefined";  // untranslated
 Blockly.Msg.ARD_VAR_AS = "as";  // untranslated
 Blockly.Msg.ARD_VAR_AS_TIP = "Sets a value to a specific type";  // untranslated
-Blockly.Msg.ARD_WRITE_TO = "to";  // untranslated
+Blockly.Msg.ARD_WRITE_TO = "auf";  // untranslated
 Blockly.Msg.NEW_INSTANCE = "New instance...";  // untranslated
 Blockly.Msg.NEW_INSTANCE_TITLE = "New instance name:";  // untranslated
 Blockly.Msg.RENAME_INSTANCE = "Rename instance...";  // untranslated
 Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untranslated
 
 
-//Kniwwelino
-
+//Kniwwelino DOKU URL
 Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/de/reference/";
+//Kniwwelino
+Blockly.Msg.KNIWWELINO_GETID = 'Kniwwelino ID'
+Blockly.Msg.KNIWWELINO_GETID_TIP = 'Gibt die Kniwwelino ID zurück'
+Blockly.Msg.KNIWWELINO_GETNAME = 'Kniwwelino Name'
+Blockly.Msg.KNIWWELINO_GETNAME_TIP = 'Gibt den Name deines Kniwwelino zurück'
+Blockly.Msg.KNIWWELINO_GETIP = 'WIFI IP Adresse'
+Blockly.Msg.KNIWWELINO_GETIP_TIP = 'Gibt die WIFI IP Adresse deines Kniwwelino zurück'
+Blockly.Msg.KNIWWELINO_GETMAC = 'WIFI MAC Adresse'
+Blockly.Msg.KNIWWELINO_GETMAC_TIP = 'Gibt die WIFI MAC Adresse deines Kniwwelino zurück'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'E/A Pin'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Setzt den ausgewählten E/A Pin auf an/blinken/blitzen/aus'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "blinken"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "blitzen"
+// RGB Led
+Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
+Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Select a Color and return it as HEX String'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'RGB LED Farbe'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP = 'Setzt eine Farbe auf der RGB LED'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT = 'RGB LED Farbe'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP = 'Setzt eine Farbe und einen Effekt auf der RGB LED'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'RGB LED Farbe'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP = 'Setzt die RGB LED Farbe durch einen HEX-Wert (String)'
+Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'RGB LED aus'
+Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Schaltet die RGB LED aus'
+// MATRIX
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Designe ein Icon';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = 'Zeige ein Icon auf der Matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = 'Zeigt ein Icon aus der Liste auf der LED Matrix an';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = 'Zeige ein Icon auf der Matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = 'Zeigt ein Icon auf der LED Matrix an';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'Schreibe Text auf Matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Zeigt einen gegebenen Text auf der LED Matrix an';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'Scrollen';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_WAIT = 'Warten';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_ONCE = 'Nur ein mal';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE = 'Matrix Blinkrate';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Setzt die Blinkrate für die LED Matrix (an, 1/2Hz, 1Hz, 2Hz)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'Matrix Helligkeit';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Setze die Helligkeitder LED Matrix (1-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT = 'Wert ausserhalb des Bereichs: 1-15';
+Blockly.Msg.KNIWWELINO_MATRIX_CLEAR = 'Matrix löschen';
+Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP = 'Löscht den Inhalt der LED Matrix';
+Blockly.Msg.KNIWWELINO_DRAWICON_HEART = "Herz";
+Blockly.Msg.KNIWWELINO_DRAWICON_SMILE = "Lächeln";
+Blockly.Msg.KNIWWELINO_DRAWICON_SAD = "Traurig";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP = "Pfeil hoch";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN = "Pfeil runter";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT = "Pfeil links";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT = "Pfeil rechts";
+// BUTTONS
+Blockly.Msg.KNIWWELINO_BUTTON = "Knopf";
+Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "gedrückt ist";
+Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Gibt zurück ob ein Knopf gedrückt ist";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "gedrückt war";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Gibt zurück ob der Knopf seit der letzten Überprüfung gedrückt war";
+// MQTT - MESSAGING
+Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Gruppe für Nachrichten";
+Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Setzt die Gruppe für die deine Nachrichten bestimmt sind";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "Nachrichten: Verbinde RGB LED";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Verbindet einkommende Nachrichten mit der RGB LED";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "Nachrichten: Verbinde Matrix";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Verbindet einkommende Nachrichten mit der LED Matrix";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "Sende";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Sendet eine gegebene Nachrichten an ein Thema (Topic)";
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "an Thema (Topic)";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Verbinde Variable";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (String) mit einem bestimmten Nachrichten-Thema (Topic)";
+
+
+// overwrite default labels
+Blockly.Msg.ARD_HIGH = "AN";
+Blockly.Msg.ARD_LOW = "AUS";

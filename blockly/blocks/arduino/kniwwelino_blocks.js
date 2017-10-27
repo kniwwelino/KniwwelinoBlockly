@@ -98,7 +98,7 @@ Blockly.Blocks['kniwwelino_PINsetEffect'] = {
 		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_EFFECT)
 		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
 		    	.appendField(Blockly.Msg.ARD_WRITE_TO)
-		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"], ["OFF","RGB_OFF"]]), "EFFECT");
+		      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.ARD_LOW,"RGB_OFF"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_Kniwwelino.HUE);
@@ -146,7 +146,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		    this.appendDummyInput()
 		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
 		        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR")
-		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -164,7 +164,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		    this.appendDummyInput()
 //		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
 //		        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR")
-		        .appendField(new Blockly.FieldDropdown([["ON","RGB_ON"], ["BLINK","RGB_BLINK"], ["FLASH","RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -320,10 +320,10 @@ Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
    },
 
    onchange: function() {
-     if (this.getFieldValue('BRIGHTNESS') < 0 | this.getFieldValue('BRIGHTNESS') > 15) {
+     if (this.getFieldValue('BRIGHTNESS') < 1 | this.getFieldValue('BRIGHTNESS') > 15) {
        this.setWarningText(Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT);
-       if (this.getFieldValue('BRIGHTNESS') < 0) {
-         this.setFieldValue(0, 'BRIGHTNESS');
+       if (this.getFieldValue('BRIGHTNESS') < 1) {
+         this.setFieldValue(1, 'BRIGHTNESS');
        } else if (this.getFieldValue('BRIGHTNESS') > 15) {
          this.setFieldValue(15, 'BRIGHTNESS');
        }
