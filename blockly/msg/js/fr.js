@@ -510,3 +510,78 @@ Blockly.Msg.NEW_INSTANCE = "New instance...";  // untranslated
 Blockly.Msg.NEW_INSTANCE_TITLE = "New instance name:";  // untranslated
 Blockly.Msg.RENAME_INSTANCE = "Rename instance...";  // untranslated
 Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untranslated
+
+
+//Kniwwelino DOKU URL
+Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/fr/reference/";
+//Kniwwelino
+Blockly.Msg.KNIWWELINO_GETID = 'ID du périphérique'
+Blockly.Msg.KNIWWELINO_GETID_TIP = "Retourne l'ID du périphérique" /*I changed the quote due to the apostrophe*/
+Blockly.Msg.KNIWWELINO_GETNAME = 'Nom du périphérique'
+Blockly.Msg.KNIWWELINO_GETNAME_TIP = 'Retourne le nom du périphérique'
+Blockly.Msg.KNIWWELINO_GETIP = 'Adresse IP WIFI'
+Blockly.Msg.KNIWWELINO_GETIP_TIP = "Returns the Devices WIFI IP Address"
+Blockly.Msg.KNIWWELINO_GETMAC = 'WIFI MAC Address'
+Blockly.Msg.KNIWWELINO_GETMAC_TIP = "Retourne l'adresse MAC WIFI du périphérique"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'IO Pin'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Configure le Pin IO sur ON/Clignoter/Flasher'
+// RGB Led
+Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
+Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Selectionner une couleur et la convertir en chaîne HEX'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'Couleur de la LED RVB'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP = 'Configure la LED RVB sur Couleur'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT = 'Couleur de la LED RVB'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP = 'Configure la LED RVB sur Couleur et Effet'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'Couleur de la LED RVB'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP = 'Configure la couleur de la LED RVB depuis la chaîne HEX'
+Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'LED RVB OFF'
+Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Éteindre la LED RVB'
+// MATRIX
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Créer une icône';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = "MATRIX affiche l'icône";
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = "Affiche l'icône sélectionné sur la MATRIX";
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = "MATRIX affiche l'icône";
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = "Affiche l'icône sélectionné sur la MATRIX";
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'MATRIX écrit';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Écrit le text donné sur la MATRIX';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'Défiler';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_WAIT = 'Attendre';
+Blockly.Msg.KNIWWELINO_MATRIX_WRITE_ONCE = 'Une fois';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE = 'Fréquence de clignotement de la MATRIX';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Configure la fréquence de clignotement de la MATRIX de LED (plage 0-3)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'Luminosité de la MATRIX';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la MATRIX de LED (0-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT = 'Valeur hors de la plage (0-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_CLEAR = 'MATRIX vide';
+Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP = 'Supprimer le contenu de la MATRIX de LED';
+Blockly.Msg.KNIWWELINO_DRAWICON_HEART = "Coeur"
+Blockly.Msg.KNIWWELINO_DRAWICON_SMILE = "Sourire";
+Blockly.Msg.KNIWWELINO_DRAWICON_SAD = "Triste";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP = "Flèche haut";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN = "Flèche bas";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT = "Flèche gauche";
+Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT = "Flèche droite";
+// BUTTONS
+Blockly.Msg.KNIWWELINO_BUTTON = "BOUTTON";
+Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "Si appuyé";
+Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Retourne si le bouton à été appuyé";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "À été cliqué";
+Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Retourne si le bouton a été cliqué depuis la dernière vérification";
+// MQTT - MESSAGING
+Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Envoyer un message au groupe";
+Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Configurer le groupe pour l'envoie du message";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "Messaging: Connecter la LED RVB";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connecter la LED RVB à Messaging";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "Messaging: Connecter la MATRIX";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connecter la MATRIX à Messaging";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "Envoyé";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Envoyé le message donné au Topic spécifié";///////////
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "Au Topic";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Relier une Variable";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné (Chaîne) au //message Topic// spécifié";
+
+
+// overwrite default labels
+Blockly.Msg.ARD_HIGH = "ON";
+Blockly.Msg.ARD_LOW = "OFF";
