@@ -468,7 +468,7 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 		   init: function() {
 				 this.setInputsInline(true);
 			     this.appendValueInput("TOPIC")
-			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_ATTACH).appendField(new Blockly.FieldVariable("item"), "VAR")
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_ATTACH).appendField(new Blockly.FieldVariable(Blockly.Msg.VARIABLES_DEFAULT_NAME), "VAR")
 			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC);
 //			     this.setPreviousStatement(true, null);
 //			     this.setNextStatement(true, null);
