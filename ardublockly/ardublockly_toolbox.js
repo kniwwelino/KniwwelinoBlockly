@@ -82,6 +82,11 @@ Ardublockly.TOOLBOX_XML =
 '    		<block type="kniwwelino_BUTTONdown"></block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="controls_if">' +
+'      <value name="IF0">' +
+'    		<block type="kniwwelino_BUTTONclicked"></block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_BUTTONdown"></block>' +
 '    <block type="kniwwelino_BUTTONclicked"></block>' +
 '  </category>' +

@@ -568,6 +568,8 @@ Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "Si appuyé";
 Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Retourne si le bouton à été appuyé";
 Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "À été cliqué";
 Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Retourne si le bouton a été cliqué depuis la dernière vérification";
+Blockly.Msg.KNIWWELINO_BUTTON_A_AND_B = "A et B";
+Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B = "A ou B";
 // MQTT - MESSAGING
 Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Envoyer un message au groupe";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Configurer le groupe pour l'envoie du message";

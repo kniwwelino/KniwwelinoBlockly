@@ -570,6 +570,8 @@ Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "is pressed";
 Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP = "Returns if the Button is pressed down";
 Blockly.Msg.KNIWWELINO_BUTTON_CLICKED = "was clicked";
 Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Returns if the Button was clicked since the last check";
+Blockly.Msg.KNIWWELINO_BUTTON_A_AND_B = "A and B";
+Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B = "A or B";
 // MQTT - MESSAGING
 Blockly.Msg.KNIWWELINO_MQTT_GROUP = "Messaging Group";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Set the group for your Messaging";

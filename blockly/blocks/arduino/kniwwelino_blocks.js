@@ -373,8 +373,8 @@ Blockly.Blocks['kniwwelino_BUTTONdown'] = {
 		        .appendField(new Blockly.FieldDropdown(
 		    [["A","A"],
 		    ["B","B"],
-		    ["A and B","AandB"],
-		    ["A or B","AorB"]]), "BUTTON")
+		    [Blockly.Msg.KNIWWELINO_BUTTON_A_AND_B,"AandB"],
+		    [Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B,"AorB"]]), "BUTTON")
 		    .appendField(Blockly.Msg.KNIWWELINO_BUTTON_DOWN);
 		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP);
@@ -392,8 +392,8 @@ Blockly.Blocks['kniwwelino_BUTTONclicked'] = {
 		        .appendField(new Blockly.FieldDropdown(
 		    [["A","A"],
 		    ["B","B"],
-		    ["A and B","AandB"],
-		    ["A or B","AorB"]]), "BUTTON")
+		    [Blockly.Msg.KNIWWELINO_BUTTON_A_AND_B,"AandB"],
+		    [Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B,"AorB"]]), "BUTTON")
 		    .appendField(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED);
 		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP);
