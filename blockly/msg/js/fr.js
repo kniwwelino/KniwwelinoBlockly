@@ -585,5 +585,5 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné (Cha�
 
 
 // overwrite default labels
-Blockly.Msg.ARD_HIGH = "ON";
-Blockly.Msg.ARD_LOW = "OFF";
+Blockly.Msg.ARD_HIGH = "activée";
+Blockly.Msg.ARD_LOW = "désactivée";

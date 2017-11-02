@@ -587,5 +587,5 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected Variable (String) 
 
 
 // overwrite default labels
-Blockly.Msg.ARD_HIGH = "ON";
-Blockly.Msg.ARD_LOW = "OFF";
+Blockly.Msg.ARD_HIGH = "on";
+Blockly.Msg.ARD_LOW = "off";
