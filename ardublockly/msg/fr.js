@@ -20,7 +20,7 @@ Ardublockly.LOCALISED_TEXT = {
   arduinoBoardDefault: "Carte Arduino inconnu",
   comPort: "Port COM",
   comPortDefault: "Port COM inconnu",
-  defaultIdeButton: "Boutton IDE par défaut",
+  defaultIdeButton: "Bouton IDE par défaut",
   defaultIdeButtonDefault: "Options IDE inconnu",
   language: "Langue",
   languageDefault: "Langue inconnu",
@@ -103,4 +103,5 @@ Ardublockly.LOCALISED_TEXT = {
   catMotors: "Moteurs",
   catComms: "Comms",
   catMQTT: "Messages",
+  catButtons: "Boutons",
 };
