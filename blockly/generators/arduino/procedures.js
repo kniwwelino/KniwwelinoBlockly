@@ -133,12 +133,12 @@ Blockly.Arduino['procedures_ifreturn'] = function(block) {
 };
 
 /**
- * Code generator to add code into the setup() and loop() functions.
+ * Code generator to add code into the setup() functions.
  * Its use is not mandatory, but necessary to add manual code to setup().
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {string} Completed code.
  */
-Blockly.Arduino['arduino_functions'] = function(block) {
+Blockly.Arduino['arduino_functions_setup'] = function(block) {
   // Edited version of Blockly.Generator.prototype.statementToCode
   function statementToCodeNoTab(block, name) {
     var targetBlock = block.getInputTargetBlock(name);
@@ -153,6 +153,26 @@ Blockly.Arduino['arduino_functions'] = function(block) {
   //var setupCode = Blockly.Arduino.scrub_(block, setupBranch); No comment block
   if (setupBranch) {
     Blockly.Arduino.addSetup('userSetupCode', setupBranch, true);
+  }
+  return "";
+
+};
+
+/**
+ * Code generator to add code into the loop() functions.
+ * Its use is not mandatory, but necessary to add manual code to setup().
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {string} Completed code.
+ */
+Blockly.Arduino['arduino_functions_loop'] = function(block) {
+  // Edited version of Blockly.Generator.prototype.statementToCode
+  function statementToCodeNoTab(block, name) {
+    var targetBlock = block.getInputTargetBlock(name);
+    var code = Blockly.Arduino.blockToCode(targetBlock);
+    if (!goog.isString(code)) {
+      throw 'Expecting code from statement block "' + targetBlock.type + '".';
+    }
+    return code;
   }
 
   var loopBranch = statementToCodeNoTab(block, 'LOOP_FUNC');
