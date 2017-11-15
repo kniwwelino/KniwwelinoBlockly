@@ -19,8 +19,8 @@ local_packages_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
 sys.path.insert(0, local_packages_path)
 
 # Follows Semantic Versioning 2.0.0 http://semver.org/spec/v2.0.0.html
-__version__ = '0.1.3-a'
+__version__ = '0.1.4'
 
-__author__ = 'carlosperate'
-__copyright__ = 'Copyright 2017, carlosperate https://github.com/carlosperate/'
+__author__ = 'LIST'
+__copyright__ = 'Copyright 2017, Luxembourg Institute of Science and Technology (LIST)'
 __license__ = 'Apache License, Version 2.0'
