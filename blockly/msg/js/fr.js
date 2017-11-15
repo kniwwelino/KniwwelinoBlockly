@@ -525,6 +525,7 @@ Blockly.Msg.KNIWWELINO_GETMAC = 'WIFI MAC Address'
 Blockly.Msg.KNIWWELINO_GETMAC_TIP = "Retourne l'adresse MAC WIFI du périphérique"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'IO Pin'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Configure le Pin IO sur ON/Clignoter/Flasher'
+Blockly.Msg.KNIWWELINO_TIME_SEC = "seconde";
 // RGB Led
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Selectionner une couleur et la convertir en chaîne HEX'

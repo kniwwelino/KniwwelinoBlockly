@@ -527,6 +527,7 @@ Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'IO Pin'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Set the selected IO Pin to ON/Blink/Flash/OFF'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "blink"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "flash"
+Blockly.Msg.KNIWWELINO_TIME_SEC = "seconds";
 // RGB Led
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Select a Color and return it as HEX String'

@@ -527,6 +527,7 @@ Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'E/A Pin'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Setzt den ausgewählten E/A Pin auf an/blinken/blitzen/aus'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "blinken"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "blitzen"
+Blockly.Msg.KNIWWELINO_TIME_SEC = "Sekunden";
 // RGB Led
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Select a Color and return it as HEX String'

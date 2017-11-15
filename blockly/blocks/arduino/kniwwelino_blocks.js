@@ -77,6 +77,21 @@ Blockly.Blocks['kniwwelino_getMAC'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_sleepsec'] = {
+		init: function() {
+		    this.appendValueInput('DELAY_TIME_SEC')
+		        .setCheck(Blockly.Types.NUMBER.checkList)
+		        .appendField(Blockly.Msg.ARD_TIME_DELAY);
+		    this.appendDummyInput()
+		        .appendField(Blockly.Msg.KNIWWELINO_TIME_SEC);
+		    this.setInputsInline(true);
+		    this.setPreviousStatement(true, null);
+		    this.setNextStatement(true, null);
+		    this.setColour(Blockly.Blocks.kniwwelino_Kniwwelino.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		  }
+};
+
 Blockly.Blocks['kniwwelino_sleep'] = {
 		init: function() {
 		    this.appendValueInput('DELAY_TIME_MILI')
@@ -113,7 +128,6 @@ Blockly.Blocks['kniwwelino_PINsetEffect'] = {
 //void RGBsetColorEffect(uint32 color, uint8_t effect, int count);
 //void RGBsetColorEffect(uint8_t red ,uint8_t green, uint8_t blue, uint8_t effect, int count);
 
-
 Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   init: function() {
 		     this.appendDummyInput()
@@ -128,18 +142,6 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
-//Blockly.Blocks['kniwwelino_RGBsetColor'] = {
-//		   init: function() {
-//		     this.appendDummyInput()
-//		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOR)
-//		         .appendField(new Blockly.FieldColour("#ff0000"), "COLOR");
-//		     this.setPreviousStatement(true, null);
-//		     this.setNextStatement(true, null);
-//		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
-//		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOR_TIP);
-//		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
-//		   }
-//		};
 
 Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		  init: function() {
@@ -162,8 +164,6 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 			         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING)
 				     .setCheck(Blockly.Types.TEXT.checkList)
 		    this.appendDummyInput()
-//		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
-//		        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR")
 		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
