@@ -62,6 +62,7 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_RGBsetBrightness"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catMatrix" name="Matrix">' +
@@ -86,18 +87,18 @@ Ardublockly.TOOLBOX_XML =
 '  <sep></sep>' +
 
 '  <category id="catButtons" name="Buttons">' +
-'    <block type="controls_if">' +
-'      <value name="IF0">' +
-'    		<block type="kniwwelino_BUTTONdown"></block>' +
-'      </value>' +
-'    </block>' +
+//'    <block type="controls_if">' +
+//'      <value name="IF0">' +
+//'    		<block type="kniwwelino_BUTTONdown"></block>' +
+//'      </value>' +
+//'    </block>' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
 '    		<block type="kniwwelino_BUTTONclicked"></block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_BUTTONdown"></block>' +
 '    <block type="kniwwelino_BUTTONclicked"></block>' +
+'    <block type="kniwwelino_BUTTONdown"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 

@@ -535,6 +535,8 @@ Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT = 'Couleur de la LED RVB'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP = 'Configure la LED RVB sur couleur et effet'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'Couleur de la LED RVB'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP = 'Configure la couleur de la LED RVB depuis la chaîne HEX'
+Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'Luminosité de la LED RVB';
+Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la LED RVB (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'LED RVB OFF'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Éteindre la LED RVB'
 // MATRIX

@@ -187,6 +187,33 @@ Blockly.Blocks['kniwwelino_RGBsetColorFromString'] = {
 		   }
 		};
 
+Blockly.Blocks['kniwwelino_RGBsetBrightness'] = {
+		   init: function() {
+		     this.appendDummyInput()
+		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS)
+		         .appendField(new Blockly.FieldNumber(200, 0, 255, 0), 'BRIGHTNESS');
+		     this.setPreviousStatement(true, null);
+		     this.setNextStatement(true, null);
+		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP);
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		   },
+
+		   onchange: function() {
+		     if (this.getFieldValue('BRIGHTNESS') < 1 | this.getFieldValue('BRIGHTNESS') > 255) {
+		       this.setWarningText(Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT);
+		       if (this.getFieldValue('BRIGHTNESS') < 1) {
+		         this.setFieldValue(1, 'BRIGHTNESS');
+		       } else if (this.getFieldValue('BRIGHTNESS') > 15) {
+		         this.setFieldValue(15, 'BRIGHTNESS');
+		       }
+		     } else {
+		       this.setWarningText(null);
+		     }
+		   }
+
+		};
+
 Blockly.Blocks['kniwwelino_RGBclear'] = {
 		   init: function() {
 		     this.appendDummyInput()
@@ -296,8 +323,8 @@ Blockly.Blocks['kniwwelino_MATRIXwrite'] = {
 		 this.appendDummyInput()
 	     	.appendField(new Blockly.FieldDropdown([
 	            [Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL,"SCROLL"],
-	            [Blockly.Msg.KNIWWELINO_MATRIX_WRITE_WAIT,	"WAIT"],
-	            [Blockly.Msg.KNIWWELINO_MATRIX_WRITE_ONCE,	"ONCE"]])
+	            [Blockly.Msg.KNIWWELINO_MATRIX_WRITE_ONCE,	"ONCE"],
+	            [Blockly.Msg.KNIWWELINO_MATRIX_WRITE_WAIT,	"WAIT"]])
 	          , "TYPE");
 	     this.setPreviousStatement(true, null);
 	     this.setNextStatement(true, null);
@@ -315,7 +342,7 @@ Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
      this.setPreviousStatement(true, null);
      this.setNextStatement(true, null);
      this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
-     this.setTooltip(Blockly.Msg.KNIWWELINO_SETBRIGHTNESS_TIP);
+     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP);
      this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
    },
 
@@ -411,14 +438,35 @@ Blockly.Blocks['kniwwelino_BUTTONclicked'] = {
 Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 		   init: function() {
 				 this.setInputsInline(true);
-			     this.appendValueInput("GROUP")
-			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_GROUP);
+//			     this.appendValueInput("GROUP")
+			     this.appendDummyInput()
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_GROUP)
+			                 .appendField(this.newQuote_(true))
+			                 .appendField(new Blockly.FieldTextInput('myFriends'), 'GROUP')
+			     			 .appendField(this.newQuote_(false));
 //			     this.setPreviousStatement(true, null);
 //			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
-		   }
+		   }, 
+		   
+		   onchange: function() {
+			       this.setFieldValue(this.getFieldValue('GROUP').trim().replace(" ","_"), 'GROUP');
+			   },
+		   
+		   newQuote_: function(open) {
+			   if (open == this.RTL) {
+				    var file = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg==';
+				  } else {
+				    var file = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAn0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMfz9AylsaRRgGzvZAAAAAElFTkSuQmCC';
+				  }
+				  return new Blockly.FieldImage(file, 12, 12, '"');
+				},
+				/** @return {!string} Type of the block, text block always a string. */
+				getBlockType: function() {
+				  return Blockly.Types.TEXT;
+				}
 		};
 
 Blockly.Blocks['kniwwelino_MQTTconnectRGB'] = {
@@ -490,3 +538,5 @@ Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
+
+

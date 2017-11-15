@@ -98,6 +98,13 @@ Blockly.Arduino['kniwwelino_RGBsetColorFromString'] = function(block) {
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	return  'Kniwwelino.RGBsetColor(String('+color+'));\n';
 };
+
+Blockly.Arduino['kniwwelino_RGBsetBrightness'] = function(block) {
+	kniwwelinoBaseCode();
+	var brightness = block.getFieldValue('BRIGHTNESS');
+	return  'Kniwwelino.RGBsetBrightness(' + brightness + ');\n';
+};
+
 	
 Blockly.Arduino['kniwwelino_RGBclear'] = function(block) {
 	kniwwelinoBaseCode();
@@ -195,8 +202,10 @@ Blockly.Arduino['kniwwelino_BUTTONclicked'] = function(block) {
 
 Blockly.Arduino['kniwwelino_MQTTsetGroup'] = function(block) {
 	kniwwelinoBaseCode();
-	var group = Blockly.Arduino.valueToCode(block, 'GROUP',Blockly.Arduino.ORDER_UNARY_POSTFIX);
-	Blockly.Arduino.addSetup('kniwwelino_MQTTsetGroup','Kniwwelino.MQTTsetGroup(String(' + group + '));', true);
+//	var group = Blockly.Arduino.valueToCode(block, 'GROUP',Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	var group = block.getFieldValue('GROUP');
+	group = group.trim().replace(" ","_");
+	Blockly.Arduino.addSetup('kniwwelino_MQTTsetGroup','Kniwwelino.MQTTsetGroup(String("' + group + '"));', true);
 	return '';
 };
 
@@ -215,6 +224,7 @@ Blockly.Arduino['kniwwelino_MQTTconnectMATRIX'] = function(block) {
 Blockly.Arduino['kniwwelino_MQTTpublishSimple'] = function(block) {
 	kniwwelinoBaseCode();
 	var topic = block.getFieldValue('TOPIC');
+	topic = topic.trim().replace(" ","_");
 	var message = Blockly.Arduino.valueToCode(block, 'MESSAGE',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	return  'Kniwwelino.MQTTpublish("'+topic+'", String('+message+'));\n';
 };
@@ -223,6 +233,7 @@ Blockly.Arduino['kniwwelino_MQTTsubscribe'] = function(block) {
 	kniwwelinoBaseCode();
 	kniwwelinoMQTTCode();
 	var topic = Blockly.Arduino.valueToCode(block, 'TOPIC',Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	topic = topic.trim().replace(" ","_");
 	var varName = Blockly.Arduino.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
 
 	Blockly.Arduino.addKniwwelinoSub(varName, topic);
@@ -233,6 +244,7 @@ Blockly.Arduino['kniwwelino_MQTTsubscribe'] = function(block) {
 Blockly.Arduino['kniwwelino_MQTTpublish'] = function(block) {
 	kniwwelinoBaseCode();
 	var topic = Blockly.Arduino.valueToCode(block, 'TOPIC',Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	topic = topic.trim().replace(" ","_");
 	var message = Blockly.Arduino.valueToCode(block, 'MESSAGE',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	return  'Kniwwelino.MQTTpublish('+topic+', String('+message+'));\n';
 };
