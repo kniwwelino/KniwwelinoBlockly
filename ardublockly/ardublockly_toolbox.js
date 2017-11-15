@@ -93,8 +93,21 @@ Ardublockly.TOOLBOX_XML =
 //'      </value>' +
 //'    </block>' +
 '    <block type="controls_if">' +
+'      <mutation elseif="2"></mutation>' + 
 '      <value name="IF0">' +
-'    		<block type="kniwwelino_BUTTONclicked"></block>' +
+'    		<block type="kniwwelino_BUTTONclicked">' +
+'    			<field name="BUTTON">AandB</field>' +
+'           </block>' +
+'      </value>' +
+'      <value name="IF1">' +
+'    		<block type="kniwwelino_BUTTONclicked">' +
+'    			<field name="BUTTON">A</field>' +
+'           </block>' +
+'      </value>' +
+'      <value name="IF2">' +
+'    		<block type="kniwwelino_BUTTONclicked">' +
+'    			<field name="BUTTON">B</field>' +
+'           </block>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_BUTTONclicked"></block>' +
