@@ -589,3 +589,5 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected Variable (String) 
 // overwrite default labels
 Blockly.Msg.ARD_HIGH = "on";
 Blockly.Msg.ARD_LOW = "off";
+Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino loop forever:";
+Blockly.Msg.ARD_FUN_RUN_SETUP = "Kniwwelino run first:";

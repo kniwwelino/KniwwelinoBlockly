@@ -587,3 +587,5 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné au to
 // overwrite default labels
 Blockly.Msg.ARD_HIGH = "activée";
 Blockly.Msg.ARD_LOW = "désactivée";
+Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino boucle infinie:";
+Blockly.Msg.ARD_FUN_RUN_SETUP = "Kniwwelino exécute en premier:";

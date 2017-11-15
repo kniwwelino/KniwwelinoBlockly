@@ -23,6 +23,8 @@ Ardublockly.TOOLBOX_XML =
 //'  </category>' +
 //'  <sep></sep>' +
 '  <category id="catKniwwelino" name="Kniwwelino">' +
+'    <block type="arduino_functions_setup"></block>' +
+'    <block type="arduino_functions_loop"></block>' +
 '    <block type="kniwwelino_sleep">' +
 '      <value name="DELAY_TIME_MILI">' +
 '        <block type="math_number">' +
