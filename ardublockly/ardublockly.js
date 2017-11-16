@@ -36,8 +36,7 @@ Ardublockly.init = function() {
     console.log('Offline app modal opened as non localhost host name found: ' +
                 document.location.hostname)
   }
-  //load a new prepared workspace
-  Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
+  
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */

@@ -173,6 +173,9 @@ Ardublockly.loadSessionStorageBlocks = function() {
     delete window.sessionStorage.loadOnceBlocks;
     var xml = Blockly.Xml.textToDom(loadOnce);
     Blockly.Xml.domToWorkspace(xml, Ardublockly.workspace);
+  } else {
+    //load a new prepared workspace
+    Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
   }
 };
 
