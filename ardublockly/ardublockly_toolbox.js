@@ -213,31 +213,6 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catMath" name="Math">' +
 '    <block type="math_number"></block>' +
 '    <block type="math_arithmetic"></block>' +
-'    <block type="math_single"></block>' +
-'    <block type="math_trig"></block>' +
-'    <block type="math_constant"></block>' +
-'    <block type="math_number_property"></block>' +
-'    <block type="math_change">' +
-'      <value name="DELTA">' +
-'        <block type="math_number">' +
-'          <field name="NUM">1</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="math_round"></block>' +
-'    <block type="math_modulo"></block>' +
-'    <block type="math_constrain">' +
-'      <value name="LOW">' +
-'        <block type="math_number">' +
-'          <field name="NUM">1</field>' +
-'        </block>' +
-'      </value>' +
-'      <value name="HIGH">' +
-'        <block type="math_number">' +
-'          <field name="NUM">100</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
 '    <block type="math_random_int">' +
 '      <value name="FROM">' +
 '        <block type="math_number">' +
@@ -251,7 +226,32 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="math_random_float"></block>' +
+'    <block type="math_change">' +
+'      <value name="DELTA">' +
+'        <block type="math_number">' +
+'          <field name="NUM">1</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="math_constrain">' +
+'      <value name="LOW">' +
+'        <block type="math_number">' +
+'          <field name="NUM">1</field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="HIGH">' +
+'        <block type="math_number">' +
+'          <field name="NUM">100</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="base_map"></block>' +
+'    <block type="math_single"></block>' +
+'    <block type="math_trig"></block>' +
+'    <block type="math_constant"></block>' +
+'    <block type="math_number_property"></block>' +
+'    <block type="math_round"></block>' +
+'    <block type="math_modulo"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catText" name="Text">' +
