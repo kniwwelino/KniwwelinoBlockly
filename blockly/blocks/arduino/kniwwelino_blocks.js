@@ -204,8 +204,8 @@ Blockly.Blocks['kniwwelino_RGBsetBrightness'] = {
 		       this.setWarningText(Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT);
 		       if (this.getFieldValue('BRIGHTNESS') < 1) {
 		         this.setFieldValue(1, 'BRIGHTNESS');
-		       } else if (this.getFieldValue('BRIGHTNESS') > 15) {
-		         this.setFieldValue(15, 'BRIGHTNESS');
+		       } else if (this.getFieldValue('BRIGHTNESS') > 255) {
+		         this.setFieldValue(255, 'BRIGHTNESS');
 		       }
 		     } else {
 		       this.setWarningText(null);
@@ -449,12 +449,12 @@ Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
-		   }, 
-		   
+		   },
+
 		   onchange: function() {
 			       this.setFieldValue(this.getFieldValue('GROUP').trim().replace(" ","_"), 'GROUP');
 			   },
-		   
+
 		   newQuote_: function(open) {
 			   if (open == this.RTL) {
 				    var file = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAAqUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhggONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvBO3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5AoslLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg==';
@@ -538,5 +538,3 @@ Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
 		   }
 };
-
-

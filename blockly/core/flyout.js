@@ -30,6 +30,7 @@ goog.require('Blockly.Block');
 goog.require('Blockly.Comment');
 goog.require('Blockly.Events');
 goog.require('Blockly.WorkspaceSvg');
+
 goog.require('goog.dom');
 goog.require('goog.events');
 goog.require('goog.math.Rect');
@@ -553,6 +554,15 @@ Blockly.Flyout.prototype.show = function(xmlList) {
   for (var i = 0, xml; xml = xmlList[i]; i++) {
     if (xml.tagName && xml.tagName.toUpperCase() == 'BLOCK') {
       var curBlock = Blockly.Xml.domToBlock(xml, this.workspace_);
+      if (curBlock.type == 'arduino_functions_setup') {
+        // Special category for procedures.
+        curBlock.setDisabled(Blockly.KniwwelinoProcedures.setupBlockDisabled(this.workspace_.targetWorkspace));
+      }
+      if (curBlock.type == 'arduino_functions_loop') {
+        // Special category for procedures.
+        curBlock.setDisabled(Blockly.KniwwelinoProcedures.loopBlockDisabled(this.workspace_.targetWorkspace));
+      }
+
       if (curBlock.disabled) {
         // Record blocks that were initially disabled.
         // Do not enable these blocks as a result of capacity filtering.

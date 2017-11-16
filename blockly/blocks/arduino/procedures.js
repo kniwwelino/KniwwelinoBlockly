@@ -9,6 +9,7 @@
  *     https://arduino.cc/en/Reference/HomePage
  */
 'use strict';
+goog.provide('Blockly.KniwwelinoProcedures');
 
 goog.require('Blockly.Blocks');
 
@@ -56,4 +57,31 @@ Blockly.Blocks['arduino_functions_loop'] = {
   getArduinoLoopsInstance: function() {
     return true;
   }
+};
+
+
+Blockly.KniwwelinoProcedures.setupBlockDisabled = function(workspace) {
+
+    // If this parent block present already in the workspace show as disabled
+    var workspaceTopBlocks = workspace.getTopBlocks();
+    for (var i = 0; i < workspaceTopBlocks.length; i++) {
+      if (workspaceTopBlocks[i].getArduinoSetupInstance &&
+          workspaceTopBlocks[i].getArduinoSetupInstance()) {
+        return true;
+      }
+    }
+    return false;
+};
+
+Blockly.KniwwelinoProcedures.loopBlockDisabled = function(workspace) {
+
+    // If this parent block present already in the workspace show as disabled
+    var workspaceTopBlocks = workspace.getTopBlocks();
+    for (var i = 0; i < workspaceTopBlocks.length; i++) {
+      if (workspaceTopBlocks[i].getArduinoLoopsInstance &&
+          workspaceTopBlocks[i].getArduinoLoopsInstance()) {
+        return true;
+      }
+    }
+    return false;
 };
