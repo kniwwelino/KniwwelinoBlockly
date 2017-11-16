@@ -9,6 +9,8 @@
 /** Create a namespace for the application. */
 var Ardublockly = Ardublockly || {};
 
+Ardublockly.DEFAULT_PROJECT = "/examples/default_workspace.xml";
+
 /**
  * Blockly main workspace.
  * @type Blockly.WorkspaceSvg
