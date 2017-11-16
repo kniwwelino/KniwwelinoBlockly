@@ -28,6 +28,7 @@ Ardublockly.init = function() {
 
   Blockly.HSV_SATURATION = 0.70;
   Blockly.HSV_VALUE = 0.70;
+  Ardublockly.DEFAULT_PROJECT = "../examples/default_workspace.xml";
 
   // Hackish way to check if not running locally
   if (document.location.hostname != 'localhost') {
@@ -35,6 +36,8 @@ Ardublockly.init = function() {
     console.log('Offline app modal opened as non localhost host name found: ' +
                 document.location.hostname)
   }
+  //load a new prepared workspace
+  Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -43,6 +46,7 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('button_load', Ardublockly.loadUserXmlFile);
   Ardublockly.bindClick_('button_save', Ardublockly.saveXmlFile);
   Ardublockly.bindClick_('button_delete', Ardublockly.discardAllBlocks);
+
 
   // Side menu buttons, they also close the side menu
   Ardublockly.bindClick_('menu_load', function() {
