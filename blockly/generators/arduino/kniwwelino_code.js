@@ -1,6 +1,8 @@
 /**
- * @license Licensed under the Apache License, Version 2.0 (the "License"):
- *          http://www.apache.org/licenses/LICENSE-2.0
+ *  @license Copyright (C) 2017 Luxembourg Institute of Science and Technology.
+ * This program is free software: you can redistribute it and/or modify  it under
+ * the terms of the Lesser General Public License as published by the Free Software Foundation,
+ * either version 3 of the License.
  */
 
 /**
@@ -16,14 +18,14 @@ goog.require('Blockly.Arduino');
 function kniwwelinoBaseCode() {
 	Blockly.Arduino.addInclude('kniwwelino', '#include <Kniwwelino.h>');
 	Blockly.Arduino.addSetup('kniwwelinoBegin', '//Initialize the Kniwwelino Board\n  Kniwwelino.begin(true, true); // Wifi=true, Fastboot=true', true);
-	
-	// Adding something to the loop() is not possible right now. 
+
+	// Adding something to the loop() is not possible right now.
 	// please add the following code to the Blockly.Arduino.finish function in generators/arduino.js
 	//
 	// code = code + '\nKniwwelino.loop(); // do background stuff...';
 }
 
-function kniwwelinoMQTTCode() {    
+function kniwwelinoMQTTCode() {
 	Blockly.Arduino.addSetup('MQTTonMessage', 'Kniwwelino.MQTTonMessage(messageReceived);', true);
 }
 
@@ -68,16 +70,16 @@ Blockly.Arduino['kniwwelino_sleepsec'] = function(block) {
 
 Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
 	kniwwelinoBaseCode();
-	
+
 	var pin = block.getFieldValue('PIN');
 	Blockly.Arduino.reservePin(block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Digital Write');
 
 	var pinSetupCode = 'pinMode(' + pin + ', OUTPUT);';
 	Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
-	
-	return 'Kniwwelino.PINsetEffect(' + pin + ', ' + 
+
+	return 'Kniwwelino.PINsetEffect(' + pin + ', ' +
 		 block.getFieldValue('EFFECT') + ');\n';
-};	
+};
 
 //==== RGB LED  functions ====================================================
 
@@ -89,10 +91,10 @@ Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
 Blockly.Arduino['kniwwelino_RGBsetColorEffect'] = function(block) {
 	kniwwelinoBaseCode();
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
-	return 'Kniwwelino.RGBsetColorEffect(String(' + color + '), ' + 
+	return 'Kniwwelino.RGBsetColorEffect(String(' + color + '), ' +
 		 block.getFieldValue('EFFECT') + ', -1' +');\n';
-};	
-	
+};
+
 Blockly.Arduino['kniwwelino_RGBsetColorFromString'] = function(block) {
 	kniwwelinoBaseCode();
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
@@ -105,7 +107,7 @@ Blockly.Arduino['kniwwelino_RGBsetBrightness'] = function(block) {
 	return  'Kniwwelino.RGBsetBrightness(' + brightness + ');\n';
 };
 
-	
+
 Blockly.Arduino['kniwwelino_RGBclear'] = function(block) {
 	kniwwelinoBaseCode();
 	return  'Kniwwelino.RGBclear();\n';
@@ -152,7 +154,7 @@ Blockly.Arduino['kniwwelino_MATRIXwrite'] = function(block) {
 		return 'Kniwwelino.MATRIXwriteAndWait(String(' + text + '));\n';
 	} else if (type == "ONCE") {
 		return 'Kniwwelino.MATRIXwriteOnce(String(' + text + '));\n';
-	} 
+	}
 };
 
 Blockly.Arduino['kniwwelino_MATRIXsetBrightness'] = function(block) {
@@ -178,11 +180,11 @@ Blockly.Arduino['kniwwelino_BUTTONdown'] = function(block) {
 	kniwwelinoBaseCode();
 	var button = block.getFieldValue('BUTTON');
 	if (button == 'AandB')  {
-		return ['Kniwwelino.BUTTONAdown() && Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];		
+		return ['Kniwwelino.BUTTONAdown() && Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];
 	} else if (button == 'AorB')  {
-		return ['Kniwwelino.BUTTONAdown() || Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];		
+		return ['Kniwwelino.BUTTONAdown() || Kniwwelino.BUTTONBdown()', Blockly.Arduino.ORDER_ATOMIC];
 	} else {
-		return ['Kniwwelino.BUTTON'+button+'down()', Blockly.Arduino.ORDER_ATOMIC];		
+		return ['Kniwwelino.BUTTON'+button+'down()', Blockly.Arduino.ORDER_ATOMIC];
 	}
 };
 
@@ -190,9 +192,9 @@ Blockly.Arduino['kniwwelino_BUTTONclicked'] = function(block) {
 	kniwwelinoBaseCode();
 	var button = block.getFieldValue('BUTTON');
 	if (button == 'AandB')  {
-		return ['Kniwwelino.BUTTONABclicked()', Blockly.Arduino.ORDER_ATOMIC];		
+		return ['Kniwwelino.BUTTONABclicked()', Blockly.Arduino.ORDER_ATOMIC];
 	} else if (button == 'AorB')  {
-		return ['Kniwwelino.BUTTONAclicked() || Kniwwelino.BUTTONBclicked()', Blockly.Arduino.ORDER_ATOMIC];		
+		return ['Kniwwelino.BUTTONAclicked() || Kniwwelino.BUTTONBclicked()', Blockly.Arduino.ORDER_ATOMIC];
 	} else {
 		return ['Kniwwelino.BUTTON'+button+'clicked()', Blockly.Arduino.ORDER_ATOMIC];
 	}
@@ -248,4 +250,3 @@ Blockly.Arduino['kniwwelino_MQTTpublish'] = function(block) {
 	var message = Blockly.Arduino.valueToCode(block, 'MESSAGE',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	return  'Kniwwelino.MQTTpublish('+topic+', String('+message+'));\n';
 };
-

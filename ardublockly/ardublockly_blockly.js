@@ -1,5 +1,10 @@
 /**
- * @license Licensed under the Apache License, Version 2.0 (the "License"):
+ * @license Copyright (C) 2017 Luxembourg Institute of Science and Technology.
+ * This program is free software: you can redistribute it and/or modify  it under
+ * the terms of the Lesser General Public License as published by the Free Software Foundation,
+ * either version 3 of the License.
+ *
+ * @license Ardublockly is Licensed under the Apache License, Version 2.0 (the "License"):
  *          http://www.apache.org/licenses/LICENSE-2.0
  *
  * @fileoverview Ardublockly JavaScript for the Blockly resources and bindings.
