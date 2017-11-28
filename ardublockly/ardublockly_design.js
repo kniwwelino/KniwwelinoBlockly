@@ -493,6 +493,38 @@ Ardublockly.contentHeightToggle = function() {
   }, 400);
 };
 
+Ardublockly.contentWidthToggle = function() {
+  var outputHeader = document.getElementById('ide_output_collapsible_header');
+  var blocks = document.getElementById('blocks_panel');
+  var arduino = document.getElementById('content_arduino');
+  var xml = document.getElementById('content_xml');
+
+  // Blockly doesn't resize with CSS3 transitions enabled, so do it manually
+  var timerId = setInterval(function() {
+    window.dispatchEvent(new Event('resize'));
+  }, 15);
+  setTimeout(function() {
+    clearInterval(timerId);
+  }, 400);
+
+  if (outputHeader.className.match('active') && $(window).height() > 800) {
+    blocks.className = 'content height_transition blocks_panel_small';
+    arduino.className = 'content height_transition content_arduino_small';
+    xml.className = 'content height_transition content_xml_small';
+  } else {
+    blocks.className = 'content height_transition blocks_panel_large';
+    arduino.className = 'content height_transition content_arduino_large';
+    xml.className = 'content height_transition content_xml_large';
+  }
+
+  // If the height transition CSS is left then blockly does not resize
+  setTimeout(function() {
+    blocks.className = blocks.className.replace('height_transition', '');
+    arduino.className = arduino.className.replace('height_transition', '');
+    xml.className = xml.className.replace('height_transition', '');
+  }, 400);
+};
+
 /**
  * Compute the absolute coordinates and dimensions of an HTML element.
  * @param {!Element} element Element to match.

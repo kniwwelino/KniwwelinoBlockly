@@ -28,7 +28,7 @@ Ardublockly.init = function() {
 
   Blockly.HSV_SATURATION = 0.70;
   Blockly.HSV_VALUE = 0.70;
-  
+
 
   // Hackish way to check if not running locally
   if (document.location.hostname != 'localhost') {
@@ -85,6 +85,8 @@ Ardublockly.bindActionFunctions = function() {
   });
   Ardublockly.bindClick_('button_load_xml', Ardublockly.XmlTextareaToBlocks);
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
+
+  Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 
   // Settings modal input field listeners only if they can be edited
   var settingsPathInputListeners = function(elId, setValFunc, setHtmlCallback) {
@@ -538,6 +540,17 @@ Ardublockly.XmlTextareaToBlocks = function() {
         false);
   }
 };
+
+Ardublockly.toggleSourceCodeVisibility = function() {
+  if (document.getElementById('codesidebar').style.visibility == "hidden") {
+    document.getElementById('blocks_workspace').style.width = "65%";
+    document.getElementById('codesidebar').style.visibility = "visible";
+  } else {
+    document.getElementById('blocks_workspace').style.width = "100%";
+    document.getElementById('codesidebar').style.visibility = "hidden";
+  }
+   Ardublockly.contentWidthToggle();
+}
 
 /**
  * Private variable to save the previous version of the Arduino Code.

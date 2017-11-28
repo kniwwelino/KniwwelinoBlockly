@@ -115,9 +115,9 @@
   </ul>
 
   <!-- Content -->
-  <div class="container">
+  <div class="container" id ="container">
     <div class="row">
-      <div class="col s12 m12 l8" style="position:relative">
+      <div id="blocks_workspace" class="col s12 m12 l8" style="position:relative; width: 100%;">
         <!-- Toolbox visibility button -->
         <a id="button_toggle_toolbox" class="waves-effect waves-light btn-flat button_toggle_toolbox_off" style="display: none"><i id="button_toggle_toolbox_icon" class="mdi-action-visibility-off"></i></a>
         <!-- Arduino IDE action buttons -->
@@ -171,10 +171,10 @@
           </div>
         </div>
       </div>
-      <div class="col s12 m12 l4">
+      <div class="col s12 m12 l4" id="codesidebar" style="visibility: hidden;">
         <ul class="collapsible z-depth-1" data-collapsible="accordion">
           <li>
-            <div class="collapsible-header  waves-effect waves-teal"> <!--active-->
+            <div class="sourcecode collapsible-header active waves-effect waves-teal"> <!--active-->
               <span class="collapsible_logo">{ }</span>
               <span class="translatable_arduinoSourceCode">Arduino Source Code</span>
             </div>
@@ -183,7 +183,7 @@
             </div>
           </li>
           <li>
-            <div class="collapsible-header waves-effect waves-teal" id="xml_collapsible_header">
+            <div class="sourcecode collapsible-header waves-effect waves-teal" id="xml_collapsible_header">
               <span class="collapsible_logo">&#60; &#62;</span>
               <span class="translatable_blocksXml">Blocks XML</span>
             </div>
@@ -193,6 +193,10 @@
             </div>
           </li>
         </ul>
+
+      </div>
+      <div id="expandCodeButtons">
+        <a class="waves-effect waves-light btn"><i class="fa fa-chevron-right fa-fw"></i><span class="translatable_seeArduinoSourceCode">Source Code</span></a>
       </div>
     </div>
   </div>

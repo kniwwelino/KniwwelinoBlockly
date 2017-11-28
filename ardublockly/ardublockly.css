@@ -242,23 +242,50 @@ ul.side-nav li.side-menu-end {
   -webkit-transition: height 0.2s ease-out;
 }
 
+#codesidebar {
+
+}
+
+#blocks_workspace {
+
+}
+
+#expandCodeButtons {
+  position: fixed !important;
+  right: -85px;
+  top: 180px;
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+#expandCodeButtons .btn {
+  vertical-align: middle;
+  text-transform: none;
+  font-size: 1.3em;
+}
+
 #blocks_panel {
   padding: 0px;
   position: relative !important;
   min-height: 480px;
 }
+
 .blocks_panel_large {
   height: -moz-calc(100vh - 190px);     /* Firefox  */
   height: -webkit-calc(100vh - 190px);  /* WebKit   */
   height: -o-calc(100vh - 190px);       /* Opera    */
   height: calc(100vh - 190px);          /* Standard */
 }
+
 .blocks_panel_small {
   height: -moz-calc(100vh - 350px);     /* Firefox  */
   height: -webkit-calc(100vh - 350px);  /* WebKit   */
   height: -o-calc(100vh - 350px);       /* Opera    */
   height: calc(100vh - 350px);          /* Standard */
 }
+
 #content_blocks {
   margin: 0;
   padding: 0;
@@ -322,7 +349,6 @@ ul.side-nav li.side-menu-end {
   height: -o-calc(100vh - 440px);       /* Opera    */
   height: calc(100vh - 440px);          /* Standard */
 }
-
 /****************/
 /*  IDE output  */
 /****************/
