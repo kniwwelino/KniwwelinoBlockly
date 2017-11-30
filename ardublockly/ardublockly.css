@@ -38,12 +38,21 @@ body {
 /******************/
 /* Category Icons */
 /******************/
+#catKniwwelino {
+  color: white;
+  background-color: #8e322a;
+}
 
 #catKniwwelino\.label:before {
   content: "\f2db";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+#catRGB {
+  color: white;
+  background-color: #9d35b2;
 }
 
 #catRGB\.label:before {
@@ -53,11 +62,21 @@ body {
   padding-right: 5px;
 }
 
+#catMatrix {
+  color: white;
+  background-color: #7435b2;
+}
+
 #catMatrix\.label:before {
   content: "\f00a";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+#catButtons {
+  color: white;
+  background-color: #4a35b2;
 }
 
 #catButtons\.label:before {
@@ -67,11 +86,21 @@ body {
   padding-right: 5px;
 }
 
+#catMQTT {
+  color: white;
+  background-color: #a8b235;
+}
+
 #catMQTT\.label:before {
   content: "\f289";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+#catLogic {
+  color: white;
+  background-color: #3574b2;
 }
 
 #catLogic\.label:before {
@@ -81,11 +110,21 @@ body {
   padding-right: 5px;
 }
 
+#catLoops {
+  color: white;
+  background-color: #35b235;
+}
+
 #catLoops\.label:before {
   content: "\f01e";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+#catMath {
+  color: white;
+  background-color: #354ab2;
 }
 
 #catMath\.label:before {
@@ -95,11 +134,21 @@ body {
   padding-right: 5px;
 }
 
+#catText {
+  color: white;
+  background-color: #35b288;
+}
+
 #catText\.label:before {
   content: "\f15c";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+#catVariables {
+  color: white;
+  background-color: #b23574;
 }
 
 #catVariables\.label:before {
@@ -109,11 +158,21 @@ body {
   padding-right: 5px;
 }
 
+#catFunctions {
+  color: white;
+  background-color: #b23f35;
+}
+
 #catFunctions\.label:before {
   content: "\f0b0";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+#catInputOutput {
+  color: white;
+  background-color: #4a35b2;
 }
 
 #catInputOutput\.label:before {
