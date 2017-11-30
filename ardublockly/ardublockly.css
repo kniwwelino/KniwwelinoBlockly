@@ -895,7 +895,7 @@ text.blocklyCheckbox {
   box-sizing: content-box !important;
 }
 .blocklyTreeSelected {
-  background-color: #E47128 !important;  /* arduino orange */
+  /*background-color: #E47128 !important;  /* arduino orange */
 }
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
   background-color: rgba(255, 204, 51, 1) !important;  /* arduino yellow */
