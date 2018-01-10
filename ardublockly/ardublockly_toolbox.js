@@ -289,7 +289,9 @@ Ardublockly.TOOLBOX_XML =
 '            <block type="io_digitalread"></block>' +
 '          </value>' +
 '          <value name="B">' +
-'            <block type="io_highlow"></block>' +
+'            <block type="io_highlow">' +
+'              <field name="STATE">OFF</field>' +
+'            </block>' +
 '          </value>' +
 '        </block>' +
 '      </value>' +
