@@ -290,7 +290,7 @@ Ardublockly.TOOLBOX_XML =
 '          </value>' +
 '          <value name="B">' +
 '            <block type="io_highlow">' +
-'              <field name="STATE">OFF</field>' +
+'              <field name="STATE">LOW</field>' +
 '            </block>' +
 '          </value>' +
 '        </block>' +
@@ -312,12 +312,16 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="io_highlow"></block>' +
 '    <block type="io_pulsein">' +
 '      <value name="PULSETYPE">' +
-'        <shadow type="io_highlow"></shadow>' +
+'        <shadow type="io_highlow">' +
+'              <field name="STATE">LOW</field>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="io_pulsetimeout">' +
 '      <value name="PULSETYPE">' +
-'        <shadow type="io_highlow"></shadow>' +
+'        <shadow type="io_highlow">' +
+'              <field name="STATE">LOW</field>' +
+'        </shadow>' +
 '      </value>' +
 '      <value name="TIMEOUT">' +
 '        <shadow type="math_number">' +
