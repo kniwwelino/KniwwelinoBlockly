@@ -310,7 +310,7 @@ Blockly.Arduino.Boards.profiles.esp8266_wemos_d1 = {
   i2c: [['I2C', 'Wire']],
   i2cPins: { Wire: [['SDA', 'D2'], ['SCL', 'D1']] },
   i2cSpeed: Blockly.Arduino.Boards.profiles.uno.i2cSpeed,
-  builtinLed: [['BUILDIN_LED', 'D4']],
+  builtinLed: [['BUILTIN_LED', 'D4']],
   interrupt: [['D0', 'D0'], ['D1', 'D1'], ['D2', 'D2'], ['D3', 'D3'],
               ['D4', 'D4'], ['D5', 'D5'], ['D6', 'D7'], ['D8', 'D8']]
 };
@@ -332,7 +332,7 @@ Blockly.Arduino.Boards.profiles.esp8266_kniwwelino = {
   i2c: [['I2C', 'Wire']],
   i2cPins: { Wire: [['SDA', 'D2'], ['SCL', 'D1']] },
   i2cSpeed: Blockly.Arduino.Boards.profiles.uno.i2cSpeed,
-  builtinLed: [['BUILDIN_LED', 'D4']],
+  builtinLed: [['BUILTIN_LED', 'D4']],
   interrupt: [['D0', 'D0'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']]
 };
 
