@@ -25,20 +25,20 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catKniwwelino" name="Kniwwelino">' +
 '    <block type="arduino_functions_setup"></block>' +
 '    <block type="arduino_functions_loop"></block>' +
-'    <block type="kniwwelino_sleepsec">' +
-'      <value name="DELAY_TIME_SEC">' +
-'        <block type="math_number">' +
-'          <field name="NUM">5</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_sleep">' +
-'      <value name="DELAY_TIME_MILI">' +
-'        <block type="math_number">' +
-'          <field name="NUM">1000</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
+//'    <block type="kniwwelino_sleepsec">' +
+//'      <value name="DELAY_TIME_SEC">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">5</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="kniwwelino_sleep">' +
+//'      <value name="DELAY_TIME_MILI">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">1000</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
 //'    <block type="kniwwelino_getID"></block>' +
 //'    <block type="kniwwelino_getName"></block>' +
 //'    <block type="kniwwelino_getIP"></block>' +
@@ -337,8 +337,22 @@ Ardublockly.TOOLBOX_XML =
 '      </value>'+
 '    </block>' +
 '  </category>' +
-//'  <sep></sep>' +
-//'  <category id="catTime" name="Time">' +
+'  <sep></sep>' +
+'  <category id="catTime" name="Time">' +
+'    <block type="kniwwelino_sleepsec">' +
+'      <value name="DELAY_TIME_SEC">' +
+'        <block type="math_number">' +
+'          <field name="NUM">5</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_sleep">' +
+'      <value name="DELAY_TIME_MILI">' +
+'        <block type="math_number">' +
+'          <field name="NUM">1000</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 //'    <block type="time_delay">' +
 //'      <value name="DELAY_TIME_MILI">' +
 //'        <block type="math_number">' +
@@ -353,10 +367,10 @@ Ardublockly.TOOLBOX_XML =
 //'        </block>' +
 //'      </value>' +
 //'    </block>' +
-//'    <block type="time_millis"></block>' +
-//'    <block type="time_micros"></block>' +
+'    <block type="time_millis"></block>' +
+'    <block type="time_micros"></block>' +
 //'    <block type="infinite_loop"></block>' +
-//'  </category>' +
+'  </category>' +
 //'  <sep></sep>' +
 //'  <category id="catAudio" name="Audio">' +
 //'    <block type="io_tone">' +
