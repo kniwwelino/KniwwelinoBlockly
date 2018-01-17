@@ -107,6 +107,14 @@ Blockly.Arduino['kniwwelino_RGBsetBrightness'] = function(block) {
 };
 
 
+Blockly.Arduino['kniwwelino_RGBsetBrightnessFromVariable'] = function(block) {
+	kniwwelinoBaseCode();
+	var brightness = Blockly.Arduino.valueToCode(
+		      block, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0';
+	brightness = Math.round(delayTime);
+	return  'Kniwwelino.RGBsetBrightness(' + brightness + ');\n';
+};
+
 Blockly.Arduino['kniwwelino_RGBclear'] = function(block) {
 	kniwwelinoBaseCode();
 	return  'Kniwwelino.RGBclear();\n';

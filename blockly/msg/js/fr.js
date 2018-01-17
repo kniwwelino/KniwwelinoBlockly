@@ -539,6 +539,8 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'Luminosité de la LED RVB';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la LED RVB (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'LED RVB OFF'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Éteindre la LED RVB'
+Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
+Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Créer une icône';
@@ -588,8 +590,8 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné au to
 
 
 // overwrite default labels
-Blockly.Msg.ARD_HIGH = "activée";
-Blockly.Msg.ARD_LOW = "désactivée";
+//Blockly.Msg.ARD_HIGH = "activée";
+//Blockly.Msg.ARD_LOW = "désactivée";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino boucle infinie:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Kniwwelino exécute en premier:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "valeur";

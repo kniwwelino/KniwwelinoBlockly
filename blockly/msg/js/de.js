@@ -523,8 +523,8 @@ Blockly.Msg.KNIWWELINO_GETIP = 'WIFI IP Adresse'
 Blockly.Msg.KNIWWELINO_GETIP_TIP = 'Gibt die WIFI IP Adresse deines Kniwwelino zurück'
 Blockly.Msg.KNIWWELINO_GETMAC = 'WIFI MAC Adresse'
 Blockly.Msg.KNIWWELINO_GETMAC_TIP = 'Gibt die WIFI MAC Adresse deines Kniwwelino zurück'
-Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'E/A Pin'
-Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Setzt den ausgewählten E/A Pin auf an/blinken/blitzen/aus'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'Setzte externe LED an Pin'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Setzt die externe LED am ausgewählten E/A Pin auf an/blinken/blitzen/aus'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "blinken"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "blitzen"
 Blockly.Msg.KNIWWELINO_TIME_SEC = "Sekunden";
@@ -541,6 +541,8 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'RGB LED Helligkeit';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Setze die Helligkeit der RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'RGB LED aus'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Schaltet die RGB LED aus'
+Blockly.Msg.KNIWWELINO_PIN_ON = "an";
+Blockly.Msg.KNIWWELINO_PIN_OFF = "aus";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Designe ein Icon';
@@ -590,8 +592,8 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (Strin
 
 
 // overwrite default labels
-Blockly.Msg.ARD_HIGH = "an";
-Blockly.Msg.ARD_LOW = "aus";
+//Blockly.Msg.ARD_HIGH = "an";
+//Blockly.Msg.ARD_LOW = "aus";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino mache immer wieder:"; 
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Kniwwelino mache zuerst:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "Wert";

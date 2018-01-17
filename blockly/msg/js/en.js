@@ -432,9 +432,9 @@ Blockly.Msg.ARD_SERIAL_PRINT_WARN = "A setup block for %1 must be added to the w
 Blockly.Msg.ARD_SERIAL_SETUP = "Setup";
 Blockly.Msg.ARD_SERIAL_SETUP_TIP = "Selects the speed for a specific Serial peripheral";
 Blockly.Msg.ARD_SERIAL_SPEED = ":  speed to";
-Blockly.Msg.ARD_SERVO_READ = "read SERVO from PIN#";
+Blockly.Msg.ARD_SERVO_READ = "read SERVO on PIN#";
 Blockly.Msg.ARD_SERVO_READ_TIP = "Read a Servo angle";
-Blockly.Msg.ARD_SERVO_WRITE = "set SERVO from Pin";
+Blockly.Msg.ARD_SERVO_WRITE = "set SERVO on Pin";
 Blockly.Msg.ARD_SERVO_WRITE_DEG_180 = "Degrees (0~180)";
 Blockly.Msg.ARD_SERVO_WRITE_TIP = "Set a Servo to an specified angle";
 Blockly.Msg.ARD_SERVO_WRITE_TO = "to";
@@ -523,8 +523,8 @@ Blockly.Msg.KNIWWELINO_GETIP = 'WIFI IP Address'
 Blockly.Msg.KNIWWELINO_GETIP_TIP = 'Returns the Devices WIFI IP Address'
 Blockly.Msg.KNIWWELINO_GETMAC = 'WIFI MAC Address'
 Blockly.Msg.KNIWWELINO_GETMAC_TIP = 'Returns the Devices WIFI MAC Address'
-Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'IO Pin'
-Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Set the selected IO Pin to ON/Blink/Flash/OFF'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'Set external LED on Pin'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Set the external LED on selected IO Pin to ON/Blink/Flash/OFF'
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "blink"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "flash"
 Blockly.Msg.KNIWWELINO_TIME_SEC = "seconds";
@@ -541,6 +541,8 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'RGB LED Brightness';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Set the brightness of the RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'RGB LED OFF'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Switch off the RGB LED'
+Blockly.Msg.KNIWWELINO_PIN_ON = "on";
+Blockly.Msg.KNIWWELINO_PIN_OFF = "off";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Design an icon';
@@ -590,7 +592,7 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the sp
 
 
 // overwrite default labels
-Blockly.Msg.ARD_HIGH = "on";
-Blockly.Msg.ARD_LOW = "off";
+//Blockly.Msg.ARD_HIGH = "on";
+//Blockly.Msg.ARD_LOW = "off";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino loop forever:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Kniwwelino run first:";

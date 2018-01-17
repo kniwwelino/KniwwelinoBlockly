@@ -108,22 +108,6 @@ Blockly.Blocks['kniwwelino_sleep'] = {
 		  }
 };
 
-Blockly.Blocks['kniwwelino_PINsetEffect'] = {
-		  init: function() {
-		    this.appendDummyInput()
-		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_EFFECT)
-		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
-		    	.appendField(Blockly.Msg.ARD_WRITE_TO)
-		      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.ARD_LOW,"RGB_OFF"]]), "EFFECT");
-		    this.setPreviousStatement(true, null);
-		    this.setNextStatement(true, null);
-		    this.setColour(Blockly.Blocks.kniwwelino_Kniwwelino.HUE);
-			this.setTooltip(Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP);
-			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL);
-		  }
-		};
-
-
 //==== RGB LED  functions ====================================================
 //void RGBsetColor(uint32 color);
 //void RGBsetColorEffect(uint32 color, uint8_t effect, int count);
@@ -149,7 +133,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		    this.appendDummyInput()
 		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
 		        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR")
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -165,7 +149,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 			         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING)
 				     .setCheck(Blockly.Types.TEXT.checkList)
 		    this.appendDummyInput()
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.ARD_HIGH,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -215,6 +199,19 @@ Blockly.Blocks['kniwwelino_RGBsetBrightness'] = {
 
 		};
 
+
+Blockly.Blocks['kniwwelino_RGBsetBrightnessFromVariable'] = {
+		   init: function() {
+			 this.setInputsInline(true);
+				 this.appendValueInput("BRIGHTNESS").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS)
+		     this.setPreviousStatement(true, null);
+		     this.setNextStatement(true, null);
+		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP);
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		   }
+		};
+
 Blockly.Blocks['kniwwelino_RGBclear'] = {
 		   init: function() {
 		     this.appendDummyInput()
@@ -225,6 +222,21 @@ Blockly.Blocks['kniwwelino_RGBclear'] = {
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP);
 		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
 		   }
+		};
+
+Blockly.Blocks['kniwwelino_PINsetEffect'] = {
+		  init: function() {
+		    this.appendDummyInput()
+		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_EFFECT)
+		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
+		    	.appendField(Blockly.Msg.ARD_WRITE_TO)
+		      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_OFF,"RGB_OFF"]]), "EFFECT");
+		    this.setPreviousStatement(true, null);
+		    this.setNextStatement(true, null);
+		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL);
+		  }
 		};
 
 //==== LED MATRIX functions ==================================================

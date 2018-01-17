@@ -39,7 +39,6 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_PINsetEffect"></block>' +
 '    <block type="kniwwelino_getID"></block>' +
 '    <block type="kniwwelino_getName"></block>' +
 '    <block type="kniwwelino_getIP"></block>' +
@@ -63,6 +62,14 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_RGBsetBrightness"></block>' +
+'    <block type="kniwwelino_RGBsetBrightnessFromVariable">' +
+'      <value name="BRIGHTNESS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">200</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_PINsetEffect"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catMatrix" name="Matrix">' +
@@ -302,11 +309,11 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="io_digitalread"></block>' +
-'    <block type="io_builtin_led">' +
-'      <value name="STATE">' +
-'        <block type="io_highlow"></block>' +
-'      </value>' +
-'    </block>' +
+//'    <block type="io_builtin_led">' +
+//'      <value name="STATE">' +
+//'        <block type="io_highlow"></block>' +
+//'      </value>' +
+//'    </block>' +
 '    <block type="io_analogwrite"></block>' +
 '    <block type="io_analogread"></block>' +
 '    <block type="io_highlow"></block>' +
@@ -362,16 +369,16 @@ Ardublockly.TOOLBOX_XML =
 //'    </block>' +
 //'    <block type="io_notone"></block>' +
 //'  </category>' +
-//'  <sep></sep>' +
-//'  <category id="catMotors" name="Motors">' +
-//'    <block type="servo_write">' +
-//'      <value name="SERVO_ANGLE">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">90</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
-//'    <block type="servo_read"></block>' +
+'  <sep></sep>' +
+'  <category id="catMotors" name="Motors">' +
+'    <block type="servo_write">' +
+'      <value name="SERVO_ANGLE">' +
+'        <block type="math_number">' +
+'          <field name="NUM">90</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="servo_read"></block>' +
 //'    <block type="stepper_config">' +
 //'      <field name="STEPPER_NUMBER_OF_PINS">2</field>' +
 //'      <field name="STEPPER_PIN1">1</field>' +
@@ -394,7 +401,7 @@ Ardublockly.TOOLBOX_XML =
 //'        </block>' +
 //'      </value>' +
 //'    </block>' +
-//'  </category>' +
+'  </category>' +
 //'  <sep></sep>' +
 //'  <category id="catComms" name="Comms">' +
 //'    <block type="serial_setup"></block>' +
