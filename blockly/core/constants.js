@@ -54,15 +54,15 @@ Blockly.LONGPRESS = 750;
 
 /**
  * The richness of block colours, regardless of the hue.
- * Must be in the range of 0 (inclusive) to 1 (exclusive).
+ * Must be in the range of 0 (inclusive) to 1 (exclusive). 0.55; 
  */
-Blockly.HSV_SATURATION = 0.55;
+Blockly.HSV_SATURATION = 0.77;
 
 /**
  * The intensity of block colours, regardless of the hue.
- * Must be in the range of 0 (inclusive) to 1 (exclusive).
+ * Must be in the range of 0 (inclusive) to 1 (exclusive). 0.65; 
  */
-Blockly.HSV_VALUE = 0.65;
+Blockly.HSV_VALUE = 0.47;
 
 /**
  * Sprited icons and images.

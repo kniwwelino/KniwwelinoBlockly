@@ -20,11 +20,11 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.kniwwelino_Kniwwelino.HUE = 5;
-Blockly.Blocks.kniwwelino_RGB.HUE = 290;
-Blockly.Blocks.kniwwelino_MATRIX.HUE = 270;
-Blockly.Blocks.kniwwelino_BUTTONS.HUE = 250;
-Blockly.Blocks.kniwwelino_MQTT.HUE = 65;
+Blockly.Blocks.kniwwelino_Kniwwelino.HUE = 31;
+Blockly.Blocks.kniwwelino_RGB.HUE = 332;
+Blockly.Blocks.kniwwelino_MATRIX.HUE = 272;
+Blockly.Blocks.kniwwelino_BUTTONS.HUE = 92;
+Blockly.Blocks.kniwwelino_MQTT.HUE = 62;
 
 //==== Kniwwelino functions===================================================
 

@@ -26,8 +26,8 @@ Ardublockly.init = function() {
   Ardublockly.bindActionFunctions();
   Ardublockly.bindBlocklyEventListeners();
 
-  Blockly.HSV_SATURATION = 0.70;
-  Blockly.HSV_VALUE = 0.70;
+  Blockly.HSV_SATURATION =  0.87; //0.70;
+  Blockly.HSV_VALUE = 0.80; //0.47; //0.70;
 
 
   // Hackish way to check if not running locally

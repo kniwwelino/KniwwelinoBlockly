@@ -40,7 +40,7 @@ body {
 /******************/
 #catKniwwelino {
   color: white;
-  background-color: #8e322a;
+  background-color: #d67c1c;
 }
 
 #catKniwwelino\.label:before {
@@ -52,7 +52,7 @@ body {
 
 #catRGB {
   color: white;
-  background-color: #9d35b2;
+  background-color: #d61c73;
 }
 
 #catRGB\.label:before {
@@ -64,7 +64,7 @@ body {
 
 #catMatrix {
   color: white;
-  background-color: #7435b2;
+  background-color: #7f1cd6;
 }
 
 #catMatrix\.label:before {
@@ -76,7 +76,7 @@ body {
 
 #catButtons {
   color: white;
-  background-color: #4a35b2;
+  background-color: #73d61c;
 }
 
 #catButtons\.label:before {
@@ -88,7 +88,7 @@ body {
 
 #catMQTT {
   color: white;
-  background-color: #a8b235;
+  background-color: #d0d61c;
 }
 
 #catMQTT\.label:before {
@@ -100,7 +100,7 @@ body {
 
 #catLogic {
   color: white;
-  background-color: #3574b2;
+  background-color: #1ccad6;
 }
 
 #catLogic\.label:before {
@@ -112,7 +112,7 @@ body {
 
 #catLoops {
   color: white;
-  background-color: #35b235;
+  background-color: #1cd628;
 }
 
 #catLoops\.label:before {
@@ -124,7 +124,7 @@ body {
 
 #catMath {
   color: white;
-  background-color: #354ab2;
+  background-color: #221cd6;
 }
 
 #catMath\.label:before {
@@ -136,7 +136,7 @@ body {
 
 #catText {
   color: white;
-  background-color: #35b288;
+  background-color: #d6ab1c;
 }
 
 #catText\.label:before {
@@ -148,7 +148,7 @@ body {
 
 #catVariables {
   color: white;
-  background-color: #b23574;
+  background-color: #d61cd0;
 }
 
 #catVariables\.label:before {
@@ -160,7 +160,7 @@ body {
 
 #catFunctions {
   color: white;
-  background-color: #b23f35;
+  background-color: #d61f1c;
 }
 
 #catFunctions\.label:before {
@@ -171,8 +171,8 @@ body {
 }
 
 #catInputOutput {
-  color: white;
-  background-color: #4a35b2;
+  /*color: white;
+  background-color: #4a35b2;*/
 }
 
 #catInputOutput\.label:before {
@@ -896,9 +896,14 @@ text.blocklyCheckbox {
 }
 .blocklyTreeSelected {
   /*background-color: #E47128 !important;  /* arduino orange */
+  padding-left: 10px !important;
+  font-weight: bold;
+
 }
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
-  background-color: rgba(255, 204, 51, 1) !important;  /* arduino yellow */
+  /*background-color: rgba(255, 204, 51, 1) !important;  /* arduino yellow */
+  padding-left: 10px !important;
+  font-weight: bold;
 }
 .blocklyTreeLabel {
 }
