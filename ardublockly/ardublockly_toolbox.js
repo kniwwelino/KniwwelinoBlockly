@@ -39,10 +39,10 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_getID"></block>' +
-'    <block type="kniwwelino_getName"></block>' +
-'    <block type="kniwwelino_getIP"></block>' +
-'    <block type="kniwwelino_getMAC"></block>' +
+//'    <block type="kniwwelino_getID"></block>' +
+//'    <block type="kniwwelino_getName"></block>' +
+//'    <block type="kniwwelino_getIP"></block>' +
+//'    <block type="kniwwelino_getMAC"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catRGB" name="LED">' +
@@ -415,4 +415,14 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="spi_transfer"></block>' +
 //'    <block type="spi_transfer_return"></block>' +
 //'  </category>' +
+'  <sep></sep>' +
+'  <category id="catSensors" name="Sensors">' +
+'  </category>' +
+'  <sep></sep>' +
+'  <category id="catOther" name="Other">' +
+'    <block type="kniwwelino_getID"></block>' +
+'    <block type="kniwwelino_getName"></block>' +
+'    <block type="kniwwelino_getIP"></block>' +
+'    <block type="kniwwelino_getMAC"></block>' +
+'  </category>' +
 '</xml>';
