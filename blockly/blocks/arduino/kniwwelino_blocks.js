@@ -88,7 +88,7 @@ Blockly.Blocks['kniwwelino_sleepsec'] = {
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
-		    this.setColour(140);
+		    this.setColour(1);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  }
 };
@@ -103,7 +103,7 @@ Blockly.Blocks['kniwwelino_sleep'] = {
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
-		    this.setColour(140);
+		    this.setColour(1);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  }
 };

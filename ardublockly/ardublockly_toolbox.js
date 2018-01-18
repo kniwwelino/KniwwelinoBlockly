@@ -45,6 +45,27 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="kniwwelino_getMAC"></block>' +
 '  </category>' +
 '  <sep></sep>' +
+
+'  <category id="catMatrix" name="Matrix">' +
+'    <block type="kniwwelino_MATRIXwrite">' +
+'      <value name="TEXT">' +
+'        <block type="text">' +
+'          <field name="TEXT">Hello Kniwwelino</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MATRIXdrawIconChooser"></block>' +
+'    <block type="kniwwelino_MATRIXclear"></block>' +
+'    <block type="kniwwelino_MATRIXdrawIcon">' +
+'    <value name="TEXT">' +
+'        <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
+'    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
+'    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
+'  </category>' +
+'  <sep></sep>' +
 '  <category id="catRGB" name="LED">' +
 //'    <block type="kniwwelino_RGBsetColor"></block>' +
 '    <block type="kniwwelino_RGBsetColorEffect">' +
@@ -72,27 +93,6 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_PINsetEffect"></block>' +
 '  </category>' +
 '  <sep></sep>' +
-'  <category id="catMatrix" name="Matrix">' +
-'    <block type="kniwwelino_MATRIXwrite">' +
-'      <value name="TEXT">' +
-'        <block type="text">' +
-'          <field name="TEXT">Hello Kniwwelino</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_MATRIXdrawIconChooser"></block>' +
-'    <block type="kniwwelino_MATRIXclear"></block>' +
-'    <block type="kniwwelino_MATRIXdrawIcon">' +
-'    <value name="TEXT">' +
-'        <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
-'    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
-'    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
-'  </category>' +
-'  <sep></sep>' +
-
 '  <category id="catButtons" name="Buttons">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
@@ -188,6 +188,17 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="logic_ternary"></block>' +
 '  </category>' +
 '  <sep></sep>' +
+'  <category id="catVariables" name="Variables">' +
+'    <block type="variables_get"></block>' +
+'    <block type="variables_set"></block>' +
+'    <block type="variables_set">' +
+'      <value name="VALUE">' +
+'        <block type="variables_set_type"></block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="variables_set_type"></block>' +
+'  </category>' +
+'  <sep></sep>' +
 '  <category id="catLoops" name="Loops">' +
 '    <block type="controls_repeat_ext">' +
 '      <value name="TIMES">' +
@@ -275,15 +286,38 @@ Ardublockly.TOOLBOX_XML =
 //'    <!--block type="text_print"></block Part of the serial comms -->' +
 '  </category>' +
 '  <sep></sep>' +
-'  <category id="catVariables" name="Variables">' +
-'    <block type="variables_get"></block>' +
-'    <block type="variables_set"></block>' +
-'    <block type="variables_set">' +
-'      <value name="VALUE">' +
-'        <block type="variables_set_type"></block>' +
+'  <category id="catTime" name="Time">' +
+'    <block type="kniwwelino_sleepsec">' +
+'      <value name="DELAY_TIME_SEC">' +
+'        <block type="math_number">' +
+'          <field name="NUM">5</field>' +
+'        </block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="variables_set_type"></block>' +
+'    <block type="kniwwelino_sleep">' +
+'      <value name="DELAY_TIME_MILI">' +
+'        <block type="math_number">' +
+'          <field name="NUM">1000</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+//'    <block type="time_delay">' +
+//'      <value name="DELAY_TIME_MILI">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">1000</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="time_delaymicros">' +
+//'      <value name="DELAY_TIME_MICRO">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">100</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+'    <block type="time_millis"></block>' +
+'    <block type="time_micros"></block>' +
+//'    <block type="infinite_loop"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
@@ -338,39 +372,6 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '  </category>' +
 '  <sep></sep>' +
-'  <category id="catTime" name="Time">' +
-'    <block type="kniwwelino_sleepsec">' +
-'      <value name="DELAY_TIME_SEC">' +
-'        <block type="math_number">' +
-'          <field name="NUM">5</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_sleep">' +
-'      <value name="DELAY_TIME_MILI">' +
-'        <block type="math_number">' +
-'          <field name="NUM">1000</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-//'    <block type="time_delay">' +
-//'      <value name="DELAY_TIME_MILI">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">1000</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
-//'    <block type="time_delaymicros">' +
-//'      <value name="DELAY_TIME_MICRO">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">100</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
-'    <block type="time_millis"></block>' +
-'    <block type="time_micros"></block>' +
-//'    <block type="infinite_loop"></block>' +
-'  </category>' +
 //'  <sep></sep>' +
 //'  <category id="catAudio" name="Audio">' +
 //'    <block type="io_tone">' +

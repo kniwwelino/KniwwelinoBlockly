@@ -40,7 +40,7 @@ body {
 /******************/
 #catKniwwelino {
   color: white;
-  background-color: #d67c1c;
+  background-color: #d64d1c;
 }
 
 #catKniwwelino\.label:before {
@@ -146,6 +146,19 @@ body {
   padding-right: 5px;
 }
 
+ #catTime {
+  color: white;
+  background-color: #d61f1c;
+}
+
+#catTime\.label:before {
+  content: "\f252";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+
 #catVariables {
   color: white;
   background-color: #d61cd0;
@@ -160,7 +173,7 @@ body {
 
 #catFunctions {
   color: white;
-  background-color: #d61f1c;
+  background-color: #b2b2b2;
 }
 
 #catFunctions\.label:before {
@@ -177,18 +190,6 @@ body {
 
 #catInputOutput\.label:before {
   content: "\f07e";  /* this is your text. You can also use UTF-8 character codes as I do here */
-  font-family: FontAwesome;
-  left:0px;
-  padding-right: 5px;
-}
-
-#catTime {
-  color: white;
-  background-color: #b2b2b2;
-}
-
-#catTime\.label:before {
-  content: "\f252";  /* this is your text. You can also use UTF-8 character codes as I do here */
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
@@ -948,13 +949,11 @@ text.blocklyCheckbox {
 }
 .blocklyTreeSelected {
   /*background-color: #E47128 !important;  /* arduino orange */
-  padding-left: 10px !important;
   font-weight: bold;
 
 }
 .blocklyTreeRow:not(.blocklyTreeSelected):hover {
   /*background-color: rgba(255, 204, 51, 1) !important;  /* arduino yellow */
-  padding-left: 10px !important;
   font-weight: bold;
 }
 .blocklyTreeLabel {
