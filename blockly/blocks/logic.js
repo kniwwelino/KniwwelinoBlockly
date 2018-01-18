@@ -31,7 +31,7 @@ goog.require('Blockly.Types');
 
 
 /**
- * Common HSV hue for all blocks in this category. 
+ * Common HSV hue for all blocks in this category.
  */
 Blockly.Blocks.logic.HUE = 184;
 
@@ -292,6 +292,7 @@ Blockly.Blocks['logic_compare'] = {
     this.setOutput(true, Blockly.Types.BOOLEAN.output);
     this.appendValueInput('A');
     this.appendValueInput('B')
+        .appendField(Blockly.Msg.KNIWWELINO_IS)
         .appendField(new Blockly.FieldDropdown(OPERATORS), 'OP');
     this.setInputsInline(true);
     // Assign 'this' to a variable for use in the tooltip closure below.

@@ -589,11 +589,12 @@ Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Sendet eine gegebene Nachrichten 
 Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "an Thema (Topic)";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Verbinde Variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (String) mit einem bestimmten Nachrichten-Thema (Topic)";
-
+//logic
+Blockly.Msg.KNIWWELINO_IS = "ist";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";
 //Blockly.Msg.ARD_LOW = "aus";
-Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino mache immer wieder:"; 
+Blockly.Msg.ARD_FUN_RUN_LOOP = "Kniwwelino mache immer wieder:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Kniwwelino mache zuerst:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "Wert";
