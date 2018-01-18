@@ -117,7 +117,7 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   init: function() {
 		     this.appendDummyInput()
 		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR)
-		         .appendField(new Blockly.FieldColour("#ff0000"), "COLOR");
+		         .appendField(new Blockly.FieldColour("#00FF00"), "COLOR");
 		     this.setOutput(true, Blockly.Types.TEXT.output);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP);
@@ -132,7 +132,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		  init: function() {
 		    this.appendDummyInput()
 		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
-		        .appendField(new Blockly.FieldColour("#ff0000"), "COLOR")
+		        .appendField(new Blockly.FieldColour("#00FF00"), "COLOR")
 		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);

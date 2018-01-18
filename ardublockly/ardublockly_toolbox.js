@@ -57,7 +57,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_RGBsetColorFromString">' +
 '      <value name="COLOR">' +
 '        <block type="text">' +
-'          <field name="TEXT">FF0000</field>' +
+'          <field name="TEXT">00FF00</field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
