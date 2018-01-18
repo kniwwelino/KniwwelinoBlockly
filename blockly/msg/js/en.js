@@ -192,7 +192,7 @@ Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MINUS = "Return the difference of the two nu
 Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_MULTIPLY = "Return the product of the two numbers.";
 Blockly.Msg.MATH_ARITHMETIC_TOOLTIP_POWER = "Return the first number raised to the power of the second number.";
 Blockly.Msg.MATH_CHANGE_HELPURL = "https://en.wikipedia.org/wiki/Programming_idiom#Incrementing_a_counter";
-Blockly.Msg.MATH_CHANGE_TITLE = "change %1 by %2";
+Blockly.Msg.MATH_CHANGE_TITLE = "increase %1 by %2";
 Blockly.Msg.MATH_CHANGE_TOOLTIP = "Add a number to variable '%1'.";
 Blockly.Msg.MATH_CONSTANT_HELPURL = "https://en.wikipedia.org/wiki/Mathematical_constant";
 Blockly.Msg.MATH_CONSTANT_TOOLTIP = "Return one of the common constants: π (3.141…), e (2.718…), φ (1.618…), sqrt(2) (1.414…), sqrt(½) (0.707…), or ∞ (infinity).";
@@ -589,7 +589,8 @@ Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Sent the given message to the spe
 Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Attach variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the specified message topic";
-
+//logic
+Blockly.Msg.KNIWWELINO_IS = "is";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "on";

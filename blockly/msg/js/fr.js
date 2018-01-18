@@ -587,7 +587,8 @@ Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Envoie le message donné au Topic
 Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "au topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Relie la variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné au topic spécifié";
-
+//logic
+Blockly.Msg.KNIWWELINO_IS = "est";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "activée";
