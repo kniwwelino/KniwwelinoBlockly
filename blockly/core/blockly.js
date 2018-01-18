@@ -128,6 +128,7 @@ Blockly.onTouchUpWrapper_ = null;
  * @return {string} RGB code, e.g. '#5ba65b'.
  */
 Blockly.hueToRgb = function(hue) {
+  if (isNaN(hue)) return hue;
   return goog.color.hsvToHex(hue, Blockly.HSV_SATURATION,
       Blockly.HSV_VALUE * 255);
 };
