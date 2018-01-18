@@ -171,8 +171,8 @@ body {
 }
 
 #catInputOutput {
-  /*color: white;
-  background-color: #4a35b2;*/
+  color: white;
+  background-color: #b2b2b2;
 }
 
 #catInputOutput\.label:before {
@@ -181,6 +181,58 @@ body {
   left:0px;
   padding-right: 5px;
 }
+
+#catTime {
+  color: white;
+  background-color: #b2b2b2;
+}
+
+#catTime\.label:before {
+  content: "\f252";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catMotors {
+  color: white;
+  background-color: #b2b2b2;
+}
+
+#catMotors\.label:before {
+  content: "\f085";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catSensors {
+  color: white;
+  background-color: #b2b2b2;
+}
+
+#catSensors\.label:before {
+  content: "\f2c8";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+#catOther {
+  color: white;
+  background-color: #b2b2b2;
+}
+
+#catOther\.label:before {
+  content: "\f2da";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+
+
+
 
 /*********************/
 /*  Arduino Colours  */
