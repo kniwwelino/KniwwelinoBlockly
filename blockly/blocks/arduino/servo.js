@@ -19,7 +19,7 @@ goog.require('Blockly.Types');
 
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.servo.HUE = 60;
+Blockly.Blocks.servo.HUE = "#207720";
 
 Blockly.Blocks['servo_write'] = {
   /**

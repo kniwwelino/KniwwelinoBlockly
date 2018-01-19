@@ -66,33 +66,6 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
 '  </category>' +
 '  <sep></sep>' +
-'  <category id="catRGB" name="LED">' +
-//'    <block type="kniwwelino_RGBsetColor"></block>' +
-'    <block type="kniwwelino_RGBsetColorEffect">' +
-'      <value name="COLOR">' +
-'        <block type="kniwwelino_RGBselectColor"></block>' +
-'      </value>' +
-'  </block>' +
-'    <block type="kniwwelino_RGBclear"></block>' +
-'    <block type="kniwwelino_RGBselectColor"></block>' +
-'    <block type="kniwwelino_RGBsetColorFromString">' +
-'      <value name="COLOR">' +
-'        <block type="text">' +
-'          <field name="TEXT">00FF00</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_RGBsetBrightness"></block>' +
-'    <block type="kniwwelino_RGBsetBrightnessFromVariable">' +
-'      <value name="BRIGHTNESS">' +
-'        <block type="math_number">' +
-'          <field name="NUM">200</field>' +
-'        </block>' +
-'      </value>' +
-'    </block>' +
-'    <block type="kniwwelino_PINsetEffect"></block>' +
-'  </category>' +
-'  <sep></sep>' +
 '  <category id="catButtons" name="Buttons">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
@@ -121,7 +94,33 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_BUTTONdown"></block>' +
 '  </category>' +
 '  <sep></sep>' +
-
+'  <category id="catRGB" name="LED">' +
+//'    <block type="kniwwelino_RGBsetColor"></block>' +
+'    <block type="kniwwelino_RGBsetColorEffect">' +
+'      <value name="COLOR">' +
+'        <block type="kniwwelino_RGBselectColor"></block>' +
+'      </value>' +
+'  </block>' +
+'    <block type="kniwwelino_RGBclear"></block>' +
+'    <block type="kniwwelino_RGBselectColor"></block>' +
+'    <block type="kniwwelino_RGBsetColorFromString">' +
+'      <value name="COLOR">' +
+'        <block type="text">' +
+'          <field name="TEXT">00FF00</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_RGBsetBrightness"></block>' +
+'    <block type="kniwwelino_RGBsetBrightnessFromVariable">' +
+'      <value name="BRIGHTNESS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">200</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_PINsetEffect"></block>' +
+'  </category>' +
+'  <sep></sep>' +
 '  <category id="catMQTT" name="Messages">' +
 '    <block type="kniwwelino_MQTTsetGroup">' +
 '      <value name="GROUP">' +
@@ -320,8 +319,6 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="infinite_loop"></block>' +
 '  </category>' +
 '  <sep></sep>' +
-'  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
-'  <sep></sep>' +
 '  <category id="catInputOutput" name="Input/Output">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
@@ -371,7 +368,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>'+
 '    </block>' +
 '  </category>' +
-'  <sep></sep>' +
+//'  <sep></sep>' +
 //'  <sep></sep>' +
 //'  <category id="catAudio" name="Audio">' +
 //'    <block type="io_tone">' +
@@ -433,6 +430,8 @@ Ardublockly.TOOLBOX_XML =
 '  <sep></sep>' +
 '  <category id="catSensors" name="Sensors">' +
 '  </category>' +
+'  <sep></sep>' +
+'  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
 '  <sep></sep>' +
 '  <category id="catOther" name="Other">' +
 '    <block type="kniwwelino_getID"></block>' +

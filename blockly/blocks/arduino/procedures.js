@@ -15,7 +15,7 @@ goog.require('Blockly.Blocks');
 
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.procedures.HUE = 15;
+Blockly.Blocks.procedures.HUE = "#eb6500";//"#eb6500"; "#ee4035"
 
 Blockly.Blocks['arduino_functions_setup'] = {
   /**
@@ -24,12 +24,13 @@ Blockly.Blocks['arduino_functions_setup'] = {
    */
   init: function() {
     this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("./img/kn02.png", 84, 24, "*"))
         .appendField(Blockly.Msg.ARD_FUN_RUN_SETUP);
     this.appendStatementInput('SETUP_FUNC');
     this.setInputsInline(false);
 	this.setPreviousStatement(false);
     this.setNextStatement(false);
-    this.setColour(Blockly.Blocks.procedures.HUE);
+    this.setColour("#ee4035");
     this.setTooltip(Blockly.Msg.ARD_FUN_RUN_TIP);
     this.setHelpUrl('https://arduino.cc/en/Reference/Loop');
     this.contextMenu = false;
@@ -47,12 +48,13 @@ Blockly.Blocks['arduino_functions_loop'] = {
    */
   init: function() {
     this.appendDummyInput()
+		.appendField(new Blockly.FieldImage("./img/kn02.png", 84, 24, "*"))
         .appendField(Blockly.Msg.ARD_FUN_RUN_LOOP);
     this.appendStatementInput('LOOP_FUNC');
   	this.setPreviousStatement(false);
     this.setNextStatement(false);
     this.setInputsInline(false);
-    this.setColour(Blockly.Blocks.procedures.HUE);
+    this.setColour("#ee4035");
     this.setTooltip(Blockly.Msg.ARD_FUN_RUN_TIP);
     this.setHelpUrl('https://arduino.cc/en/Reference/Loop');
     this.contextMenu = false;

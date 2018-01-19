@@ -33,7 +33,7 @@ goog.require('Blockly.Types');
 /**
  * Common HSV hue for all blocks in this category.
  */
-Blockly.Blocks.texts.HUE = 46;
+Blockly.Blocks.texts.HUE = "#53bdb7";
 
 Blockly.Blocks['text'] = {
   /**

@@ -20,11 +20,11 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
 
 /** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.kniwwelino_Kniwwelino.HUE = 31;
-Blockly.Blocks.kniwwelino_RGB.HUE = 332;
-Blockly.Blocks.kniwwelino_MATRIX.HUE = 272;
-Blockly.Blocks.kniwwelino_BUTTONS.HUE = 92;
-Blockly.Blocks.kniwwelino_MQTT.HUE = 62;
+Blockly.Blocks.kniwwelino_Kniwwelino.HUE = "#ee4035";
+Blockly.Blocks.kniwwelino_RGB.HUE = "#30499b";
+Blockly.Blocks.kniwwelino_MATRIX.HUE = "#844d9e";
+Blockly.Blocks.kniwwelino_BUTTONS.HUE = "#88c542";
+Blockly.Blocks.kniwwelino_MQTT.HUE = "#f3a530";
 
 //==== Kniwwelino functions===================================================
 
@@ -88,7 +88,7 @@ Blockly.Blocks['kniwwelino_sleepsec'] = {
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
-		    this.setColour(1);
+		    this.setColour("#f9d831");
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  }
 };
@@ -103,7 +103,7 @@ Blockly.Blocks['kniwwelino_sleep'] = {
 		    this.setInputsInline(true);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
-		    this.setColour(1);
+		    this.setColour("#f9d831");
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  }
 };

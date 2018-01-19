@@ -40,7 +40,7 @@ body {
 /******************/
 #catKniwwelino {
   color: white;
-  background-color: #d64d1c;
+  background-color: #ee4035;
 }
 
 #catKniwwelino\.label:before {
@@ -52,7 +52,7 @@ body {
 
 #catRGB {
   color: white;
-  background-color: #d61c73;
+  background-color: #30499b;
 }
 
 #catRGB\.label:before {
@@ -64,7 +64,7 @@ body {
 
 #catMatrix {
   color: white;
-  background-color: #7f1cd6;
+  background-color: #844d9e;
 }
 
 #catMatrix\.label:before {
@@ -76,7 +76,7 @@ body {
 
 #catButtons {
   color: white;
-  background-color: #73d61c;
+  background-color: #88c542;
 }
 
 #catButtons\.label:before {
@@ -88,7 +88,7 @@ body {
 
 #catMQTT {
   color: white;
-  background-color: #d0d61c;
+  background-color: #f3a530;
 }
 
 #catMQTT\.label:before {
@@ -100,7 +100,7 @@ body {
 
 #catLogic {
   color: white;
-  background-color: #1ccad6;
+  background-color: #4cb2d4;
 }
 
 #catLogic\.label:before {
@@ -112,7 +112,7 @@ body {
 
 #catLoops {
   color: white;
-  background-color: #1cd628;
+  background-color: #56b949;
 }
 
 #catLoops\.label:before {
@@ -124,7 +124,7 @@ body {
 
 #catMath {
   color: white;
-  background-color: #221cd6;
+  background-color: #367abd;
 }
 
 #catMath\.label:before {
@@ -136,7 +136,7 @@ body {
 
 #catText {
   color: white;
-  background-color: #d6ab1c;
+  background-color: #53bdb7;
 }
 
 #catText\.label:before {
@@ -148,7 +148,7 @@ body {
 
  #catTime {
   color: white;
-  background-color: #d61f1c;
+  background-color: #f9d831;
 }
 
 #catTime\.label:before {
@@ -161,7 +161,7 @@ body {
 
 #catVariables {
   color: white;
-  background-color: #d61cd0;
+  background-color: #ec4a94;
 }
 
 #catVariables\.label:before {
@@ -173,7 +173,7 @@ body {
 
 #catFunctions {
   color: white;
-  background-color: #b2b2b2;
+  background-color: #eb6500;
 }
 
 #catFunctions\.label:before {
@@ -185,7 +185,7 @@ body {
 
 #catInputOutput {
   color: white;
-  background-color: #b2b2b2;
+  background-color: #2e2963;
 }
 
 #catInputOutput\.label:before {
@@ -197,7 +197,7 @@ body {
 
 #catMotors {
   color: white;
-  background-color: #b2b2b2;
+  background-color: #207720;
 }
 
 #catMotors\.label:before {
@@ -209,7 +209,7 @@ body {
 
 #catSensors {
   color: white;
-  background-color: #b2b2b2;
+  background-color: #4b709a;
 }
 
 #catSensors\.label:before {
