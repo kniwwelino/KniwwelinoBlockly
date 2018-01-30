@@ -134,7 +134,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MQTTpublish">' +
 '      <value name="MESSAGE">' +
 '        <block type="text">' +
-'          <field name="TEXT">Hello World!</field>' +
+'          <field name="TEXT">Hello Friends!</field>' +
 '        </block>' +
 '      </value>' +
 '      <value name="TOPIC">' +

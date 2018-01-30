@@ -379,7 +379,7 @@ Blockly.Blocks['kniwwelino_MATRIXsetBlinkRate'] = {
 		     this.appendDummyInput()
 		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE)
 		        .appendField(new Blockly.FieldDropdown(
-		            [["on","MATRIX_STATIC"],
+		            [[Blockly.Msg.KNIWWELINO_PIN_ON,"MATRIX_STATIC"],
 		            ["1/2Hz","MATRIX_BLINK_HALFHZ"],
 		            ["1Hz","MATRIX_BLINK_1HZ"],
 		            ["2Hz","MATRIX_BLINK_2HZ"]]), "RATE");
