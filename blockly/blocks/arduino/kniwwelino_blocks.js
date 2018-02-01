@@ -366,6 +366,38 @@ Blockly.Blocks['kniwwelino_MATRIXwrite'] = {
    }
 };
 
+Blockly.Blocks['kniwwelino_MATRIXdrawPixel'] = {
+  init: function() {
+		this.appendDummyInput()
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL);
+    this.appendValueInput("X")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X);
+    this.appendValueInput("Y")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y);
+    this.appendValueInput("STATE")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+		this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+		this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP);
+		this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+  },
+	onchange: function(ev) {
+    var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC);
+		var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+		if (x < 0 || x > 4) {
+		  alert(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING);
+    }
+		if ( y < 0 || y > 4) {
+		  alert(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING);
+    }
+  }
+};
+
 Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
    init: function() {
      this.appendDummyInput()

@@ -170,6 +170,15 @@ Blockly.Arduino['kniwwelino_MATRIXwrite'] = function(block) {
 	}
 };
 
+Blockly.Arduino['kniwwelino_MATRIXdrawPixel'] = function(block) {
+	kniwwelinoBaseCode();
+	var x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	var y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	var state = Blockly.Arduino.valueToCode(block, 'STATE', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+
+	return 'Kniwwelino.MATRIXsetPixel(' + x + ', ' + y + ', ' + state + ');\n';
+};
+
 Blockly.Arduino['kniwwelino_MATRIXsetBrightness'] = function(block) {
 	kniwwelinoBaseCode();
 	var brightness = block.getFieldValue('BRIGHTNESS');
