@@ -482,9 +482,9 @@ Blockly.Msg.ARD_TIME_DELAY_TIP = "Attendre un délai précis en millisecondes";
 Blockly.Msg.ARD_TIME_INF = "Attente sans fin (fin du programme)";
 Blockly.Msg.ARD_TIME_INF_TIP = "Attente indéfinie, arrêt du programme.";
 Blockly.Msg.ARD_TIME_MICROS = "Temps écoulé (microsecondes)";
-Blockly.Msg.ARD_TIME_MICROS_TIP = "Renvoie le temps en microseconds depuis le lancement de ce programme sur la carte Arduino. Doit être stocké dans un Entier long positif";
+Blockly.Msg.ARD_TIME_MICROS_TIP = "Renvoie le temps en microseconds depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un Entier long positif";
 Blockly.Msg.ARD_TIME_MILLIS = "Temps écoulé (millisecondes)";
-Blockly.Msg.ARD_TIME_MILLIS_TIP = "Renvoie le temps en milliseconds depuis le lancement de ce programme sur la carte Arduino. Doit être stocké dans un Entier long positif";
+Blockly.Msg.ARD_TIME_MILLIS_TIP = "Renvoie le temps en milliseconds depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un Entier long positif";
 Blockly.Msg.ARD_TIME_MS = "millisecondes";
 Blockly.Msg.ARD_TONEFREQ = "à la frequence";
 Blockly.Msg.ARD_TONE_FREQ = "frequence";
@@ -589,6 +589,11 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Relie la variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné au topic spécifié";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "est";
+//times
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "Temps écoulé  (secondes)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Renvoie le temps en seconds depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un Entier long positif";
+
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "activée";

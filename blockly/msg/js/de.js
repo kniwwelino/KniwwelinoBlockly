@@ -482,9 +482,9 @@ Blockly.Msg.ARD_TIME_DELAY_TIP = "Wait specific time in milliseconds";  // untra
 Blockly.Msg.ARD_TIME_INF = "wait forever (end program)";  // untranslated
 Blockly.Msg.ARD_TIME_INF_TIP = "Wait indefinitely, stopping the program.";  // untranslated
 Blockly.Msg.ARD_TIME_MICROS = "aktuell verstrichene Zeit (Mikrosekunden)";  // untranslated
-Blockly.Msg.ARD_TIME_MICROS_TIP = "Returns the number of microseconds since the Arduino board began running the current program. Has to be stored in a positive long integer";  // untranslated
+Blockly.Msg.ARD_TIME_MICROS_TIP = "Returns the number of microseconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";  // untranslated
 Blockly.Msg.ARD_TIME_MILLIS = "aktuell verstrichene Zeit (Millisekunden)";  // untranslated
-Blockly.Msg.ARD_TIME_MILLIS_TIP = "Returns the number of milliseconds since the Arduino board began running the current program. Has to be stored in a positive long integer";  // untranslated
+Blockly.Msg.ARD_TIME_MILLIS_TIP = "Returns the number of milliseconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";  // untranslated
 Blockly.Msg.ARD_TIME_MS = "Millisekunden";
 Blockly.Msg.ARD_TONEFREQ = "at frequency";  // untranslated
 Blockly.Msg.ARD_TONE_FREQ = "frequency";  // untranslated
@@ -591,6 +591,10 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "verbinde Variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (String) mit einem bestimmten Nachrichten-Thema (Topic)";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "ist";
+//times
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "aktuell verstrichene Zeit (Sekunden)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";   // untranslated
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";
