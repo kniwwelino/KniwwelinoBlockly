@@ -22,29 +22,7 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="logic_ternary"></block>' +
 //'  </category>' +
 //'  <sep></sep>' +
-'  <category id="catKniwwelino" name="Kniwwelino">' +
-'    <block type="arduino_functions_setup"></block>' +
-'    <block type="arduino_functions_loop"></block>' +
-//'    <block type="kniwwelino_sleepsec">' +
-//'      <value name="DELAY_TIME_SEC">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">5</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
-//'    <block type="kniwwelino_sleep">' +
-//'      <value name="DELAY_TIME_MILI">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">1000</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
-//'    <block type="kniwwelino_getID"></block>' +
-//'    <block type="kniwwelino_getName"></block>' +
-//'    <block type="kniwwelino_getIP"></block>' +
-//'    <block type="kniwwelino_getMAC"></block>' +
-'  </category>' +
-'  <sep></sep>' +
+
 
 '  <category id="catMatrix" name="Matrix">' +
 '    <block type="kniwwelino_MATRIXwrite">' +
@@ -434,10 +412,29 @@ Ardublockly.TOOLBOX_XML =
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
 '  <sep></sep>' +
-'  <category id="catOther" name="Other">' +
+'  <category id="catKniwwelino" name="Kniwwelino">' +
+'    <block type="arduino_functions_setup"></block>' +
+'    <block type="arduino_functions_loop"></block>' +
+//'    <block type="kniwwelino_sleepsec">' +
+//'      <value name="DELAY_TIME_SEC">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">5</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
+//'    <block type="kniwwelino_sleep">' +
+//'      <value name="DELAY_TIME_MILI">' +
+//'        <block type="math_number">' +
+//'          <field name="NUM">1000</field>' +
+//'        </block>' +
+//'      </value>' +
+//'    </block>' +
 '    <block type="kniwwelino_getID"></block>' +
 '    <block type="kniwwelino_getName"></block>' +
 '    <block type="kniwwelino_getIP"></block>' +
 '    <block type="kniwwelino_getMAC"></block>' +
+'  </category>' +
+'  <sep></sep>' +
+'  <category id="catOther" name="Other">' +
 '  </category>' +
 '</xml>';
