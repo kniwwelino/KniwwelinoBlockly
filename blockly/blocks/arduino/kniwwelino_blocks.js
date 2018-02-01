@@ -150,11 +150,23 @@ Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 				var g = Blockly.Arduino.valueToCode(this, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
 				var b = Blockly.Arduino.valueToCode(this, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
 				if (r < 0 || r > 255) {
-				  alert(Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING);
+				  swal({
+						title: Blockly.Msg.KNIWWELINO_WARNING,
+						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+						icon: "warning"
+					});
 		    } else if (g < 0 || g > 255) {
-				  alert(Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING);
+					swal({
+						title: Blockly.Msg.KNIWWELINO_WARNING,
+						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+						icon: "warning"
+					});
 		    } else if (b < 0 || b > 255) {
-				  alert(Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING);
+					swal({
+						title: Blockly.Msg.KNIWWELINO_WARNING,
+						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+						icon: "warning"
+					});
 		    }
 		  }
 		};
@@ -407,10 +419,18 @@ Blockly.Blocks['kniwwelino_MATRIXdrawPixel'] = {
     var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC);
 		var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC);
 		if (x < 0 || x > 4) {
-		  alert(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING);
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
+				icon: "warning"
+			});
     }
 		if ( y < 0 || y > 4) {
-		  alert(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING);
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
+				icon: "warning"
+			});
     }
   }
 };

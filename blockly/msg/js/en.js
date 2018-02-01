@@ -514,6 +514,8 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";
 
 //Kniwwelino DOKU URL
 Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/en/reference/";
+
+Blockly.Msg.KNIWWELINO_WARNING = 'Warning:';
 //Kniwwelino
 Blockly.Msg.KNIWWELINO_GETID = 'Device ID'
 Blockly.Msg.KNIWWELINO_GETID_TIP = 'Returns the Device ID'
@@ -542,7 +544,7 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Set the brightness of the RGB LE
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'switch RGB LED off'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Switch off the RGB LED'
 Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';
-Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "WARNING: The value must be in the range 0-255.";
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-255.";
 Blockly.Msg.KNIWWELINO_RGB_RED = "red";
 Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";
 Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";
@@ -560,7 +562,7 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Enable or disable a pixel on the 
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED state';
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'WARNING: The value must be in the range 0-4.';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'write a text on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Write the given text on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'repeating';
