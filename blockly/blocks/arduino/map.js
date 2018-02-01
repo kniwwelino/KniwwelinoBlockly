@@ -18,8 +18,9 @@ goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
 
 
-/** Common HSV hue for all blocks in this category. */
-Blockly.Blocks.map.HUE = 230;
+/** Common HSV hue for all blocks in this category. //Blockly.Blocks.map.HUE = 230;*/
+
+Blockly.Blocks.map.HUE = "#367abd";
 
 Blockly.Blocks['base_map'] = {
   /**
