@@ -128,7 +128,7 @@ Blockly.Arduino['kniwwelino_MATRIXdrawIconCreator'] = function(block) {
 	for (var x = 1; x < 6; x++) {
 		for (var y = 1; y < 6; y++) {
 			var led = x + '_' + y;
-			console.log("LED to read: " + led);
+			//console.log("LED to read: " + led);
 			if (block.getFieldValue(led) == "TRUE") {
 				pixels = pixels.concat('1');
 			} else {
@@ -136,24 +136,30 @@ Blockly.Arduino['kniwwelino_MATRIXdrawIconCreator'] = function(block) {
 			}
 		}
 	}
-	return ['"B' + pixels +'"', Blockly.Arduino.ORDER_ATOMIC];
+	return ['String("B' + pixels +')"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_MATRIXdrawIconChooser'] = function(block) {
 	kniwwelinoBaseCode();
 	var icon = block.getFieldValue('ICON');
-	return  'Kniwwelino.MATRIXdrawIcon(' + icon + ');\n';
+	return 'Kniwwelino.MATRIXdrawIcon(' + icon + ');\n';
+};
+
+Blockly.Arduino['kniwwelino_MATRIXIconChooser'] = function(block) {
+	kniwwelinoBaseCode();
+	var icon = block.getFieldValue('ICON_CHOOSER');
+	return [icon, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_MATRIXdrawIcon'] = function(block) {
 	kniwwelinoBaseCode();
-	var text = Blockly.Arduino.valueToCode(block, 'TEXT',Blockly.Arduino.ORDER_UNARY_POSTFIX);
-	return  'Kniwwelino.MATRIXdrawIcon(String(' + text + '));\n';
+	var icon =  Blockly.Arduino.valueToCode(block, 'ICON', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return 'Kniwwelino.MATRIXdrawIcon(' + icon + ');\n';
 };
 
 Blockly.Arduino['kniwwelino_MATRIXwrite'] = function(block) {
 	kniwwelinoBaseCode();
-	var text = Blockly.Arduino.valueToCode(block, 'TEXT',Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	var text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	var type = block.getFieldValue('TYPE');
 	if (type == "SCROLL") {
 		return 'Kniwwelino.MATRIXwrite(String(' + text + '));\n';

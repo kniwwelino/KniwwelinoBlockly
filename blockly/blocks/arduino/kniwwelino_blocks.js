@@ -316,10 +316,29 @@ Blockly.Blocks['kniwwelino_MATRIXdrawIconChooser'] = {
   }
 };
 
+Blockly.Blocks['kniwwelino_MATRIXIconChooser'] = {
+  init: function() {
+		this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          [Blockly.Msg.KNIWWELINO_DRAWICON_HEART,		"ICON_HEART"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_SMILE,		"ICON_SMILE"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_SAD,			"ICON_SAD"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP,	"ICON_ARROW_UP"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN,	"ICON_ARROW_DOWN"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT,	"ICON_ARROW_LEFT"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT,	"ICON_ARROW_RIGHT"]])
+        , "ICON_CHOOSER");
+		this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+  }
+};
+
 Blockly.Blocks['kniwwelino_MATRIXdrawIcon'] = {
 		  init: function() {
 			this.setInputsInline(true);
-			this.appendValueInput("TEXT")
+			this.appendValueInput("ICON")
 		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
