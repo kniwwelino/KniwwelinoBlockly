@@ -293,8 +293,9 @@ Ardublockly.TOOLBOX_XML =
 //'        </block>' +
 //'      </value>' +
 //'    </block>' +
+'    <block type="time_seconds"></block>' +
 '    <block type="time_millis"></block>' +
-'    <block type="time_micros"></block>' +
+//'    <block type="time_micros"></block>' +
 //'    <block type="infinite_loop"></block>' +
 '  </category>' +
 '  <sep></sep>' +

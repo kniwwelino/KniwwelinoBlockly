@@ -59,6 +59,25 @@ Blockly.Blocks['time_delaymicros'] = {
   }
 };
 
+Blockly.Blocks['time_seconds'] = {
+  /**
+   * Elapsed time in milliseconds block definition
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl('http://arduino.cc/en/Reference/Millis');
+    this.setColour(Blockly.Blocks.time.HUE);
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.KNIWWELINO_TIME_SECONDS);
+    this.setOutput(true, Blockly.Types.LARGE_NUMBER.output);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP);
+  },
+  /** @return {string} The type of return value for the block, an integer. */
+  getBlockType: function() {
+    return Blockly.Types.LARGE_NUMBER;
+  }
+};
+
 Blockly.Blocks['time_millis'] = {
   /**
    * Elapsed time in milliseconds block definition

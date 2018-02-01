@@ -591,6 +591,11 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "attach variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the specified message topic";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "is";
+//times
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "current elapsed Time (seconds)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";
+
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "on";

@@ -46,6 +46,17 @@ goog.require('Blockly.Arduino');
  * @param {!Blockly.Block} block Block to generate the code from.
  * @return {array} Completed code with order of operation.
  */
+ Blockly.Arduino['time_seconds'] = function(block) {
+  var code = 'millis()/1000';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+/**
+ * Code generator for the elapsed time in milliseconds block.
+ * Arduino code: loop { millis() }
+ * @param {!Blockly.Block} block Block to generate the code from.
+ * @return {array} Completed code with order of operation.
+ */
  Blockly.Arduino['time_millis'] = function(block) {
   var code = 'millis()';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
