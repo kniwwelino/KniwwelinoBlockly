@@ -106,6 +106,27 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_RGBsetColorFromString">' +
+'      <value name="COLOR">' +
+'        <block type="kniwwelino_RGBsetRGB">' +
+'          <value name="RED">' +
+'             <block type="math_number">' +
+'               <field name="NUM">0</field>' +
+'             </block>' +
+'          </value>' +
+'          <value name="GREEN">' +
+'             <block type="math_number">' +
+'               <field name="NUM">0</field>' +
+'             </block>' +
+'          </value>' +
+'          <value name="BLUE">' +
+'             <block type="math_number">' +
+'               <field name="NUM">0</field>' +
+'             </block>' +
+'          </value>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_RGBsetBrightness"></block>' +
 '    <block type="kniwwelino_RGBsetBrightnessFromVariable">' +
 '      <value name="BRIGHTNESS">' +

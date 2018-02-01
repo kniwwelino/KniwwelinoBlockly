@@ -541,6 +541,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'set RGB LED brightness to';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Set the brightness of the RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'switch RGB LED off'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Switch off the RGB LED'
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "WARNING: The value must be in the range 0-255.";
+Blockly.Msg.KNIWWELINO_RGB_RED = "red";
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";
 Blockly.Msg.KNIWWELINO_PIN_ON = "on";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "off";
 // MATRIX

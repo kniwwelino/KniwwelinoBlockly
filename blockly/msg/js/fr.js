@@ -539,6 +539,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'Luminosité de la LED RVB';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la LED RVB (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'LED RVB OFF'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Éteindre la LED RVB'
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "WARNING: The value must be in the range 0-255.";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_RED = "red";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";  // untranslated
 Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
 // MATRIX

@@ -127,18 +127,35 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
-
-Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
+Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 		  init: function() {
-		    this.appendDummyInput()
-		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
-		        .appendField(new Blockly.FieldColour("#00FF00"), "COLOR")
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
-		    this.setPreviousStatement(true, null);
-		    this.setNextStatement(true, null);
-		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
-			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP);
-			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		    this.appendValueInput("RED")
+		        .setCheck("Number")
+		        .appendField(Blockly.Msg.KNIWWELINO_RGB_RED);
+		    this.appendValueInput("GREEN")
+		        .setCheck("Number")
+		        .appendField(Blockly.Msg.KNIWWELINO_RGB_GREEN);
+		    this.appendValueInput("BLUE")
+		        .setCheck("Number")
+		        .appendField(Blockly.Msg.KNIWWELINO_RGB_BLUE);
+		    this.appendDummyInput();
+				this.setOutput(true, Blockly.Types.TEXT.output);
+				this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+	 		  this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_TIP);
+	 		  this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		  }, getBlockType: function() {
+				 return Blockly.Types.TEXT;
+			}, onchange: function(ev) {
+		    var r = Blockly.Arduino.valueToCode(this, 'RED', Blockly.Arduino.ORDER_ATOMIC);
+				var g = Blockly.Arduino.valueToCode(this, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
+				var b = Blockly.Arduino.valueToCode(this, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
+				if (r < 0 || r > 255) {
+				  alert(Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING);
+		    } else if (g < 0 || g > 255) {
+				  alert(Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING);
+		    } else if (b < 0 || b > 255) {
+				  alert(Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING);
+		    }
 		  }
 		};
 

@@ -541,6 +541,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'setze RGB LED Helligkeit auf';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Setze die Helligkeit der RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'schalte RGB LED aus'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Schaltet die RGB LED aus'
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "WARNING: The value must be in the range 0-255.";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_RED = "rot";
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "grün";
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "blau";
 Blockly.Msg.KNIWWELINO_PIN_ON = "an";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "aus";
 // MATRIX

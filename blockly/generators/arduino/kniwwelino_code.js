@@ -87,6 +87,16 @@ Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
 	return ['"'+block.getFieldValue('COLOR').replace("#","").toUpperCase()+'"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['kniwwelino_RGBsetRGB'] = function(block) {
+	kniwwelinoBaseCode();
+	var r = Blockly.Arduino.valueToCode(block, 'RED', Blockly.Arduino.ORDER_ATOMIC);
+	var g = Blockly.Arduino.valueToCode(block, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
+	var b = Blockly.Arduino.valueToCode(block, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
+	return ['"' + (Number(r)+0x10000).toString(16).substr(-2).toUpperCase()
+							+ (Number(g)+0x10000).toString(16).substr(-2).toUpperCase()
+							+ (Number(b)+0x10000).toString(16).substr(-2).toUpperCase() + '"', Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['kniwwelino_RGBsetColorEffect'] = function(block) {
 	kniwwelinoBaseCode();
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
