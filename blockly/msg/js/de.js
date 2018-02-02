@@ -482,9 +482,9 @@ Blockly.Msg.ARD_TIME_DELAY_TIP = "Wait specific time in milliseconds";  // untra
 Blockly.Msg.ARD_TIME_INF = "wait forever (end program)";  // untranslated
 Blockly.Msg.ARD_TIME_INF_TIP = "Wait indefinitely, stopping the program.";  // untranslated
 Blockly.Msg.ARD_TIME_MICROS = "aktuell verstrichene Zeit (Mikrosekunden)";  // untranslated
-Blockly.Msg.ARD_TIME_MICROS_TIP = "Returns the number of microseconds since the Arduino board began running the current program. Has to be stored in a positive long integer";  // untranslated
+Blockly.Msg.ARD_TIME_MICROS_TIP = "Returns the number of microseconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";  // untranslated
 Blockly.Msg.ARD_TIME_MILLIS = "aktuell verstrichene Zeit (Millisekunden)";  // untranslated
-Blockly.Msg.ARD_TIME_MILLIS_TIP = "Returns the number of milliseconds since the Arduino board began running the current program. Has to be stored in a positive long integer";  // untranslated
+Blockly.Msg.ARD_TIME_MILLIS_TIP = "Returns the number of milliseconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";  // untranslated
 Blockly.Msg.ARD_TIME_MS = "Millisekunden";
 Blockly.Msg.ARD_TONEFREQ = "at frequency";  // untranslated
 Blockly.Msg.ARD_TONE_FREQ = "frequency";  // untranslated
@@ -514,6 +514,8 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untrans
 
 //Kniwwelino DOKU URL
 Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/de/reference/";
+
+Blockly.Msg.KNIWWELINO_WARNING = 'Warnung:';
 //Kniwwelino
 Blockly.Msg.KNIWWELINO_GETID = 'Kniwwelino ID'
 Blockly.Msg.KNIWWELINO_GETID_TIP = 'Gibt die Kniwwelino ID zurück'
@@ -541,6 +543,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'setze RGB LED Helligkeit auf';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Setze die Helligkeit der RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'schalte RGB LED aus'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Schaltet die RGB LED aus'
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-255.";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_RED = "rot";
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "grün";
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "blau";
 Blockly.Msg.KNIWWELINO_PIN_ON = "an";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "aus";
 // MATRIX
@@ -550,6 +557,12 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = 'zeige ein Icon auf der Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = 'Zeigt ein Icon aus der Liste auf der LED Matrix an';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = 'zeige ein Icon auf der Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = 'Zeigt ein Icon auf der LED Matrix an';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'Enable or disable a pixel on the matrix';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Enable or disable a pixel on the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4]. The LED state 0 is off bigger value is on.';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED state';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';  // untranslated
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'schreibe Text auf Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Zeigt einen gegebenen Text auf der LED Matrix an';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'wiederholend';
@@ -591,6 +604,10 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "verbinde Variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (String) mit einem bestimmten Nachrichten-Thema (Topic)";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "ist";
+//times
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "aktuell verstrichene Zeit (Sekunden)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";   // untranslated
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";

@@ -482,9 +482,9 @@ Blockly.Msg.ARD_TIME_DELAY_TIP = "Attendre un délai précis en millisecondes";
 Blockly.Msg.ARD_TIME_INF = "Attente sans fin (fin du programme)";
 Blockly.Msg.ARD_TIME_INF_TIP = "Attente indéfinie, arrêt du programme.";
 Blockly.Msg.ARD_TIME_MICROS = "Temps écoulé (microsecondes)";
-Blockly.Msg.ARD_TIME_MICROS_TIP = "Renvoie le temps en microseconds depuis le lancement de ce programme sur la carte Arduino. Doit être stocké dans un Entier long positif";
+Blockly.Msg.ARD_TIME_MICROS_TIP = "Renvoie le temps en microseconds depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un Entier long positif";
 Blockly.Msg.ARD_TIME_MILLIS = "Temps écoulé (millisecondes)";
-Blockly.Msg.ARD_TIME_MILLIS_TIP = "Renvoie le temps en milliseconds depuis le lancement de ce programme sur la carte Arduino. Doit être stocké dans un Entier long positif";
+Blockly.Msg.ARD_TIME_MILLIS_TIP = "Renvoie le temps en milliseconds depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un Entier long positif";
 Blockly.Msg.ARD_TIME_MS = "millisecondes";
 Blockly.Msg.ARD_TONEFREQ = "à la frequence";
 Blockly.Msg.ARD_TONE_FREQ = "frequence";
@@ -514,6 +514,8 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untrans
 
 //Kniwwelino DOKU URL
 Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/fr/reference/";
+
+Blockly.Msg.KNIWWELINO_WARNING = 'Warning:'; // untranslated
 //Kniwwelino
 Blockly.Msg.KNIWWELINO_GETID = 'ID du périphérique'
 Blockly.Msg.KNIWWELINO_GETID_TIP = "Retourne l'ID du périphérique" /*I changed the quote due to the apostrophe*/
@@ -539,6 +541,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'Luminosité de la LED RVB';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la LED RVB (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'LED RVB OFF'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Éteindre la LED RVB'
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-255.";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_RED = "red";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";  // untranslated
 Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
 // MATRIX
@@ -548,6 +555,12 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = "Affiche l'icône sur la matrice
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = "Affiche l'icône sélectionné sur la matrice";
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = "Affiche l'icône sur la matrice";
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = "Affiche l'icône sélectionné sur la matrice";
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'Enable or disable a pixel on the matrix';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Enable or disable a pixel on the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4]. The LED state 0 is off bigger value is on.';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED state';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';  // untranslated
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'Écrit le texte sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Écrit le text donné sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'en continu';
@@ -589,6 +602,11 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "Relie la variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relier la variable sélectionné au topic spécifié";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "est";
+//times
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "Temps écoulé  (secondes)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Renvoie le temps en seconds depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un Entier long positif";
+
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "activée";

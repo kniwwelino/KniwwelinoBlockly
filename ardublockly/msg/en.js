@@ -75,12 +75,12 @@ Ardublockly.LOCALISED_TEXT = {
   invalidXmlTitle: "Invalid XML",
   invalidXmlBody: "The XML file was not successfully parsed into blocks. Please review the XML code and try again.",
   /* Tooltips */
-  uploadingSketch: "Uploading Sketch into Kniwwelino...",
-  uploadSketch: "Upload Sketch to the Kniwwelino",
-  verifyingSketch: "Verifying Sketch...",
-  verifySketch: "Verify the Sketch",
-  openingSketch: "Opening Sketch in the Arduino IDE...",
-  openSketch: "Open Sketch in IDE",
+  uploadingSketch: "Uploading Code to Kniwwelino...",
+  uploadSketch: "Upload Code to the Kniwwelino",
+  verifyingSketch: "Verifying Code...",
+  verifySketch: "Verify the Code",
+  openingSketch: "Opening Code in the Arduino IDE...",
+  openSketch: "Open Code in IDE",
   notImplemented: "Function not yet implemented",
   /* Prompts */
   ok: "OK",

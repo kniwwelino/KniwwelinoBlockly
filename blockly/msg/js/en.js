@@ -517,6 +517,8 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";
 
 //Kniwwelino DOKU URL
 Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/en/reference/";
+
+Blockly.Msg.KNIWWELINO_WARNING = 'Warning:';
 //Kniwwelino
 Blockly.Msg.KNIWWELINO_GETID = 'Device ID'
 Blockly.Msg.KNIWWELINO_GETID_TIP = 'Returns the Device ID'
@@ -544,6 +546,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'set RGB LED brightness to';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Set the brightness of the RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'switch RGB LED off'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Switch off the RGB LED'
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-255.";
+Blockly.Msg.KNIWWELINO_RGB_RED = "red";
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";
 Blockly.Msg.KNIWWELINO_PIN_ON = "on";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "off";
 // MATRIX
@@ -553,6 +560,12 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = 'show an icon on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = 'Show the selected icon on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = 'show an icon on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = 'Show the selected icon on the matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'draw a pixel on the matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Enable or disable a pixel on the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4]. The LED state 0 is off, value bigger 1 is on.';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED state';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'write a text on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Write the given text on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'repeating';
@@ -594,6 +607,11 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "attach variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the specified message topic";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "is";
+//times
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "current elapsed Time (seconds)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";
+
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "on";

@@ -127,18 +127,47 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
-
-Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
+Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 		  init: function() {
-		    this.appendDummyInput()
-		        .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT)
-		        .appendField(new Blockly.FieldColour("#00FF00"), "COLOR")
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
-		    this.setPreviousStatement(true, null);
-		    this.setNextStatement(true, null);
-		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
-			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP);
-			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		    this.appendValueInput("RED")
+		        .setCheck("Number")
+		        .appendField(Blockly.Msg.KNIWWELINO_RGB_RED);
+		    this.appendValueInput("GREEN")
+		        .setCheck("Number")
+		        .appendField(Blockly.Msg.KNIWWELINO_RGB_GREEN);
+		    this.appendValueInput("BLUE")
+		        .setCheck("Number")
+		        .appendField(Blockly.Msg.KNIWWELINO_RGB_BLUE);
+		    this.appendDummyInput();
+				this.setOutput(true, Blockly.Types.TEXT.output);
+				this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+	 		  this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_TIP);
+	 		  this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		  }, getBlockType: function() {
+				 return Blockly.Types.TEXT;
+			}, onchange: function(ev) {
+		    var r = Blockly.Arduino.valueToCode(this, 'RED', Blockly.Arduino.ORDER_ATOMIC);
+				var g = Blockly.Arduino.valueToCode(this, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
+				var b = Blockly.Arduino.valueToCode(this, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
+				if (r < 0 || r > 255) {
+				  swal({
+						title: Blockly.Msg.KNIWWELINO_WARNING,
+						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+						className: "kniwwelino-bg"
+					});
+		    } else if (g < 0 || g > 255) {
+					swal({
+						title: Blockly.Msg.KNIWWELINO_WARNING,
+						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+						className: "kniwwelino-bg"
+					});
+		    } else if (b < 0 || b > 255) {
+					swal({
+						title: Blockly.Msg.KNIWWELINO_WARNING,
+						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+						className: "kniwwelino-bg"
+					});
+		    }
 		  }
 		};
 
@@ -316,10 +345,29 @@ Blockly.Blocks['kniwwelino_MATRIXdrawIconChooser'] = {
   }
 };
 
+Blockly.Blocks['kniwwelino_MATRIXIconChooser'] = {
+  init: function() {
+		this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          [Blockly.Msg.KNIWWELINO_DRAWICON_HEART,		"ICON_HEART"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_SMILE,		"ICON_SMILE"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_SAD,			"ICON_SAD"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP,	"ICON_ARROW_UP"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN,	"ICON_ARROW_DOWN"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT,	"ICON_ARROW_LEFT"],
+          [Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT,	"ICON_ARROW_RIGHT"]])
+        , "ICON_CHOOSER");
+		this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+  }
+};
+
 Blockly.Blocks['kniwwelino_MATRIXdrawIcon'] = {
 		  init: function() {
 			this.setInputsInline(true);
-			this.appendValueInput("TEXT")
+			this.appendValueInput("ICON")
 		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
@@ -345,6 +393,46 @@ Blockly.Blocks['kniwwelino_MATRIXwrite'] = {
 	     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP);
 	     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
    }
+};
+
+Blockly.Blocks['kniwwelino_MATRIXdrawPixel'] = {
+  init: function() {
+		this.appendDummyInput()
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL);
+    this.appendValueInput("X")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X);
+    this.appendValueInput("Y")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y);
+    this.appendValueInput("STATE")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE);
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+		this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+		this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP);
+		this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+  },
+	onchange: function(ev) {
+    var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC);
+		var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC);
+		if (x < 0 || x > 4) {
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
+				className: "kniwwelino-bg"
+			});
+    }
+		if ( y < 0 || y > 4) {
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
+				className: "kniwwelino-bg"
+			});
+    }
+  }
 };
 
 Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
