@@ -146,7 +146,7 @@ Blockly.Arduino['kniwwelino_MATRIXdrawIconCreator'] = function(block) {
 			}
 		}
 	}
-	return ['String("B' + pixels +')"', Blockly.Arduino.ORDER_ATOMIC];
+	return ['String("B' + pixels +'")', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_MATRIXdrawIconChooser'] = function(block) {

@@ -231,7 +231,12 @@ body {
   padding-right: 5px;
 }
 
-
+.kniwwelino-bg {
+  background-image: url("./img/mascot.png");
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 200px;
+}
 
 
 

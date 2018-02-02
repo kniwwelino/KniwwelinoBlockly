@@ -153,19 +153,19 @@ Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 				  swal({
 						title: Blockly.Msg.KNIWWELINO_WARNING,
 						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
-						icon: "warning"
+						className: "kniwwelino-bg"
 					});
 		    } else if (g < 0 || g > 255) {
 					swal({
 						title: Blockly.Msg.KNIWWELINO_WARNING,
 						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
-						icon: "warning"
+						className: "kniwwelino-bg"
 					});
 		    } else if (b < 0 || b > 255) {
 					swal({
 						title: Blockly.Msg.KNIWWELINO_WARNING,
 						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
-						icon: "warning"
+						className: "kniwwelino-bg"
 					});
 		    }
 		  }
@@ -422,14 +422,14 @@ Blockly.Blocks['kniwwelino_MATRIXdrawPixel'] = {
 			swal({
 				title: Blockly.Msg.KNIWWELINO_WARNING,
 				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
-				icon: "warning"
+				className: "kniwwelino-bg"
 			});
     }
 		if ( y < 0 || y > 4) {
 			swal({
 				title: Blockly.Msg.KNIWWELINO_WARNING,
 				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
-				icon: "warning"
+				className: "kniwwelino-bg"
 			});
     }
   }
