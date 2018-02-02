@@ -94,45 +94,45 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="kniwwelino_RGBsetColor"></block>' +
 '    <block type="kniwwelino_RGBsetColorEffect">' +
 '      <value name="COLOR">' +
-'        <block type="kniwwelino_RGBselectColor"></block>' +
+'        <shadow type="kniwwelino_RGBselectColor"></shadow>' +
 '      </value>' +
 '  </block>' +
 '    <block type="kniwwelino_RGBclear"></block>' +
 '    <block type="kniwwelino_RGBselectColor"></block>' +
 '    <block type="kniwwelino_RGBsetColorFromString">' +
 '      <value name="COLOR">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">00FF00</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_RGBsetColorFromString">' +
 '      <value name="COLOR">' +
 '        <block type="kniwwelino_RGBsetRGB">' +
 '          <value name="RED">' +
-'             <block type="math_number">' +
+'             <shadow type="math_number">' +
 '               <field name="NUM">0</field>' +
-'             </block>' +
+'             </shadow>' +
 '          </value>' +
 '          <value name="GREEN">' +
-'             <block type="math_number">' +
+'             <shadow type="math_number">' +
 '               <field name="NUM">0</field>' +
-'             </block>' +
+'             </shadow>' +
 '          </value>' +
 '          <value name="BLUE">' +
-'             <block type="math_number">' +
+'             <shadow type="math_number">' +
 '               <field name="NUM">0</field>' +
-'             </block>' +
+'             </shadow>' +
 '          </value>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_RGBsetBrightness"></block>' +
+// '    <block type="kniwwelino_RGBsetBrightness"></block>' +
 '    <block type="kniwwelino_RGBsetBrightnessFromVariable">' +
 '      <value name="BRIGHTNESS">' +
-'        <block type="math_number">' +
+'        <shadow type="math_number">' +
 '          <field name="NUM">200</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_PINsetEffect"></block>' +
