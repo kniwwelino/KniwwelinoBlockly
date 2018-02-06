@@ -177,11 +177,18 @@ Ardublockly.loadSessionStorageBlocks = function() {
   }
   if (loadOnce) {
     delete window.sessionStorage.loadOnceBlocks;
-    var xml = Blockly.Xml.textToDom(loadOnce);
-    Blockly.Xml.domToWorkspace(xml, Ardublockly.workspace);
+    Ardublockly.workspace.clear();
+    setTimeout(function() {
+      var xml = Blockly.Xml.textToDom(loadOnce);
+      Blockly.Xml.domToWorkspace(xml, Ardublockly.workspace);
+    }, 200);
   } else {
-    //load a new prepared workspace
-    Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
+    Ardublockly.workspace.clear();
+    setTimeout(function() {
+      //load a new prepared workspace
+      Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
+    }, 200);
+
   }
 };
 
