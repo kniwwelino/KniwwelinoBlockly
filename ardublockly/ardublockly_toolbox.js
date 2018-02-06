@@ -88,8 +88,8 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '    <block type="kniwwelino_BUTTONclicked"></block>' +
 '    <block type="kniwwelino_BUTTONdown"></block>' +
-'    <block type="kniwwelino_PINbuttonClicked"><field name="PIN">D5</field></block>' +
-'    <block type="kniwwelino_PINbuttonDown"><field name="PIN">D5</field></block>' +
+'    <block type="kniwwelino_PINbuttonClicked"></block>' +
+'    <block type="kniwwelino_PINbuttonDown"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catRGB" name="LED">' +

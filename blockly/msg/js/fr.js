@@ -548,7 +548,7 @@ Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";  // untranslated
 Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";  // untranslated
 Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
-Blockly.Msg.KNIWWELINO_PIN_BUTTON = "External Button on Pin";
+Blockly.Msg.KNIWWELINO_PIN_BUTTON = "external button on pin";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Créer une icône';
