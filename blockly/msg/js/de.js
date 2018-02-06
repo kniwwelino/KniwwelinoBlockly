@@ -550,6 +550,7 @@ Blockly.Msg.KNIWWELINO_RGB_GREEN = "grün";
 Blockly.Msg.KNIWWELINO_RGB_BLUE = "blau";
 Blockly.Msg.KNIWWELINO_PIN_ON = "an";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "aus";
+Blockly.Msg.KNIWWELINO_PIN_BUTTON = "Externer Knopf an Pin";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Designe ein Icon';

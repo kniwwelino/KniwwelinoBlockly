@@ -80,6 +80,34 @@ Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
 		 block.getFieldValue('EFFECT') + ');\n';
 };
 
+Blockly.Arduino['kniwwelino_PINbuttonDown'] = function(block) {
+	kniwwelinoBaseCode();
+	
+	var pin = block.getFieldValue('PIN');
+	Blockly.Arduino.reservePin(block, pin, Blockly.Arduino.PinTypes.INPUT, 'Digital Read');
+
+	var pinSetupCode = 'PINenableButton(' + pin + ');';
+	Blockly.Arduino.addSetup('ioButton_' + pin, pinSetupCode, false);
+	
+	var pin = block.getFieldValue('PIN');
+	return ['Kniwwelino.PINbuttonDown('+pin+')', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['kniwwelino_PINbuttonClicked'] = function(block) {
+	kniwwelinoBaseCode();
+	
+	var pin = block.getFieldValue('PIN');
+	Blockly.Arduino.reservePin(block, pin, Blockly.Arduino.PinTypes.INPUT, 'Digital Read');
+
+	var pinSetupCode = 'PINenableButton(' + pin + ');';
+	Blockly.Arduino.addSetup('ioButton_' + pin, pinSetupCode, false);
+	
+	var button = block.getFieldValue('BUTTON');
+	var pin = block.getFieldValue('PIN');
+	return ['Kniwwelino.PINbuttonClicked('+pin+')', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
 //==== RGB LED  functions ====================================================
 
 Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {

@@ -259,7 +259,7 @@ Blockly.Blocks['kniwwelino_PINsetEffect'] = {
 		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_EFFECT)
 		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
 		    	.appendField(Blockly.Msg.ARD_WRITE_TO)
-		      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_OFF,"RGB_OFF"]]), "EFFECT");
+		      .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"PIN_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"PIN_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"PIN_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_OFF,"PIN_OFF"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -267,6 +267,37 @@ Blockly.Blocks['kniwwelino_PINsetEffect'] = {
 			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL);
 		  }
 		};
+
+Blockly.Blocks['kniwwelino_PINbuttonDown'] = {
+		  init: function() {
+		    this.appendDummyInput()
+		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_BUTTON)
+		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
+		    	.appendField(Blockly.Msg.KNIWWELINO_BUTTON_DOWN);
+		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
+		  },getBlockType: function() {
+			    return Blockly.Types.BOOLEAN;
+		  }
+};
+
+Blockly.Blocks['kniwwelino_PINbuttonClicked'] = {
+		  init: function() {
+		    this.appendDummyInput()
+		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_BUTTON)
+		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
+		    	.appendField(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED);
+		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_BUTTONS.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'buttons');
+		  },getBlockType: function() {
+			    return Blockly.Types.BOOLEAN;
+		  }
+};
+
 
 //==== LED MATRIX functions ==================================================
 //void MATRIXwriteOnce(String text);
