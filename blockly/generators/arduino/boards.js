@@ -321,7 +321,7 @@ Blockly.Arduino.Boards.profiles.esp8266_kniwwelino = {
   description: 'Kniwwelino',
   compilerFlag: 'esp8266:esp8266:kniwwelino',
   analogPins: [['A0', 'A0']],
-  digitalPins: [['D0', 'D0'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']],
+  digitalPins: [['D0 ', 'D0'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']],
   pwmPins:   [['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']],
   serial: [['serial', 'Serial']],
   serialPins: { Serial: [['RX', 'RX'], ['TX', 'TX']] },
@@ -333,7 +333,7 @@ Blockly.Arduino.Boards.profiles.esp8266_kniwwelino = {
   i2cPins: { Wire: [['SDA', 'D2'], ['SCL', 'D1']] },
   i2cSpeed: Blockly.Arduino.Boards.profiles.uno.i2cSpeed,
   builtinLed: [['BUILTIN_LED', 'D4']],
-  interrupt: [['D0', 'D0'], ['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']]
+  interrupt: [['D5', 'D5'], ['D6', 'D6'], ['D7', 'D7']]
 };
 
 /** Set default profile to Arduino standard-compatible board */

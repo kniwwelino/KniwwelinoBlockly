@@ -553,7 +553,7 @@ Blockly.Msg.KNIWWELINO_RGB_GREEN = "green";
 Blockly.Msg.KNIWWELINO_RGB_BLUE = "blue";
 Blockly.Msg.KNIWWELINO_PIN_ON = "on";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "off";
-Blockly.Msg.KNIWWELINO_PIN_BUTTON = "External Button on Pin";
+Blockly.Msg.KNIWWELINO_PIN_BUTTON = "external button on pin";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR_TIP = 'Design an icon';
