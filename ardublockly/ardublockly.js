@@ -80,9 +80,6 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('button_ide_middle', function() {
       Ardublockly.ideButtonMiddleAction();
   });
-  Ardublockly.bindClick_('button_ide_left', function() {
-    Ardublockly.ideButtonLeftAction();
-  });
   Ardublockly.bindClick_('button_load_xml', Ardublockly.XmlTextareaToBlocks);
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
 
@@ -131,18 +128,6 @@ Ardublockly.ideSendUpload = function() {
   Ardublockly.sendCode();
 };
 
-/** Sets the Ardublockly server IDE setting to verify and sends the code. */
-Ardublockly.ideSendVerify = function() {
-  // Check if this is the currently selected option before edit sever setting
-  if (Ardublockly.ideButtonLargeAction !== Ardublockly.ideSendVerify) {
-    Ardublockly.showExtraIdeButtons(false);
-    Ardublockly.setIdeSettings(null, 'verify');
-  }
-  Ardublockly.shortMessage(Ardublockly.getLocalStr('verifyingSketch'));
-  Ardublockly.resetIdeOutputContent();
-  Ardublockly.sendCode();
-};
-
 /** Sets the Ardublockly server IDE setting to open and sends the code. */
 Ardublockly.ideSendOpen = function() {
   // Check if this is the currently selected option before edit sever setting
@@ -159,17 +144,12 @@ Ardublockly.ideSendOpen = function() {
 Ardublockly.ideButtonLargeAction = Ardublockly.ideSendUpload;
 
 /** Function bound to the middle IDE button, to be changed based on settings. */
-Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendVerify;
-
-/** Function bound to the large IDE button, to be changed based on settings. */
-Ardublockly.ideButtonLeftAction = Ardublockly.ideSendOpen;
+Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendOpen;
 
 /** Initialises the IDE buttons with the default option from the server. */
 Ardublockly.initialiseIdeButtons = function() {
-  document.getElementById('button_ide_left').title =
-      Ardublockly.getLocalStr('openSketch');
   document.getElementById('button_ide_middle').title =
-      Ardublockly.getLocalStr('verifySketch');
+      Ardublockly.getLocalStr('openSketch');
   document.getElementById('button_ide_large').title =
       Ardublockly.getLocalStr('uploadSketch');
   ArdublocklyServer.requestIdeOptions(function(jsonObj) {
@@ -187,32 +167,18 @@ Ardublockly.initialiseIdeButtons = function() {
 Ardublockly.changeIdeButtons = function(value) {
   var largeButton = document.getElementById('button_ide_large');
   var middleButton = document.getElementById('button_ide_middle');
-  var leftButton = document.getElementById('button_ide_left');
   var openTitle = Ardublockly.getLocalStr('openSketch');
-  var verifyTitle = Ardublockly.getLocalStr('verifySketch');
   var uploadTitle = Ardublockly.getLocalStr('uploadSketch');
   if (value === 'upload') {
     Ardublockly.changeIdeButtonsDesign(value);
-    Ardublockly.ideButtonLeftAction = Ardublockly.ideSendOpen;
-    Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendVerify;
+    Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendOpen;
     Ardublockly.ideButtonLargeAction = Ardublockly.ideSendUpload;
-    leftButton.title = openTitle;
-    middleButton.title = verifyTitle;
+    middleButton.title = openTitle;
     largeButton.title = uploadTitle;
-  } else if (value === 'verify') {
-    Ardublockly.changeIdeButtonsDesign(value);
-    Ardublockly.ideButtonLeftAction = Ardublockly.ideSendOpen;
-    Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendUpload;
-    Ardublockly.ideButtonLargeAction = Ardublockly.ideSendVerify;
-    leftButton.title = openTitle;
-    middleButton.title = uploadTitle;
-    largeButton.title = verifyTitle;
   } else if (value === 'open') {
     Ardublockly.changeIdeButtonsDesign(value);
-    Ardublockly.ideButtonLeftAction = Ardublockly.ideSendVerify;
     Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendUpload;
     Ardublockly.ideButtonLargeAction = Ardublockly.ideSendOpen;
-    leftButton.title = verifyTitle;
     middleButton.title = uploadTitle;
     largeButton.title = openTitle;
   }
