@@ -609,6 +609,30 @@ Blockly.Msg.KNIWWELINO_IS = "ist";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS = "aktuell verstrichene Zeit (Sekunden)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";   // untranslated
 
+//Log
+Blockly.Msg.KNIWWELINO_LOG 		= "Log"
+Blockly.Msg.KNIWWELINO_LOG_LINE = "Log Line"
+Blockly.Msg.KNIWWELINO_LOG_TIP 	= "Logs the given String to the serial Console and MQTT log topic if enabled."
+
+// SENSORS
+Blockly.Msg.KNIWWELINO_BME280getTemperature = "BME-280 get temperature"
+Blockly.Msg.KNIWWELINO_BME280getTemperatureTip = "Uses the ADPS-9960 Sensor to measure temperature in deg celsius";
+Blockly.Msg.KNIWWELINO_BME280getHumidity = "BME-280 get humidity"
+Blockly.Msg.KNIWWELINO_BME280getHumidityTip = "Uses the ADPS-9960 Sensor to measure relative humidity in %";
+Blockly.Msg.KNIWWELINO_BME280getPressure = "BME-280 get pressure"
+Blockly.Msg.KNIWWELINO_BME280getPressureTip = "Uses the ADPS-9960 Sensor to measure pressure in hPa";
+Blockly.Msg.KNIWWELINO_BME280getHeight = "BME-280 get height"
+Blockly.Msg.KNIWWELINO_BME280getHeightTip = "Uses the ADPS-9960 Sensor to measure height in m";
+
+Blockly.Msg.KNIWWELINO_ADPS9960getProximity = "ADPS-9960 get proximity";
+Blockly.Msg.KNIWWELINO_ADPS9960getProximityTip = "Uses the ADPS-9960 Sensor to measure proximity";
+Blockly.Msg.KNIWWELINO_ADPS9960getLux = "ADPS-9960 get lux";
+Blockly.Msg.KNIWWELINO_ADPS9960getLuxTip = "Uses the ADPS-9960 Sensor to measure light intensity in lux";
+Blockly.Msg.KNIWWELINO_ADPS9960getColor = "ADPS-9960 get";
+Blockly.Msg.KNIWWELINO_ADPS9960getColorComponent = "color component";
+Blockly.Msg.KNIWWELINO_ADPS9960ColorTip = "Uses the ADPS-9960 Sensor to measure the selected color component";
+Blockly.Msg.KNIWWELINO_ADPS9960waitforGesture = "ADPS-9960 wait for Gesture";
+Blockly.Msg.KNIWWELINO_ADPS9960waitforGestureTip = "Uses the ADPS-9960 Sensor to detect basic gestures (up, down, left, right)";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";

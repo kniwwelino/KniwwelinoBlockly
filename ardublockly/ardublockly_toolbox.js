@@ -449,6 +449,13 @@ Ardublockly.TOOLBOX_XML =
 //'  </category>' +
 '  <sep></sep>' +
 '  <category id="catSensors" name="Sensors">' +
+'    <block type="kniwwelino_BME280getTemperature"></block>' +
+'    <block type="kniwwelino_BME280getHumidity"></block>' +
+'    <block type="kniwwelino_BME280getPressure"></block>' +
+'    <block type="kniwwelino_BME280getHeight"></block>' +
+'    <block type="kniwwelino_ADPS9960getProximity"></block>' +
+'    <block type="kniwwelino_ADPS9960getColor"></block>' +
+'    <block type="kniwwelino_ADPS9960waitforGesture"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
@@ -456,20 +463,16 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catKniwwelino" name="Kniwwelino">' +
 '    <block type="arduino_functions_setup"></block>' +
 '    <block type="arduino_functions_loop"></block>' +
-//'    <block type="kniwwelino_sleepsec">' +
-//'      <value name="DELAY_TIME_SEC">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">5</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
-//'    <block type="kniwwelino_sleep">' +
-//'      <value name="DELAY_TIME_MILI">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">1000</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
+'    <block type="kniwwelino_log">' +
+'      <value name="TEXT">' +
+'        <shadow type="text">""</shadow>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_logln">' +
+'      <value name="TEXT">' +
+'        <shadow type="text">""</shadow>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_getID"></block>' +
 '    <block type="kniwwelino_getName"></block>' +
 '    <block type="kniwwelino_getIP"></block>' +

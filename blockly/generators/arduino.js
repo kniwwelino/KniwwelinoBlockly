@@ -185,7 +185,7 @@ Blockly.Arduino.finish = function(code) {
 	delete Blockly.Arduino.setups_['kniwwelinoBegin'];
   }
   
-  //kniwwelino MQTT set GRoup second
+  //kniwwelino MQTT set Group second
   if (Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'] !== undefined) {
 	 setups.push(Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup']);
 	 delete Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'];

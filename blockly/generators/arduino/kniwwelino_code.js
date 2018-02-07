@@ -16,7 +16,7 @@ goog.require('Blockly.Arduino');
 
 function kniwwelinoBaseCode() {
 	Blockly.Arduino.addInclude('kniwwelino', '#include <Kniwwelino.h>');
-	Blockly.Arduino.addSetup('kniwwelinoBegin', '//Initialize the Kniwwelino Board\n  Kniwwelino.begin(true, true); // Wifi=true, Fastboot=true', true);
+	Blockly.Arduino.addSetup('kniwwelinoBegin', '//Initialize the Kniwwelino Board\n  Kniwwelino.begin(true, true, false); // Wifi=true, Fastboot=true, MQTT Logging=false\n', true);
 
 	// Adding something to the loop() is not possible right now.
 	// please add the following code to the Blockly.Arduino.finish function in generators/arduino.js
@@ -50,6 +50,19 @@ Blockly.Arduino['kniwwelino_getMAC'] = function(block) {
 	kniwwelinoBaseCode();
 	return ['Kniwwelino.getMAC()', Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino['kniwwelino_log'] = function(block) {
+	kniwwelinoBaseCode();
+	var text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return  'Kniwwelino.log(String('+text+'));\n';
+};
+
+Blockly.Arduino['kniwwelino_logln'] = function(block) {
+	kniwwelinoBaseCode();
+	var text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return  'Kniwwelino.logln(String('+text+'));\n';
+};
+
 
 Blockly.Arduino['kniwwelino_sleep'] = function(block) {
 	kniwwelinoBaseCode();
@@ -310,3 +323,85 @@ Blockly.Arduino['kniwwelino_MQTTpublish'] = function(block) {
 	var message = Blockly.Arduino.valueToCode(block, 'MESSAGE',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	return  'Kniwwelino.MQTTpublish('+topic+', String('+message+'));\n';
 };
+
+
+//==== SENSORS ==============================================
+Blockly.Arduino['kniwwelino_BME280getTemperature'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
+	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
+	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	return ['bme280.readTemperature()', Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino['kniwwelino_BME280getHumidity'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
+	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
+	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	return ['bme280.readHumidity()', Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino['kniwwelino_BME280getPressure'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
+	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
+	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	return ['(bme280.readPressure()/100.0F)', Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino['kniwwelino_BME280getHeight'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
+	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
+	Blockly.Arduino.addDeclaration('Adafruit_BME280SeaLevel', '#define BME280_SEALEVELPRESSURE_HPA (1013.25)');
+	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	return ['bme280.readAltitude(BME280_SEALEVELPRESSURE_HPA)', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+Blockly.Arduino['kniwwelino_ADPS9960getProximity'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_APDS9960', '#include "Adafruit_APDS9960.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_APDS9960', 'Adafruit_APDS9960 apds9960;');
+	Blockly.Arduino.addSetup('APDS9960init', 'if(apds9960.begin()) Kniwwelino.logln("ADPS-9960 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize ADPS-9960 Sensor"); ', true);
+	Blockly.Arduino.addSetup('APDS9960enableProximity', 'apds9960.enableProximity(true);', true);
+	return ['apds9960.readProximity()', Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino['kniwwelino_ADPS9960getLux'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_APDS9960', '#include "Adafruit_APDS9960.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_APDS9960', 'Adafruit_APDS9960 apds9960;');
+	Blockly.Arduino.addSetup('APDS9960init', 'if(apds9960.begin()) Kniwwelino.logln("ADPS-9960 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize ADPS-9960 Sensor"); ', true);
+	Blockly.Arduino.addSetup('APDS9960enableColor', 'apds9960.enableColor(true);', true);
+	return ['apds9960.getLux()', Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino['kniwwelino_ADPS9960getColor'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_APDS9960', '#include "Adafruit_APDS9960.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_APDS9960', 'Adafruit_APDS9960 apds9960;');
+	Blockly.Arduino.addSetup('APDS9960init', 'if(apds9960.begin()) Kniwwelino.logln("ADPS-9960 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize ADPS-9960 Sensor"); ', true);
+	Blockly.Arduino.addSetup('APDS9960enableColor', 'apds9960.enableColor(true);', true);
+	var color = block.getFieldValue('COLOR');
+	if (color == 'WHITE')  {
+		return ['apds9960.getWhite()', Blockly.Arduino.ORDER_ATOMIC];
+	} else if (color == 'RED')  {
+		return ['apds9960.getRed()', Blockly.Arduino.ORDER_ATOMIC];
+	} else if (color == 'GREEN')  {
+		return ['apds9960.getGreen()', Blockly.Arduino.ORDER_ATOMIC];
+	} else {
+		return ['apds9960.getBlue()', Blockly.Arduino.ORDER_ATOMIC];
+	}
+};
+Blockly.Arduino['kniwwelino_ADPS9960waitforGesture'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_APDS9960', '#include "Adafruit_APDS9960.h"');
+	Blockly.Arduino.addDeclaration('Adafruit_APDS9960', 'Adafruit_APDS9960 apds9960;');
+	Blockly.Arduino.addSetup('APDS9960init', 'if(apds9960.begin()) Kniwwelino.logln("ADPS-9960 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize ADPS-9960 Sensor"); ', true);
+	Blockly.Arduino.addSetup('APDS9960enableProximity', 'apds9960.enableProximity(true);', true);
+	Blockly.Arduino.addSetup('APDS9960enableGesture', 'apds9960.enableGesture(true);', true);
+	return ['apds9960.readGesture()', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
