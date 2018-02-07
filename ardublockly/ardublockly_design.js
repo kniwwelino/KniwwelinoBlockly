@@ -102,7 +102,7 @@ Ardublockly.changeIdeButtonsDesign = function(value) {
     iconLarge.className = 'mdi-av-play-arrow';
   }  else if (value === 'open') {
     buttonMiddle.className =
-        buttonMiddle.className.replace(/arduino_\S+/, 'arduino_teal');
+        buttonMiddle.className.replace(/arduino_\S+/, 'arduino_orange');
     iconMiddle.className = 'mdi-av-play-arrow';
     buttonLarge.className =
         buttonLarge.className.replace(/arduino_\S+/, 'arduino_yellow');

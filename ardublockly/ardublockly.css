@@ -570,6 +570,7 @@ ul.side-nav li.side-menu-end {
 /*  Buttons  */
 /*************/
 #ide_buttons_wrapper {
+  color: white;
   position: absolute;
   right: 25px;
   top: -20px;
