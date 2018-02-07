@@ -818,6 +818,10 @@ ul.side-nav li.side-menu-end {
   }
 }
 
+#settings_dialog {
+  height: 55% !important;
+}
+
 
 /*****************/
 /*  Sketch name  */
