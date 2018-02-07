@@ -331,7 +331,7 @@ Blockly.Arduino['kniwwelino_BME280getTemperature'] = function(block) {
 	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
 	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
 	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
-	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	Blockly.Arduino.addSetup('BME280init', 'if(bme280.begin(0x76)) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
 	return ['bme280.readTemperature()', Blockly.Arduino.ORDER_ATOMIC];
 };
 Blockly.Arduino['kniwwelino_BME280getHumidity'] = function(block) {
@@ -339,7 +339,7 @@ Blockly.Arduino['kniwwelino_BME280getHumidity'] = function(block) {
 	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
 	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
 	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
-	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	Blockly.Arduino.addSetup('BME280init', 'if(bme280.begin(0x76)) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
 	return ['bme280.readHumidity()', Blockly.Arduino.ORDER_ATOMIC];
 };
 Blockly.Arduino['kniwwelino_BME280getPressure'] = function(block) {
@@ -347,7 +347,7 @@ Blockly.Arduino['kniwwelino_BME280getPressure'] = function(block) {
 	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
 	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
 	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
-	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	Blockly.Arduino.addSetup('BME280init', 'if(bme280.begin(0x76)) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
 	return ['(bme280.readPressure()/100.0F)', Blockly.Arduino.ORDER_ATOMIC];
 };
 Blockly.Arduino['kniwwelino_BME280getHeight'] = function(block) {
@@ -356,7 +356,7 @@ Blockly.Arduino['kniwwelino_BME280getHeight'] = function(block) {
 	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
 	Blockly.Arduino.addDeclaration('Adafruit_BME280', 'Adafruit_BME280 bme280;');
 	Blockly.Arduino.addDeclaration('Adafruit_BME280SeaLevel', '#define BME280_SEALEVELPRESSURE_HPA (1013.25)');
-	Blockly.Arduino.addSetup('BME280init', 'bool status = bme280.begin(0x76);\n  if(status) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
+	Blockly.Arduino.addSetup('BME280init', 'if(bme280.begin(0x76)) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
 	return ['bme280.readAltitude(BME280_SEALEVELPRESSURE_HPA)', Blockly.Arduino.ORDER_ATOMIC];
 };
 
