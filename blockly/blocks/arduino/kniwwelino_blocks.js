@@ -613,7 +613,7 @@ Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 		   },
 
 		   onchange: function() {
-			       this.setFieldValue(this.getFieldValue('GROUP').trim().replace(" ","_"), 'GROUP');
+			       this.setFieldValue(this.getFieldValue('GROUP').trim().replace(" ","_").replace(/\W/g,""), 'GROUP');
 			   },
 
 		   newQuote_: function(open) {

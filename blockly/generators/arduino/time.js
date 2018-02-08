@@ -47,7 +47,7 @@ goog.require('Blockly.Arduino');
  * @return {array} Completed code with order of operation.
  */
  Blockly.Arduino['time_seconds'] = function(block) {
-  var code = 'millis()/1000';
+  var code = '(millis()/1000)';
   return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
