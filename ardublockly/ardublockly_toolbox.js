@@ -449,13 +449,11 @@ Ardublockly.TOOLBOX_XML =
 //'  </category>' +
 '  <sep></sep>' +
 '  <category id="catSensors" name="Sensors">' +
-'    <block type="kniwwelino_BME280getTemperature"></block>' +
-'    <block type="kniwwelino_BME280getHumidity"></block>' +
-'    <block type="kniwwelino_BME280getPressure"></block>' +
-'    <block type="kniwwelino_BME280getHeight"></block>' +
-'    <block type="kniwwelino_ADPS9960getProximity"></block>' +
-'    <block type="kniwwelino_ADPS9960getColor"></block>' +
-'    <block type="kniwwelino_ADPS9960waitforGesture"></block>' +
+'    <block type="kniwwelino_BME280getValue"></block>' +
+'    <block type="kniwwelino_BME680getValue"></block>' +
+'    <block type="kniwwelino_SHT30getValue"></block>' +
+'    <block type="kniwwelino_BH1750getLightLevel"></block>' +
+'    <block type="kniwwelino_ADPS9960getValue"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +

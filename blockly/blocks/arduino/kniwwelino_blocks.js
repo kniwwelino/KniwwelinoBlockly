@@ -696,48 +696,19 @@ Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 
 //==== SENSORS ==============================================
 
-Blockly.Blocks['kniwwelino_BME280getTemperature'] = {
+Blockly.Blocks['kniwwelino_BME280getValue'] = {
 		  init: function() {
 			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_BME280getTemperature);
+			    .appendField(Blockly.Msg.KNIWWELINO_BME280getValue)
+		        .appendField(new Blockly.FieldDropdown(
+					    [
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_TEMP,"TEMPERATURE"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_HUM,"HUMIDITY"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE,"PRESSURE"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT,"HEIGHT"]
+					    ]), "VALUE");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME280getTemperatureTip);
-		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
-		  },getBlockType: function() {
-			    return Blockly.Types.NUMBER;
-		  }
-};
-Blockly.Blocks['kniwwelino_BME280getHumidity'] = {
-		  init: function() {
-			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_BME280getHumidity);
-		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME280getHumidityTip);
-		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
-		  },getBlockType: function() {
-			    return Blockly.Types.NUMBER;
-		  }
-};
-Blockly.Blocks['kniwwelino_BME280getPressure'] = {
-		  init: function() {
-			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_BME280getPressure);
-		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME280getPressureTip);
-		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
-		  },getBlockType: function() {
-			    return Blockly.Types.NUMBER;
-		  }
-};
-Blockly.Blocks['kniwwelino_BME280getHeight'] = {
-		  init: function() {
-			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_BME280getHeight);
-		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME280getHeightTip);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME280getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  },getBlockType: function() {
@@ -745,60 +716,77 @@ Blockly.Blocks['kniwwelino_BME280getHeight'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_BME680getValue'] = {
+		  init: function() {
+			  this.appendDummyInput()
+			    .appendField(Blockly.Msg.KNIWWELINO_BME680getValue)
+		        .appendField(new Blockly.FieldDropdown(
+					    [
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_TEMP,"TEMPERATURE"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_HUM,"HUMIDITY"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_GAS,"GAS"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE,"PRESSURE"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT,"HEIGHT"]
+					    ]), "VALUE");
+		    this.setOutput(true, Blockly.Types.NUMBER.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME680getValueTip);
+		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		  },getBlockType: function() {
+			    return Blockly.Types.NUMBER;
+		  }
+};
 
-Blockly.Blocks['kniwwelino_ADPS9960getProximity'] = {
+Blockly.Blocks['kniwwelino_SHT30getValue'] = {
 		  init: function() {
 			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_ADPS9960getProximity);
+			    .appendField(Blockly.Msg.KNIWWELINO_SHT30getValue)
+		        .appendField(new Blockly.FieldDropdown(
+					    [
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_TEMP,"TEMPERATURE"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_HUM,"HUMIDITY"],
+					    ]), "VALUE");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960getProximityTip);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_SHT30getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
 };
-Blockly.Blocks['kniwwelino_ADPS9960getLux'] = {
+
+Blockly.Blocks['kniwwelino_BH1750getLightLevel'] = {
 		  init: function() {
 			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_ADPS9960getLux);
+			    .appendField(Blockly.Msg.KNIWWELINO_BH1750getLightLevel);
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960getLuxTip);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
 };
-Blockly.Blocks['kniwwelino_ADPS9960getColor'] = {
+
+Blockly.Blocks['kniwwelino_ADPS9960getValue'] = {
 		  init: function() {
 			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_ADPS9960getColor)
+			    .appendField(Blockly.Msg.KNIWWELINO_ADPS9960getValue)
 			        .appendField(new Blockly.FieldDropdown(
-			    [["WHITE","WHITE"],
-			    ["RED","RED"],
-			    ["GREEN","GREEN"],
-			    ["BLUE","BLUE"]]), "COLOR")
-			    .appendField(Blockly.Msg.KNIWWELINO_ADPS9960getColorComponent);
+			    [
+			    	[Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY,"PROXIMITY"],
+			    	[Blockly.Msg.KNIWWELINO_SENSOR_GESTURE,"GESTURE"],
+			    	[Blockly.Msg.KNIWWELINO_SENSOR_WHITE,"WHITE"],
+			    	[Blockly.Msg.KNIWWELINO_SENSOR_RED,"RED"],
+			    	[Blockly.Msg.KNIWWELINO_SENSOR_GREEN,"GREEN"],
+			    	[Blockly.Msg.KNIWWELINO_SENSOR_BLUE,"BLUE"]
+			    ]), "VALUE");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960ColorTip);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960ValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
 };
-Blockly.Blocks['kniwwelino_ADPS9960waitforGesture'] = {
-		  init: function() {
-			  this.appendDummyInput()
-			    .appendField(Blockly.Msg.KNIWWELINO_ADPS9960waitforGesture);
-		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960waitforGestureTip);
-		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
-		  },getBlockType: function() {
-			    return Blockly.Types.NUMBER;
-		  }
-};
-
 
