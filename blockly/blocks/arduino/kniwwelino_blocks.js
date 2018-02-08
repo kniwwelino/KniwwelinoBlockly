@@ -710,7 +710,7 @@ Blockly.Blocks['kniwwelino_BME280getValue'] = {
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME280getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
@@ -731,7 +731,7 @@ Blockly.Blocks['kniwwelino_BME680getValue'] = {
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BME680getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
@@ -749,7 +749,7 @@ Blockly.Blocks['kniwwelino_SHT30getValue'] = {
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_SHT30getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
@@ -762,7 +762,7 @@ Blockly.Blocks['kniwwelino_BH1750getLightLevel'] = {
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
@@ -782,9 +782,9 @@ Blockly.Blocks['kniwwelino_ADPS9960getValue'] = {
 			    	[Blockly.Msg.KNIWWELINO_SENSOR_BLUE,"BLUE"]
 			    ]), "VALUE");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960ValueTip);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
 		  },getBlockType: function() {
 			    return Blockly.Types.NUMBER;
 		  }
