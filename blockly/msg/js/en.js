@@ -616,27 +616,29 @@ Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since t
 Blockly.Msg.KNIWWELINO_LOG 		= "Log"
 Blockly.Msg.KNIWWELINO_LOG_LINE = "Log Line"
 Blockly.Msg.KNIWWELINO_LOG_TIP 	= "Logs the given String to the serial Console and MQTT log topic if enabled."
-
 // SENSORS
-Blockly.Msg.KNIWWELINO_BME280getTemperature = "BME-280 get temperature"
-Blockly.Msg.KNIWWELINO_BME280getTemperatureTip = "Uses the ADPS-9960 Sensor to measure temperature in deg celsius";
-Blockly.Msg.KNIWWELINO_BME280getHumidity = "BME-280 get humidity"
-Blockly.Msg.KNIWWELINO_BME280getHumidityTip = "Uses the ADPS-9960 Sensor to measure relative humidity in %";
-Blockly.Msg.KNIWWELINO_BME280getPressure = "BME-280 get pressure"
-Blockly.Msg.KNIWWELINO_BME280getPressureTip = "Uses the ADPS-9960 Sensor to measure pressure in hPa";
-Blockly.Msg.KNIWWELINO_BME280getHeight = "BME-280 get height"
-Blockly.Msg.KNIWWELINO_BME280getHeightTip = "Uses the ADPS-9960 Sensor to measure height in m";
-
-Blockly.Msg.KNIWWELINO_ADPS9960getProximity = "ADPS-9960 get proximity";
-Blockly.Msg.KNIWWELINO_ADPS9960getProximityTip = "Uses the ADPS-9960 Sensor to measure proximity";
-Blockly.Msg.KNIWWELINO_ADPS9960getLux = "ADPS-9960 get lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getLuxTip = "Uses the ADPS-9960 Sensor to measure light intensity in lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getColor = "ADPS-9960 get";
-Blockly.Msg.KNIWWELINO_ADPS9960getColorComponent = "color component";
-Blockly.Msg.KNIWWELINO_ADPS9960ColorTip = "Uses the ADPS-9960 Sensor to measure the selected color component";
-Blockly.Msg.KNIWWELINO_ADPS9960waitforGesture = "ADPS-9960 wait for Gesture";
-Blockly.Msg.KNIWWELINO_ADPS9960waitforGestureTip = "Uses the ADPS-9960 Sensor to detect basic gestures (up, down, left, right)";
-
+Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "temperature"
+Blockly.Msg.KNIWWELINO_SENSOR_HUM = "humidity"
+Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE = "pressure"
+Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT = "height"
+Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "temperature"
+Blockly.Msg.KNIWWELINO_SENSOR_GAS = "gas"
+Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY = "proximity"
+Blockly.Msg.KNIWWELINO_SENSOR_GESTURE = "gesture"
+Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "white level"
+Blockly.Msg.KNIWWELINO_SENSOR_RED = "red level"
+Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "green level"
+Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "blue level"
+Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 get"
+Blockly.Msg.KNIWWELINO_BME280getValueTip = "Uses the BME-280 Sensor to measure the selected value";
+Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 get"
+Blockly.Msg.KNIWWELINO_BME680getValueTip = "Uses the BME-680 Sensor to measure the selected value";
+Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 get"
+Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Uses the SHT30 Sensor to measure the selected value";
+Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 get light level"
+Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Uses the BH1750 Sensor to measure the light level in lux";
+Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 get";
+Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Uses the ADPS-9960 Sensor to measure the selected value";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "on";
