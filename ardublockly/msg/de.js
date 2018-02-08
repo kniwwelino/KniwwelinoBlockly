@@ -75,7 +75,7 @@ Ardublockly.LOCALISED_TEXT = {
   invalidXmlTitle: "Fehlerhaftes XML",
   invalidXmlBody: "Die XML-Datei wurde nicht erfolgreich in Blöcke umgewandelt. Bitte überprüfen Sie den XML-Code und versuchen Sie es erneut.",
   /* Tooltips */
-  uploadingSketch: "Sketch wird in Kniwwelino geladen...",
+  uploadingSketch: "Sketch wird in Kniwwwelino geladen...",
   uploadSketch: "Sketch in Kniwwelino laden",
   verifyingSketch: "Sketch überprüfen...",
   verifySketch: "Überprüfe dem Sketch",

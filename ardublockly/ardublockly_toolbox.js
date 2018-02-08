@@ -27,9 +27,9 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catMatrix" name="Matrix">' +
 '    <block type="kniwwelino_MATRIXwrite">' +
 '      <value name="TEXT">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">Hello Kniwwelino</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 // '    <block type="kniwwelino_MATRIXdrawIconChooser"></block>' +
