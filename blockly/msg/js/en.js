@@ -285,7 +285,7 @@ Blockly.Msg.PROCEDURES_CREATE_DO = "Create '%1'";
 Blockly.Msg.PROCEDURES_DEFNORETURN_COMMENT = "Describe the function...";
 Blockly.Msg.PROCEDURES_DEFNORETURN_DO = "";
 Blockly.Msg.PROCEDURES_DEFNORETURN_HELPURL = "https://en.wikipedia.org/wiki/Procedure_%28computer_science%29";
-Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE = "my function to do something";
+Blockly.Msg.PROCEDURES_DEFNORETURN_PROCEDURE = "do something";
 Blockly.Msg.PROCEDURES_DEFNORETURN_TITLE = "my function to";
 Blockly.Msg.PROCEDURES_DEFNORETURN_TOOLTIP = "Creates a function without output.";
 Blockly.Msg.PROCEDURES_DEFRETURN_HELPURL = "https://en.wikipedia.org/wiki/Procedure_%28computer_science%29";
@@ -609,12 +609,12 @@ Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the sp
 //logic
 Blockly.Msg.KNIWWELINO_IS = "is";
 //times
-Blockly.Msg.KNIWWELINO_TIME_SECONDS = "current elapsed Time (seconds)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "current elapsed time (seconds)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";
 
 // Log
 Blockly.Msg.KNIWWELINO_LOG 		= "Log"
-Blockly.Msg.KNIWWELINO_LOG_LINE = "Log Line"
+Blockly.Msg.KNIWWELINO_LOG_LINE = "Log line"
 Blockly.Msg.KNIWWELINO_LOG_TIP 	= "Logs the given String to the serial Console and MQTT log topic if enabled."
 // SENSORS
 Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "temperature"
@@ -629,15 +629,15 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "white level"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "red level"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "green level"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "blue level"
-Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 get"
+Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 read"
 Blockly.Msg.KNIWWELINO_BME280getValueTip = "Uses the BME-280 Sensor to measure the selected value";
-Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 get"
+Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 read"
 Blockly.Msg.KNIWWELINO_BME680getValueTip = "Uses the BME-680 Sensor to measure the selected value";
-Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 get"
+Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 read"
 Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Uses the SHT30 Sensor to measure the selected value";
-Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 get light level"
+Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 read light level"
 Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Uses the BH1750 Sensor to measure the light level in lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 get";
+Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 read";
 Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Uses the ADPS-9960 Sensor to measure the selected value";
 
 // overwrite default labels

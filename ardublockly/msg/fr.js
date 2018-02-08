@@ -75,7 +75,7 @@ Ardublockly.LOCALISED_TEXT = {
   invalidXmlTitle: "XML invalide",
   invalidXmlBody: "Le fichier XML n'a pas pu être correctement décrypté en blocs. Vérifiez le code XML et réessayez.",
   /* Tooltips */
-  uploadingSketch: "Transfer du code sur le Kniwwelino...",
+  uploadingSketch: "Transfert du code sur le Kniwwelino...",
   uploadSketch: "Transférer le code sur le Kniwwelino",
   verifyingSketch: "Vérififcation du Sketch...",
   verifySketch: "Vérifier le Sketch",

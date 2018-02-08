@@ -625,20 +625,20 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "composante blanche"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "composante rouge"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "composante verte"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "composante bleue"
-Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 lis"
+Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 mesure"
 Blockly.Msg.KNIWWELINO_BME280getValueTip = "Utilise le capteur BME-280 pour mesurer le paramètre sélectionné";
-Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 lis"
+Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 mesure"
 Blockly.Msg.KNIWWELINO_BME680getValueTip = "Utilise le capteur BME-680 pour mesurer le paramètre sélectionné";
-Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 lis"
+Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 mesure"
 Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Utilise le capteur SHT30 pour mesurer le paramètre sélectionné";
-Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 lis la luminosité"
+Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 mesure la luminosité"
 Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Utilise le capteur BH1750 pour mesurer la luminosité en lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 lis";
+Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 mesure";
 Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Utilise le capteur ADPS-9960 pour mesurer le paramètre sélectionné";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "activée";
 //Blockly.Msg.ARD_LOW = "désactivée";
-Blockly.Msg.ARD_FUN_RUN_LOOP = "boucle en continu:";
+Blockly.Msg.ARD_FUN_RUN_LOOP = "boucle continue:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "au démarrage:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "valeur";
