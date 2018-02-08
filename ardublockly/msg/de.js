@@ -75,12 +75,12 @@ Ardublockly.LOCALISED_TEXT = {
   invalidXmlTitle: "Fehlerhaftes XML",
   invalidXmlBody: "Die XML-Datei wurde nicht erfolgreich in Blöcke umgewandelt. Bitte überprüfen Sie den XML-Code und versuchen Sie es erneut.",
   /* Tooltips */
-  uploadingSketch: "Sketch wird in Kniwwelino geladen...",
-  uploadSketch: "Sketch in Kniwwelino laden",
+  uploadingSketch: "Code wird auf Kniwwelino übertragen...",
+  uploadSketch: "Code auf Kniwwelino übertragen",
   verifyingSketch: "Sketch überprüfen...",
   verifySketch: "Überprüfe dem Sketch",
-  openingSketch: "Öffne Sketch in Arduino IDE...",
-  openSketch: "Sketch in Arduino IDE öffnen",
+  openingSketch: "Öffne Code in Arduino IDE...",
+  openSketch: "Code in Arduino IDE öffnen",
   notImplemented: "Funktion noch nicht Verfügbar",
   /* Prompts */
   ok: "OK",
@@ -105,4 +105,5 @@ Ardublockly.LOCALISED_TEXT = {
   catComms: "Comms",
   catMQTT: "Nachrichten",
   catButtons: "Knöpfe",
+  catSensors: "Sensoren",
 };
