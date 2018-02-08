@@ -782,7 +782,7 @@ Blockly.Blocks['kniwwelino_ADPS9960getValue'] = {
 			    	[Blockly.Msg.KNIWWELINO_SENSOR_BLUE,"BLUE"]
 			    ]), "VALUE");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
-		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960ValueTip);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_ADPS9960getValueTip);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
 		  },getBlockType: function() {
