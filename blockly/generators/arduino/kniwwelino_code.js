@@ -99,7 +99,7 @@ Blockly.Arduino['kniwwelino_PINbuttonDown'] = function(block) {
 	var pin = block.getFieldValue('PIN');
 	Blockly.Arduino.reservePin(block, pin, Blockly.Arduino.PinTypes.INPUT, 'Digital Read');
 
-	var pinSetupCode = 'PINenableButton(' + pin + ');';
+	var pinSetupCode = 'Kniwwelino.PINenableButton(' + pin + ');';
 	Blockly.Arduino.addSetup('ioButton_' + pin, pinSetupCode, false);
 	
 	var pin = block.getFieldValue('PIN');
@@ -112,7 +112,7 @@ Blockly.Arduino['kniwwelino_PINbuttonClicked'] = function(block) {
 	var pin = block.getFieldValue('PIN');
 	Blockly.Arduino.reservePin(block, pin, Blockly.Arduino.PinTypes.INPUT, 'Digital Read');
 
-	var pinSetupCode = 'PINenableButton(' + pin + ');';
+	var pinSetupCode = 'Kniwwelino.PINenableButton(' + pin + ');';
 	Blockly.Arduino.addSetup('ioButton_' + pin, pinSetupCode, false);
 	
 	var button = block.getFieldValue('BUTTON');
