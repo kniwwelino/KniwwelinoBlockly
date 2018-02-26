@@ -610,29 +610,33 @@ Blockly.Msg.KNIWWELINO_TIME_SECONDS = "aktuell verstrichene Zeit (Sekunden)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";   // untranslated
 
 //Log
-Blockly.Msg.KNIWWELINO_LOG 		= "Log"
-Blockly.Msg.KNIWWELINO_LOG_LINE = "Log Line"
-Blockly.Msg.KNIWWELINO_LOG_TIP 	= "Logs the given String to the serial Console and MQTT log topic if enabled."
+Blockly.Msg.KNIWWELINO_LOG 		= "logge"
+Blockly.Msg.KNIWWELINO_LOG_LINE = "logge Zeile"
+Blockly.Msg.KNIWWELINO_LOG_TIP 	= "loggt den gegebenen String auf die serielle Konsole und den MQTT Log."
 
 // SENSORS
-Blockly.Msg.KNIWWELINO_BME280getTemperature = "BME-280 get temperature"
-Blockly.Msg.KNIWWELINO_BME280getTemperatureTip = "Uses the ADPS-9960 Sensor to measure temperature in deg celsius";
-Blockly.Msg.KNIWWELINO_BME280getHumidity = "BME-280 get humidity"
-Blockly.Msg.KNIWWELINO_BME280getHumidityTip = "Uses the ADPS-9960 Sensor to measure relative humidity in %";
-Blockly.Msg.KNIWWELINO_BME280getPressure = "BME-280 get pressure"
-Blockly.Msg.KNIWWELINO_BME280getPressureTip = "Uses the ADPS-9960 Sensor to measure pressure in hPa";
-Blockly.Msg.KNIWWELINO_BME280getHeight = "BME-280 get height"
-Blockly.Msg.KNIWWELINO_BME280getHeightTip = "Uses the ADPS-9960 Sensor to measure height in m";
-
-Blockly.Msg.KNIWWELINO_ADPS9960getProximity = "ADPS-9960 get proximity";
-Blockly.Msg.KNIWWELINO_ADPS9960getProximityTip = "Uses the ADPS-9960 Sensor to measure proximity";
-Blockly.Msg.KNIWWELINO_ADPS9960getLux = "ADPS-9960 get lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getLuxTip = "Uses the ADPS-9960 Sensor to measure light intensity in lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getColor = "ADPS-9960 get";
-Blockly.Msg.KNIWWELINO_ADPS9960getColorComponent = "color component";
-Blockly.Msg.KNIWWELINO_ADPS9960ColorTip = "Uses the ADPS-9960 Sensor to measure the selected color component";
-Blockly.Msg.KNIWWELINO_ADPS9960waitforGesture = "ADPS-9960 wait for Gesture";
-Blockly.Msg.KNIWWELINO_ADPS9960waitforGestureTip = "Uses the ADPS-9960 Sensor to detect basic gestures (up, down, left, right)";
+Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "Temperatur"
+Blockly.Msg.KNIWWELINO_SENSOR_HUM = "Luftfeuchtigkeit"
+Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE = "Luftdruck"
+Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT = "Höhe"
+Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "Temperatur"
+Blockly.Msg.KNIWWELINO_SENSOR_GAS = "Gas"
+Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY = "Distanz"
+Blockly.Msg.KNIWWELINO_SENSOR_GESTURE = "Geste"
+Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "Weißanteil"
+Blockly.Msg.KNIWWELINO_SENSOR_RED = "Rotanteil"
+Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "Grünanteil"
+Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
+Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 lese"
+Blockly.Msg.KNIWWELINO_BME280getValueTip = "Verwendet den BME-280 Sensor um den gewählten Parameter zu messen";
+Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 lese"
+Blockly.Msg.KNIWWELINO_BME680getValueTip = "Verwendet den BME-680 Sensor um den gewählten Parameter zu messen";
+Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 lese"
+Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Verwendet den SHT-30 Sensor um den gewählten Parameter zu messen";
+Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 lese Helligkeit"
+Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Verwendet den BH1750 Sensor um die Helligkeit in lux zu messen";
+Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 lese";
+Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Verwendet den ADPS-9960 Sensor um den gewählten Parameter zu messen";
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";

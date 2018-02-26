@@ -152,45 +152,45 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MQTTconnectMATRIX"></block>' +
 '    <block type="kniwwelino_MQTTpublish">' +
 '      <value name="MESSAGE">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">Hello Friends!</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '      <value name="TOPIC">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">MATRIX/TEXT</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MQTTpublish">' +
 '      <value name="MESSAGE">' +
-'        <block type="kniwwelino_MATRIXdrawIconCreator">' +
+'        <shadow type="kniwwelino_MATRIXdrawIconCreator">' +
 '          <field name="TEXT"></field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '      <value name="TOPIC">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">MATRIX/ICON</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MQTTpublish">' +
 '      <value name="MESSAGE">' +
-'        <block type="kniwwelino_RGBselectColor">' +
+'        <shadow type="kniwwelino_RGBselectColor">' +
 '          <field name="TEXT"></field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '      <value name="TOPIC">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">RGB/COLOR</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MQTTsubscribe">' +
 '      <value name="TOPIC">' +
-'        <block type="text">' +
+'        <shadow type="text">' +
 '          <field name="TEXT">MATRIX/TEXT</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '  </category>' +
@@ -307,16 +307,16 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catTime" name="Time">' +
 '    <block type="kniwwelino_sleepsec">' +
 '      <value name="DELAY_TIME_SEC">' +
-'        <block type="math_number">' +
+'        <shadow type="math_number">' +
 '          <field name="NUM">5</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_sleep">' +
 '      <value name="DELAY_TIME_MILI">' +
-'        <block type="math_number">' +
+'        <shadow type="math_number">' +
 '          <field name="NUM">1000</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 //'    <block type="time_delay">' +
@@ -405,9 +405,9 @@ Ardublockly.TOOLBOX_XML =
 '  <category id="catMotors" name="Motors">' +
 '    <block type="servo_write">' +
 '      <value name="SERVO_ANGLE">' +
-'        <block type="math_number">' +
+'        <shadow type="math_number">' +
 '          <field name="NUM">90</field>' +
-'        </block>' +
+'        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="servo_read"></block>' +
