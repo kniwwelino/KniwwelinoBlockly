@@ -216,6 +216,20 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		  }
 		};
 
+Blockly.Blocks['kniwwelino_RGBsetEffect'] = {
+		  init: function() {
+			this.setInputsInline(true);
+		    this.appendDummyInput()
+		    	.appendField(Blockly.Msg.KNIWWELINO_RGB_SETEFFECT)
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		    this.setPreviousStatement(true, null);
+		    this.setNextStatement(true, null);
+		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETEFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		  }
+		};
+
 Blockly.Blocks['kniwwelino_RGBsetColorFromString'] = {
 		   init: function() {
 			 this.setInputsInline(true);

@@ -145,6 +145,11 @@ Blockly.Arduino['kniwwelino_RGBsetColorEffect'] = function(block) {
 		 block.getFieldValue('EFFECT') + ', -1' +');\n';
 };
 
+Blockly.Arduino['kniwwelino_RGBsetEffect'] = function(block) {
+	kniwwelinoBaseCode();
+	return 'Kniwwelino.RGBsetEffect(' + block.getFieldValue('EFFECT') + ', -1' +');\n';
+};
+
 Blockly.Arduino['kniwwelino_RGBsetColorFromString'] = function(block) {
 	kniwwelinoBaseCode();
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);

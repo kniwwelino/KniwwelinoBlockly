@@ -129,7 +129,7 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
-// '    <block type="kniwwelino_RGBsetBrightness"></block>' +
+'    <block type="kniwwelino_RGBsetEffect"></block>' +
 '    <block type="kniwwelino_RGBsetBrightnessFromVariable">' +
 '      <value name="BRIGHTNESS">' +
 '        <shadow type="math_number">' +
