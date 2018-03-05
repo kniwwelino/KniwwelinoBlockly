@@ -24,7 +24,7 @@ Blockly.Blocks['arduino_functions_setup'] = {
    */
   init: function() {
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("./img/kn02.png", 84, 24, "*"))
+		.appendField(new Blockly.FieldImage("../blockly/media/kn02.png", 84, 24, "*"))
         .appendField(Blockly.Msg.ARD_FUN_RUN_SETUP);
     this.appendStatementInput('SETUP_FUNC');
     this.setInputsInline(false);
@@ -48,7 +48,7 @@ Blockly.Blocks['arduino_functions_loop'] = {
    */
   init: function() {
     this.appendDummyInput()
-		.appendField(new Blockly.FieldImage("./img/kn02.png", 84, 24, "*"))
+		.appendField(new Blockly.FieldImage("../blockly/media/kn02.png", 84, 24, "*"))
         .appendField(Blockly.Msg.ARD_FUN_RUN_LOOP);
     this.appendStatementInput('LOOP_FUNC');
   	this.setPreviousStatement(false);
