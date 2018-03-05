@@ -17,7 +17,6 @@ Ardublockly.init = function() {
   // Inject Blockly into content_blocks and fetch additional blocks
   Ardublockly.injectBlockly(document.getElementById('content_blocks'),
                             Ardublockly.TOOLBOX_XML, '../blockly/');
-  Ardublockly.importExtraBlocks();
 
   Ardublockly.designJsInit();
   Ardublockly.initialiseIdeButtons();
@@ -28,15 +27,6 @@ Ardublockly.init = function() {
 
   Blockly.HSV_SATURATION =  0.87; //0.70;
   Blockly.HSV_VALUE = 0.83; //0.47; //0.70;
-
-
-  // Hackish way to check if not running locally
-  if (document.location.hostname != 'localhost') {
-    Ardublockly.openNotConnectedModal();
-    console.log('Offline app modal opened as non localhost host name found: ' +
-                document.location.hostname)
-  }
-
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -45,33 +35,6 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('button_load', Ardublockly.loadUserXmlFile);
   Ardublockly.bindClick_('button_save', Ardublockly.saveXmlFile);
   Ardublockly.bindClick_('button_delete', Ardublockly.discardAllBlocks);
-
-
-  // Side menu buttons, they also close the side menu
-  Ardublockly.bindClick_('menu_load', function() {
-    Ardublockly.loadUserXmlFile();
-    $('.button-collapse').sideNav('hide');
-  });
-  Ardublockly.bindClick_('menu_save', function() {
-    Ardublockly.saveXmlFile();
-    $('.button-collapse').sideNav('hide');
-  });
-  Ardublockly.bindClick_('menu_delete', function() {
-    Ardublockly.discardAllBlocks();
-    $('.button-collapse').sideNav('hide');
-  });
-  Ardublockly.bindClick_('menu_settings', function() {
-    Ardublockly.openSettings();
-    $('.button-collapse').sideNav('hide');
-  });
-  Ardublockly.bindClick_('menu_example_1', function() {
-    Ardublockly.loadServerXmlFile('../examples/bf_wristband.xml');
-    $('.button-collapse').sideNav('hide');
-  });
-  Ardublockly.bindClick_('menu_example_2', function() {
-    Ardublockly.loadServerXmlFile('../examples/rock_paper_scissors.xml');
-    $('.button-collapse').sideNav('hide');
-  });
 
   // Floating buttons
   Ardublockly.bindClick_('button_ide_large', function() {
@@ -84,36 +47,6 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
-
-  // Settings modal input field listeners only if they can be edited
-  var settingsPathInputListeners = function(elId, setValFunc, setHtmlCallback) {
-    var el = document.getElementById(elId);
-    if (el.readOnly === false) {
-      // Event listener that send the data when the user presses 'Enter'
-      el.onkeypress = function(e) {
-        if (!e) e = window.event;
-        var keyCode = e.keyCode || e.which;
-        if (keyCode == '13') {
-          setValFunc(el.value, function(jsonObj) {
-            setHtmlCallback(ArdublocklyServer.jsonToHtmlTextInput(jsonObj));
-          });
-          return false;
-        }
-      };
-      // Event listener that send the data when moving out of the input field
-      el.onblur = function() {
-        setValFunc(el.value, function(jsonObj) {
-          setHtmlCallback(ArdublocklyServer.jsonToHtmlTextInput(jsonObj));
-        });
-      };
-    }
-  };
-  settingsPathInputListeners('settings_compiler_location',
-                             ArdublocklyServer.setCompilerLocation,
-                             Ardublockly.setCompilerLocationHtml);
-  settingsPathInputListeners('settings_sketch_location',
-                             ArdublocklyServer.setSketchLocationHtml,
-                             Ardublockly.setSketchLocationHtml);
 };
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */
@@ -201,9 +134,6 @@ Ardublockly.loadServerXmlFile = function(xmlFile) {
             Ardublockly.getLocalStr('invalidXmlBody'),
             false);
       }
-    };
-    var connectionErrorCb = function() {
-      Ardublockly.openNotConnectedModal();
     };
     Ardublockly.loadXmlBlockFile(xmlFile, loadXmlCb, connectionErrorCb);
   };
@@ -299,33 +229,7 @@ Ardublockly.saveTextFileAs = function(fileName, content) {
   saveAs(blob, fileName);
 };
 
-/**
- * Retrieves the Settings from ArdublocklyServer to populates the form data
- * and opens the Settings modal dialog.
- */
-Ardublockly.openSettings = function() {
-  ArdublocklyServer.requestCompilerLocation(function(jsonObj) {
-    Ardublockly.setCompilerLocationHtml(
-        ArdublocklyServer.jsonToHtmlTextInput(jsonObj));
-  });
-  ArdublocklyServer.requestSketchLocation(function(jsonObj) {
-    Ardublockly.setSketchLocationHtml(
-        ArdublocklyServer.jsonToHtmlTextInput(jsonObj));
-  });
-  ArdublocklyServer.requestArduinoBoards(function(jsonObj) {
-    Ardublockly.setArduinoBoardsHtml(
-        ArdublocklyServer.jsonToHtmlDropdown(jsonObj));
-  });
-  ArdublocklyServer.requestSerialPorts(function(jsonObj) {
-    Ardublockly.setSerialPortsHtml(
-        ArdublocklyServer.jsonToHtmlDropdown(jsonObj));
-  });
-  ArdublocklyServer.requestIdeOptions(function(jsonObj) {
-    Ardublockly.setIdeHtml(ArdublocklyServer.jsonToHtmlDropdown(jsonObj));
-  });
-  // Language menu only set on page load within Ardublockly.initLanguage()
-  Ardublockly.openSettingsModal();
-};
+
 
 /**
  * Sets the compiler location form data retrieve from an updated element.
@@ -333,7 +237,6 @@ Ardublockly.openSettings = function() {
  * @return {undefined} Might exit early if response is null.
  */
 Ardublockly.setCompilerLocationHtml = function(newEl) {
-  if (newEl === null) return Ardublockly.openNotConnectedModal();
 
   var compLocIp = document.getElementById('settings_compiler_location');
   if (compLocIp != null) {
@@ -349,7 +252,6 @@ Ardublockly.setCompilerLocationHtml = function(newEl) {
  * @return {undefined} Might exit early if response is null.
  */
 Ardublockly.setSketchLocationHtml = function(newEl) {
-  if (newEl === null) return Ardublockly.openNotConnectedModal();
 
   var sketchLocIp = document.getElementById('settings_sketch_location');
   if (sketchLocIp != null) {
@@ -366,7 +268,6 @@ Ardublockly.setSketchLocationHtml = function(newEl) {
  * @return {undefined} Might exit early if response is null.
  */
 Ardublockly.setArduinoBoardsHtml = function(newEl) {
-  if (newEl === null) return Ardublockly.openNotConnectedModal();
 
   var boardDropdown = document.getElementById('board');
   if (boardDropdown !== null) {
@@ -402,7 +303,6 @@ Ardublockly.setBoard = function() {
  * @return {undefined} Might exit early if response is null.
  */
 Ardublockly.setSerialPortsHtml = function(newEl) {
-  if (newEl === null) return Ardublockly.openNotConnectedModal();
 
   var serialDropdown = document.getElementById('serial_port');
   if (serialDropdown !== null) {
@@ -434,7 +334,6 @@ Ardublockly.setSerial = function() {
  * @return {undefined} Might exit early if response is null.
  */
 Ardublockly.setIdeHtml = function(newEl) {
-  if (newEl === null) return Ardublockly.openNotConnectedModal();
 
   var ideDropdown = document.getElementById('ide_settings');
   if (ideDropdown !== null) {
@@ -484,7 +383,6 @@ Ardublockly.sendCode = function() {
    */
   var sendCodeReturn = function(jsonObj) {
     Ardublockly.largeIdeButtonSpinner(false);
-    if (jsonObj === null) return Ardublockly.openNotConnectedModal();
     var dataBack = ArdublocklyServer.jsonToIdeModal(jsonObj);
     Ardublockly.arduinoIdeOutput(dataBack);
   };
@@ -580,112 +478,6 @@ Ardublockly.toogleToolbox = function() {
 /** @return {boolean} Indicates if the toolbox is currently visible. */
 Ardublockly.isToolboxVisible = function() {
   return Ardublockly.TOOLBAR_SHOWING_;
-};
-
-/**
- * Lazy loads the additional block JS files from the ./block directory.
- * Initialises any additional Ardublockly extensions.
- * TODO: Loads the examples into the examples modal
- */
-Ardublockly.importExtraBlocks = function() {
-  /**
-   * Parses the JSON data to find the block and languages js files.
-   * @param {jsonDataObj} jsonDataObj JSON in JavaScript object format, null
-   *     indicates an error occurred.
-   * @return {undefined} Might exit early if response is null.
-   */
-  var jsonDataCb = function(jsonDataObj) {
-    if (jsonDataObj === null) return Ardublockly.openNotConnectedModal();
-    if (jsonDataObj.categories !== undefined) {
-      var head = document.getElementsByTagName('head')[0];
-      for (var catDir in jsonDataObj.categories) {
-        var blocksJsLoad = document.createElement('script');
-        blocksJsLoad.src = '../blocks/' + catDir + '/blocks.js';
-        head.appendChild(blocksJsLoad);
-
-        var blocksLangJsLoad = document.createElement('script');
-        blocksLangJsLoad.src = '../blocks/' + catDir + '/msg/' + 'messages.js';
-            //'lang/' + Ardublockly.LANG + '.js';
-        head.appendChild(blocksLangJsLoad);
-
-        var blocksGeneratorJsLoad = document.createElement('script');
-        blocksGeneratorJsLoad.src = '../blocks/' + catDir +
-            '/generator_arduino.js';
-        head.appendChild(blocksGeneratorJsLoad);
-
-        // Check if the blocks add additional Ardublockly functionality
-        var extensions = jsonDataObj.categories[catDir].extensions;
-        if (extensions) {
-          for (var i = 0; i < extensions.length; i++) {
-            var blockExtensionJsLoad = document.createElement('script');
-            blockExtensionJsLoad.src = '../blocks/' + catDir + '/extensions.js';
-            head.appendChild(blockExtensionJsLoad);
-            // Add function to scheduler as lazy loading has to complete first
-            setTimeout(function(category, extension) {
-              var extensionNamespaces = extension.split('.');
-              var extensionCall = window;
-              var invalidFunc = false;
-              for (var j = 0; j < extensionNamespaces.length; j++) {
-                extensionCall = extensionCall[extensionNamespaces[j]];
-                if (extensionCall === undefined) {
-                  invalidFunc = true;
-                  break;
-                }
-              }
-              if (typeof extensionCall != 'function') {
-                invalidFunc = true;
-              }
-              if (invalidFunc) {
-                throw 'Blocks ' + category.categoryName + ' extension "' +
-                      extension + '" is not a valid function.';
-              } else {
-                extensionCall();
-              }
-            }, 800, jsonDataObj.categories[catDir], extensions[i]);
-          }
-        }
-      }
-    }
-  };
-  // Reads the JSON data containing all block categories from ./blocks directory
-  // TODO: Now reading a local file, to be replaced by server generated JSON
-  ArdublocklyServer.getJson('../blocks/blocks_data.json', jsonDataCb);
-};
-
-/** Opens a modal with a list of categories to add or remove to the toolbox */
-Ardublockly.openExtraCategoriesSelect = function() {
-  /**
-   * Parses the JSON data from the server into a list of additional categories.
-   * @param {jsonDataObj} jsonDataObj JSON in JavaScript object format, null
-   *     indicates an error occurred.
-   * @return {undefined} Might exit early if response is null.
-   */
-  var jsonDataCb = function(jsonDataObj) {
-    if (jsonDataObj === null) return Ardublockly.openNotConnectedModal();
-    var htmlContent = document.createElement('div');
-    if (jsonDataObj.categories !== undefined) {
-      for (var catDir in jsonDataObj.categories) {
-        // Function required to maintain each loop variable scope separated
-        (function(cat) {
-          var clickBind = function(tickValue) {
-            if (tickValue) {
-              var catDom = (new DOMParser()).parseFromString(
-                  cat.toolbox.join(''), 'text/xml').firstChild;
-              Ardublockly.addToolboxCategory(cat.toolboxName, catDom);
-            } else {
-              Ardublockly.removeToolboxCategory(cat.toolboxName);
-            }
-          };
-          htmlContent.appendChild(Ardublockly.createExtraBlocksCatHtml(
-              cat.categoryName, cat.description, clickBind));
-        })(jsonDataObj.categories[catDir]);
-      }
-    }
-    Ardublockly.openAdditionalBlocksModal(htmlContent);
-  };
-  // Reads the JSON data containing all block categories from ./blocks directory
-  // TODO: Now reading a local file, to be replaced by server generated JSON
-  ArdublocklyServer.getJson('../blocks/blocks_data.json', jsonDataCb);
 };
 
 /** Informs the user that the selected function is not yet implemented. */
