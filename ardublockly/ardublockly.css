@@ -306,6 +306,29 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     line-height: 80px;
     color: black;
 }
+
+#button_manageKniwwelino {
+
+}
+
+.manageKniwwelino {
+	display: inline !important;
+	border: none;
+}
+
+@media only screen and (max-width: 480px) {
+	#manageKniwwelino.modal {
+	  min-width: 100%;
+	}
+}
+
+@media only screen and (min-width: 481px) {
+	#manageKniwwelino.modal {
+	  max-width: 480px;
+	}
+}
+
+
 .languageMenu-wrapper {
 	width: 100px;
 }

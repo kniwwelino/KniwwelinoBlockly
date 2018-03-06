@@ -46,6 +46,7 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
+	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal)
 };
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */
@@ -173,7 +174,43 @@ Ardublockly.saveTextFileAs = function(fileName, content) {
   saveAs(blob, fileName);
 };
 
+Ardublockly.renderKniwwelinosModal = function() {
+	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
+	if (!kniwwelinoLocalStorage) {
+		return;
+	}
 
+	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
+	var kniwwelinos = document.getElementById('listKniwwelinosModal').value;
+	kniwwelinos = '';
+	kniwwelinos += `You are managing: ${kniwwelinoJSON.length} Kniwwelinos`;
+
+	kniwwelinos += '<ul class="collection">';
+
+	for (var i = 0; i < kniwwelinoJSON.length; i++) {
+		kniwwelinos += '<li class="collection-item avatar">';
+		kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
+		kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
+		kniwwelinos += `<span class="id">${kniwwelinoJSON[i].id}</span><br>`;
+		kniwwelinos += `<span class="mac">${kniwwelinoJSON[i].mac}</span>`;
+		kniwwelinos += '<a href="#!" class="btn-floating btn secondary-content"><i class="mdi-content-remove-circle-outline red"></i></a>';
+		kniwwelinos += '</li>';
+	}
+	kniwwelinos += '</ul>';
+
+	kniwwelinos += '<ul class="collection">';
+	kniwwelinos += '<li class="collection-item avatar">';
+	kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
+	kniwwelinos += `<span class="title">Name</span><br>`;
+	kniwwelinos += `<span class="id">ID</span><br>`;
+	kniwwelinos += `<span class="mac">MAC</span>`;
+	kniwwelinos += '<a href="#!" class="btn-floating btn secondary-content"><i class="mdi-content-add-circle-outline green"></i></a>';
+	kniwwelinos += '</li>';
+
+	kniwwelinos += '</ul>';
+
+	document.getElementById('listKniwwelinosModal').innerHTML = kniwwelinos;
+};
 
 /**
  * Sets the compiler location form data retrieve from an updated element.

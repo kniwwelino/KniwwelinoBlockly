@@ -106,4 +106,6 @@ Ardublockly.LOCALISED_TEXT = {
   catMQTT: "Nachrichten",
   catButtons: "Knöpfe",
   catSensors: "Sensoren",
+	/*Modal Dialog to manage Kniwwelino*/
+	manageKniwwelinoHeading: "Verwalte deine Kniwwelinos",
 };

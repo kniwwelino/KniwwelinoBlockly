@@ -105,4 +105,6 @@ Ardublockly.LOCALISED_TEXT = {
   catMotors: "Motors",
   catComms: "Comms",
   catMQTT: "Messages",
+	/*Modal Dialog to manage Kniwwelino*/
+	manageKniwwelinoHeading: "Manage your Kniwwelino boards",
 };

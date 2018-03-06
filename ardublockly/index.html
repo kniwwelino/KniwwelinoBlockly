@@ -80,6 +80,10 @@
       </a>
       <!-- Horizontal Navbar links only shown on large resolutions -->
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a id="button_manageKniwwelino" class="modal-trigger" href="#manageKniwwelino"><i class="mdi-content-add"></i></a></li>
+				<li><select name="settings_kniwwelino" id="kniwwelino" class="manageKniwwelino browser-default input-field">
+					<option value="default"><span class="translatable_addKniwwelino">... add Kniwwelino first</span></option>
+				</select></li>
         <li><a href="#" id="button_load"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
         <li><a href="#" id="button_save"><span class="translatable_save">Save</span><i class="mdi-file-file-download left"></i></a></li>
         <li><a href="#" id="button_delete"><span class="translatable_deleteAll">Delete All</span><i class="mdi-action-delete left"></i></a></li>
@@ -218,21 +222,16 @@
     </div>
   </div>
 
-  <!-- Local Modal to be shown if Ardublockly Server is not running. -->
-  <div id="not_running_dialog" class="modal">
+  <!-- Local Modal to manage Kniwwelino board. -->
+  <div id="manageKniwwelino" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <div>
-        <h4 id="gen_alert_title"><span class="translatable_noServerTitle">Ardublockly app not running</span></h4>
-      </div>
-      <div class="translatable_noServerTitleBody">
-        <p>For all the Kniwwelino-Blockly features to be enabled, the Kniwwelino-Blockly desktop application must be running locally on your computer.</p>
-        <p>If you are using an online version you will not be able to configure the settings nor load the blocks code into an Kniwwelino.</p>
-        <p>Installation instruction can be found in the <a href=\"http://doku.kniwwelino.lu/en/installation\">Kniwwelino Documentation Wiki</a>.</p>
-        <p>If you have Kniwwelino-Blockly already installed, make sure the application is running correctly.</p>
-      </div>
+      <h4><span class="translatable_manageKniwwelinoHeading">Manage your Kniwwelino boards</span></h4>
+    	<div id="listKniwwelinosModal">add Kniwwelino first</div>		
     </div>
     <div class="modal-footer">
-      <a id="gen_alert_ok_link" href="#" class="waves-effect btn-flat modal-close"><span class="translatable_okay">Okay</span></a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">
+				<span class="translatable_return">Return</span>
+			</a>
     </div>
   </div>
 
