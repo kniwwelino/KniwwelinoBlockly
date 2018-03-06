@@ -306,6 +306,38 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     line-height: 80px;
     color: black;
 }
+.languageMenu-wrapper {
+	width: 100px;
+}
+
+
+.languageMenu-wrapper:after {
+    content: "▼";
+    position: absolute;
+    right: -10px;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    width: 100px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.languageMenu {
+	height: 70%;
+  position: relative;
+	display: inline !important;
+	border: none;
+	border-bottom: 1px solid grey;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.languageMenu::-ms-expand {
+   display:none;
+}
+
 
 @media only screen and (min-width : 993px) {
   body {

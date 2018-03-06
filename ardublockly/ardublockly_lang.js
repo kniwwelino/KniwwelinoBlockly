@@ -40,9 +40,14 @@ Ardublockly.initLanguage = function() {
   // Save the current default language ID to check if it has been changed
   var defaultLang = Ardublockly.LANG;
 
+	var browserLang = navigator.language || navigator.userLanguage;
+	if (browserLang) {
+		browserLang = browserLang.substr(0,2);
+	}
+
   // Check server settings and url language, url gets priority
   Ardublockly.LANG = Ardublockly.getUrlLanguage() ||
-      Ardublockly.getLanguageSetting() || Ardublockly.LANG;
+      browserLang || Ardublockly.getLanguageSetting() || Ardublockly.LANG;
 
 	Ardublockly.populateLanguageMenu(Ardublockly.LANG);
 
