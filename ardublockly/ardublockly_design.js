@@ -49,21 +49,29 @@ Ardublockly.bindDesignEventListeners = function() {
   // Resize blockly workspace on window resize
   window.addEventListener(
       'resize', Ardublockly.resizeBlocklyWorkspace, false);
+	// Display/hide the XML load button when the XML collapsible header is clicked
+	document.getElementById('arduino_collapsible_header').addEventListener(
+		  'click', Ardublockly.buttonDownloadArduinoDisplay);
   // Display/hide the XML load button when the XML collapsible header is clicked
   document.getElementById('xml_collapsible_header').addEventListener(
       'click', Ardublockly.buttonLoadXmlCodeDisplay);
   // Toggle the content height on click to the IDE output collapsible header
   document.getElementById('ide_output_collapsible_header').addEventListener(
-      'click', function() {
-        Ardublockly.contentHeightToggle();
+      'click',  function() {
+         Ardublockly.contentHeightToggle();
       });
-  // Display/hide the additional IDE buttons when mouse over/out of play button
-  $('#button_ide_large').mouseenter(function() {
-      Ardublockly.showExtraIdeButtons(true);
-  });
-  $('#ide_buttons_wrapper').mouseleave(function() {
-      Ardublockly.showExtraIdeButtons(false);
-  });
+};
+
+Ardublockly.buttonDownloadArduinoDisplay = function() {
+  var xmlCollapsibleBody = document.getElementById('arduino_collapsible_body');
+  // Waiting 400 ms to check status due to the animation delay (300 ms)
+  setTimeout(function() {
+    if (xmlCollapsibleBody.style.display == 'none') {
+      $('#download_arduino').hide();
+    } else {
+      $('#download_arduino').fadeIn('slow');
+    }
+  }, 400);
 };
 
 /**
@@ -80,60 +88,6 @@ Ardublockly.buttonLoadXmlCodeDisplay = function() {
       $('#button_load_xml').fadeIn('slow');
     }
   }, 400);
-};
-
-/**
- * Changes the IDE launch buttons based on the option indicated in the argument.
- * @param {!string} value One of the 3 possible values from the drop down select
- *     in the settings modal: 'upload', 'verify', or 'open'.
- */
-Ardublockly.changeIdeButtonsDesign = function(value) {
-  var buttonMiddle = document.getElementById('button_ide_middle');
-  var iconMiddle = document.getElementById('button_ide_middle_icon');
-  var buttonLarge = document.getElementById('button_ide_large');
-  var iconLarge = document.getElementById('button_ide_large_icon');
-
-  if (value === 'upload') {
-    buttonMiddle.className =
-        buttonMiddle.className.replace(/arduino_\S+/, 'arduino_yellow');
-    iconMiddle.className = 'mdi-action-open-in-browser';
-    buttonLarge.className =
-        buttonLarge.className.replace(/arduino_\S+/, 'arduino_orange');
-    iconLarge.className = 'mdi-av-play-arrow';
-  }  else if (value === 'open') {
-    buttonMiddle.className =
-        buttonMiddle.className.replace(/arduino_\S+/, 'arduino_orange');
-    iconMiddle.className = 'mdi-av-play-arrow';
-    buttonLarge.className =
-        buttonLarge.className.replace(/arduino_\S+/, 'arduino_yellow');
-    iconLarge.className = 'mdi-action-open-in-browser';
-  }
-};
-
-/**
- * Displays or hides the additional Arduino IDE action buttons.
- * Hide/display effects done with CCS3 transitions on visibility and opacity.
- * @param {!boolean} show Indicates if the extra buttons are to be shown.
- */
-Ardublockly.showExtraIdeButtons = function(show) {
-  var IdeButtonMiddle = document.getElementById('button_ide_middle');
-  if (show) {
-    // prevent previously set time-out to hide buttons while trying to show them
-    clearTimeout(Ardublockly.outHoldtimeoutHandle);
-    clearTimeout(Ardublockly.hidetimeoutHandle);
-    IdeButtonMiddle.style.visibility = 'visible';
-    IdeButtonMiddle.style.opacity = '1';
-  } else {
-    // As the mouse out can be accidental, only hide them after a delay
-    Ardublockly.outHoldtimeoutHandle = setTimeout(function() {
-      // Prevent show time-out to affect the hiding of the buttons
-      clearTimeout(Ardublockly.showtimeoutHandle);
-      Ardublockly.hidetimeoutHandle = setTimeout(function() {
-        IdeButtonMiddle.style.visibility = 'hidden';
-        IdeButtonMiddle.style.opacity = '0';
-      }, 50);
-    }, 200);
-  }
 };
 
 /**

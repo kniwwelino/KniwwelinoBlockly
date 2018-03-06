@@ -118,7 +118,7 @@ ArdublocklyServer.jsonToIdeModal = function(jsonObj) {
 
   // Add the Standard and Error outputs
   var ideData = jsonObj.ide_data;
-  if (ideData && (ideData.std_output !== undefined) && 
+  if (ideData && (ideData.std_output !== undefined) &&
       (ideData.err_output !== undefined)) {
     elStdOp.innerHTML = ideData.std_output.split('\n').join('<br />');
     elErrOp.innerHTML = ideData.err_output.split('\n').join('<br />');

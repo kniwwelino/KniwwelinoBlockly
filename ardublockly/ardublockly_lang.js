@@ -44,6 +44,7 @@ Ardublockly.initLanguage = function() {
   Ardublockly.LANG = Ardublockly.getUrlLanguage() ||
       Ardublockly.getLanguageSetting() || Ardublockly.LANG;
 
+	Ardublockly.populateLanguageMenu(Ardublockly.LANG);
 
   if (defaultLang !== Ardublockly.LANG) {
       Ardublockly.duplicateDefaultLang();
@@ -76,6 +77,25 @@ Ardublockly.getUrlLanguage = function() {
   }
   return language;
 };
+
+/**
+ * Populates the settings language selection menu.
+ * @param {!string} selectedLang Language to be marked as selected.
+ */
+Ardublockly.populateLanguageMenu = function(selectedLang) {
+  var languageMenu = document.getElementById('language');
+  languageMenu.options.length = 0;
+
+  for (var lang in Ardublockly.LANGUAGE_NAME) {
+    var option = new Option(Ardublockly.LANGUAGE_NAME[lang], lang);
+    if (lang == selectedLang) {
+      option.selected = true;
+    }
+    languageMenu.options.add(option);
+  }
+  languageMenu.onchange = Ardublockly.changeLanguage;
+};
+
 
 /**
  * Because new languages are injected by overwriting Ardublockly.LOCALISED_TEXT

@@ -83,7 +83,11 @@
         <li><a href="#" id="button_load"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
         <li><a href="#" id="button_save"><span class="translatable_save">Save</span><i class="mdi-file-file-download left"></i></a></li>
         <li><a href="#" id="button_delete"><span class="translatable_deleteAll">Delete All</span><i class="mdi-action-delete left"></i></a></li>
+
+				<li><select name="settings_language" id="language" class="languageMenu"></select></li>
       </ul>
+
+
     </div>
   </nav>
 
@@ -95,46 +99,45 @@
         <a id="button_toggle_toolbox" class="waves-effect waves-light btn-flat button_toggle_toolbox_off" style="display: none"><i id="button_toggle_toolbox_icon" class="mdi-action-visibility-off"></i></a>
         <!-- Arduino IDE action buttons -->
         <div id="ide_buttons_wrapper">
-          <a id="button_ide_middle" class="waves-effect waves-light waves-circle z-depth-1-half arduino_yellow"><i id="button_ide_middle_icon" class="mdi-action-open-in-browser"></i></a>
           <a id="button_ide_large" class="waves-effect waves-light waves-circle z-depth-1-half arduino_orange"><i id="button_ide_large_icon" class="mdi-av-play-arrow"></i></a>
-          <div id="button_ide_large_spinner" class="preloader-wrapper active ide_loader" style="display:none">
-            <div class="spinner-layer spinner-orange">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-            <div class="spinner-layer spinner-dark-teal">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-            <div class="spinner-layer spinner-yellow">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-            <div class="spinner-layer spinner-light-teal">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-          </div>
+					<div id="button_ide_large_spinner" class="preloader-wrapper active ide_loader" style="display:none">
+					 <div class="spinner-layer spinner-orange">
+						 <div class="circle-clipper left">
+							 <div class="circle"></div>
+						 </div><div class="gap-patch">
+							 <div class="circle"></div>
+						 </div><div class="circle-clipper right">
+							 <div class="circle"></div>
+						 </div>
+					 </div>
+					 <div class="spinner-layer spinner-dark-teal">
+						 <div class="circle-clipper left">
+							 <div class="circle"></div>
+						 </div><div class="gap-patch">
+							 <div class="circle"></div>
+						 </div><div class="circle-clipper right">
+							 <div class="circle"></div>
+						 </div>
+					 </div>
+					 <div class="spinner-layer spinner-yellow">
+						 <div class="circle-clipper left">
+							 <div class="circle"></div>
+						 </div><div class="gap-patch">
+							 <div class="circle"></div>
+						 </div><div class="circle-clipper right">
+							 <div class="circle"></div>
+						 </div>
+					 </div>
+					 <div class="spinner-layer spinner-light-teal">
+						 <div class="circle-clipper left">
+							 <div class="circle"></div>
+						 </div><div class="gap-patch">
+							 <div class="circle"></div>
+						 </div><div class="circle-clipper right">
+							 <div class="circle"></div>
+						 </div>
+					 </div>
+				 </div>
         </div>
         <!-- Blockly Panel -->
         <div class="card-panel white" style="padding: 0">
@@ -146,11 +149,12 @@
       <div class="col s12 m12 l4" id="codesidebar" style="visibility: hidden;">
         <ul class="collapsible z-depth-1" data-collapsible="accordion">
           <li>
-            <div class="sourcecode collapsible-header active waves-effect waves-teal"> <!--active-->
+            <div class="sourcecode collapsible-header active waves-effect waves-teal" id="arduino_collapsible_header">
               <span class="collapsible_logo">{ }</span>
               <span class="translatable_arduinoSourceCode">Arduino Source Code</span>
             </div>
-            <div class="collapsible-body">
+            <div class="collapsible-body" style="position:relative" id="arduino_collapsible_body">
+							<a id="download_arduino" class="btn btn-floating btn-large waves-effect waves-light blue right z-depth-1-half"><i class="mdi-file-file-download"></i></a>
               <pre id="content_arduino" class="content content_height_transition content_arduino_large"></pre>
             </div>
           </li>
@@ -160,7 +164,7 @@
               <span class="translatable_blocksXml">Blocks XML</span>
             </div>
             <div class="collapsible-body" style="position:relative" id="xml_collapsible_body">
-              <a class="btn-floating btn-large waves-effect waves-light arduino_teal z-depth-1-half" id="button_load_xml"><i class="mdi-action-extension"></i></a>
+              <a id="button_load_xml" class="btn-floating btn-large waves-effect waves-light arduino_teal z-depth-1-half"><i class="mdi-action-extension"></i></a>
               <textarea id="content_xml" class="content content_height_transition content_xml_large" wrap="soft"></textarea>
             </div>
           </li>

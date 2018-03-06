@@ -38,12 +38,11 @@ Ardublockly.bindActionFunctions = function() {
 
   // Floating buttons
   Ardublockly.bindClick_('button_ide_large', function() {
-    Ardublockly.ideButtonLargeAction();
-  });
-  Ardublockly.bindClick_('button_ide_middle', function() {
-      Ardublockly.ideButtonMiddleAction();
+		console.log('Button Event: Upload Arduino code to server');
+    Ardublockly.ideSendUpload();
   });
   Ardublockly.bindClick_('button_load_xml', Ardublockly.XmlTextareaToBlocks);
+	Ardublockly.bindClick_('download_arduino', Ardublockly.saveSketchFile);
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
@@ -51,70 +50,15 @@ Ardublockly.bindActionFunctions = function() {
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */
 Ardublockly.ideSendUpload = function() {
-  // Check if this is the currently selected option before edit sever setting
-  if (Ardublockly.ideButtonLargeAction !== Ardublockly.ideSendUpload) {
-    Ardublockly.showExtraIdeButtons(false);
-    Ardublockly.setIdeSettings(null, 'upload');
-  }
   Ardublockly.shortMessage(Ardublockly.getLocalStr('uploadingSketch'));
   Ardublockly.resetIdeOutputContent();
   Ardublockly.sendCode();
 };
 
-/** Sets the Ardublockly server IDE setting to open and sends the code. */
-Ardublockly.ideSendOpen = function() {
-  // Check if this is the currently selected option before edit sever setting
-  if (Ardublockly.ideButtonLargeAction !== Ardublockly.ideSendOpen) {
-    Ardublockly.showExtraIdeButtons(false);
-    Ardublockly.setIdeSettings(null, 'open');
-  }
-  Ardublockly.shortMessage(Ardublockly.getLocalStr('openingSketch'));
-  Ardublockly.resetIdeOutputContent();
-  Ardublockly.sendCode();
-};
-
-/** Function bound to the left IDE button, to be changed based on settings. */
-Ardublockly.ideButtonLargeAction = Ardublockly.ideSendUpload;
-
-/** Function bound to the middle IDE button, to be changed based on settings. */
-Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendOpen;
-
 /** Initialises the IDE buttons with the default option from the server. */
 Ardublockly.initialiseIdeButtons = function() {
-  document.getElementById('button_ide_middle').title =
-      Ardublockly.getLocalStr('openSketch');
   document.getElementById('button_ide_large').title =
       Ardublockly.getLocalStr('uploadSketch');
-  ArdublocklyServer.requestIdeOptions(function(jsonObj) {
-    if (jsonObj != null) {
-      Ardublockly.changeIdeButtons(jsonObj.selected);
-    } // else Null: Ardublockly server is not running, do nothing
-  });
-};
-
-/**
- * Changes the IDE launch buttons based on the option indicated in the argument.
- * @param {!string} value One of the 3 possible values from the drop down select
- *     in the settings modal: 'upload', 'verify', or 'open'.
- */
-Ardublockly.changeIdeButtons = function(value) {
-  var largeButton = document.getElementById('button_ide_large');
-  var middleButton = document.getElementById('button_ide_middle');
-  var openTitle = Ardublockly.getLocalStr('openSketch');
-  var uploadTitle = Ardublockly.getLocalStr('uploadSketch');
-  if (value === 'upload') {
-    Ardublockly.changeIdeButtonsDesign(value);
-    Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendOpen;
-    Ardublockly.ideButtonLargeAction = Ardublockly.ideSendUpload;
-    middleButton.title = openTitle;
-    largeButton.title = uploadTitle;
-  } else if (value === 'open') {
-    Ardublockly.changeIdeButtonsDesign(value);
-    Ardublockly.ideButtonMiddleAction = Ardublockly.ideSendUpload;
-    Ardublockly.ideButtonLargeAction = Ardublockly.ideSendOpen;
-    middleButton.title = uploadTitle;
-    largeButton.title = openTitle;
-  }
 };
 
 /**
@@ -348,25 +292,6 @@ Ardublockly.setIdeHtml = function(newEl) {
   }
 };
 
-/**
- * Sets the IDE settings data with the selected user input from the drop down.
- * @param {Event} e Event that triggered this function call. Required for link
- *     it to the listeners, but not used.
- * @param {string} preset A value to set the IDE settings bypassing the drop
- *     down selected value. Valid data: 'upload', 'verify', or 'open'.
- */
-Ardublockly.setIdeSettings = function(e, preset) {
-  if (preset !== undefined) {
-    var ideValue = preset;
-  } else {
-    var el = document.getElementById('ide_settings');
-    var ideValue = el.options[el.selectedIndex].value;
-  }
-  Ardublockly.changeIdeButtons(ideValue);
-  ArdublocklyServer.setIdeOptions(ideValue, function(jsonObj) {
-    Ardublockly.setIdeHtml(ArdublocklyServer.jsonToHtmlDropdown(jsonObj));
-  });
-};
 
 /**
  * Send the Arduino Code to the ArdublocklyServer to process.
