@@ -313,7 +313,7 @@ Ardublockly.sendCode = function() {
   };
 
   ArdublocklyServer.sendSketchToServer(
-      Ardublockly.generateArduino(), sendCodeReturn);
+      Ardublockly.generateArduino(), document.getElementById('sketch_name').value, sendCodeReturn);
 };
 
 /** Populate the workspace blocks with the XML written in the XML text area. */

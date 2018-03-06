@@ -336,7 +336,7 @@ ArdublocklyServer.setIdeOptions = function(ide_option, callback) {
  * @param {!function} callback Callback function for the server request, must
  *     have one argument to receive the JSON response.
  */
-ArdublocklyServer.sendSketchToServer = function(code, callback) {
+ArdublocklyServer.sendSketchToServer = function(code, name, callback) {
   ArdublocklyServer.sendRequest(
-      '/code', 'POST', 'application/json', {"sketch_code": code}, callback);
+      '/code', 'POST', 'application/json', {"sketch_code": code, "sketch_name": name}, callback);
 };
