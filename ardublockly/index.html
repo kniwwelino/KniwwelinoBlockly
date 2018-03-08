@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="prettify/arduino.css">
   <link rel="stylesheet" href="ardublockly.css" media="screen,projection">
   <link rel="stylesheet" href="font/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!-- led matrix editor -->
+	<link rel="stylesheet" href="ledmatrix.css">
+
+	<!-- <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script> -->
+  <!-- bootstrap --><!-- TODO check sideeffect with the led matrix position! -->
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
 
   <script src="./js_libs/sweetalert.min.js"></script>
 
@@ -226,7 +233,7 @@
   <div id="manageKniwwelino" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4><span class="translatable_manageKniwwelinoHeading">Manage your Kniwwelino boards</span></h4>
-    	<div id="listKniwwelinosModal">add Kniwwelino first</div>		
+    	<div id="listKniwwelinosModal">add Kniwwelino first</div>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">
@@ -252,6 +259,7 @@
   <script src="ardublockly_toolbox.js"></script>
   <script src="ardublockly_blockly.js"></script>
   <script src="ardublockly.js"></script>
+	<script src="ledmatrix.js"></script>
   <script>
     window.addEventListener('load', function load(event) {
       window.removeEventListener('load', load, false);

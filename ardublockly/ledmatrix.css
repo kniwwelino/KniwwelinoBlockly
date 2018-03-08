@@ -1,0 +1,83 @@
+html, body {
+    min-height: 100%;
+}
+
+table.leds,
+table.cols,
+table.rows {
+    border-spacing: 11px;
+    border-collapse: separate;
+}
+
+table.leds {
+  /* background-color: #333; */
+  /* box-shadow: 1px 1px 10px #333; */
+	/* border-width: 1px; */
+	/* border-style: solid; */
+}
+
+
+table.cols td,
+table.rows td,
+table.leds td {
+  width: 12px;
+  min-width: 12px;
+  max-width: 12px;
+  height: 12px;
+  min-height: 12px;
+  max-height: 12px;
+  cursor: pointer;
+	font-size: 15px;
+	line-height: 5px;
+}
+
+table.leds td {
+    border-radius: 30%;
+    box-shadow: inset 0 0 1px #666666;
+		transform: rotate3d(0, 0, 1, 45deg);
+    /* background: lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%); */ */
+}
+
+table.leds td.active {
+    background: orangered radial-gradient(ellipse at center, lightcoral 0%, orangered 50%, red 100%);
+}
+
+table.cols td.hover,
+table.rows td.hover,
+table.cols td:hover,
+table.rows td:hover {
+    color: orangered;
+    font-weight: bold;
+}
+
+.ledmatrix {
+	padding-left: 86px;
+	padding-top: 86px;
+}
+
+/* .ledmatrix {
+	padding-left: 52px;
+	padding-top: 50px;
+} */
+
+.led2id {
+  background-image: url('img/kniwwelino300.png');
+	width: 300px;
+	height: 300px;
+}
+
+div.ideditor {
+	position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+	/* -webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-o-transform: scale(0.8);
+	transform: scale(0.8); */
+}

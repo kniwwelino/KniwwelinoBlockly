@@ -198,18 +198,34 @@ Ardublockly.renderKniwwelinosModal = function() {
 	}
 	kniwwelinos += '</ul>';
 
-	kniwwelinos += '<ul class="collection">';
-	kniwwelinos += '<li class="collection-item avatar">';
-	kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
+	// kniwwelinos += '<ul class="collection">';
+	// kniwwelinos += '<li class="collection-item">';
+	kniwwelinos += '<div>';
+	kniwwelinos += '<div class="ideditor">';
+	kniwwelinos += '<div class="led2id">';
+	kniwwelinos += '	<table style="display: inline-block" class="ledmatrix">';
+	kniwwelinos += '				<tr>';
+	kniwwelinos += '						<td></td>';
+	kniwwelinos += '					<td id="cols"></td>';
+	kniwwelinos += '			</tr>';
+	kniwwelinos += '			<tr>';
+	kniwwelinos += '					<td id="rows"></td>';
+	kniwwelinos += '					<td id="leds"></td>';
+	kniwwelinos += '			</tr>';
+	kniwwelinos += '		</table>';
+	kniwwelinos += '	</div>';
+	kniwwelinos += '</div>';
+	kniwwelinos += '</div>';
 	kniwwelinos += `<span class="title">Name</span><br>`;
 	kniwwelinos += `<span class="id">ID</span><br>`;
 	kniwwelinos += `<span class="mac">MAC</span>`;
 	kniwwelinos += '<a href="#!" class="btn-floating btn secondary-content"><i class="mdi-content-add-circle-outline green"></i></a>';
-	kniwwelinos += '</li>';
-
-	kniwwelinos += '</ul>';
+	// kniwwelinos += '</li>';
+	//
+	// kniwwelinos += '</ul>';
 
 	document.getElementById('listKniwwelinosModal').innerHTML = kniwwelinos;
+	Ardublockly.LedMatrix();
 };
 
 /**
