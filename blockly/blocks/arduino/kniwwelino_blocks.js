@@ -692,6 +692,24 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP);
 			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+			     this.setOutput(false);
+		   },
+		   /**
+		    * @return {!string} Retrieves the type (stored in varType) of this block.
+		    * @this Blockly.Block
+		    */
+		   getBlockType: function() {
+		     return [Blockly.Types.UNDEF, this.getFieldValue('VAR')];
+		   },
+		   /**
+		    * Gets the stored type of the variable indicated in the argument. As only one
+		    * variable is stored in this block, no need to check input
+		    * @this Blockly.
+		    * @param {!string} varName Name of this block variable to check type.
+		    * @return {!string} String to indicate the type of this block.
+		    */
+		   getVarType: function(varName) {
+		     return [Blockly.Types.UNDEF, this.getFieldValue('VAR')];
 		   }
 };
 
