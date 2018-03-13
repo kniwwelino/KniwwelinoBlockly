@@ -125,6 +125,7 @@ Blockly.Arduino.init = function(workspace) {
 
   // Set variable declarations with their Arduino type in the defines dictionary
   for (var varName in varsWithTypes) {
+	  
     Blockly.Arduino.addVariable(varName,
     Blockly.Arduino.getArduinoType_(varsWithTypes[varName]) +' ' +
     Blockly.Arduino.variableDB_.getName(varName, Blockly.Variables.NAME_TYPE) + ';');
@@ -463,7 +464,8 @@ Blockly.Arduino.getArduinoType_ = function(typeBlockly) {
     case Blockly.Types.NULL.typeId:
       return 'void';
     case Blockly.Types.UNDEF.typeId:
-      return 'undefined';
+    	// As undefined causes Problems, default to String.
+      return 'String';
     case Blockly.Types.CHILD_BLOCK_MISSING.typeId:
       // If no block connected default to int, change for easier debugging
       //return 'ChildBlockMissing';
