@@ -253,13 +253,6 @@ var getProgramMenuData = function() {
                         .executeJavaScript('Ardublockly.ideSendOpen()');
                 }
             }, {
-                label: 'Verify',
-                accelerator: 'CmdOrCtrl+R',
-                click: function() {
-                    BrowserWindow.getFocusedWindow().webContents
-                        .executeJavaScript('Ardublockly.ideSendVerify()');
-                }
-            }, {
                 label: 'Upload program',
                 accelerator: 'CmdOrCtrl+U',
                 click: function() {
