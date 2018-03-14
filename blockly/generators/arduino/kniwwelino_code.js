@@ -133,9 +133,8 @@ Blockly.Arduino['kniwwelino_RGBsetRGB'] = function(block) {
 	var r = Blockly.Arduino.valueToCode(block, 'RED', Blockly.Arduino.ORDER_ATOMIC);
 	var g = Blockly.Arduino.valueToCode(block, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
 	var b = Blockly.Arduino.valueToCode(block, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
-	return ['"' + (Number(r)+0x10000).toString(16).substr(-2).toUpperCase()
-							+ (Number(g)+0x10000).toString(16).substr(-2).toUpperCase()
-							+ (Number(b)+0x10000).toString(16).substr(-2).toUpperCase() + '"', Blockly.Arduino.ORDER_ATOMIC];
+
+	return ['Kniwwelino.RGBcolor2Hex('+r+', '+g+', '+b+')', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_RGBsetColorEffect'] = function(block) {
@@ -167,8 +166,8 @@ Blockly.Arduino['kniwwelino_RGBsetBrightnessFromVariable'] = function(block) {
 	kniwwelinoBaseCode();
 	var brightness = Blockly.Arduino.valueToCode(
 		      block, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0';
-	brightness = Math.round(brightness);
-	return  'Kniwwelino.RGBsetBrightness(' + brightness + ');\n';
+	// brightness = Math.round(brightness);
+	return  'Kniwwelino.RGBsetBrightness((int)' + brightness + ');\n';
 };
 
 Blockly.Arduino['kniwwelino_RGBclear'] = function(block) {
