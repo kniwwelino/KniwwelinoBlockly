@@ -615,6 +615,11 @@ Blockly.Msg.KNIWWELINO_LOG_LINE = "Log Line"
 Blockly.Msg.KNIWWELINO_LOG_TIP 	= "Logs the given String to the serial Console and MQTT log topic if enabled."
 
 // SENSORS
+Blockly.Msg.KNIWWELINO_SENSOR_READ = " mesure "
+Blockly.Msg.KNIWWELINO_SENSOR_TIP = "Utilise le capteur pour mesurer le paramètre sélectionné";
+Blockly.Msg.KNIWWELINO_SENSOR_DISTANCE = "distance"
+Blockly.Msg.KNIWWELINO_SENSOR_CM = " [cm]"
+Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL = "luminosité en lux"
 Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "température"
 Blockly.Msg.KNIWWELINO_SENSOR_HUM = "humidité"
 Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE = "pression"
@@ -627,16 +632,13 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "composante blanche"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "composante rouge"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "composante verte"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "composante bleue"
-Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 mesure"
-Blockly.Msg.KNIWWELINO_BME280getValueTip = "Utilise le capteur BME-280 pour mesurer le paramètre sélectionné";
-Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 mesure"
-Blockly.Msg.KNIWWELINO_BME680getValueTip = "Utilise le capteur BME-680 pour mesurer le paramètre sélectionné";
-Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 mesure"
-Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Utilise le capteur SHT30 pour mesurer le paramètre sélectionné";
-Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 mesure la luminosité"
-Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Utilise le capteur BH1750 pour mesurer la luminosité en lux";
-Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 mesure";
-Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Utilise le capteur ADPS-9960 pour mesurer le paramètre sélectionné";
+	
+// AUDIO
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Play Note"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Play Tone" 
+Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "of duration 1/"
+Blockly.Msg.KNIWWELINO_AUDIO_PIN = "on Pin"
+Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Turn tone off on pin"
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "activée";

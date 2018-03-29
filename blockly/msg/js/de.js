@@ -617,28 +617,31 @@ Blockly.Msg.KNIWWELINO_LOG_LINE = "logge Zeile"
 Blockly.Msg.KNIWWELINO_LOG_TIP 	= "loggt den gegebenen String auf die serielle Konsole und den MQTT Log."
 
 // SENSORS
+Blockly.Msg.KNIWWELINO_SENSOR_READ = " messe "
+Blockly.Msg.KNIWWELINO_SENSOR_TIP = "Verwendet den Sensor um den gewählten Parameter zu messen";
+Blockly.Msg.KNIWWELINO_SENSOR_DISTANCE = "Entfernung"
+Blockly.Msg.KNIWWELINO_SENSOR_CM = " [cm]"
+Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL = "Helligkeit"
 Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "Temperatur"
 Blockly.Msg.KNIWWELINO_SENSOR_HUM = "Luftfeuchtigkeit"
 Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE = "Luftdruck"
 Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT = "Höhe"
 Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "Temperatur"
 Blockly.Msg.KNIWWELINO_SENSOR_GAS = "Gas"
-Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY = "Distanz"
+Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY = "Nähe"
 Blockly.Msg.KNIWWELINO_SENSOR_GESTURE = "Geste"
 Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "Weißanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "Rotanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "Grünanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
-Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 lese"
-Blockly.Msg.KNIWWELINO_BME280getValueTip = "Verwendet den BME-280 Sensor um den gewählten Parameter zu messen";
-Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 lese"
-Blockly.Msg.KNIWWELINO_BME680getValueTip = "Verwendet den BME-680 Sensor um den gewählten Parameter zu messen";
-Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 lese"
-Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Verwendet den SHT-30 Sensor um den gewählten Parameter zu messen";
-Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 lese Helligkeit"
-Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Verwendet den BH1750 Sensor um die Helligkeit in lux zu messen";
-Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 lese";
-Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Verwendet den ADPS-9960 Sensor um den gewählten Parameter zu messen";
+	
+// AUDIO
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Spiele Note"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Spiele Ton" 
+Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "mit Länge"
+Blockly.Msg.KNIWWELINO_AUDIO_PIN = "an Pin"
+Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton ab an Pin"
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";
