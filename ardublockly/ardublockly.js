@@ -198,28 +198,54 @@ Ardublockly.renderKniwwelinosModal = function() {
 	}
 	kniwwelinos += '</ul>';
 
+		//
+	  // <div class="row">
+	  //   <div class="col s12 m6">
+	  //     <div class="card">
+	  //       <div class="card-image">
+	  //         <img src="images/sample-1.jpg">
+	  //         <span class="card-title">Card Title</span>
+	  //         <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+	  //       </div>
+	  //       <div class="card-content">
+	  //         <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+	  //       </div>
+	  //     </div>
+	  //   </div>
+	  // </div>
+
 	// kniwwelinos += '<ul class="collection">';
 	// kniwwelinos += '<li class="collection-item">';
-	kniwwelinos += '<div>';
+	// kniwwelinos += '<div class="row">';
+	// kniwwelinos += '    <div class="col s12 m6">';
+	kniwwelinos += '<div id="addKniwwelino">';
 	kniwwelinos += '<div class="ideditor">';
 	kniwwelinos += '<div class="led2id">';
 	kniwwelinos += '	<table style="display: inline-block" class="ledmatrix">';
 	kniwwelinos += '				<tr>';
 	kniwwelinos += '						<td></td>';
-	kniwwelinos += '					<td id="cols"></td>';
+	kniwwelinos += '					<td id="ledcols"></td>';
 	kniwwelinos += '			</tr>';
 	kniwwelinos += '			<tr>';
-	kniwwelinos += '					<td id="rows"></td>';
+	kniwwelinos += '					<td id="ledrows"></td>';
 	kniwwelinos += '					<td id="leds"></td>';
 	kniwwelinos += '			</tr>';
 	kniwwelinos += '		</table>';
 	kniwwelinos += '	</div>';
 	kniwwelinos += '</div>';
+	// kniwwelinos += '</div>';
+	kniwwelinos += `<div class="col s12">`;
+	kniwwelinos += '<label for="name">Kniwwelino Name</label>';
+	kniwwelinos += '<input placeholder="My Kniwwelino" id="name" type="text" class="validate">';
 	kniwwelinos += '</div>';
-	kniwwelinos += `<span class="title">Name</span><br>`;
 	kniwwelinos += `<span class="id">ID</span><br>`;
-	kniwwelinos += `<span class="mac">MAC</span>`;
-	kniwwelinos += '<a href="#!" class="btn-floating btn secondary-content"><i class="mdi-content-add-circle-outline green"></i></a>';
+	// kniwwelinos += `<span class="mac">MAC</span>`;
+	kniwwelinos += '<a href="#!" id="button_addKniwwelino" class="btn-floating btn secondary-content"><i class="mdi-content-add-circle-outline green"></i></a>';
+	kniwwelinos += '<div class="ledmatrix-description">';
+	kniwwelinos += '	<p></p>';
+	kniwwelinos += '</div>';
+	kniwwelinos += '</div>';
+
 	// kniwwelinos += '</li>';
 	//
 	// kniwwelinos += '</ul>';

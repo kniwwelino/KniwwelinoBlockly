@@ -83,8 +83,8 @@ Ardublockly.LedMatrix = function () {
         saveState();
     }
 
-    $('#cols').append($(generator.tableCols()));
-    $('#rows').append($(generator.tableRows()));
+    $('#ledcols').append($(generator.tableCols()));
+    $('#ledrows').append($(generator.tableRows()));
     $leds.append($(generator.tableLeds()));
 
     $leds.find('td').mousedown(function () {
@@ -92,14 +92,14 @@ Ardublockly.LedMatrix = function () {
       ledsToHex();
     });
 
-    $('table.cols td').mousedown(function () {
+    $('table.ledcols td').mousedown(function () {
         var col = $(this).attr('data-col');
         $leds.find('td[data-col=' + col + ']').toggleClass('active',
             $leds.find('td[data-col=' + col + '].active').length != 8);
         ledsToHex();
     });
 
-    $('table.rows td[data-row]').mousedown(function () {
+    $('table.ledrows td[data-row]').mousedown(function () {
         var row = $(this).attr('data-row');
         $leds.find('td[data-row=' + row + ']').toggleClass('active',
             $leds.find('td[data-row=' + row + '].active').length != 8);
@@ -107,11 +107,11 @@ Ardublockly.LedMatrix = function () {
     });
 
     $('#indexSelectsWhole').hover(function () {
-        $('table.cols td').addClass('hover');
-        $('table.rows td').addClass('hover');
+        $('table.ledcols td').addClass('hover');
+        $('table.ledrows td').addClass('hover');
     }, function () {
-        $('table.cols td').removeClass('hover');
-        $('table.rows td').removeClass('hover');
+        $('table.ledcols td').removeClass('hover');
+        $('table.ledrows td').removeClass('hover');
     });
 
 
