@@ -545,8 +545,8 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'setze RGB LED Helligkeit auf';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Setze die Helligkeit der RGB LED (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'schalte RGB LED aus'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Schaltet die RGB LED aus'
-Blockly.Msg.KNIWWELINO_RGB_TIP = 'Set the colors by numberic values for red, green and blue. [0-255]';  // untranslated
-Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-255.";  // untranslated
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Setze die Farbe der RGB LED durch nummerische Werte für rot, grün und blau. [0-255]';
+Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "Der Wert muss im Bereich 0-255 liegen.";
 Blockly.Msg.KNIWWELINO_RGB_RED = "rot";
 Blockly.Msg.KNIWWELINO_RGB_GREEN = "grün";
 Blockly.Msg.KNIWWELINO_RGB_BLUE = "blau";
@@ -560,12 +560,12 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = 'zeige ein Icon auf der Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = 'Zeigt ein Icon aus der Liste auf der LED Matrix an';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = 'zeige ein Icon auf der Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = 'Zeigt ein Icon auf der LED Matrix an';
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'Enable or disable a pixel on the matrix';  // untranslated
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Enable or disable a pixel on the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4]. The LED state 0 is off bigger value is on.';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'zeichne einen Pixel auf der LED Matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Schalte einen Pixel auf der LED Matrix an oder aus. X ist die Position in der Reihe [0-4]. Y ist die Position der Zeile [0-4]. Ist der LED Zustand 0 ist der LED Pixel aus, Werte größer 0 schalten den LED Pixel an.';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED state';  // untranslated
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED Zustand';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'Der Wert muss im Bereich 0-4 liegen.';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'schreibe Text auf Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Zeigt einen gegebenen Text auf der LED Matrix an';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'wiederholend';
@@ -617,28 +617,31 @@ Blockly.Msg.KNIWWELINO_LOG_LINE = "logge Zeile"
 Blockly.Msg.KNIWWELINO_LOG_TIP 	= "loggt den gegebenen String auf die serielle Konsole und den MQTT Log."
 
 // SENSORS
+Blockly.Msg.KNIWWELINO_SENSOR_READ = " messe "
+Blockly.Msg.KNIWWELINO_SENSOR_TIP = "Verwendet den Sensor um den gewählten Parameter zu messen";
+Blockly.Msg.KNIWWELINO_SENSOR_DISTANCE = "Entfernung"
+Blockly.Msg.KNIWWELINO_SENSOR_CM = " [cm]"
+Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL = "Helligkeit"
 Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "Temperatur"
 Blockly.Msg.KNIWWELINO_SENSOR_HUM = "Luftfeuchtigkeit"
 Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE = "Luftdruck"
 Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT = "Höhe"
 Blockly.Msg.KNIWWELINO_SENSOR_TEMP = "Temperatur"
 Blockly.Msg.KNIWWELINO_SENSOR_GAS = "Gas"
-Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY = "Distanz"
+Blockly.Msg.KNIWWELINO_SENSOR_PROXIMITY = "Nähe"
 Blockly.Msg.KNIWWELINO_SENSOR_GESTURE = "Geste"
 Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "Weißanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "Rotanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "Grünanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
-Blockly.Msg.KNIWWELINO_BME280getValue = "BME-280 lese"
-Blockly.Msg.KNIWWELINO_BME280getValueTip = "Verwendet den BME-280 Sensor um den gewählten Parameter zu messen";
-Blockly.Msg.KNIWWELINO_BME680getValue = "BME-680 lese"
-Blockly.Msg.KNIWWELINO_BME680getValueTip = "Verwendet den BME-680 Sensor um den gewählten Parameter zu messen";
-Blockly.Msg.KNIWWELINO_SHT30getValue = "SHT30 lese"
-Blockly.Msg.KNIWWELINO_SHT30getValueTip = "Verwendet den SHT-30 Sensor um den gewählten Parameter zu messen";
-Blockly.Msg.KNIWWELINO_BH1750getLightLevel = "BH1750 lese Helligkeit"
-Blockly.Msg.KNIWWELINO_BH1750getLightLevelTip = "Verwendet den BH1750 Sensor um die Helligkeit in lux zu messen";
-Blockly.Msg.KNIWWELINO_ADPS9960getValue = "ADPS-9960 lese";
-Blockly.Msg.KNIWWELINO_ADPS9960getValueTip = "Verwendet den ADPS-9960 Sensor um den gewählten Parameter zu messen";
+	
+// AUDIO
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Spiele Note"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Spiele Ton" 
+Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "mit Länge"
+Blockly.Msg.KNIWWELINO_AUDIO_PIN = "an Pin"
+Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton ab an Pin"
+
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";

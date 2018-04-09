@@ -68,16 +68,16 @@ Blockly.Arduino['kniwwelino_sleep'] = function(block) {
 	kniwwelinoBaseCode();
 	var delayTime = Blockly.Arduino.valueToCode(
 	      block, 'DELAY_TIME_MILI', Blockly.Arduino.ORDER_ATOMIC) || '0';
-	delayTime = Math.round(delayTime);
-	return 'Kniwwelino.sleep(' + delayTime + ');\n' ;
+	//delayTime = Math.round(delayTime);
+	return 'Kniwwelino.sleep((unsigned long) ' + delayTime + ');\n' ;
 };
 
 Blockly.Arduino['kniwwelino_sleepsec'] = function(block) {
 	kniwwelinoBaseCode();
 	var delayTime = Blockly.Arduino.valueToCode(
 	      block, 'DELAY_TIME_SEC', Blockly.Arduino.ORDER_ATOMIC) || '0';
-	delayTime = Math.round(delayTime * 1000);
-	return 'Kniwwelino.sleep(' + delayTime + ');\n' ;
+	//delayTime = Math.round(delayTime * 1000);
+	return 'Kniwwelino.sleep((unsigned long) (' + delayTime+ '*1000) );\n' ;
 };
 
 Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
@@ -133,9 +133,8 @@ Blockly.Arduino['kniwwelino_RGBsetRGB'] = function(block) {
 	var r = Blockly.Arduino.valueToCode(block, 'RED', Blockly.Arduino.ORDER_ATOMIC);
 	var g = Blockly.Arduino.valueToCode(block, 'GREEN', Blockly.Arduino.ORDER_ATOMIC);
 	var b = Blockly.Arduino.valueToCode(block, 'BLUE', Blockly.Arduino.ORDER_ATOMIC);
-	return ['"' + (Number(r)+0x10000).toString(16).substr(-2).toUpperCase()
-							+ (Number(g)+0x10000).toString(16).substr(-2).toUpperCase()
-							+ (Number(b)+0x10000).toString(16).substr(-2).toUpperCase() + '"', Blockly.Arduino.ORDER_ATOMIC];
+
+	return ['Kniwwelino.RGBcolor2Hex('+r+', '+g+', '+b+')', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_RGBsetColorEffect'] = function(block) {
@@ -167,8 +166,8 @@ Blockly.Arduino['kniwwelino_RGBsetBrightnessFromVariable'] = function(block) {
 	kniwwelinoBaseCode();
 	var brightness = Blockly.Arduino.valueToCode(
 		      block, 'BRIGHTNESS', Blockly.Arduino.ORDER_ATOMIC) || '0';
-	brightness = Math.round(brightness);
-	return  'Kniwwelino.RGBsetBrightness(' + brightness + ');\n';
+	// brightness = Math.round(brightness);
+	return  'Kniwwelino.RGBsetBrightness((int)' + brightness + ');\n';
 };
 
 Blockly.Arduino['kniwwelino_RGBclear'] = function(block) {
@@ -427,3 +426,59 @@ Blockly.Arduino['kniwwelino_ADPS9960getValue'] = function(block) {
 	}
 	return ""
 };
+
+Blockly.Arduino['kniwwelino_HCSR04getValue'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('HCSR04', '#include <HCSR04.h>');
+	Blockly.Arduino.addDeclaration('HCSR04', 'UltraSonicDistanceSensor hcsr04(D0, D5);');
+	return ['hcsr04.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+//==== AUDIO ==============================================
+
+Blockly.Arduino['kniwwelino_playNote'] = function(block) {
+	  var pin = block.getFieldValue('TONEPIN');
+	  var freq = Blockly.Arduino.valueToCode(block, 'NOTE', Blockly.Arduino.ORDER_ATOMIC);
+	  var dur  = Blockly.Arduino.valueToCode(block, 'NOTE_DURATION', Blockly.Arduino.ORDER_ATOMIC);
+	  Blockly.Arduino.reservePin(
+	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
+
+	  var pinSetupCode = 'pinMode(' + pin + ', OUTPUT);\n';
+	  Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
+
+	  var code = 'Kniwwelino.playNote(' + pin + ', ' + freq + ', ' + dur + ');\n';
+	  return code;
+	};
+
+Blockly.Arduino['kniwwelino_playTone'] = function(block) {
+	  var pin = block.getFieldValue('TONEPIN');
+	  var freq = Blockly.Arduino.valueToCode(block, 'NOTE', Blockly.Arduino.ORDER_ATOMIC);
+	  Blockly.Arduino.reservePin(
+	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
+
+	  var pinSetupCode = 'pinMode(' + pin + ', OUTPUT);\n';
+	  Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
+
+	  var code = 'Kniwwelino.playTone(' + pin + ', ' + freq + ');\n';
+	  return code;
+	};
+
+
+Blockly.Arduino['kniwwelino_toneOff'] = function(block) {
+	  var pin = block.getFieldValue("TONEPIN");
+	  Blockly.Arduino.reservePin(
+	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
+	  
+	  var pinSetupCode = 'pinMode(' + pin + ', OUTPUT);\n';
+	  Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
+
+	  var code = 'Kniwwelino.toneOff(' + pin + ');\n';
+	  return code;
+	};
+	
+	
+Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
+		kniwwelinoBaseCode();
+		var freq = block.getFieldValue('NOTE');
+		return [freq, Blockly.Arduino.ORDER_ATOMIC];
+	};

@@ -326,13 +326,13 @@ Ardublockly.TOOLBOX_XML =
 //'        </block>' +
 //'      </value>' +
 //'    </block>' +
-//'    <block type="time_delaymicros">' +
-//'      <value name="DELAY_TIME_MICRO">' +
-//'        <block type="math_number">' +
-//'          <field name="NUM">100</field>' +
-//'        </block>' +
-//'      </value>' +
-//'    </block>' +
+'    <block type="time_delaymicros">' +
+'      <value name="DELAY_TIME_MICRO">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">10</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
 '    <block type="time_seconds"></block>' +
 '    <block type="time_millis"></block>' +
 //'    <block type="time_micros"></block>' +
@@ -389,18 +389,32 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '  </category>' +
 //'  <sep></sep>' +
-//'  <sep></sep>' +
-//'  <category id="catAudio" name="Audio">' +
-//'    <block type="io_tone">' +
-//'      <field name="TONEPIN">0</field>' +
-//'      <value name="FREQUENCY">' +
-//'        <shadow type="math_number">' +
-//'          <field name="NUM">220</field>' +
-//'        </shadow>' +
-//'      </value>' +
-//'    </block>' +
-//'    <block type="io_notone"></block>' +
-//'  </category>' +
+'  <sep></sep>' +
+'  <category id="catAudio" name="Audio">' +
+'    <block type="kniwwelino_playNote">' +
+'      <value name="NOTE">' +
+'        <shadow type="kniwwelino_toneChooser">' +
+'       	<field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'        </shadow>' +
+'      </value>' +
+'      <value name="NOTE_DURATION">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">4</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_playTone">' +
+'      <value name="NOTE">' +
+'        <shadow type="kniwwelino_toneChooser">' +
+'       	<field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_toneOff"></block>' +
+'    <block type="kniwwelino_toneChooser">' + 
+'       <field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'    </block>' +
+'  </category>' +
 '  <sep></sep>' +
 '  <category id="catMotors" name="Motors">' +
 '    <block type="servo_write">' +
@@ -454,6 +468,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_SHT30getValue"></block>' +
 '    <block type="kniwwelino_BH1750getLightLevel"></block>' +
 '    <block type="kniwwelino_ADPS9960getValue"></block>' +
+'    <block type="kniwwelino_HCSR04getValue"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
