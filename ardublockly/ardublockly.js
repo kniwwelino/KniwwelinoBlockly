@@ -20,6 +20,7 @@ Ardublockly.init = function() {
 
   Ardublockly.designJsInit();
   Ardublockly.initialiseIdeButtons();
+	Ardublockly.initKniwwelinoList();
 
   Ardublockly.bindDesignEventListeners();
   Ardublockly.bindActionFunctions();
@@ -174,50 +175,50 @@ Ardublockly.saveTextFileAs = function(fileName, content) {
   saveAs(blob, fileName);
 };
 
+Ardublockly.initKniwwelinoList = function() {
+	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
+	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
+	var kniwwelinos = '<li><select name="select_kniwwelino" id="select_kniwwelino" class="manageKniwwelino browser-default input-field">';
+
+	if (!kniwwelinoLocalStorage) {
+		kniwwelinos += '<option value="default"><span class="translatable_addKniwwelino">... add Kniwwelino first</span></option>';
+	} else {
+		for (var i = 0; i < kniwwelinoJSON.length; i++) {
+			kniwwelinos += `<option><span class="title">${kniwwelinoJSON[i].name}</span></option>`;
+		}
+	}
+	kniwwelinos += '</select></li>';
+	document.getElementById('select_kniwwelino').innerHTML = kniwwelinos;
+};
+
 Ardublockly.renderKniwwelinosModal = function() {
 	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
-	if (!kniwwelinoLocalStorage) {
-		return;
-	}
 
 	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
 	var kniwwelinos = document.getElementById('listKniwwelinosModal').value;
-	kniwwelinos = '';
-	kniwwelinos += `You are managing: ${kniwwelinoJSON.length} Kniwwelinos`;
 
-	kniwwelinos += '<ul class="collection">';
+	if (!kniwwelinoLocalStorage) {
+		kniwwelinos = '';
+		kniwwelinos += `You are managing: 0 Kniwwelinos`;
+	} else {
 
-	for (var i = 0; i < kniwwelinoJSON.length; i++) {
-		kniwwelinos += '<li class="collection-item avatar">';
-		kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
-		kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
-		kniwwelinos += `<span class="id">${kniwwelinoJSON[i].id}</span><br>`;
-		kniwwelinos += `<span class="mac">${kniwwelinoJSON[i].mac}</span>`;
-		kniwwelinos += '<a href="#!" class="btn-floating btn secondary-content"><i class="mdi-content-remove-circle-outline red"></i></a>';
-		kniwwelinos += '</li>';
+		kniwwelinos = '';
+		kniwwelinos += `You are managing: ${kniwwelinoJSON.length} Kniwwelinos`;
+
+		kniwwelinos += '<ul class="collection">';
+
+		for (var i = 0; i < kniwwelinoJSON.length; i++) {
+			kniwwelinos += '<li class="collection-item avatar">';
+			kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
+			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
+			kniwwelinos += `<span class="id">${kniwwelinoJSON[i].id}</span><br>`;
+			kniwwelinos += `<span class="mac">${kniwwelinoJSON[i].mac}</span>`;
+			kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
+			kniwwelinos += '</li>';
+		}
+		kniwwelinos += '</ul>';
 	}
-	kniwwelinos += '</ul>';
 
-		//
-	  // <div class="row">
-	  //   <div class="col s12 m6">
-	  //     <div class="card">
-	  //       <div class="card-image">
-	  //         <img src="images/sample-1.jpg">
-	  //         <span class="card-title">Card Title</span>
-	  //         <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-	  //       </div>
-	  //       <div class="card-content">
-	  //         <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-	  //       </div>
-	  //     </div>
-	  //   </div>
-	  // </div>
-
-	// kniwwelinos += '<ul class="collection">';
-	// kniwwelinos += '<li class="collection-item">';
-	// kniwwelinos += '<div class="row">';
-	// kniwwelinos += '    <div class="col s12 m6">';
 	kniwwelinos += '<div id="addKniwwelino">';
 	kniwwelinos += '<div class="ideditor">';
 	kniwwelinos += '<div class="led2id">';
@@ -233,24 +234,73 @@ Ardublockly.renderKniwwelinosModal = function() {
 	kniwwelinos += '		</table>';
 	kniwwelinos += '	</div>';
 	kniwwelinos += '</div>';
-	// kniwwelinos += '</div>';
 	kniwwelinos += `<div class="col s12">`;
 	kniwwelinos += '<label for="name">Kniwwelino Name</label>';
-	kniwwelinos += '<input placeholder="My Kniwwelino" id="name" type="text" class="validate">';
+	kniwwelinos += '<input placeholder="My Kniwwelino" id="name_addKniwwelino" type="text" class="validate">';
 	kniwwelinos += '</div>';
-	kniwwelinos += `<span class="id">ID</span><br>`;
-	// kniwwelinos += `<span class="mac">MAC</span>`;
 	kniwwelinos += '<a href="#!" id="button_addKniwwelino" class="btn-floating btn secondary-content"><i class="mdi-content-add-circle-outline green"></i></a>';
 	kniwwelinos += '<div class="ledmatrix-description">';
 	kniwwelinos += '	<p></p>';
 	kniwwelinos += '</div>';
 	kniwwelinos += '</div>';
 
-	// kniwwelinos += '</li>';
-	//
-	// kniwwelinos += '</ul>';
-
 	document.getElementById('listKniwwelinosModal').innerHTML = kniwwelinos;
+	for (var i = 0; i < kniwwelinoJSON.length; i++) {
+		document.getElementById(`delete_addKniwwelino_${kniwwelinoJSON[i].id}`).addEventListener(
+			'click',  function(e) {
+				var source = e.target || e.srcElement;
+				var deleteThis = source.id.substr(-6);
+				var kniwwelinoJSON = JSON.parse(localStorage.getItem("kniwwelinos"));
+				var tempJSON = JSON.parse('[]');
+				for (var i = 0; i < kniwwelinoJSON.length; i++) {
+					if(kniwwelinoJSON[i].id != deleteThis) {
+						tempJSON.push(kniwwelinoJSON[i]);
+					}
+				}
+				localStorage.setItem('kniwwelinos', JSON.stringify(tempJSON));
+				Ardublockly.renderKniwwelinosModal();
+				Ardublockly.initKniwwelinoList();
+			});
+	}
+	document.getElementById('button_addKniwwelino').addEventListener(
+		'click',  function() {
+			ArdublocklyServer.getJson("/id?id="+Ardublockly.getLedMatrixID(), function (res) { //TODO Translation
+				if (Object.keys(res).length === 0) {
+					alert("No Kniwwelino with this ID found.");
+					return;
+				} else if (Object.keys(res).length > 1) { //TODO How to handle this case
+					alert("No unique ID for this Kniwwelino found.");
+					return;
+				}
+				let newKniwwelino = {};
+				newKniwwelino.type = "kniwwelino";
+				newKniwwelino.id = Ardublockly.getLedMatrixID();
+				newKniwwelino.mac = Object.keys(res[Object.keys(res)])[0];
+				newKniwwelino.name = document.getElementById('name_addKniwwelino').value;
+				if (newKniwwelino.name == "") {
+					Ardublockly.materialAlert("Name required","Give it a name");
+					return;
+				}
+
+				var kniwwelinoJSON = JSON.parse(localStorage.getItem("kniwwelinos"));
+				if (kniwwelinoJSON !== null) {
+					//check if Kniwwelino already exists in localStorage
+					for (var i = 0; i < kniwwelinoJSON.length; i++) {
+						if(kniwwelinoJSON[i].mac == newKniwwelino.mac) {
+							alert("You are already managing this Kniwwelino!");
+							return;
+						}
+					}
+					kniwwelinoJSON.push(newKniwwelino);
+				} else {
+					var kniwwelinoJSON = [newKniwwelino];
+				}
+
+				localStorage.setItem('kniwwelinos', JSON.stringify(kniwwelinoJSON));
+				Ardublockly.renderKniwwelinosModal();
+				Ardublockly.initKniwwelinoList();
+			});
+		});
 	Ardublockly.LedMatrix();
 };
 

@@ -15,7 +15,7 @@ var ArdublocklyServer = {};
  * @param {!function} jsonDataCb Callback with JSON object or null for error.
  */
 ArdublocklyServer.getJson = function(url, callback) {
-  ArdublocklyServer.sendRequest(url, 'GET', 'application/json', null, callback);
+	ArdublocklyServer.sendRequest(url, 'GET', 'application/json', null, callback);
 };
 
 /**

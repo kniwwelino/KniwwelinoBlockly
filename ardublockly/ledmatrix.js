@@ -1,4 +1,11 @@
 
+var id = "000000";
+
+Ardublockly.getLedMatrixID = function() {
+	console.log(`ID ${id} requested`);
+	return id;
+}
+
 Ardublockly.LedMatrix = function () {
 
     var $leds = $('#leds');
@@ -53,7 +60,8 @@ Ardublockly.LedMatrix = function () {
 				byte = parseInt(byte.join(''), 2).toString(16);
 				out.push(byte);
 
-				console.log(out.join('').toUpperCase());
+				//console.log(out.join('').toUpperCase());
+				id = out.join('').toUpperCase();
     }
 
     function hexInputToLeds() {

@@ -57,9 +57,9 @@ Ardublockly.bindDesignEventListeners = function() {
       'click', Ardublockly.buttonLoadXmlCodeDisplay);
   // Toggle the content height on click to the IDE output collapsible header
   document.getElementById('ide_output_collapsible_header').addEventListener(
-      'click',  function() {
-         Ardublockly.contentHeightToggle();
-      });
+    'click',  function() {
+       Ardublockly.contentHeightToggle();
+    });
 };
 
 Ardublockly.buttonDownloadArduinoDisplay = function() {
