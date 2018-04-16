@@ -567,6 +567,8 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'draw a pixel on the matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Enable or disable a pixel on the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4]. The LED state 0 is off, value bigger 1 is on.';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
+Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL = 'read a pixel from the matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP = 'Read a pixel from the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4].';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED state';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'write a text on the matrix';
@@ -642,7 +644,14 @@ Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Play Tone"
 Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "of duration 1/"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "on Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Turn tone off on pin"
-
+// DATE TIME
+Blockly.Msg.KNIWWELINO_GET_TIME = "get the current Date/Time in format:"
+Blockly.Msg.KNIWWELINO_TIME_DATETIME = "HH:mm:ss dd.MM.YYYY"
+Blockly.Msg.KNIWWELINO_TIME_DATE = "dd.MM.YYYY"
+Blockly.Msg.KNIWWELINO_TIME_TIME = "HH:mm:ss"
+Blockly.Msg.KNIWWELINO_TIME_HOUR = "HOUR"
+Blockly.Msg.KNIWWELINO_TIME_MINUTE = "MINUTE"
+Blockly.Msg.KNIWWELINO_TIME_SECOND = "SECOND"
 	
 	
 // overwrite default labels

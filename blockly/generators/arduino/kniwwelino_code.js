@@ -80,6 +80,25 @@ Blockly.Arduino['kniwwelino_sleepsec'] = function(block) {
 	return 'Kniwwelino.sleep((unsigned long) (' + delayTime+ '*1000) );\n' ;
 };
 
+Blockly.Arduino['kniwwelino_getTime'] = function(block) {
+	kniwwelinoBaseCode();
+	var value = block.getFieldValue('FORMAT');
+	if (value == 'DATETIME')  {
+		return 'Kniwwelino.getTime()'		
+	} else if (value == 'DATE')  {
+		return 'String((day()<10?"0":"") + day() + "." + (month()<10?"0":"") + month() + "." + year())'
+	} else if (value == 'TIME')  {
+		return 'String((hour()<10?"0":"") + hour() + ":" + (minute()<10?"0":"") + minute() + ":" + (second()<10?"0":"") + second())'
+	} else if (value == 'HOUR')  {
+		return 'String(hour())'
+	} else if (value == 'MINUTE')  {
+		return 'String(minute())'
+	} else if (value == 'SECOND')  {
+		return 'String(second())'
+	}
+	return ""
+};
+
 Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
 	kniwwelinoBaseCode();
 
@@ -232,6 +251,14 @@ Blockly.Arduino['kniwwelino_MATRIXdrawPixel'] = function(block) {
 	var state = Blockly.Arduino.valueToCode(block, 'STATE', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 
 	return 'Kniwwelino.MATRIXsetPixel(' + x + ', ' + y + ', ' + state + ');\n';
+};
+
+Blockly.Arduino['kniwwelino_MATRIXreadPixel'] = function(block) {
+	kniwwelinoBaseCode();
+	var x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	var y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	
+	return 'Kniwwelino.MATRIXgetPixel(' + x + ', ' + y + ')';
 };
 
 Blockly.Arduino['kniwwelino_MATRIXsetBrightness'] = function(block) {

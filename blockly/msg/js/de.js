@@ -564,6 +564,8 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'zeichne einen Pixel auf der LED Matri
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = 'Schalte einen Pixel auf der LED Matrix an oder aus. X ist die Position in der Reihe [0-4]. Y ist die Position der Zeile [0-4]. Ist der LED Zustand 0 ist der LED Pixel aus, Werte größer 0 schalten den LED Pixel an.';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
+Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL = 'Lese den Zustand eines Pixel auf der LED Matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP = 'Lese den Zustand eines Pixel auf der LED Matrix. X ist die Position in der Reihe [0-4]. Y ist die Position der Zeile [0-4].';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'LED Zustand';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'Der Wert muss im Bereich 0-4 liegen.';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'schreibe Text auf Matrix';
@@ -642,6 +644,14 @@ Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "mit Länge"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "an Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton ab an Pin"
 
+// DATE TIME
+Blockly.Msg.KNIWWELINO_GET_TIME = "Datum/Zeit im Format:"
+Blockly.Msg.KNIWWELINO_TIME_DATETIME = "HH:mm:ss dd.MM.YYYY"
+Blockly.Msg.KNIWWELINO_TIME_DATE = "dd.MM.YYYY"
+Blockly.Msg.KNIWWELINO_TIME_TIME = "HH:mm:ss"
+Blockly.Msg.KNIWWELINO_TIME_HOUR = "Stunde"
+Blockly.Msg.KNIWWELINO_TIME_MINUTE = "Minute"
+Blockly.Msg.KNIWWELINO_TIME_SECOND = "Sekunde"
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";

@@ -58,6 +58,18 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_MATRIXreadPixel">' +
+'    <value name="X">' +
+'        <block type="math_number">' +
+'          <field name="X">1</field>' +
+'        </block>' +
+'      </value>' +
+'    <value name="Y">' +
+'        <block type="math_number">' +
+'          <field name="Y">1</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
 '    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
 '  </category>' +
@@ -333,9 +345,9 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_getTime"></block>' +
 '    <block type="time_seconds"></block>' +
 '    <block type="time_millis"></block>' +
-//'    <block type="time_micros"></block>' +
 //'    <block type="infinite_loop"></block>' +
 '  </category>' +
 '  <sep></sep>' +
