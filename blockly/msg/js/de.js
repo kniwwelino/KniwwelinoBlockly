@@ -642,7 +642,7 @@ Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Spiele Note"
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Spiele Ton" 
 Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "mit Länge"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "an Pin"
-Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton ab an Pin"
+Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton aus an Pin"
 
 // DATE TIME
 Blockly.Msg.KNIWWELINO_GET_TIME = "Datum/Zeit im Format:"

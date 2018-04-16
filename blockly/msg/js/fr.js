@@ -562,10 +562,10 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'active ou désactive un pixel sur la 
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = "X est la position dans une rangée [0-4]. Y est la position de la rangée [0-4]. L'état 0 de la LED est éteint, une valeur plus grande est allumée.";  
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
-Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL = 'read a pixel from the matrix';
-Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP = 'Read a pixel from the matrix. X is the postion in a row [0-4]. Y is the position of the row [0-4].';
+Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL = 'lis un pixel sur la matrice';
+Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP = 'Lit un pixel sur la matrice. X est la position dans une rangée [0-4]. Y est la position de la rangée [0-4].';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'état LED'; 
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'The value must be in the range 0-4.';  // untranslated
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'La valeur doit être compris entre 0-4.'; 
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'écris le texte sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Écrit le text donné sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'en continu';
@@ -636,20 +636,20 @@ Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "composante verte"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "composante bleue"
 	
 // AUDIO
-Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Play Note"
-Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Play Tone" 
-Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "of duration 1/"
-Blockly.Msg.KNIWWELINO_AUDIO_PIN = "on Pin"
-Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Turn tone off on pin"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "joue la note"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "joue le son" 
+Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "de durée 1/"
+Blockly.Msg.KNIWWELINO_AUDIO_PIN = "sur pin"
+Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "arrête le son sur pin"
 	
 // DATE TIME
-Blockly.Msg.KNIWWELINO_GET_TIME = "get the current Date/Time in format:"
+Blockly.Msg.KNIWWELINO_GET_TIME = "retourne la date/heure actuelle en format:"
 Blockly.Msg.KNIWWELINO_TIME_DATETIME = "HH:mm:ss dd.MM.YYYY"
 Blockly.Msg.KNIWWELINO_TIME_DATE = "dd.MM.YYYY"
 Blockly.Msg.KNIWWELINO_TIME_TIME = "HH:mm:ss"
-Blockly.Msg.KNIWWELINO_TIME_HOUR = "HOUR"
+Blockly.Msg.KNIWWELINO_TIME_HOUR = "HEURE"
 Blockly.Msg.KNIWWELINO_TIME_MINUTE = "MINUTE"
-Blockly.Msg.KNIWWELINO_TIME_SECOND = "SECOND"
+Blockly.Msg.KNIWWELINO_TIME_SECOND = "SECONDE"
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "activée";
