@@ -28,6 +28,11 @@ Ardublockly.init = function() {
 
   Blockly.HSV_SATURATION =  0.87; //0.70;
   Blockly.HSV_VALUE = 0.83; //0.47; //0.70;
+
+	document.getElementById('sketch_name').addEventListener(
+		'keyup', function() {
+			Ardublockly.renderContent();
+	});
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -644,4 +649,11 @@ Ardublockly.bindClick_ = function(el, func) {
   };
   el.addEventListener('ontouchend', propagateOnce);
   el.addEventListener('click', propagateOnce);
+};
+
+Ardublockly.getSketchName = function(digits) {
+	if (digits != null) {
+		return document.getElementById('sketch_name').value.substr(0, digits);
+	}
+	return document.getElementById('sketch_name').value;
 };
