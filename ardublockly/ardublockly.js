@@ -29,6 +29,11 @@ Ardublockly.init = function() {
   Blockly.HSV_SATURATION =  0.87; //0.70;
   Blockly.HSV_VALUE = 0.83; //0.47; //0.70;
 
+  document.getElementById('sketch_name').addEventListener(
+  		'keyup', function() {
+  			Ardublockly.renderContent();
+  });
+
 
   // Hackish way to check if not running locally
   if (document.location.hostname != 'localhost') {

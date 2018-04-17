@@ -16,7 +16,7 @@ goog.require('Blockly.Arduino');
 
 function kniwwelinoBaseCode() {
 	Blockly.Arduino.addInclude('kniwwelino', '#include <Kniwwelino.h>');
-	Blockly.Arduino.addSetup('kniwwelinoBegin', '//Initialize the Kniwwelino Board\n  Kniwwelino.begin(true, true, false); // Wifi=true, Fastboot=true, MQTT Logging=false\n', true);
+	Blockly.Arduino.addSetup('kniwwelinoBegin', '//Initialize the Kniwwelino Board\n  Kniwwelino.begin("'+Ardublockly.getSketchName(20)+'", true, true, false); // Wifi=true, Fastboot=true, MQTT Logging=false\n', true);
 
 	// Adding something to the loop() is not possible right now.
 	// please add the following code to the Blockly.Arduino.finish function in generators/arduino.js
@@ -258,7 +258,7 @@ Blockly.Arduino['kniwwelino_MATRIXreadPixel'] = function(block) {
 	kniwwelinoBaseCode();
 	var x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	var y = Blockly.Arduino.valueToCode(block, 'Y', Blockly.Arduino.ORDER_UNARY_POSTFIX);
-	
+
 	return 'Kniwwelino.MATRIXgetPixel(' + x + ', ' + y + ')';
 };
 
@@ -496,15 +496,15 @@ Blockly.Arduino['kniwwelino_toneOff'] = function(block) {
 	  var pin = block.getFieldValue("TONEPIN");
 	  Blockly.Arduino.reservePin(
 	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
-	  
+
 	  var pinSetupCode = 'pinMode(' + pin + ', OUTPUT);\n';
 	  Blockly.Arduino.addSetup('io_' + pin, pinSetupCode, false);
 
 	  var code = 'Kniwwelino.toneOff(' + pin + ');\n';
 	  return code;
 	};
-	
-	
+
+
 Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		kniwwelinoBaseCode();
 		var freq = block.getFieldValue('NOTE');
