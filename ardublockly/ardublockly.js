@@ -739,3 +739,11 @@ Ardublockly.bindClick_ = function(el, func) {
   el.addEventListener('ontouchend', propagateOnce);
   el.addEventListener('click', propagateOnce);
 };
+
+
+Ardublockly.getSketchName = function(digits) {
+	if (digits != null) {
+		return document.getElementById('sketch_name').value.substr(0, digits);
+	}
+	return document.getElementById('sketch_name').value;
+};
