@@ -33,6 +33,12 @@ Ardublockly.init = function() {
 		'keyup', function() {
 			Ardublockly.renderContent();
 	});
+
+	swal({
+		title: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_TITLE'),
+		text: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_MESSAGE'),
+		className: "kniwwelino-bg"
+	});
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
