@@ -109,6 +109,7 @@ Ardublockly.loadUserXmlFile = function() {
     if (extensionPosition !== -1) {
       filename = filename.substr(0, extensionPosition);
     }
+
 Ardublockly.bindKniwwelinoList
     var reader = new FileReader();
     reader.onload = function() {

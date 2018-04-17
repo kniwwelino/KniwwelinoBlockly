@@ -208,6 +208,7 @@ Ardublockly.discardAllBlocks = function() {
           Ardublockly.workspace.clear();
           //load a new prepared workspace
           Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
+					Ardublockly.sketchNameSet(Ardublockly.getLocalStr('sketchName'));
           Ardublockly.renderContent();
         });
   }
