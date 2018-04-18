@@ -83,20 +83,21 @@ Blockly.Arduino['kniwwelino_sleepsec'] = function(block) {
 Blockly.Arduino['kniwwelino_getTime'] = function(block) {
 	kniwwelinoBaseCode();
 	var value = block.getFieldValue('FORMAT');
+	var codeStr = "";
 	if (value == 'DATETIME')  {
-		return 'Kniwwelino.getTime()'
+		codeStr = 'Kniwwelino.getTime()';
 	} else if (value == 'DATE')  {
-		return 'String((day()<10?"0":"") + day() + "." + (month()<10?"0":"") + month() + "." + year())'
+		codeStr = 'String((day()<10?"0":"") + day() + "." + (month()<10?"0":"") + month() + "." + year())';
 	} else if (value == 'TIME')  {
-		return 'String((hour()<10?"0":"") + hour() + ":" + (minute()<10?"0":"") + minute() + ":" + (second()<10?"0":"") + second())'
+		codeStr = 'String((hour()<10?"0":"") + hour() + ":" + (minute()<10?"0":"") + minute() + ":" + (second()<10?"0":"") + second())';
 	} else if (value == 'HOUR')  {
-		return 'String(hour())'
+		codeStr = 'String(hour())';
 	} else if (value == 'MINUTE')  {
-		return 'String(minute())'
+		codeStr = 'String(minute())';
 	} else if (value == 'SECOND')  {
-		return 'String(second())'
+		codeStr = 'String(second())';
 	}
-	return ""
+	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
