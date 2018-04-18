@@ -325,11 +325,11 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 
 #button_addKniwwelino {
 	right: 4%;
-	transform: translate(0%, -25px);
-	-webkit-transform: translate(0%, -25px);
-	-moz-transform: translate(0%, -25px);
-	-o-transform: translate(0%, -25px);
-	-ms-transform: translate(0%, -25px);
+	transform: translate(0%, -68px);
+	-webkit-transform: translate(0%, -68px);
+	-moz-transform: translate(0%, -68px);
+	-o-transform: translate(0%, -68px);
+	-ms-transform: translate(0%, -68px);
 }
 
 .manageKniwwelino {
@@ -343,6 +343,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 	border-color: #E0E0E0;
 	background-color: white;
 	padding-bottom: 50%;
+	min-height: 405px;
 }
 
 @media only screen and (max-width: 480px) {
