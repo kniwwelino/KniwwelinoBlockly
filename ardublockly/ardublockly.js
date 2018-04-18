@@ -337,10 +337,18 @@ Ardublockly.renderKniwwelinosModal = function() {
 			 if (!document.getElementById('button_addKniwwelino').className.includes('disabled')) {
 				 ArdublocklyServer.getJson("/id?id="+Ardublockly.getLedMatrixID(), function (res) { //TODO Translation
 	 				if (Object.keys(res).length === 0) {
-	 					alert("No Kniwwelino with this ID found.");
+						swal({
+							title: Ardublockly.getLocalStr('KNIWWELINO_WARNING_TITLE'),
+							text: "No Kniwwelino with this ID found.", //TODO Translate content
+							className: "kniwwelino-bg"
+						});
 	 					return;
 	 				} else if (Object.keys(res).length > 1) { //TODO How to handle this case
-	 					alert("No unique ID for this Kniwwelino found.");
+						swal({
+							title: Ardublockly.getLocalStr('KNIWWELINO_WARNING_TITLE'),
+							text: "No unique ID for this Kniwwelino found.", //TODO Translate content
+							className: "kniwwelino-bg"
+						});
 	 					return;
 	 				}
 	 				let newKniwwelino = {};
@@ -359,7 +367,11 @@ Ardublockly.renderKniwwelinosModal = function() {
 	 					//check if Kniwwelino already exists in localStorage
 	 					for (var i = 0; i < kniwwelinoJSON.length; i++) {
 	 						if(kniwwelinoJSON[i].mac == newKniwwelino.mac) {
-	 							alert("You are already managing this Kniwwelino!");
+								swal({
+									title: Ardublockly.getLocalStr('KNIWWELINO_WARNING_TITLE'),
+									text: "You are already managing this Kniwwelino!", //TODO Translate content
+									className: "kniwwelino-bg"
+								});
 	 							return;
 	 						}
 	 						if(kniwwelinoJSON[i].selected == "selected") {

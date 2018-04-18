@@ -111,4 +111,5 @@ Ardublockly.LOCALISED_TEXT = {
 	/*ALPHA VERSION*/
 	KNIWWELINO_ALPHA_TITLE: "ALPHA Version!",
 	KNIWWELINO_ALPHA_MESSAGE: "Achtung: Dies ist eine Alpha-Version und kann Fehler enthalten. Wenn Du ein Problem findest, versuche bitte es zu reproduzieren, bevor Du uns einen Fehlerbericht schickst. Der Dienst kann von Zeit zu Zeit nicht verfügbar sein.",
+	KNIWWELINO_WARNING_TITLE: "Achtung",
 };
