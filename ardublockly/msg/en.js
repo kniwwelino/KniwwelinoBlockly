@@ -77,7 +77,7 @@ Ardublockly.LOCALISED_TEXT = {
   /* Tooltips */
   uploadingSketch: "Uploading Code to Kniwwelino...",
   uploadSketch: "Upload Code to the Kniwwelino",
-	compiledSketch: "Sketch was compiled. Download to Kniwwelino started"
+	compiledSketch: "Sketch was compiled. Download to Kniwwelino started",
   verifyingSketch: "Verifying Code...",
   verifySketch: "Verify the Code",
   openingSketch: "Opening Code in the Arduino IDE...",
