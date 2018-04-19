@@ -35,6 +35,13 @@ body {
   user-select: none;
 }
 
+#copyright {
+	height: 20px;
+	margin-top: 15px;
+	top: 20px;
+	color: grey;
+	text-align: center;
+}
 /******************/
 /* Category Icons */
 /******************/
@@ -241,6 +248,11 @@ body {
   font-family: FontAwesome;
   left:0px;
   padding-right: 5px;
+}
+
+.swal-button--addK:before {
+	content: "\f013";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
 }
 
 .kniwwelino-bg {
@@ -567,7 +579,7 @@ ul.side-nav li.side-menu-end {
   margin: 0;
   padding: 0;
   position: fixed;
-  bottom: -16px;
+  bottom: -18px;
   z-index: 10;
 }
 

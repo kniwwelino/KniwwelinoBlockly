@@ -38,6 +38,25 @@ Ardublockly.init = function() {
 		title: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_TITLE'),
 		text: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_MESSAGE'),
 		className: "kniwwelino-bg"
+	}).then(() => { //check if at least one Kniwwelino is managed
+		if (document.getElementById('button_ide_large').className.includes('disabled')) {
+	  	swal({
+				title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
+				text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
+				className: "kniwwelino-bg",
+			  buttons: {
+					addK: {
+						text: "",
+			      value: "addK",
+			    },
+					ok: true,
+			  },
+			}).then((k) => {
+				if (k == 'addK') {
+					document.getElementById('button_manageKniwwelino').click();
+				};
+			});
+		}
 	});
 };
 
@@ -50,8 +69,12 @@ Ardublockly.bindActionFunctions = function() {
 
   // Floating buttons
   Ardublockly.bindClick_('button_ide_large', function() {
-		console.log('Button Event: Upload Arduino code to server');
-    Ardublockly.ideSendUpload();
+		if (document.getElementById('button_ide_large').className.includes('disabled')) {
+
+		} else {
+			console.log('Button Event: Upload Arduino code to server');
+	    Ardublockly.ideSendUpload();
+		}
   });
   Ardublockly.bindClick_('button_load_xml', Ardublockly.XmlTextareaToBlocks);
 	Ardublockly.bindClick_('download_arduino', Ardublockly.saveSketchFile);
@@ -74,6 +97,7 @@ Ardublockly.ideSendUpload = function() {
 Ardublockly.initialiseIdeButtons = function() {
   document.getElementById('button_ide_large').title =
       Ardublockly.getLocalStr('uploadSketch');
+	Ardublockly.compileButtonEnable(false);
 };
 
 /**
@@ -209,6 +233,7 @@ Ardublockly.initKniwwelinoList = function() {
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
 			kniwwelinos += `<option value="${kniwwelinoJSON[i].mac}" ${kniwwelinoJSON[i].selected}><span class="title">${kniwwelinoJSON[i].name}</span></option>`;
 		}
+		Ardublockly.compileButtonEnable(true);
 	}
 	kniwwelinos += '</select></li>';
 	document.getElementById('select_kniwwelino').innerHTML = kniwwelinos;
