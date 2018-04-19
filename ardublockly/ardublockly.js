@@ -43,7 +43,18 @@ Ardublockly.init = function() {
 	  	swal({
 				title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
 				text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
-				className: "kniwwelino-bg"
+				className: "kniwwelino-bg",
+			  buttons: {
+					addK: {
+						text: "",
+			      value: "addK",
+			    },
+					ok: true,
+			  },
+			}).then((k) => {
+				if (k == 'addK') {
+					document.getElementById('button_manageKniwwelino').click();
+				};
 			});
 		}
 	});

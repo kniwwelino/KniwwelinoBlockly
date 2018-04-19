@@ -113,5 +113,5 @@ Ardublockly.LOCALISED_TEXT = {
 	KNIWWELINO_ALPHA_MESSAGE: "Attention: This is an alpha version and may contain bugs. If you find an issue, please try to reproduce it before you send us a bug report. The service may be unavailable from time to time.",
 	KNIWWELINO_WARNING_TITLE: "Warning",
 	KNIWWELINO_ADDKNIWWELINO_TITLE: "Add Kniwwelino first",
-	KNIWWELINO_ADDKNIWWELINO_MESSAGE: "In order to use this programming tool you have to link your Kniwwelino with the platform one time. Please press the gear icon in the navigation bar to add your Kniwwelino.",
+	KNIWWELINO_ADDKNIWWELINO_MESSAGE: "In order to use this programming tool you have to link your Kniwwelino with the platform one time. Please press the gear icon below or in the navigation bar to add your Kniwwelino.",
 };

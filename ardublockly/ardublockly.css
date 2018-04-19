@@ -243,6 +243,11 @@ body {
   padding-right: 5px;
 }
 
+.swal-button--addK:before {
+	content: "\f013";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+}
+
 .kniwwelino-bg {
   background-image: url("./img/mascot.png");
   background-repeat: no-repeat;
