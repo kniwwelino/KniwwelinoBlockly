@@ -107,6 +107,20 @@ Ardublockly.largeIdeButtonSpinner = function(active) {
  }
 };
 
+Ardublockly.compileButtonEnable = function(active) {
+  var spinner = document.getElementById('button_ide_large_spinner');
+  var buttonIdeLarge = document.getElementById('button_ide_large');
+  var buttonClass = buttonIdeLarge.className;
+  if (active) {
+    spinner.style.display = 'none';
+		buttonIdeLarge.className = buttonClass.replace(' disabled grey', '');
+
+  } else {
+    spinner.style.display = 'none';
+    buttonIdeLarge.className = buttonIdeLarge.className + ' disabled grey';
+ }
+};
+
 /**
  * Sets the toolbox HTML element to be display or not and change the visibility
  * button to reflect the new state.
