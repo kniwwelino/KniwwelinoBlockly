@@ -38,6 +38,14 @@ Ardublockly.init = function() {
 		title: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_TITLE'),
 		text: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_MESSAGE'),
 		className: "kniwwelino-bg"
+	}).then(() => { //check if at least one Kniwwelino is managed
+		if (document.getElementById('button_ide_large').className.includes('disabled')) {
+	  	swal({
+				title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
+				text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
+				className: "kniwwelino-bg"
+			});
+		}
 	});
 };
 

@@ -113,4 +113,6 @@ Ardublockly.LOCALISED_TEXT = {
 	KNIWWELINO_ALPHA_TITLE: "ALPHA Version!",
 	KNIWWELINO_ALPHA_MESSAGE: "Achtung: Dies ist eine Alpha-Version und kann Fehler enthalten. Wenn Du ein Problem findest, versuche bitte es zu reproduzieren, bevor Du uns einen Fehlerbericht schickst. Der Dienst kann von Zeit zu Zeit nicht verfügbar sein.",
 	KNIWWELINO_WARNING_TITLE: "Achtung",
+	KNIWWELINO_ADDKNIWWELINO_TITLE: "Zuerst einen Kniwwelino hinzufügen",
+	KNIWWELINO_ADDKNIWWELINO_MESSAGE: "Um dieses Programmiertool nutzen zu können, müssen Sie Ihren Kniwwelino einmalig mit der Plattform verbinden. Bitte klicken Sie auf das Zahnradsymbol in der Navigationsleiste, um Ihren Kniwwelino hinzuzufügen.",
 };
