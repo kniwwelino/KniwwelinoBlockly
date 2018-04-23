@@ -109,6 +109,17 @@ Ardublockly.LOCALISED_TEXT = {
   catSensors: "Sensoren",
 	/*Modal Dialog to manage Kniwwelino*/
 	manageKniwwelinoHeading: "Verwalte deine Kniwwelinos",
+	manageKniwwelinoAdd: "Kniwwelino hinzufügen",
+	manageKniwwelinoZero: "Du verwaltest: 0 Kniwwelinos",
+	manageKniwwelinoManaging: "Du verwaltest:",
+	manageKniwwelinoName: "Kniwwelino Name",
+	manageKniwwelinoPlaceholder: "Mein Kniwwelino",
+	manageKniwwelinoHelp: "Stelle sicher, dass dein Kniwwelino mit dem Wifi verbunden ist und starte ihn mit gedrücktem Knopf A. <a href='https://doku.kniwwelino.lu/en/preparation' target='_blank'>weiterlesen</a>",
+	manageKniwwelinoNoID: "Kein Kniwwelino mit dieser ID gefunden.",
+	manageKniwwelinoNoUniqueID: "Keine eindeutige ID für diesen Kniwwelino gefunden.",
+	manageKniwwelinoNameRequired: "Name nötig",
+	manageKniwwelinoNameRequired_message: "Gib ihm einen Namen.",
+	manageKniwwelinoAlreadyManaging: "Du verwaltest schon diesen Kniwwelino!",
 	/*ALPHA VERSION*/
 	KNIWWELINO_ALPHA_TITLE: "ALPHA Version!",
 	KNIWWELINO_ALPHA_MESSAGE: "Achtung: Dies ist eine Alpha-Version und kann Fehler enthalten. Wenn Du ein Problem findest, versuche bitte es zu reproduzieren, bevor Du uns einen Fehlerbericht schickst. Der Dienst kann von Zeit zu Zeit nicht verfügbar sein.",

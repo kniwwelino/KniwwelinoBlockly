@@ -42,6 +42,18 @@ body {
 	color: grey;
 	text-align: center;
 }
+
+#gen_copyright h1 {
+	font-size: 32px;
+	font-weight: 400;
+}
+
+#gen_copyright h3 {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+
 /******************/
 /* Category Icons */
 /******************/
@@ -355,7 +367,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 	border-color: #E0E0E0;
 	background-color: white;
 	padding-bottom: 50%;
-	min-height: 405px;
+	min-height: 455px;
 }
 
 @media only screen and (max-width: 480px) {

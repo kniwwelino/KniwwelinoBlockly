@@ -70,11 +70,11 @@ div.ideditor {
 	position: absolute;
   /* top: 50%; */
   left: 50%;
-  transform: translate(-50%, 30%);
-  -webkit-transform: translate(-50%, 30%);
-  -moz-transform: translate(-50%, 30%);
-  -o-transform: translate(-50%, 30%);
-  -ms-transform: translate(-50%, 30%);
+  transform: translate(-50%, 5%);
+  -webkit-transform: translate(-50%, 5%);
+  -moz-transform: translate(-50%, 5%);
+  -o-transform: translate(-50%, 5%);
+  -ms-transform: translate(-50%, 5%);
 	/* -webkit-transform: scale(0.8);
 	-moz-transform: scale(0.8);
 	-ms-transform: scale(0.8);
