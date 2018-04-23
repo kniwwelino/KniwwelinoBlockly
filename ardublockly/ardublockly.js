@@ -363,18 +363,18 @@ Ardublockly.renderKniwwelinosModal = function() {
 	document.getElementById('button_addKniwwelino').addEventListener(
 		'click',  function() {
 			 if (!document.getElementById('button_addKniwwelino').className.includes('disabled')) {
-				 ArdublocklyServer.getJson("/id?id="+Ardublockly.getLedMatrixID(), function (res) { //TODO Translation
+				 ArdublocklyServer.getJson("/id?id="+Ardublockly.getLedMatrixID(), function (res) {
 	 				if (Object.keys(res).length === 0) {
 						swal({
 							title: Ardublockly.getLocalStr('KNIWWELINO_WARNING_TITLE'),
-							text: "No Kniwwelino with this ID found.", //TODO Translate content
+							text: Ardublockly.getLocalStr('manageKniwwelinoNoID'),
 							className: "kniwwelino-bg"
 						});
 	 					return;
 	 				} else if (Object.keys(res).length > 1) { //TODO How to handle this case
 						swal({
 							title: Ardublockly.getLocalStr('KNIWWELINO_WARNING_TITLE'),
-							text: "No unique ID for this Kniwwelino found.", //TODO Translate content
+							text: Ardublockly.getLocalStr('manageKniwwelinoNoUniqueID'),
 							className: "kniwwelino-bg"
 						});
 	 					return;
@@ -386,7 +386,11 @@ Ardublockly.renderKniwwelinosModal = function() {
 	 				newKniwwelino.name = document.getElementById('name_addKniwwelino').value;
 	 				newKniwwelino.selected = "selected";
 	 				if (newKniwwelino.name == "") {
-	 					Ardublockly.materialAlert("Name required","Give it a name");
+						swal({
+							title: Ardublockly.getLocalStr('manageKniwwelinoNameRequired'),
+							text: Ardublockly.getLocalStr('manageKniwwelinoNameRequired_message'),
+							className: "kniwwelino-bg"
+						});
 	 					return;
 	 				}
 
@@ -397,7 +401,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 	 						if(kniwwelinoJSON[i].mac == newKniwwelino.mac) {
 								swal({
 									title: Ardublockly.getLocalStr('KNIWWELINO_WARNING_TITLE'),
-									text: "You are already managing this Kniwwelino!", //TODO Translate content
+									text: Ardublockly.getLocalStr('manageKniwwelinoAlreadyManaging'),
 									className: "kniwwelino-bg"
 								});
 	 							return;
