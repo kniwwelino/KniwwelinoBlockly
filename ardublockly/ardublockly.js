@@ -598,6 +598,7 @@ Ardublockly.toggleSourceCodeVisibility = function() {
   } else {
     document.getElementById('blocks_workspace').style.width = "100%";
     document.getElementById('codesidebar').style.visibility = "hidden";
+		document.getElementById('codesidebar').style.left = "5000px"
   }
    Ardublockly.contentWidthToggle();
 }
