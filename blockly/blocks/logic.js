@@ -41,7 +41,7 @@ Blockly.Blocks['controls_if'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.CONTROLS_IF_HELPURL);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'logic');
     this.setColour(Blockly.Blocks.logic.HUE);
     this.appendValueInput('IF0')
         .setCheck(Blockly.Types.BOOLEAN.checkList)
@@ -287,7 +287,7 @@ Blockly.Blocks['logic_compare'] = {
           ['>', 'GT'],
           ['\u2265', 'GTE']
         ];
-    this.setHelpUrl(Blockly.Msg.LOGIC_COMPARE_HELPURL);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'logic');
     this.setColour(Blockly.Blocks.logic.HUE);
     this.setOutput(true, Blockly.Types.BOOLEAN.output);
     this.appendValueInput('A');
@@ -353,7 +353,7 @@ Blockly.Blocks['logic_operation'] = {
     var OPERATORS =
         [[Blockly.Msg.LOGIC_OPERATION_AND, 'AND'],
          [Blockly.Msg.LOGIC_OPERATION_OR, 'OR']];
-    this.setHelpUrl(Blockly.Msg.LOGIC_OPERATION_HELPURL);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'logic');
     this.setColour(Blockly.Blocks.logic.HUE);
     this.setOutput(true, Blockly.Types.BOOLEAN.output);
     this.appendValueInput('A')
@@ -397,7 +397,7 @@ Blockly.Blocks['logic_negate'] = {
       "output": Blockly.Types.BOOLEAN.output,
       "colour": Blockly.Blocks.logic.HUE,
       "tooltip": Blockly.Msg.LOGIC_NEGATE_TOOLTIP,
-      "helpUrl": Blockly.Msg.LOGIC_NEGATE_HELPURL
+      "helpUrl": Blockly.Msg.KNIWWELINO_HELPURL + 'logic'
     });
   },
   /** Assigns block type, 'block input' is meant to be a boolean, so same. */
@@ -427,7 +427,7 @@ Blockly.Blocks['logic_boolean'] = {
       "output": Blockly.Types.BOOLEAN.output,
       "colour": Blockly.Blocks.logic.HUE,
       "tooltip": Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP,
-      "helpUrl": Blockly.Msg.LOGIC_BOOLEAN_HELPURL
+      "helpUrl": Blockly.Msg.KNIWWELINO_HELPURL + 'logic'
     });
   },
   /** Assigns a type to the boolean block. */
@@ -447,7 +447,7 @@ Blockly.Blocks['logic_null'] = {
       "output": Blockly.Types.NULL.output,
       "colour": Blockly.Blocks.logic.HUE,
       "tooltip": Blockly.Msg.LOGIC_NULL_TOOLTIP,
-      "helpUrl": Blockly.Msg.LOGIC_NULL_HELPURL
+      "helpUrl": Blockly.Msg.KNIWWELINO_HELPURL + 'logic'
     });
   },
   /** Assigns a type to the NULL block. */
@@ -462,7 +462,7 @@ Blockly.Blocks['logic_ternary'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl(Blockly.Msg.LOGIC_TERNARY_HELPURL);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'logic');
     this.setColour(Blockly.Blocks.logic.HUE);
     this.appendValueInput('IF')
         .setCheck(Blockly.Types.BOOLEAN.checkList)

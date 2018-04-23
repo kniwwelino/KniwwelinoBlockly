@@ -594,9 +594,14 @@ Ardublockly.XmlTextareaToBlocks = function() {
 Ardublockly.toggleSourceCodeVisibility = function() {
   if (document.getElementById('codesidebar').style.visibility == "hidden") {
     document.getElementById('blocks_workspace').style.width = "65%";
+		document.getElementById('codesidebar').style.width = "35%";
+		document.getElementById('codesidebar').style.position = "relative";
+		document.getElementById('codesidebar').style.left = "";
     document.getElementById('codesidebar').style.visibility = "visible";
   } else {
     document.getElementById('blocks_workspace').style.width = "100%";
+		document.getElementById('codesidebar').style.position = "absolute";
+		document.getElementById('codesidebar').style.left = "-1000px";
     document.getElementById('codesidebar').style.visibility = "hidden";
   }
    Ardublockly.contentWidthToggle();
