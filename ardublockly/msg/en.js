@@ -108,6 +108,12 @@ Ardublockly.LOCALISED_TEXT = {
   catMQTT: "Messages",
 	/*Modal Dialog to manage Kniwwelino*/
 	manageKniwwelinoHeading: "Manage your Kniwwelino boards",
+	manageKniwwelinoAdd: "add Kniwwelino first",
+	manageKniwwelinoZero: "You are managing: 0 Kniwwelinos",
+	manageKniwwelinoManaging: "You are managing:",
+	manageKniwwelinoName: "Kniwwelino Name",
+	manageKniwwelinoPlaceholder: "My Kniwwelino",
+	manageKniwwelinoHelp: "Make sure your Kniwwelino is connected to Wifi and start it with button A pressed. <a href='https://doku.kniwwelino.lu/en/preparation' target='_blank'>read more</a>",
 	/*ALPHA VERSION*/
 	KNIWWELINO_ALPHA_TITLE: "ALPHA Version!",
 	KNIWWELINO_ALPHA_MESSAGE: "Attention: This is an alpha version and may contain bugs. If you find an issue, please try to reproduce it before you send us a bug report. The service may be unavailable from time to time.",

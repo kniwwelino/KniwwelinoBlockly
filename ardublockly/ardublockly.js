@@ -81,7 +81,9 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
-	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal)
+	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
+
+	Ardublockly.bindClick_('copyright', Ardublockly.renderCopyright);
 
 	Ardublockly.bindKniwwelinoList();
 };
@@ -228,7 +230,7 @@ Ardublockly.initKniwwelinoList = function() {
 	var kniwwelinos = '<li><select name="select_kniwwelino" id="select_kniwwelino" class="manageKniwwelino browser-default input-field">';
 
 	if (!kniwwelinoLocalStorage) {
-		kniwwelinos += '<option value="default"><span class="translatable_addKniwwelino">... add Kniwwelino first</span></option>';
+		kniwwelinos += '<option value="default"><span class="translatable_manageKniwwelinoAdd">'+Ardublockly.getLocalStr('manageKniwwelinoAdd')+'</span></option>';
 	} else {
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
 			kniwwelinos += `<option value="${kniwwelinoJSON[i].mac}" ${kniwwelinoJSON[i].selected}><span class="title">${kniwwelinoJSON[i].name}</span></option>`;
@@ -272,11 +274,11 @@ Ardublockly.renderKniwwelinosModal = function() {
 
 	if (!kniwwelinoLocalStorage) {
 		kniwwelinos = '';
-		kniwwelinos += `You are managing: 0 Kniwwelinos`;
+		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoZero');
 	} else {
 
 		kniwwelinos = '';
-		kniwwelinos += `You are managing: ${kniwwelinoJSON.length} Kniwwelinos`;
+		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoManaging')+` ${kniwwelinoJSON.length} Kniwwelinos`;
 
 		kniwwelinos += '<ul class="collection">';
 
@@ -284,8 +286,8 @@ Ardublockly.renderKniwwelinosModal = function() {
 			kniwwelinos += '<li class="collection-item avatar">';
 			kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
 			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
-			kniwwelinos += `<span class="id">${kniwwelinoJSON[i].id}</span><br>`;
-			kniwwelinos += `<span class="mac">${kniwwelinoJSON[i].mac}</span>`;
+			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
+			kniwwelinos += `<span class="mac">MAC: ${kniwwelinoJSON[i].mac}</span>`;
 			kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
 			kniwwelinos += '</li>';
 		}
@@ -293,6 +295,14 @@ Ardublockly.renderKniwwelinosModal = function() {
 	}
 
 	kniwwelinos += '<div id="addKniwwelino">';
+	kniwwelinos += `<div class="col s12">`;
+	kniwwelinos += '<label for="name">'+Ardublockly.getLocalStr('manageKniwwelinoName')+'</label>';
+	kniwwelinos += '<input placeholder="'+Ardublockly.getLocalStr('manageKniwwelinoPlaceholder')+'" id="name_addKniwwelino" type="text" class="validate">';
+	kniwwelinos += '</div>';
+	kniwwelinos += '<a href="#!" id="button_addKniwwelino" class="btn-floating disabled secondary-content green"><i class="mdi-content-add-circle-outline"></i></a>';
+	kniwwelinos += '<div class="ledmatrix-description">';
+	kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoHelp');
+	kniwwelinos += '</div>';
 	kniwwelinos += '<div class="ideditor">';
 	kniwwelinos += '<div class="led2id">';
 	kniwwelinos += '	<table style="display: inline-block" class="ledmatrix">';
@@ -307,14 +317,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 	kniwwelinos += '		</table>';
 	kniwwelinos += '	</div>';
 	kniwwelinos += '</div>';
-	kniwwelinos += `<div class="col s12">`;
-	kniwwelinos += '<label for="name">Kniwwelino Name</label>';
-	kniwwelinos += '<input placeholder="My Kniwwelino" id="name_addKniwwelino" type="text" class="validate">';
-	kniwwelinos += '</div>';
-	kniwwelinos += '<a href="#!" id="button_addKniwwelino" class="btn-floating disabled secondary-content green"><i class="mdi-content-add-circle-outline"></i></a>';
-	kniwwelinos += '<div class="ledmatrix-description">';
-	kniwwelinos += '	<p></p>';
-	kniwwelinos += '</div>';
+
 	kniwwelinos += '</div>';
 
 	document.getElementById('listKniwwelinosModal').innerHTML = kniwwelinos;
@@ -416,6 +419,17 @@ Ardublockly.renderKniwwelinosModal = function() {
 		});
 	Ardublockly.LedMatrix();
 };
+
+Ardublockly.renderCopyright  = function() {
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	       document.getElementById('gen_copyright_body').innerHTML = xhttp.responseText;
+	    }
+	};
+	xhttp.open("GET", "/termsofuse", true);
+	xhttp.send();
+}
 
 /**
  * Sets the compiler location form data retrieve from an updated element.

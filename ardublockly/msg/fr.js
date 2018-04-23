@@ -109,7 +109,13 @@ Ardublockly.LOCALISED_TEXT = {
   catButtons: "Boutons",
   catSensors: "Capteurs",
 	/*Modal Dialog to manage Kniwwelino*/
-	manageKniwwelinoHeading: "Manage your Kniwwelino boards",
+	manageKniwwelinoHeading: "Gérer vos cartes Kniwwelino",
+	manageKniwwelinoAdd: "ajouter Kniwwelino en premier",
+	manageKniwwelinoZero: "Tu gères: 0 Kniwwelinos",
+	manageKniwwelinoManaging: "Tu gères:",
+	manageKniwwelinoName: "Kniwwelino Nom",
+	manageKniwwelinoPlaceholder: "Mon Kniwwelino",
+		manageKniwwelinoHelp: "Assure-toi que ton Kniwwelino est connecté à ton Wifi et démarre-le avec le bouton A enfoncé. <a href='https://doku.kniwwelino.lu/en/preparation' target='_blank'>lire plus</a>",
 	/*ALPHA VERSION*/
 	KNIWWELINO_ALPHA_TITLE: "Version ALPHA!",
 	KNIWWELINO_ALPHA_MESSAGE: "Attention : Il s'agit d'une version alpha et peut contenir des erreurs. Si tu trouves un problème, essaie de le reproduire avant de nous envoyer un rapport de bogue. Le service peut ne pas être disponible de temps à autre.",
