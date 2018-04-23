@@ -93,7 +93,7 @@ Blockly.Blocks['kniwwelino_sleepsec'] = {
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour("#f9d831");
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'time');
 		  }
 };
 
@@ -108,7 +108,7 @@ Blockly.Blocks['kniwwelino_sleep'] = {
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour("#f9d831");
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'time');
 		  }
 };
 
@@ -128,7 +128,7 @@ Blockly.Blocks['kniwwelino_getTime'] = {
 		    this.setOutput(true, Blockly.Types.TEXT.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_GET_TIME);
 		    this.setColour("#f9d831");
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'time');
 		  },getBlockType: function() {
 			    return Blockly.Types.TEXT;
 		  }
@@ -173,7 +173,7 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		     this.setOutput(true, Blockly.Types.TEXT.output);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		   },getBlockType: function() {
 			    return Blockly.Types.TEXT;
 		   }
@@ -194,7 +194,7 @@ Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 				this.setOutput(true, Blockly.Types.TEXT.output);
 				this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 	 		  this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_TIP);
-	 		  this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+	 		  this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		  }, getBlockType: function() {
 				 return Blockly.Types.TEXT;
 			}, onchange: function(ev) {
@@ -235,7 +235,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP);
-			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		  }
 		};
 
@@ -249,7 +249,7 @@ Blockly.Blocks['kniwwelino_RGBsetEffect'] = {
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETEFFECT_TIP);
-			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		  }
 		};
 
@@ -263,7 +263,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorFromString'] = {
 		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		   }
 		};
 
@@ -276,7 +276,7 @@ Blockly.Blocks['kniwwelino_RGBsetBrightness'] = {
 		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		   },
 
 		   onchange: function() {
@@ -303,7 +303,7 @@ Blockly.Blocks['kniwwelino_RGBsetBrightnessFromVariable'] = {
 		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		   }
 		};
 
@@ -315,7 +315,7 @@ Blockly.Blocks['kniwwelino_RGBclear'] = {
 		     this.setNextStatement(true, null);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'rgb');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
 		   }
 		};
 
@@ -686,7 +686,7 @@ Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 //			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP);
-			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
 		   },
 
 		   onchange: function() {
@@ -713,7 +713,7 @@ Blockly.Blocks['kniwwelino_MQTTconnectRGB'] = {
 		         .appendField(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB);
 		     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
 		   }
 };
 
@@ -723,7 +723,7 @@ Blockly.Blocks['kniwwelino_MQTTconnectMATRIX'] = {
 		         .appendField(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX);
 		     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP);
-		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
 		   }
 };
 
@@ -742,7 +742,7 @@ Blockly.Blocks['kniwwelino_MQTTpublishSimple'] = {
 			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP);
-			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
 		   }
 };
 
@@ -754,7 +754,7 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP);
-			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
 			     this.setOutput(false);
 		   },
 		   /**
@@ -785,7 +785,7 @@ Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 			     this.setNextStatement(true, null);
 			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
 			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP);
-			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'mqtt');
+			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
 		   }
 };
 
@@ -917,7 +917,7 @@ Blockly.Blocks['kniwwelino_playNote'] = {
 		    this.setNextStatement(true);
 		    this.setColour(Blockly.Blocks.kniwwelino_AUDIO.HUE);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_TONEOFF_TIP);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  },
 		    /** @return {!string} The type of input value for the block, an integer. */
 		  getBlockType: function() {
@@ -939,7 +939,7 @@ Blockly.Blocks['kniwwelino_playTone'] = {
 		    this.setNextStatement(true);
 		    this.setColour(Blockly.Blocks.kniwwelino_AUDIO.HUE);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_TONEOFF_TIP);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  },
 		    /** @return {!string} The type of input value for the block, an integer. */
 		  getBlockType: function() {
@@ -957,7 +957,7 @@ Blockly.Blocks['kniwwelino_toneOff'] = {
 		    this.setNextStatement(true);
 		    this.setColour(Blockly.Blocks.kniwwelino_AUDIO.HUE);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_TONEOFF_TIP);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  },
 		    /** @return {!string} The type of input value for the block, an integer. */
 		  getBlockType: function() {
@@ -1066,7 +1066,7 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 				this.setOutput(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_AUDIO.HUE);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP);
-		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '');
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  }
 		};
 
