@@ -114,7 +114,7 @@ Ardublockly.LOCALISED_TEXT = {
 	manageKniwwelinoName: "Kniwwelino Name",
 	manageKniwwelinoPlaceholder: "My Kniwwelino",
 	manageKniwwelinoHelp: "Make sure your Kniwwelino is connected to Wifi and start it with button A pressed. <a href='https://doku.kniwwelino.lu/en/preparation' target='_blank'>read more</a>",
-	manageKniwwelinoNoID: "No Kniwwelino with this ID found.",
+	manageKniwwelinoNoID: "No Kniwwelino with this ID found. Please make sure that the entered ID is correct and that your Kniwwelino is connected to a Wifi.",
 	manageKniwwelinoNoUniqueID: "No unique ID for this Kniwwelino found.",
 	manageKniwwelinoNameRequired: "Name required",
 	manageKniwwelinoNameRequired_message: "Give it a name.",
