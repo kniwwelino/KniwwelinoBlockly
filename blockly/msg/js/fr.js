@@ -513,7 +513,7 @@ Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untrans
 
 
 //Kniwwelino DOKU URL
-Blockly.Msg.KNIWWELINO_HELPURL = "http://doku.kniwwelino.lu/fr/reference/";
+Blockly.Msg.KNIWWELINO_HELPURL = "https://doku.kniwwelino.lu/en/programmingblocks/";
 
 Blockly.Msg.KNIWWELINO_WARNING = 'Warning:'; // untranslated
 //Kniwwelino
