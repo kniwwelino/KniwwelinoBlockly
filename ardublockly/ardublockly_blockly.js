@@ -200,17 +200,17 @@ Ardublockly.discardAllBlocks = function() {
     Ardublockly.renderContent();
   } else if (blockCount > 1) {
     Ardublockly.alertMessage(
-        Ardublockly.getLocalStr('discardBlocksTitle'),
-        Ardublockly.getLocalStr('discardBlocksBody')
-            .replace('%1', blockCount),
-        true,
-        function() {
-          Ardublockly.workspace.clear();
-          //load a new prepared workspace
-          Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
-					Ardublockly.sketchNameSet(Ardublockly.getLocalStr('sketchName'));
-          Ardublockly.renderContent();
-        });
+      Ardublockly.getLocalStr('discardBlocksTitle'),
+      Ardublockly.getLocalStr('discardBlocksBody').replace('%1', blockCount),
+      true,
+      function() {
+				Ardublockly.workspace.clear();
+				//load a new prepared workspace
+				Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
+				Ardublockly.sketchNameSet(Ardublockly.getLocalStr('sketchName'));
+				Ardublockly.renderContent();
+			}
+		);
   }
 };
 
