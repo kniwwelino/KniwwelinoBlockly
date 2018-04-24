@@ -428,6 +428,12 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
   body {
     padding-top: 110px;
   }
+
+	.hide-on-large {
+		visibility: hidden;
+		display: none;
+	}
+
   .nav-fixed {
     position: fixed;
     right: 0;
@@ -437,6 +443,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     z-index: 997;
   }
 }
+
 
 /* Side nav Logo */
 ul.side-nav li.logo {
@@ -1177,6 +1184,10 @@ ul.side-nav li ul li ul {
 }
 ul.side-nav li ul li ul li {
   border: none !important;
+}
+
+ul.side-nav li ul li select {
+	padding: 0px 30px;
 }
 
 /* Add extra margin to the side menu button*/

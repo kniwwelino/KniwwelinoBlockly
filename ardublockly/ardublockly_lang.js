@@ -99,6 +99,18 @@ Ardublockly.populateLanguageMenu = function(selectedLang) {
     languageMenu.options.add(option);
   }
   languageMenu.onchange = Ardublockly.changeLanguage;
+
+	var sidelanguageMenu = document.getElementById('menu_language');
+  sidelanguageMenu.options.length = 0;
+
+  for (var lang in Ardublockly.LANGUAGE_NAME) {
+    var option = new Option(Ardublockly.LANGUAGE_NAME[lang], lang);
+    if (lang == selectedLang) {
+      option.selected = true;
+    }
+    sidelanguageMenu.options.add(option);
+  }
+  sidelanguageMenu.onchange = Ardublockly.changeLanguageBySideNav;
 };
 
 
@@ -160,9 +172,20 @@ Ardublockly.injectLanguageJsSources = function(langKey) {
 Ardublockly.changeLanguage = function() {
   // Store the blocks for the duration of the reload only
   Ardublockly.saveSessionStorageBlocks();
-
   var languageMenu = document.getElementById('language');
-  var newLang = encodeURIComponent(
+  return Ardublockly.changeLang(languageMenu);
+};
+
+/** Saves the blocks and reloads with a different language. */
+Ardublockly.changeLanguageBySideNav = function() {
+  // Store the blocks for the duration of the reload only
+  Ardublockly.saveSessionStorageBlocks();
+  var languageMenu = document.getElementById('menu_language');
+  return Ardublockly.changeLang(languageMenu);
+};
+
+Ardublockly.changeLang = function(languageMenu) {
+	var newLang = encodeURIComponent(
       languageMenu.options[languageMenu.selectedIndex].value);
   var search = window.location.search;
   if (search.length <= 1) {

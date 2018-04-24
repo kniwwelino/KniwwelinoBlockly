@@ -108,6 +108,7 @@ Ardublockly.LOCALISED_TEXT = {
   catButtons: "Knöpfe",
   catSensors: "Sensoren",
 	/*Modal Dialog to manage Kniwwelino*/
+	manageKniwwelino: "Deine Kniwwelinos",
 	manageKniwwelinoHeading: "Verwalte deine Kniwwelinos",
 	manageKniwwelinoAdd: "Kniwwelino hinzufügen",
 	manageKniwwelinoZero: "Du verwaltest: 0 Kniwwelinos",
