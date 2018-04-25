@@ -9,7 +9,7 @@ Ardublockly.LOCALISED_TEXT = {
   deleteAll: "Tout supprimer",
   settings: "Réglages",
   documentation: "Documentation",
-  reportBug: "Signaler un problème",
+  reportBug: "Signaler un bug",
   examples: "Exemples",
   /* Settings */
   compilerLocation: "Emplacement du compilateur",

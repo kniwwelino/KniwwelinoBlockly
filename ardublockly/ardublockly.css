@@ -689,6 +689,19 @@ ul.side-nav li.side-menu-end {
   }
 }
 
+@media only screen and (max-width: 750px) {
+	.hide-on-small {
+		display: none;
+	}
+
+	nav .brand-logo {
+		left: 0%;
+		transform: translateX(80px);
+		-webkit-transform: translateX(80px);
+	}
+}
+
+
 
 /*************/
 /*  Buttons  */
@@ -977,6 +990,14 @@ ul.side-nav li.side-menu-end {
   }
 }
 
+@media only screen and (min-width: 750px) and (max-width: 992px) {
+	nav .brand-logo {
+		left: 0%;
+		transform: translateX(300px);
+		-webkit-transform: translateX(300px);
+	}
+}
+
 
 /************/
 /*  Others  */
@@ -989,7 +1010,7 @@ ul.side-nav li.side-menu-end {
   font-weight: bold;
   display: block;
   float: left;
-  text-align: center;
+
   margin-right: 1rem;
 }
 
@@ -1044,6 +1065,8 @@ text.blocklyCheckbox {
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden !important;
+	/* overflow: scroll;
+  -webkit-overflow-scrolling: touch; */
 }
 .blocklyTreeRoot {
   background: none !important;

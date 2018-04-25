@@ -88,17 +88,17 @@ Ardublockly.getUrlLanguage = function() {
  * @param {!string} selectedLang Language to be marked as selected.
  */
 Ardublockly.populateLanguageMenu = function(selectedLang) {
-  var languageMenu = document.getElementById('language');
-  languageMenu.options.length = 0;
-
-  for (var lang in Ardublockly.LANGUAGE_NAME) {
-    var option = new Option(Ardublockly.LANGUAGE_NAME[lang], lang);
-    if (lang == selectedLang) {
-      option.selected = true;
-    }
-    languageMenu.options.add(option);
-  }
-  languageMenu.onchange = Ardublockly.changeLanguage;
+  // var languageMenu = document.getElementById('language');
+  // languageMenu.options.length = 0;
+	//
+  // for (var lang in Ardublockly.LANGUAGE_NAME) {
+  //   var option = new Option(Ardublockly.LANGUAGE_NAME[lang], lang);
+  //   if (lang == selectedLang) {
+  //     option.selected = true;
+  //   }
+  //   languageMenu.options.add(option);
+  // }
+  // languageMenu.onchange = Ardublockly.changeLanguage;
 
 	var sidelanguageMenu = document.getElementById('menu_language');
   sidelanguageMenu.options.length = 0;
