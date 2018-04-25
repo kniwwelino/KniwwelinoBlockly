@@ -234,7 +234,7 @@ Ardublockly.initKniwwelinoList = function() {
 	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
 	var kniwwelinos = '<li><select name="select_kniwwelino" id="select_kniwwelino" class="manageKniwwelino browser-default input-field">';
 
-	if (!kniwwelinoLocalStorage) {
+	if (!kniwwelinoLocalStorage || kniwwelinoJSON.length == 0) {
 		kniwwelinos += '<option value="default"><span class="translatable_manageKniwwelinoAdd">'+Ardublockly.getLocalStr('manageKniwwelinoAdd')+'</span></option>';
 	} else {
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
@@ -345,7 +345,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 						}
 					}
 
-					if (selectFirst) {
+					if (selectFirst && kniwwelinoJSON.length > 1) {
 						tempJSON[0].selected = "selected";
 					}
 					localStorage.setItem('kniwwelinos', JSON.stringify(tempJSON));
