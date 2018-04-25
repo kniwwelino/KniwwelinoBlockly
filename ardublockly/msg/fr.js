@@ -9,7 +9,7 @@ Ardublockly.LOCALISED_TEXT = {
   deleteAll: "Tout supprimer",
   settings: "Réglages",
   documentation: "Documentation",
-  reportBug: "Signaler un problème",
+  reportBug: "Signaler un bug",
   examples: "Exemples",
   /* Settings */
   compilerLocation: "Emplacement du compilateur",
@@ -109,6 +109,7 @@ Ardublockly.LOCALISED_TEXT = {
   catButtons: "Boutons",
   catSensors: "Capteurs",
 	/*Modal Dialog to manage Kniwwelino*/
+	manageKniwwelino: "Tes Kniwwelinos",
 	manageKniwwelinoHeading: "Gérer vos cartes Kniwwelino",
 	manageKniwwelinoAdd: "ajouter Kniwwelino en premier",
 	manageKniwwelinoZero: "Tu gères: 0 Kniwwelinos",

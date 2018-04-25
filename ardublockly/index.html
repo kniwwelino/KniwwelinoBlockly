@@ -76,7 +76,8 @@
   <!-- Horizontal Navigation bar -->
   <nav class="nav-fixed page-header">
     <div class="nav-wrapper container">
-      <img src="./img/nav_logo.png"/>
+			<a class="button-collapse" href="#" data-activates="slide-out" id="button-collapse"><i class="mdi-navigation-menu left"></i></a>
+      <img src="./img/nav_logo.png"  class="hide-on-small"/>
       <a id="logo-container" class="brand-logo">
         <!--<span class="app_title translatable_title">Kniwwelino:</span>-->
         <!-- Sketch name editable text field -->
@@ -86,19 +87,51 @@
         </span>
       </a>
       <!-- Horizontal Navbar links only shown on large resolutions -->
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a id="button_manageKniwwelino" class="modal-trigger" href="#manageKniwwelino"><i class="mdi-action-settings"></i></a></li>
+			<ul id="nav-mobile" class="right">
+
 				<li><select name="select_kniwwelino" id="select_kniwwelino" class="manageKniwwelino browser-default input-field"></select></li>
-        <li><a href="#" id="button_load"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
-        <li><a href="#" id="button_save"><span class="translatable_save">Save</span><i class="mdi-file-file-download left"></i></a></li>
-        <li><a href="#" id="button_delete"><span class="translatable_deleteAll">Delete All</span><i class="mdi-action-delete left"></i></a></li>
+				<li><a id="button_manageKniwwelino" class="modal-trigger" href="#manageKniwwelino"><i class="mdi-action-settings"></i></a></li>
+        <!-- <li class="hide-on-med-and-down"><a href="#" id="button_load"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
+        <li class="hide-on-med-and-down"><a href="#" id="button_save"><span class="translatable_save">Save</span><i class="mdi-file-file-download left"></i></a></li> -->
+        <li class="hide-on-med-and-down"><a href="#" id="button_delete"><i class="mdi-action-delete"></i></a></li>
+				<!-- <li><a href="#" id="button_load"><i class="mdi-file-file-upload"></i></a></li>
+        <li><a href="#" id="button_save"><i class="mdi-file-file-download"></i></a></li>
+        <li><a href="#" id="button_delete"><i class="mdi-action-delete"></i></a></li> -->
 
-				<li><select name="settings_language" id="language" class="manageKniwwelino browser-default input-field"></select></li>
+				<!-- <li class="hide-on-med-and-down"><select name="settings_language" id="language" class="manageKniwwelino browser-default input-field"></select></li> -->
       </ul>
-
-
     </div>
   </nav>
+
+	<ul id="slide-out" class="side-nav">
+    <li class="logo"><img src="img/sidenav_header.png" alt="Kniwwelino block image"></li>
+    <li class="no-padding">
+      <ul>
+        <li id="menu_load"><a href="#"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
+        <li id="menu_save"><a href="#"><span class="translatable_save">Save</span><i class="mdi-file-file-download left"></i></a></li>
+        <li id="menu_delete"><a href="#"><span class="translatable_deleteAll">Delete All</span><i class="mdi-action-delete left"></i></a></li>
+        <li id="menu_button_manageKniwwelino"><a class="modal-trigger" href="#manageKniwwelino"><span class="translatable_manageKniwwelino">Manage Kniwwelino</span><i class="mdi-action-settings left"></i></a></li>
+        <li id="menu_bug"><a id="dokuURL" href="http://doku.kniwwelino.lu/" target="_blank"><span class="translatable_documentation">Documentation</span><i class="mdi-action-help left"></i></a></li>
+        <li id="menu_bug"><a id="bugreportURL" href="https://doku.kniwwelino.lu/en/feedback" target="_blank"><span class="translatable_reportBug">Report Bug</span><i class="mdi-action-bug-report left"></i></a></li>
+				<li><select name="settings_language" id="menu_language" class="browser-default input-field"></select></li>
+
+			</ul>
+    <!-- <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <div class="collapsible-header"><span class="translatable_language">Language</span><i class="mdi-navigation-arrow-drop-down"></i></div>
+          <div class="collapsible-body">
+            <ul>
+              <li id="menu_example_1"><a href="#!">Best Friends</a></li>
+              <li id="menu_example_2"><a href="#!">Rock Paper Scissors</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li> -->
+    <li class="no-padding side-menu-end">&nbsp;</li>
+  </ul>
+
 
   <!-- Content -->
   <div class="container" id ="container">
@@ -155,7 +188,7 @@
           </div>
         </div>
       </div>
-      <div class="col s12 m12 l4" id="codesidebar" style="visibility: hidden; position: absolute; left: -1000px;">
+      <div class="col s12 m12 l4" id="codesidebar" style="visibility: hidden; display:none;">
         <ul class="collapsible z-depth-1" data-collapsible="accordion">
           <li>
             <div class="sourcecode collapsible-header active waves-effect waves-teal" id="arduino_collapsible_header">

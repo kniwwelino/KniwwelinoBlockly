@@ -428,6 +428,12 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
   body {
     padding-top: 110px;
   }
+
+	.hide-on-large {
+		visibility: hidden;
+		display: none;
+	}
+
   .nav-fixed {
     position: fixed;
     right: 0;
@@ -437,6 +443,7 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     z-index: 997;
   }
 }
+
 
 /* Side nav Logo */
 ul.side-nav li.logo {
@@ -681,6 +688,19 @@ ul.side-nav li.side-menu-end {
     height: 40px;
   }
 }
+
+@media only screen and (max-width: 750px) {
+	.hide-on-small {
+		display: none;
+	}
+
+	nav .brand-logo {
+		left: 0%;
+		transform: translateX(80px);
+		-webkit-transform: translateX(80px);
+	}
+}
+
 
 
 /*************/
@@ -970,6 +990,14 @@ ul.side-nav li.side-menu-end {
   }
 }
 
+@media only screen and (min-width: 750px) and (max-width: 992px) {
+	nav .brand-logo {
+		left: 0%;
+		transform: translateX(300px);
+		-webkit-transform: translateX(300px);
+	}
+}
+
 
 /************/
 /*  Others  */
@@ -982,7 +1010,7 @@ ul.side-nav li.side-menu-end {
   font-weight: bold;
   display: block;
   float: left;
-  text-align: center;
+
   margin-right: 1rem;
 }
 
@@ -1037,6 +1065,8 @@ text.blocklyCheckbox {
   -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden !important;
+	/* overflow: scroll;
+  -webkit-overflow-scrolling: touch; */
 }
 .blocklyTreeRoot {
   background: none !important;
@@ -1177,6 +1207,10 @@ ul.side-nav li ul li ul {
 }
 ul.side-nav li ul li ul li {
   border: none !important;
+}
+
+ul.side-nav li ul li select {
+	padding: 0px 30px;
 }
 
 /* Add extra margin to the side menu button*/

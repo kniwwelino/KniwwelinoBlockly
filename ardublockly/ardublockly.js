@@ -63,8 +63,8 @@ Ardublockly.init = function() {
 /** Binds functions to each of the buttons, nav links, and related. */
 Ardublockly.bindActionFunctions = function() {
   // Navigation buttons
-  Ardublockly.bindClick_('button_load', Ardublockly.loadUserXmlFile);
-  Ardublockly.bindClick_('button_save', Ardublockly.saveXmlFile);
+  // Ardublockly.bindClick_('button_load', Ardublockly.loadUserXmlFile);
+  // Ardublockly.bindClick_('button_save', Ardublockly.saveXmlFile);
   Ardublockly.bindClick_('button_delete', Ardublockly.discardAllBlocks);
 
   // Floating buttons
@@ -82,6 +82,11 @@ Ardublockly.bindActionFunctions = function() {
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
+
+	Ardublockly.bindClick_('menu_button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
+	Ardublockly.bindClick_('menu_load', Ardublockly.loadUserXmlFile);
+  Ardublockly.bindClick_('menu_save', Ardublockly.saveXmlFile);
+  Ardublockly.bindClick_('menu_delete', Ardublockly.discardAllBlocks);
 
 	Ardublockly.bindClick_('copyright', Ardublockly.renderCopyright);
 
@@ -595,14 +600,12 @@ Ardublockly.toggleSourceCodeVisibility = function() {
   if (document.getElementById('codesidebar').style.visibility == "hidden") {
     document.getElementById('blocks_workspace').style.width = "65%";
 		document.getElementById('codesidebar').style.width = "35%";
-		document.getElementById('codesidebar').style.position = "relative";
-		document.getElementById('codesidebar').style.left = "";
     document.getElementById('codesidebar').style.visibility = "visible";
+		document.getElementById('codesidebar').style.display = "";
   } else {
     document.getElementById('blocks_workspace').style.width = "100%";
-		document.getElementById('codesidebar').style.position = "absolute";
-		document.getElementById('codesidebar').style.left = "-1000px";
     document.getElementById('codesidebar').style.visibility = "hidden";
+		document.getElementById('codesidebar').style.display = "none";
   }
    Ardublockly.contentWidthToggle();
 }
