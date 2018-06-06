@@ -205,7 +205,7 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_MQTTsubscribePublic">' + 
+'    <block type="kniwwelino_MQTTsubscribePublic">' +
 '      <value name="TOPIC">' +
 '        <shadow type="text">' +
 '          <field name="TEXT">MATRIX/TEXT</field>' +
@@ -213,7 +213,6 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '  </category>' +
-
 '  <sep></sep>' +
 '  <category id="catLogic" name="Logic">' +
 '    <block type="controls_if"></block>' +
@@ -494,6 +493,7 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_WeatherConstChooser"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
