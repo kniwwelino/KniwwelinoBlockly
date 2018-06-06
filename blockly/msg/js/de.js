@@ -604,7 +604,8 @@ Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "verbinde Matrix mit MATRIX/TEXT un
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Verbindet einkommende Nachrichten mit der LED Matrix";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "sende";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Sendet eine gegebene Nachrichten an ein Thema (Topic)";
-Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "an Topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "an Gruppen-Topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "an öffentliche Topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "verbinde Variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (String) mit einem bestimmten Nachrichten-Thema (Topic)";
 //logic
@@ -636,10 +637,26 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "Weißanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "Rotanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "Grünanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
-	
+
+// WEATHER
+Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Für"
+Blockly.Msg.KNIWWELINO_LOCATION_GET = "empfange"
+
+Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG = "Luxemburg"
+Blockly.Msg.KNIWWELINO_LOCATION_BELVAL = "Belval"
+Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH = "Echternach"
+Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK = "Ettelbrück"
+
+Blockly.Msg.KNIWWELINO_WEATHER_WEATHER = "Wetter"
+Blockly.Msg.KNIWWELINO_WEATHER_TEMP = "Temperatur"
+Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY = "Luftfeuchtigkeit"
+Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE = "Luftdruck"
+Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED = "Windgeschwindigkeit"
+Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR = "Windrichtung"
+
 // AUDIO
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Spiele Note"
-Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Spiele Ton" 
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Spiele Ton"
 Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "mit Länge"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "an Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton aus an Pin"

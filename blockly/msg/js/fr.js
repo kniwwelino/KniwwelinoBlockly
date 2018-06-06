@@ -543,11 +543,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'fixe la luminosité de la LED RVB su
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la LED RVB (1-255)';
 Blockly.Msg.KNIWWELINO_RGB_CLEAR = 'éteins la LED RVB'
 Blockly.Msg.KNIWWELINO_RGB_CLEAR_TIP = 'Éteindre la LED RVB'
-Blockly.Msg.KNIWWELINO_RGB_TIP = 'Configure les couleurs sur base de valeurs numériques pour rouge, vert et bleu. [0-255]';  
+Blockly.Msg.KNIWWELINO_RGB_TIP = 'Configure les couleurs sur base de valeurs numériques pour rouge, vert et bleu. [0-255]';
 Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-255.";  // untranslated
-Blockly.Msg.KNIWWELINO_RGB_RED = "rouge";  
-Blockly.Msg.KNIWWELINO_RGB_GREEN = "vert"; 
-Blockly.Msg.KNIWWELINO_RGB_BLUE = "bleu";  
+Blockly.Msg.KNIWWELINO_RGB_RED = "rouge";
+Blockly.Msg.KNIWWELINO_RGB_GREEN = "vert";
+Blockly.Msg.KNIWWELINO_RGB_BLUE = "bleu";
 Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
 Blockly.Msg.KNIWWELINO_PIN_BUTTON = "bouton externe sur pin";
@@ -558,14 +558,14 @@ Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER = "affiche l'icône sur la matrice
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP = "Affiche l'icône dessinée sur la matrice";
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON = "affiche l'icône sur la matrice";
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP = "Affiche l'icône dessinée sur la matrice";
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'active ou désactive un pixel sur la matrice'; 
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = "X est la position dans une rangée [0-4]. Y est la position de la rangée [0-4]. L'état 0 de la LED est éteint, une valeur plus grande est allumée.";  
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL = 'active ou désactive un pixel sur la matrice';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_TIP = "X est la position dans une rangée [0-4]. Y est la position de la rangée [0-4]. L'état 0 de la LED est éteint, une valeur plus grande est allumée.";
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X = 'X';
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y = 'Y';
 Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL = 'lis un pixel sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP = 'Lit un pixel sur la matrice. X est la position dans une rangée [0-4]. Y est la position de la rangée [0-4].';
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'état LED'; 
-Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'La valeur doit être compris entre 0-4.'; 
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_STATE = 'état LED';
+Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING = 'La valeur doit être compris entre 0-4.';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE = 'écris le texte sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_TIP = 'Écrit le text donné sur la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'en continu';
@@ -602,7 +602,8 @@ Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "connecte la matrice aux topics MAT
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connecte la matrice aux topics MATRIX/TEXT et MATRIX/ICON du messaging";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "envoie";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Envoie le message donné au Topic spécifié";///////////
-Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "au topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "au topic d'groupe";
+Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "au topic public";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "relie la variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relie la variable sélectionné au topic spécifié";
 //logic
@@ -634,14 +635,30 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "composante blanche"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "composante rouge"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "composante verte"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "composante bleue"
-	
+
+// WEATHER
+Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Pour"
+Blockly.Msg.KNIWWELINO_LOCATION_GET = "reçois"
+
+Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG = "Luxembourg"
+Blockly.Msg.KNIWWELINO_LOCATION_BELVAL = "Belval"
+Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH = "Echternach"
+Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK = "Ettelbrück"
+
+Blockly.Msg.KNIWWELINO_WEATHER_WEATHER = "météo"
+Blockly.Msg.KNIWWELINO_WEATHER_TEMP = "température"
+Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY = "humidité"
+Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE = "pression"
+Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED = "vitesse du vent"
+Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR = "direction du vent"
+
 // AUDIO
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "joue la note"
-Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "joue le son" 
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "joue le son"
 Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "de durée 1/"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "sur pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "arrête le son sur pin"
-	
+
 // DATE TIME
 Blockly.Msg.KNIWWELINO_GET_TIME = "retourne la date/heure actuelle en format:"
 Blockly.Msg.KNIWWELINO_TIME_DATETIME = "HH:mm:ss dd.MM.YYYY"
