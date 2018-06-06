@@ -205,6 +205,13 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_MQTTsubscribePublic">' + 
+'      <value name="TOPIC">' +
+'        <shadow type="text">' +
+'          <field name="TEXT">MATRIX/TEXT</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
 '  </category>' +
 
 '  <sep></sep>' +
@@ -423,7 +430,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_toneOff"></block>' +
-'    <block type="kniwwelino_toneChooser">' + 
+'    <block type="kniwwelino_toneChooser">' +
 '       <field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
 '    </block>' +
 '  </category>' +
@@ -481,6 +488,12 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_BH1750getLightLevel"></block>' +
 '    <block type="kniwwelino_ADPS9960getValue"></block>' +
 '    <block type="kniwwelino_HCSR04getValue"></block>' +
+'		 <block type="kniwwelino_MQTTsubscribePublic">' +
+'      <value name="TOPIC">' +
+'        <block type="kniwwelino_WeatherTopicChooser">' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
