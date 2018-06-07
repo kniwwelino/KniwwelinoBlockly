@@ -639,9 +639,11 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "white level"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "red level"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "green level"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "blue level"
+
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "For"
 Blockly.Msg.KNIWWELINO_LOCATION_GET = "get"
+Blockly.Msg.KNIWWELINO_LOCATION_IN = "in"
 
 Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP = "Choose a weather topic you like to subscripe to."
 Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP = "Choose a weather condition to compare to."
