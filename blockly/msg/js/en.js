@@ -607,7 +607,8 @@ Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "connect matrix to topic MATRIX/TEX
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connect matrix to messaging";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "send";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Send the given message to the specified message topic";
-Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to group topic";
+Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "to public topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "attach variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the specified message topic";
 //logic
@@ -638,9 +639,25 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "white level"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "red level"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "green level"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "blue level"
+// WEATHER
+Blockly.Msg.KNIWWELINO_LOCATION_FOR = "For"
+Blockly.Msg.KNIWWELINO_LOCATION_GET = "get"
+
+Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG = "Luxembourg"
+Blockly.Msg.KNIWWELINO_LOCATION_BELVAL = "Belval"
+Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH = "Echternach"
+Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK = "Ettelbrück"
+
+Blockly.Msg.KNIWWELINO_WEATHER_WEATHER = "weather"
+Blockly.Msg.KNIWWELINO_WEATHER_TEMP = "temperature"
+Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY = "humidity"
+Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE = "pressure"
+Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED = "wind speed"
+Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR = "wind direction"
+
 // AUDIO
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Play Note"
-Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Play Tone" 
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "Play Tone"
 Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "of duration 1/"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "on Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Turn tone off on pin"
@@ -652,8 +669,8 @@ Blockly.Msg.KNIWWELINO_TIME_TIME = "HH:mm:ss"
 Blockly.Msg.KNIWWELINO_TIME_HOUR = "HOUR"
 Blockly.Msg.KNIWWELINO_TIME_MINUTE = "MINUTE"
 Blockly.Msg.KNIWWELINO_TIME_SECOND = "SECOND"
-	
-	
+
+
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "on";
 //Blockly.Msg.ARD_LOW = "off";
