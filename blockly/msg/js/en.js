@@ -643,6 +643,9 @@ Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "blue level"
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "For"
 Blockly.Msg.KNIWWELINO_LOCATION_GET = "get"
 
+Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP = "Choose a weather topic you like to subscripe to."
+Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP = "Choose a weather condition to compare to."
+
 Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG = "Luxembourg"
 Blockly.Msg.KNIWWELINO_LOCATION_BELVAL = "Belval"
 Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH = "Echternach"
@@ -654,6 +657,14 @@ Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY = "humidity"
 Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE = "pressure"
 Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED = "wind speed"
 Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR = "wind direction"
+
+Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM = "Thunderstorm"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_DRIZZLE = "Drizzle"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_RAIN = "Rain"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_SNOW = "Snow"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_ATMOSPHERE = "Atmosphere"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_CLEAR = "Clear"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_CLOUDS = "Clouds"
 
 // AUDIO
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE = "Play Note"
