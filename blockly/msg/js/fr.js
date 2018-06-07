@@ -639,6 +639,7 @@ Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "composante bleue"
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Pour"
 Blockly.Msg.KNIWWELINO_LOCATION_GET = "reçois"
+Blockly.Msg.KNIWWELINO_LOCATION_IN = "à"
 
 Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP = "Choisir un sujet météo auquel vous aimez vous abonner."
 Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP = "Choisir une condition météorologique à comparer."

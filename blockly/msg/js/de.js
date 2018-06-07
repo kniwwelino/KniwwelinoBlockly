@@ -641,6 +641,7 @@ Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Für"
 Blockly.Msg.KNIWWELINO_LOCATION_GET = "empfange"
+Blockly.Msg.KNIWWELINO_LOCATION_IN = "in"
 
 Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP = "Wähle eine Wetterparameter zum setzen eines Nachrichten-Themas (Topic)"
 Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP = "Wähle eine Wetterkondition um sie zu vergleichen."

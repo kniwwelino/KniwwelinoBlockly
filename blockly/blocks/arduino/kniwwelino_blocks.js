@@ -935,22 +935,21 @@ Blockly.Blocks['kniwwelino_HCSR04getValue'] = {
 Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
 	init: function() {
 		this.appendDummyInput()
-				.appendField(Blockly.Msg.KNIWWELINO_LOCATION_FOR)
-        .appendField(new Blockly.FieldDropdown([
-					[Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG,"luxembourg"],
-					[Blockly.Msg.KNIWWELINO_LOCATION_BELVAL,"belval"],
-					[Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH,"echternach"],
-					[Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK,"ettelbruck"]])
-				, "LOCATION")
-				.appendField(Blockly.Msg.KNIWWELINO_LOCATION_GET)
-        .appendField(new Blockly.FieldDropdown([
+				.appendField(new Blockly.FieldDropdown([
 					[Blockly.Msg.KNIWWELINO_WEATHER_WEATHER,"weather"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_TEMP,"temp"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY, "humidity"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE, "pressure"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED, "windspeed"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR, "winddir"]])
-				, "WEATHER_PAR");
+				, "WEATHER_PAR")
+				.appendField(Blockly.Msg.KNIWWELINO_LOCATION_IN)
+        .appendField(new Blockly.FieldDropdown([
+					[Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG,"luxembourg"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_BELVAL,"belval"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH,"echternach"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK,"ettelbruck"]])
+				, "LOCATION");
 		this.setOutput(true, null);
     this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP);
