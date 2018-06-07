@@ -969,7 +969,7 @@ Blockly.Blocks['kniwwelino_toneOff'] = {
 Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
 				this.appendDummyInput()
-				.appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
+				.appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
 		        .appendField(new Blockly.FieldDropdown([
 		        	["Pause 0Hz","0 /*Silence*/"],
 		        	["B0 31Hz","NOTE_B0 /*31Hz*/"],
@@ -1069,7 +1069,3 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  }
 		};
-
-
-
-
