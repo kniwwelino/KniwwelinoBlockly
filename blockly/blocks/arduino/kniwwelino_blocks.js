@@ -953,7 +953,26 @@ Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
 				, "WEATHER_PAR");
 		this.setOutput(true, null);
     this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'weather');
+	}
+};
+
+Blockly.Blocks['kniwwelino_WeatherConstChooser'] = {
+	init: function() {
+		this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM,"Thunderstorm"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_DRIZZLE,"Drizzle"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_RAIN, "Rain"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_SNOW, "Snow"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_ATMOSPHERE, "Atmosphere"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLEAR, "Clear"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLOUDS, "Clouds"]])
+				, "WEATHER_CONST");
+		this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP);
     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'weather');
 	}
 };

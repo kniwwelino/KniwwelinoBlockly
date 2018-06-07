@@ -477,13 +477,16 @@ Blockly.Arduino['kniwwelino_HCSR04getValue'] = function(block) {
 //==== WEATHER ============================================
 
 Blockly.Arduino['kniwwelino_WeatherTopicChooser'] = function(block) {
-	kniwwelinoBaseCode();
 	var location = block.getFieldValue('LOCATION');
   var weather_par = block.getFieldValue('WEATHER_PAR');
-	// var location = Blockly.Arduino.valueToCode(block, 'LOCATION',Blockly.Arduino.ORDER_UNARY_POSTFIX);
-	// var weather = Blockly.Arduino.valueToCode(block, 'WEATHER_PAR',Blockly.Arduino.ORDER_UNARY_POSTFIX);
+
   var code = "\"weather/"+location+"/"+weather_par + "\"";
 	return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['kniwwelino_WeatherConstChooser'] = function(block) {
+  var weather_const = '\"'+block.getFieldValue('WEATHER_CONST')+'\"';
+	return [weather_const, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 //==== AUDIO ==============================================
