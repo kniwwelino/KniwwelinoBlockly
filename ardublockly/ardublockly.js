@@ -91,6 +91,13 @@ Ardublockly.bindActionFunctions = function() {
 	Ardublockly.bindClick_('copyright', Ardublockly.renderCopyright);
 
 	Ardublockly.bindKniwwelinoList();
+
+	var urlPara = location.search.match(new RegExp('[?&]' + 'xml' + '=([^&]+)'));
+	var xml = urlPara ? decodeURIComponent(urlPara[1].replace(/\+/g, '%20')) : '';
+	console.log('xml urlPara: ' + xml);
+	if (xml) {
+		//Ardublockly.loadServerXmlFile(xml);
+	}
 };
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */

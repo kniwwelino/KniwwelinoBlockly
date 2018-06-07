@@ -776,6 +776,37 @@ Blockly.Blocks['kniwwelino_MQTTsubscribe'] = {
 		   }
 };
 
+Blockly.Blocks['kniwwelino_MQTTsubscribePublic'] = {
+		   init: function() {
+				 this.setInputsInline(true);
+			     this.appendValueInput("TOPIC")
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_ATTACH).appendField(new Blockly.FieldVariable(Blockly.Msg.VARIABLES_DEFAULT_NAME), "VAR")
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC);
+			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
+			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP);
+			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
+			     this.setOutput(false);
+		   },
+		   /**
+		    * @return {!string} Retrieves the type (stored in varType) of this block.
+		    * @this Blockly.Block
+		    */
+		   getBlockType: function() {
+		     return [Blockly.Types.UNDEF, this.getFieldValue('VAR')];
+		   },
+		   /**
+		    * Gets the stored type of the variable indicated in the argument. As only one
+		    * variable is stored in this block, no need to check input
+		    * @this Blockly.
+		    * @param {!string} varName Name of this block variable to check type.
+		    * @return {!string} String to indicate the type of this block.
+		    */
+		   getVarType: function(varName) {
+		     return [Blockly.Types.UNDEF, this.getFieldValue('VAR')];
+		   }
+};
+
+
 Blockly.Blocks['kniwwelino_MQTTpublish'] = {
 		   init: function() {
 				 this.setInputsInline(true);
@@ -899,6 +930,55 @@ Blockly.Blocks['kniwwelino_HCSR04getValue'] = {
 		  }
 };
 
+//==== WEATHER ============================================
+
+Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
+	init: function() {
+		this.appendDummyInput()
+				.appendField(Blockly.Msg.KNIWWELINO_LOCATION_FOR)
+        .appendField(new Blockly.FieldDropdown([
+					[Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG,"luxembourg"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_BELVAL,"belval"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH,"echternach"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK,"ettelbruck"]])
+				, "LOCATION")
+				.appendField(Blockly.Msg.KNIWWELINO_LOCATION_GET)
+        .appendField(new Blockly.FieldDropdown([
+					[Blockly.Msg.KNIWWELINO_WEATHER_WEATHER,"weather"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_TEMP,"temp"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY, "humidity"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE, "pressure"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED, "windspeed"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR, "winddir"]])
+				, "WEATHER_PAR");
+		this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'weather');
+	}
+};
+
+Blockly.Blocks['kniwwelino_WeatherConstChooser'] = {
+	init: function() {
+		this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM,"Thunderstorm"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_DRIZZLE,"Drizzle"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_RAIN, "Rain"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_SNOW, "Snow"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_ATMOSPHERE, "Atmosphere"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLEAR, "Clear"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLOUDS, "Clouds"]])
+				, "WEATHER_CONST");
+		this.setOutput(true, null);
+    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP);
+    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'weather');
+	}
+};
+
+
+
 
 //==== AUDIO ==============================================
 
@@ -969,7 +1049,7 @@ Blockly.Blocks['kniwwelino_toneOff'] = {
 Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
 				this.appendDummyInput()
-				.appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
+				.appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
 		        .appendField(new Blockly.FieldDropdown([
 		        	["Pause 0Hz","0 /*Silence*/"],
 		        	["B0 31Hz","NOTE_B0 /*31Hz*/"],
@@ -1069,7 +1149,3 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  }
 		};
-
-
-
-
