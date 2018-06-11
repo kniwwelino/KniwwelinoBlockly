@@ -659,7 +659,7 @@ Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED = "vitesse du vent [m/s]"
 Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR = "direction du vent [°]"
 Blockly.Msg.KNIWWELINO_WEATHER_CLOUDS = "nuages"
 
-Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM = "orage électrique"
+Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM = "orage"
 Blockly.Msg.KNIWWELINO_WEATHER_COND_DRIZZLE = "bruine"
 Blockly.Msg.KNIWWELINO_WEATHER_COND_RAIN = "pluie"
 Blockly.Msg.KNIWWELINO_WEATHER_COND_SNOW = "neige"
