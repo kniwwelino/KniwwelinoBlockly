@@ -941,7 +941,8 @@ Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
 					[Blockly.Msg.KNIWWELINO_WEATHER_HUMIDITY, "humidity"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_PRESSURE, "pressure"],
 					[Blockly.Msg.KNIWWELINO_WEATHER_WINDSPEED, "windspeed"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR, "winddir"]])
+					[Blockly.Msg.KNIWWELINO_WEATHER_WINDDIR, "winddir"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_CLOUDS, "clouds"]])
 				, "WEATHER_PAR")
 				.appendField(Blockly.Msg.KNIWWELINO_LOCATION_IN)
         .appendField(new Blockly.FieldDropdown([
@@ -960,14 +961,16 @@ Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
 Blockly.Blocks['kniwwelino_WeatherConstChooser'] = {
 	init: function() {
 		this.appendDummyInput()
+				.appendField(Blockly.Msg.KNIWWELINO_WEATHER_IS)
         .appendField(new Blockly.FieldDropdown([
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM,"Thunderstorm"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_DRIZZLE,"Drizzle"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_RAIN, "Rain"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_SNOW, "Snow"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_ATMOSPHERE, "Atmosphere"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLEAR, "Clear"],
-					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLOUDS, "Clouds"]])
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_THUNDERSTORM,"thunderstorm"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_DRIZZLE,"drizzle"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_RAIN, "rain"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_SNOW, "snow"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_FOG, "fog"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_MIST, "mist"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLEAR, "clear"],
+					[Blockly.Msg.KNIWWELINO_WEATHER_COND_CLOUDS, "clouds"]])
 				, "WEATHER_CONST");
 		this.setOutput(true, null);
     this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
