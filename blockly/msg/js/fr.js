@@ -649,7 +649,7 @@ Blockly.Msg.KNIWWELINO_LOCATION_BELVAL = "Belval"
 Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH = "Echternach"
 Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK = "Ettelbrück"
 
-Blockly.Msg.KNIWWELINO_WEATHER_IS  = "conditions météorologiques sont :"
+Blockly.Msg.KNIWWELINO_WEATHER_IS  = "météo :"
 
 Blockly.Msg.KNIWWELINO_WEATHER_WEATHER = "météo [text]"
 Blockly.Msg.KNIWWELINO_WEATHER_TEMP = "température [°C]"
