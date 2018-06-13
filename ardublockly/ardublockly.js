@@ -584,6 +584,10 @@ Ardublockly.sendCode = function() {
     Ardublockly.arduinoIdeOutput(dataBack);
 		if (jsonObj.code > 0) {
 			Ardublockly.shortMessage(Ardublockly.getLocalStr('compiledSketchFailed'));
+			Ardublockly.highlightIdeOutputHeader();
+			if (!document.getElementById('ide_output_collapsible_header').className.match('active')) {
+				document.getElementById('ide_output_collapsible_header').click();
+			}
 		} else {
 			Ardublockly.shortMessage(Ardublockly.getLocalStr('compiledSketch'));
 		}
