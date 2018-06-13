@@ -78,6 +78,7 @@ Ardublockly.LOCALISED_TEXT = {
   uploadingSketch: "Code wird auf Kniwwelino übertragen...",
   uploadSketch: "Code auf Kniwwelino übertragen",
 	compiledSketch: "Sketch wurde compiliert. Download auf Kniwwelino gestartet",
+	compiledSketchFailed: "Compilieren des Sketches is fehlgeschlagen. Überprüfe deinen Code und die Ausgabe unten.",
   verifyingSketch: "Sketch überprüfen...",
   verifySketch: "Überprüfe dem Sketch",
   openingSketch: "Öffne Code in Arduino IDE...",

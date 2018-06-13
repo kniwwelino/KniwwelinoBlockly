@@ -582,7 +582,11 @@ Ardublockly.sendCode = function() {
     Ardublockly.largeIdeButtonSpinner(false);
     var dataBack = ArdublocklyServer.jsonToIdeModal(jsonObj);
     Ardublockly.arduinoIdeOutput(dataBack);
-		Ardublockly.shortMessage(Ardublockly.getLocalStr('compiledSketch'));
+		if (jsonObj.code > 0) {
+			Ardublockly.shortMessage(Ardublockly.getLocalStr('compiledSketchFailed'));
+		} else {
+			Ardublockly.shortMessage(Ardublockly.getLocalStr('compiledSketch'));
+		}
   };
 
   ArdublocklyServer.sendSketchToServer(
