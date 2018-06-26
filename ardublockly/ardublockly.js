@@ -34,30 +34,42 @@ Ardublockly.init = function() {
 			Ardublockly.renderContent();
 	});
 
-	swal({
-		title: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_TITLE'),
-		text: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_MESSAGE'),
-		className: "kniwwelino-bg"
-	}).then(() => { //check if at least one Kniwwelino is managed
-		if (document.getElementById('button_ide_large').className.includes('disabled')) {
-	  	swal({
-				title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
-				text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
-				className: "kniwwelino-bg",
-			  buttons: {
-					addK: {
-						text: "",
-			      value: "addK",
-			    },
-					ok: true,
-			  },
-			}).then((k) => {
-				if (k == 'addK') {
-					document.getElementById('button_manageKniwwelino').click();
-				};
-			});
-		}
-	});
+  var urlPara = location.search.match(new RegExp('[?&]' + 'xml' + '=([^&]+)'));
+	var xml = urlPara ? decodeURIComponent(urlPara[1].replace(/\+/g, '%20')) : '';
+	console.log('xml urlPara: ' + xml);
+	if (xml) {
+		//Ardublockly.loadServerXmlFile(xml);
+    Ardublockly.loadXmlBlockFile(xml,
+      function(success) {
+        console.log('success loading xml from web: ' + success);
+        Ardublockly.DEFAULT_PROJECT = xml;
+      },
+      function() {
+        console.log('error loading xml from web!');
+      });
+    console.log(xml);
+	}
+
+	//check if at least one Kniwwelino is managed
+	if (document.getElementById('button_ide_large').className.includes('disabled')) {
+  	swal({
+			title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
+			text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
+			className: "kniwwelino-bg",
+		  buttons: {
+				addK: {
+					text: "",
+		      value: "addK",
+		    },
+				ok: true,
+		  },
+		}).then((k) => {
+			if (k == 'addK') {
+				document.getElementById('button_manageKniwwelino').click();
+			};
+		});
+	}
+
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -91,13 +103,6 @@ Ardublockly.bindActionFunctions = function() {
 	Ardublockly.bindClick_('copyright', Ardublockly.renderCopyright);
 
 	Ardublockly.bindKniwwelinoList();
-
-	var urlPara = location.search.match(new RegExp('[?&]' + 'xml' + '=([^&]+)'));
-	var xml = urlPara ? decodeURIComponent(urlPara[1].replace(/\+/g, '%20')) : '';
-	console.log('xml urlPara: ' + xml);
-	if (xml) {
-		//Ardublockly.loadServerXmlFile(xml);
-	}
 };
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */

@@ -13,7 +13,8 @@
 /** Create a namespace for the application. */
 var Ardublockly = Ardublockly || {};
 
-Ardublockly.DEFAULT_PROJECT = "examples/default_workspace.xml";
+Ardublockly.DEFAULT_PROJECT_NAME = "examples/default_workspace.xml";
+Ardublockly.DEFAULT_PROJECT = Ardublockly.DEFAULT_PROJECT_NAME;
 
 /**
  * Blockly main workspace.
@@ -206,6 +207,7 @@ Ardublockly.discardAllBlocks = function() {
       function() {
 				Ardublockly.workspace.clear();
 				//load a new prepared workspace
+        Ardublockly.DEFAULT_PROJECT = Ardublockly.DEFAULT_PROJECT_NAME;
 				Ardublockly.loadXmlBlockFile(Ardublockly.DEFAULT_PROJECT);
 				Ardublockly.sketchNameSet(Ardublockly.getLocalStr('sketchName'));
 				Ardublockly.renderContent();
