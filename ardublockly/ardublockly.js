@@ -43,6 +43,7 @@ Ardublockly.init = function() {
       function(success) {
         console.log('success loading xml from web: ' + success);
         Ardublockly.DEFAULT_PROJECT = xml;
+        Ardublockly.sketchNameSet(xml.match(/.*\/(.*).xml/m)[1].replace('%20', ' '));
       },
       function() {
         console.log('error loading xml from web!');
