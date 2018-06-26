@@ -34,6 +34,22 @@ Ardublockly.init = function() {
 			Ardublockly.renderContent();
 	});
 
+  var urlPara = location.search.match(new RegExp('[?&]' + 'xml' + '=([^&]+)'));
+	var xml = urlPara ? decodeURIComponent(urlPara[1].replace(/\+/g, '%20')) : '';
+	console.log('xml urlPara: ' + xml);
+	if (xml) {
+		//Ardublockly.loadServerXmlFile(xml);
+    Ardublockly.loadXmlBlockFile(xml,
+      function(success) {
+        console.log('success loading xml from web: ' + success);
+        Ardublockly.DEFAULT_PROJECT = xml;
+      },
+      function() {
+        console.log('error loading xml from web!');
+      });
+    console.log(xml);
+	}
+
 	swal({
 		title: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_TITLE'),
 		text: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_MESSAGE'),
@@ -91,13 +107,6 @@ Ardublockly.bindActionFunctions = function() {
 	Ardublockly.bindClick_('copyright', Ardublockly.renderCopyright);
 
 	Ardublockly.bindKniwwelinoList();
-
-	var urlPara = location.search.match(new RegExp('[?&]' + 'xml' + '=([^&]+)'));
-	var xml = urlPara ? decodeURIComponent(urlPara[1].replace(/\+/g, '%20')) : '';
-	console.log('xml urlPara: ' + xml);
-	if (xml) {
-		//Ardublockly.loadServerXmlFile(xml);
-	}
 };
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */

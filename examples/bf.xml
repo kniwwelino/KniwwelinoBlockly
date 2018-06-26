@@ -1,0 +1,100 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_setup" id="-IN4XB=U5I.NjAh4{JDY" x="40" y="40"></block>
+  <block type="kniwwelino_MQTTsetGroup" id="E.S7y;xkhB#:aqz?fH1J" x="114" y="114">
+    <field name="GROUP">myFriends</field>
+  </block>
+  <block type="kniwwelino_MQTTconnectMATRIX" id="ebH1=71iQML~wx~njTAx" x="111" y="148"></block>
+  <block type="arduino_functions_loop" id="MXq!~SCmURm6k/r|C1zm" x="40" y="240">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="+9Le#z]Ky/ai6Swi9xzK">
+        <mutation elseif="1"></mutation>
+        <value name="IF0">
+          <block type="kniwwelino_BUTTONclicked" id="Y1;D~#?bY-V;In+Ura}e">
+            <field name="BUTTON">A</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="kniwwelino_MQTTpublish" id="mxy!r=wF%,B{43C(?L`x">
+            <value name="MESSAGE">
+              <shadow type="kniwwelino_MATRIXdrawIconCreator" id="7[3Eq^AZJ_q1waL0:H:.">
+                <field name="1_1">FALSE</field>
+                <field name="1_2">TRUE</field>
+                <field name="1_3">FALSE</field>
+                <field name="1_4">TRUE</field>
+                <field name="1_5">FALSE</field>
+                <field name="2_1">TRUE</field>
+                <field name="2_2">FALSE</field>
+                <field name="2_3">TRUE</field>
+                <field name="2_4">FALSE</field>
+                <field name="2_5">TRUE</field>
+                <field name="3_1">TRUE</field>
+                <field name="3_2">FALSE</field>
+                <field name="3_3">FALSE</field>
+                <field name="3_4">FALSE</field>
+                <field name="3_5">TRUE</field>
+                <field name="4_1">FALSE</field>
+                <field name="4_2">TRUE</field>
+                <field name="4_3">FALSE</field>
+                <field name="4_4">TRUE</field>
+                <field name="4_5">FALSE</field>
+                <field name="5_1">FALSE</field>
+                <field name="5_2">FALSE</field>
+                <field name="5_3">TRUE</field>
+                <field name="5_4">FALSE</field>
+                <field name="5_5">FALSE</field>
+              </shadow>
+            </value>
+            <value name="TOPIC">
+              <shadow type="text" id="J#Kw.Bqd:[2*k.7?;ZFs">
+                <field name="TEXT">MATRIX/ICON</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="kniwwelino_BUTTONclicked" id=".lG(0.aoI3TlHT{m^r%2">
+            <field name="BUTTON">B</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="kniwwelino_MQTTpublish" id="[s78!!gQnovw1G/b/zcC">
+            <value name="MESSAGE">
+              <shadow type="kniwwelino_MATRIXdrawIconCreator" id=".Nunu,d/XAeAiS+C,7/4">
+                <field name="1_1">FALSE</field>
+                <field name="1_2">FALSE</field>
+                <field name="1_3">FALSE</field>
+                <field name="1_4">FALSE</field>
+                <field name="1_5">FALSE</field>
+                <field name="2_1">FALSE</field>
+                <field name="2_2">TRUE</field>
+                <field name="2_3">FALSE</field>
+                <field name="2_4">TRUE</field>
+                <field name="2_5">FALSE</field>
+                <field name="3_1">FALSE</field>
+                <field name="3_2">FALSE</field>
+                <field name="3_3">FALSE</field>
+                <field name="3_4">FALSE</field>
+                <field name="3_5">FALSE</field>
+                <field name="4_1">TRUE</field>
+                <field name="4_2">FALSE</field>
+                <field name="4_3">FALSE</field>
+                <field name="4_4">FALSE</field>
+                <field name="4_5">TRUE</field>
+                <field name="5_1">FALSE</field>
+                <field name="5_2">TRUE</field>
+                <field name="5_3">TRUE</field>
+                <field name="5_4">TRUE</field>
+                <field name="5_5">FALSE</field>
+              </shadow>
+            </value>
+            <value name="TOPIC">
+              <shadow type="text" id="^*:Y-Qg2@e9xQV:22Pi1">
+                <field name="TEXT">MATRIX/ICON</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
