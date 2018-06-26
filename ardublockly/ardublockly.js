@@ -50,30 +50,26 @@ Ardublockly.init = function() {
     console.log(xml);
 	}
 
-	swal({
-		title: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_TITLE'),
-		text: Ardublockly.getLocalStr('KNIWWELINO_ALPHA_MESSAGE'),
-		className: "kniwwelino-bg"
-	}).then(() => { //check if at least one Kniwwelino is managed
-		if (document.getElementById('button_ide_large').className.includes('disabled')) {
-	  	swal({
-				title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
-				text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
-				className: "kniwwelino-bg",
-			  buttons: {
-					addK: {
-						text: "",
-			      value: "addK",
-			    },
-					ok: true,
-			  },
-			}).then((k) => {
-				if (k == 'addK') {
-					document.getElementById('button_manageKniwwelino').click();
-				};
-			});
-		}
-	});
+	//check if at least one Kniwwelino is managed
+	if (document.getElementById('button_ide_large').className.includes('disabled')) {
+  	swal({
+			title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
+			text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
+			className: "kniwwelino-bg",
+		  buttons: {
+				addK: {
+					text: "",
+		      value: "addK",
+		    },
+				ok: true,
+		  },
+		}).then((k) => {
+			if (k == 'addK') {
+				document.getElementById('button_manageKniwwelino').click();
+			};
+		});
+	}
+
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
