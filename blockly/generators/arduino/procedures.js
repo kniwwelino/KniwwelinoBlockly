@@ -154,6 +154,9 @@ Blockly.Arduino['arduino_functions_setup'] = function(block) {
   if (setupBranch) {
     Blockly.Arduino.addSetup('userSetupCode', setupBranch, true);
   }
+  Blockly.Arduino.addInclude('kniwwelino', '#include <Kniwwelino.h>');
+  Blockly.Arduino.addSetup('kniwwelinoBegin', '//Initialize the Kniwwelino Board\n  Kniwwelino.begin("'+Ardublockly.getSketchName(20)+'", true, true, false); // Wifi=true, Fastboot=true, MQTT Logging=false\n', true);
+
   return "";
 
 };
@@ -177,10 +180,10 @@ Blockly.Arduino['arduino_functions_loop'] = function(block) {
 
   var loopBranch = statementToCodeNoTab(block, 'LOOP_FUNC');
   //var loopcode = Blockly.Arduino.scrub_(block, loopBranch); No comment block
-  
+
   if (loopBranch) {
 	    Blockly.Arduino.addLoop('userLoopCode', loopBranch, true);
   }
-  
+
   return loopBranch;
 };
