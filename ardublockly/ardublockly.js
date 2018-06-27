@@ -37,11 +37,12 @@ Ardublockly.init = function() {
   var urlPara = location.search.match(new RegExp('[?&]' + 'xml' + '=([^&]+)'));
 	var xml = urlPara ? decodeURIComponent(urlPara[1].replace(/\+/g, '%20')) : '';
 	console.log('xml urlPara: ' + xml);
-	if (xml) {
+	if (xml && !Ardublockly.LANGUAGE_CHANGED) {
+    //console.log("language changed: " + Ardublockly.LANGUAGE_CHANGED);
 		//Ardublockly.loadServerXmlFile(xml);
     Ardublockly.loadXmlBlockFile(xml,
       function(success) {
-        console.log('success loading xml from web: ' + success);
+        //console.log('success loading xml from web: ' + success);
         Ardublockly.DEFAULT_PROJECT = xml;
         Ardublockly.sketchNameSet(xml.match(/.*\/(.*).xml/m)[1].replace('%20', ' '));
       },
