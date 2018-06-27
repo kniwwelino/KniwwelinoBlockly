@@ -949,7 +949,8 @@ Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
 					[Blockly.Msg.KNIWWELINO_LOCATION_LUXEMBOURG,"luxembourg"],
 					[Blockly.Msg.KNIWWELINO_LOCATION_BELVAL,"belval"],
 					[Blockly.Msg.KNIWWELINO_LOCATION_ECHTERNACH,"echternach"],
-					[Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK,"ettelbruck"]])
+					[Blockly.Msg.KNIWWELINO_LOCATION_ETTELBRUCK,"ettelbruck"],
+					[Blockly.Msg.KNIWWELINO_LOCATION_BRAUNSCHWEIG,"brunswick"]])
 				, "LOCATION");
 		this.setOutput(true, null);
     this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
