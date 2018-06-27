@@ -15,6 +15,7 @@ var Ardublockly = Ardublockly || {};
 
 Ardublockly.DEFAULT_PROJECT_NAME = "examples/default_workspace.xml";
 Ardublockly.DEFAULT_PROJECT = Ardublockly.DEFAULT_PROJECT_NAME;
+Ardublockly.LANGUAGE_CHANGED = false;
 
 /**
  * Blockly main workspace.
@@ -178,6 +179,7 @@ Ardublockly.loadSessionStorageBlocks = function() {
   }
   if (loadOnce) {
     delete window.sessionStorage.loadOnceBlocks;
+    Ardublockly.LANGUAGE_CHANGED = true;
     Ardublockly.workspace.clear();
     setTimeout(function() {
       var xml = Blockly.Xml.textToDom(loadOnce);
