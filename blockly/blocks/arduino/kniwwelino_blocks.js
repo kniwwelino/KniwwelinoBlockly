@@ -954,7 +954,7 @@ Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
 				, "LOCATION");
 		this.setOutput(true, null);
     this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERTOPICCHOOSER_TIP);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_WEATHER_WEATHERTOPICCHOOSER_TIP);
     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'weather');
 	}
 };
@@ -975,7 +975,7 @@ Blockly.Blocks['kniwwelino_WeatherConstChooser'] = {
 				, "WEATHER_CONST");
 		this.setOutput(true, null);
     this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
-    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_WEATHERCONSTCHOOSER_TIP);
+    this.setTooltip(Blockly.Msg.KNIWWELINO_WEATHER_WEATHERCONSTCHOOSER_TIP);
     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'weather');
 	}
 };
