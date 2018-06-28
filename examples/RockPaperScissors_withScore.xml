@@ -1,0 +1,479 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_setup" id="mzqQ3}Qw/wO#sDlpav!;" x="39" y="-42">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="^:hpIPgC^T+K_ONG[/I[">
+        <field name="VAR">myScore</field>
+        <value name="VALUE">
+          <block type="math_number" id="X?D~oeMA@@Lfvd1NUWN~">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="?Oi-fJ#e0BU|i@UIo?51">
+            <field name="VAR">yourScore</field>
+            <value name="VALUE">
+              <block type="math_number" id="pxIp%W{7xAYK.f6c~#)^">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="kniwwelino_MQTTsetGroup" id="svStA3c.`?!73OC]QjZn" x="36" y="75">
+    <field name="GROUP">myFriends</field>
+  </block>
+  <block type="kniwwelino_MQTTsubscribe" id="{,834ITbe[zdkK6d]5Nq" x="38" y="114">
+    <field name="VAR">yourScore</field>
+    <value name="TOPIC">
+      <shadow type="text" id="XUYd/aXY3?NNlIaVl*Wm">
+        <field name="TEXT">GAME/friendA</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="arduino_functions_loop" id="b-qEBQK_FEj1NZqJ1U2p" x="35" y="162">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="o]Tu2NDmAgzhas*u(`D1">
+        <value name="IF0">
+          <block type="kniwwelino_BUTTONclicked" id=")W#`^n(jBj!B21Ut#gtO">
+            <field name="BUTTON">A</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="?.f4wsHb1mG+ktuaiuw2">
+            <field name="VAR">myScore</field>
+            <value name="VALUE">
+              <block type="math_number" id="I_yG%(.Bwe4*dsgQG|W-">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="/kMT^CH7]n1yF;KW[*Rw">
+                <field name="VAR">yourScore</field>
+                <value name="VALUE">
+                  <block type="math_number" id=":ObG;y~n2RoD-PkNv/3J">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="kniwwelino_RGBclear" id=")YuJ7er``sJ;R?+qk#}l">
+                    <next>
+                      <block type="kniwwelino_MATRIXwrite" id="ND4M8hlSo#l3|]i5!yJ/">
+                        <field name="TYPE">WAIT</field>
+                        <value name="TEXT">
+                          <shadow type="text" id="p~7EgBD+H967me:P5Xl+">
+                            <field name="TEXT">3..2..1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="~V{p#gL=Nn%A0Mwm97xS">
+                            <field name="VAR">myScore</field>
+                            <value name="VALUE">
+                              <block type="math_random_int" id="-TgL84*}~p*/|#%qdD`M">
+                                <value name="FROM">
+                                  <block type="math_number" id="+o5%Wl^wY1(%;Y:-7/?6">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <value name="TO">
+                                  <block type="math_number" id="S}:5L{EfsTEMFjaQOm8Y">
+                                    <field name="NUM">3</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="kniwwelino_MQTTpublish" id=".n;5{]e2W%KUmyAomLe:">
+                                <value name="MESSAGE">
+                                  <shadow type="text" id="vq{Ge=kUQd@JqiV0.^m:">
+                                    <field name="TEXT">Hello Friends!</field>
+                                  </shadow>
+                                  <block type="variables_get" id="QPJG#sexeWumcI{-G}]3">
+                                    <field name="VAR">myScore</field>
+                                  </block>
+                                </value>
+                                <value name="TOPIC">
+                                  <shadow type="text" id="s_}kYiD|cu9u.[p?5um:">
+                                    <field name="TEXT">GAME/friendB</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="controls_if" id="MV[:fZ*fDC^=s}#+a.9c">
+                                    <mutation elseif="2"></mutation>
+                                    <value name="IF0">
+                                      <block type="logic_compare" id="y)Ck/CVh6[e]rzbte=1A">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="%NH@r*Q^R5BF/deOEpx2">
+                                            <field name="VAR">myScore</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="1SkPq-k(,Fr7W#S6F9A;">
+                                            <field name="NUM">1</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO0">
+                                      <block type="kniwwelino_MATRIXdrawIcon" id="Z8-vixFNxcDR#+!vIA{3">
+                                        <value name="ICON">
+                                          <block type="kniwwelino_MATRIXdrawIconCreator" id="WXGS;PBKXY/RPV-=K+`K">
+                                            <field name="1_1">FALSE</field>
+                                            <field name="1_2">TRUE</field>
+                                            <field name="1_3">TRUE</field>
+                                            <field name="1_4">TRUE</field>
+                                            <field name="1_5">FALSE</field>
+                                            <field name="2_1">TRUE</field>
+                                            <field name="2_2">FALSE</field>
+                                            <field name="2_3">FALSE</field>
+                                            <field name="2_4">FALSE</field>
+                                            <field name="2_5">TRUE</field>
+                                            <field name="3_1">TRUE</field>
+                                            <field name="3_2">FALSE</field>
+                                            <field name="3_3">FALSE</field>
+                                            <field name="3_4">FALSE</field>
+                                            <field name="3_5">TRUE</field>
+                                            <field name="4_1">TRUE</field>
+                                            <field name="4_2">FALSE</field>
+                                            <field name="4_3">FALSE</field>
+                                            <field name="4_4">FALSE</field>
+                                            <field name="4_5">TRUE</field>
+                                            <field name="5_1">FALSE</field>
+                                            <field name="5_2">TRUE</field>
+                                            <field name="5_3">TRUE</field>
+                                            <field name="5_4">TRUE</field>
+                                            <field name="5_5">FALSE</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <value name="IF1">
+                                      <block type="logic_compare" id="2B=sB_7MA~#:W=/i/Wm)">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="Ls9TV5s)=1MH^JHRPs)l">
+                                            <field name="VAR">myScore</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="AP2].cZ]Dj#.+[-gx=bP">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO1">
+                                      <block type="kniwwelino_MATRIXdrawIcon" id="=!d-VhJP@sR9afL+h{B_">
+                                        <value name="ICON">
+                                          <block type="kniwwelino_MATRIXdrawIconCreator" id="XEWv-c{l^U)EZmHUV#NV">
+                                            <field name="1_1">FALSE</field>
+                                            <field name="1_2">TRUE</field>
+                                            <field name="1_3">TRUE</field>
+                                            <field name="1_4">TRUE</field>
+                                            <field name="1_5">FALSE</field>
+                                            <field name="2_1">FALSE</field>
+                                            <field name="2_2">TRUE</field>
+                                            <field name="2_3">FALSE</field>
+                                            <field name="2_4">FALSE</field>
+                                            <field name="2_5">TRUE</field>
+                                            <field name="3_1">FALSE</field>
+                                            <field name="3_2">TRUE</field>
+                                            <field name="3_3">FALSE</field>
+                                            <field name="3_4">FALSE</field>
+                                            <field name="3_5">TRUE</field>
+                                            <field name="4_1">FALSE</field>
+                                            <field name="4_2">TRUE</field>
+                                            <field name="4_3">FALSE</field>
+                                            <field name="4_4">FALSE</field>
+                                            <field name="4_5">TRUE</field>
+                                            <field name="5_1">FALSE</field>
+                                            <field name="5_2">TRUE</field>
+                                            <field name="5_3">TRUE</field>
+                                            <field name="5_4">TRUE</field>
+                                            <field name="5_5">TRUE</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                    <value name="IF2">
+                                      <block type="logic_compare" id=",QY{?%CShMq?oED-N=LT">
+                                        <field name="OP">EQ</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="m)n!,PbyFbVZ!hz^*8Ww">
+                                            <field name="VAR">myScore</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="dJ(iQeC6XHvBymfrUa-/">
+                                            <field name="NUM">3</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <statement name="DO2">
+                                      <block type="kniwwelino_MATRIXdrawIcon" id="}yj|i[g#L5e%fH1uu8cl">
+                                        <value name="ICON">
+                                          <block type="kniwwelino_MATRIXdrawIconCreator" id="iaB.7@Dudd#*3t15Jbc[">
+                                            <field name="1_1">TRUE</field>
+                                            <field name="1_2">FALSE</field>
+                                            <field name="1_3">FALSE</field>
+                                            <field name="1_4">FALSE</field>
+                                            <field name="1_5">TRUE</field>
+                                            <field name="2_1">TRUE</field>
+                                            <field name="2_2">TRUE</field>
+                                            <field name="2_3">FALSE</field>
+                                            <field name="2_4">TRUE</field>
+                                            <field name="2_5">TRUE</field>
+                                            <field name="3_1">FALSE</field>
+                                            <field name="3_2">FALSE</field>
+                                            <field name="3_3">TRUE</field>
+                                            <field name="3_4">FALSE</field>
+                                            <field name="3_5">FALSE</field>
+                                            <field name="4_1">FALSE</field>
+                                            <field name="4_2">TRUE</field>
+                                            <field name="4_3">FALSE</field>
+                                            <field name="4_4">TRUE</field>
+                                            <field name="4_5">FALSE</field>
+                                            <field name="5_1">TRUE</field>
+                                            <field name="5_2">FALSE</field>
+                                            <field name="5_3">FALSE</field>
+                                            <field name="5_4">FALSE</field>
+                                            <field name="5_5">TRUE</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="D!F.HVMGEu(0ViDioa*}">
+            <value name="IF0">
+              <block type="logic_operation" id="3LC:Nu-zGTaLkcA92h:t">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_compare" id="PXOOQFeTucmyP^wiBGG7">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="HKvF+I`uqxcFY[[Y+i~}">
+                        <field name="VAR">myScore</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="74](C}LL.%A.X0S*G@Kk">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="-x/nz4h]*j8.C)4j.umD">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="6buDmdAd?RiG*p}Wa*7~">
+                        <field name="VAR">yourScore</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="q-2mv|uH1:94xb=}#ob|">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_if" id="W8Q+,yApKXzyx2R0B!4W">
+                <mutation elseif="3" else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="G-=5|h!=6Okbh2a^0K)I">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="[b7YH]*UONya6nE?i2P0">
+                        <field name="VAR">myScore</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="VE?,EXB,d0(HiR:=tjBG">
+                        <field name="VAR">yourScore</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="kniwwelino_RGBsetColorEffect" id="-7.8J7jDXg|yKU3Z0*6Q">
+                    <field name="EFFECT">RGB_ON</field>
+                    <value name="COLOR">
+                      <shadow type="kniwwelino_RGBselectColor" id="Q/xv7H`0N@xzvk5z1Nos">
+                        <field name="COLOR">#000099</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="logic_operation" id="6B3Po=]AW,LSON|iRB0|">
+                    <field name="OP">AND</field>
+                    <value name="A">
+                      <block type="logic_compare" id=")Trg%NHQr^`n599BI%O7">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="kUD(-7ZIQw:~bTCS:^^u">
+                            <field name="VAR">myScore</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="#MPjYQ5InHju|M;;Pcq[">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="IcmaXyBw~H!JWb9IOh9k">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="sZE#F:e22(jMte{/~vKm">
+                            <field name="VAR">yourScore</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id=";hA:,IAR2r#igJin]aUF">
+                            <field name="NUM">3</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="kniwwelino_RGBsetColorEffect" id="[;YZ~%Hr/|@oq!J^K)GF">
+                    <field name="EFFECT">RGB_ON</field>
+                    <value name="COLOR">
+                      <shadow type="kniwwelino_RGBselectColor" id="BXcS5a[+W%mkmu2(BhGr">
+                        <field name="COLOR">#006600</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF2">
+                  <block type="logic_operation" id="574#)Mrnyk6yP4/Xxk|]">
+                    <field name="OP">AND</field>
+                    <value name="A">
+                      <block type="logic_compare" id="hG~n9RyXXDA(SN7Wt6fw">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id=")4b%m3Gz4mX/f(3ZpCRQ">
+                            <field name="VAR">myScore</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="#Y+0d8RqodOReVo4@*z)">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="aldZOQgd/%iLIj{JT}fH">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="zZ8D#3mL^O*S/D4u58PC">
+                            <field name="VAR">yourScore</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="Jjf=I=qkmea^u~6yliF(">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO2">
+                  <block type="kniwwelino_RGBsetColorEffect" id="vH2-TP6bAJ}~Zo7r/F9J">
+                    <field name="EFFECT">RGB_ON</field>
+                    <value name="COLOR">
+                      <shadow type="kniwwelino_RGBselectColor" id="}}uld}xK6rEw4%ITw`Ji">
+                        <field name="COLOR">#006600</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <value name="IF3">
+                  <block type="logic_operation" id="wE30m43OS|XHW`CzhI.9">
+                    <field name="OP">AND</field>
+                    <value name="A">
+                      <block type="logic_compare" id="PLJBVp3-eeb_{LSbdubW">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="?,[Y%2!l:O69/(;bkbCm">
+                            <field name="VAR">myScore</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="_|f@8#7}4btIMwZ9HtE3">
+                            <field name="NUM">3</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="logic_compare" id="JoJS3N77+19]K~dW]{3-">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="=_BEeS+=SmeQ.!e)8{TC">
+                            <field name="VAR">yourScore</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="y%6QKb5ML%f?cwgn^pmZ">
+                            <field name="NUM">2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO3">
+                  <block type="kniwwelino_RGBsetColorEffect" id=",!!Ob7AbIB,xc^%ZmVgY">
+                    <field name="EFFECT">RGB_ON</field>
+                    <value name="COLOR">
+                      <shadow type="kniwwelino_RGBselectColor" id="pJXSpYt2J+X(-N.o(kec">
+                        <field name="COLOR">#006600</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="kniwwelino_RGBsetColorEffect" id=":(_M7^ly2kA,3ujG_|qD">
+                    <field name="EFFECT">RGB_ON</field>
+                    <value name="COLOR">
+                      <shadow type="kniwwelino_RGBselectColor" id="fM9e%FBV-:}GvrudWFMK">
+                        <field name="COLOR">#660000</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
