@@ -1,0 +1,398 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_setup" id="HjMat%b?3I@UrTX::xwC" x="26" y="18">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="DE/yZwL2[1L5@pI~0^Q@">
+        <field name="VAR">valeurA</field>
+        <value name="VALUE">
+          <block type="math_number" id="-.l#xW}FG=3:(NkJAYhM">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="|a#ss{P[1~nlh,wEtMti">
+            <field name="VAR">valeurB</field>
+            <value name="VALUE">
+              <block type="math_number" id="c7h|i[}l|thrf:i=VGZD">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="ERqsX-kuY2=O0;()k75A" x="409" y="16">
+    <field name="NAME">set color and effect</field>
+    <comment pinned="false" h="80" w="160">Describe the function...</comment>
+    <statement name="STACK">
+      <block type="controls_if" id="U)-/p*rij47p10DxGs[[">
+        <mutation elseif="5"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id=")htO`NW)y%TRr.]ff`8i">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="y75~`8u8GQ[yo0e9X57I">
+                <field name="VAR">valeurA</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="ZxgcL{6`pP*GrVGigbgl">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="xWb[D|@D:K5AGw!TglqB">
+            <field name="VAR">colourLED</field>
+            <value name="VALUE">
+              <block type="kniwwelino_RGBselectColor" id="gSQY,YfoE:3y?,Uv4u9m">
+                <field name="COLOR">#ffffff</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare" id="Dj#!l.nr.DFB`lY430T}">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="=yrL%xF}%tURYcAMBZ0%">
+                <field name="VAR">valeurA</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="LwF+qy#r_,~KlR/Sedpo">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="variables_set" id="8HRI_tg_[4G8=I6LQPp?">
+            <field name="VAR">colourLED</field>
+            <value name="VALUE">
+              <block type="kniwwelino_RGBselectColor" id="X0Q-DKv*yicb!MBeorvC">
+                <field name="COLOR">#000099</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_compare" id="/qHDSJ*N!:.iYHVKzrpK">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="W~2p}oNq3ToGeXla8I`m">
+                <field name="VAR">valeurA</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="9mP;PTN:5Z%2WN|9]VVq">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="variables_set" id="+Gp{]|XVd!O:guFY?VE9">
+            <field name="VAR">colourLED</field>
+            <value name="VALUE">
+              <block type="kniwwelino_RGBselectColor" id="fYYBpvD:qMO(cgZdHQ?o">
+                <field name="COLOR">#009900</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF3">
+          <block type="logic_compare" id="U-0GGqmjcq1cc[9LuA?z">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id=".^9#Xftv.f;%=_vEI~6)">
+                <field name="VAR">valeurA</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="DAv9~nSMA_xA5;`VIsR8">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO3">
+          <block type="variables_set" id="2Sp{@#!*av(maWNBoj-x">
+            <field name="VAR">colourLED</field>
+            <value name="VALUE">
+              <block type="kniwwelino_RGBselectColor" id="5B(p)WJG#D3bxSCiZ|}E">
+                <field name="COLOR">#cc9933</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF4">
+          <block type="logic_compare" id="%91ZA*_lKsrleR#kskD#">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="Ak57H3hPQ)%A?QA]BA`a">
+                <field name="VAR">valeurA</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id=")Cx).#gc!NLcl86%(xI_">
+                <field name="NUM">4</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO4">
+          <block type="variables_set" id="5-Z)tt?;e48`7Ff7{eX6">
+            <field name="VAR">colourLED</field>
+            <value name="VALUE">
+              <block type="kniwwelino_RGBselectColor" id="*1SP!{U6G*O`u;CvIQJK">
+                <field name="COLOR">#660000</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF5">
+          <block type="logic_compare" id="^a+^ezKyU?E2BLUi*~0s">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="variables_get" id="v[[I?+jg%*oyN@yaI3Ej">
+                <field name="VAR">valeurA</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="0.t0BK,+}03XaOz5%Mns">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO5">
+          <block type="variables_set" id="4clhuhbt0:?N^Fq,Kl.9">
+            <field name="VAR">colourLED</field>
+            <value name="VALUE">
+              <block type="kniwwelino_RGBselectColor" id="!GgC6K7c?pZ{7Zz[/8lu">
+                <field name="COLOR">#993399</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="%CiU,^@Vj9c|LBf~/#6f">
+            <mutation elseif="3"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="kwnY09evX8iUmrRp!nX-">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="=f@WrU=Z(,9!p+Fo]C1+">
+                    <field name="VAR">valeurB</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="D?%V_(Rx|Yd~t;#kY:G}">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="kniwwelino_RGBsetColorEffect" id="B@]GPLACa4B*C!k4pSMB">
+                <field name="EFFECT">RGB_ON</field>
+                <value name="COLOR">
+                  <shadow type="kniwwelino_RGBselectColor" id="dH-#;80%NLlrWhFE`8n(">
+                    <field name="COLOR">#000000</field>
+                  </shadow>
+                  <block type="variables_get" id="?5V4{u1/[ha7Ghi(oBJi">
+                    <field name="VAR">colourLED</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="t;K_y=HUN@}RY37vf!eM">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="fGU.R3}Jh)[s~q/HG}O%">
+                    <field name="VAR">valeurB</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id=";nM2J,r760)V/;W3vJ,-">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="kniwwelino_RGBsetColorEffect" id="I(Vqy5tl/0jLE(g7[`RW">
+                <field name="EFFECT">RGB_BLINK</field>
+                <value name="COLOR">
+                  <shadow type="kniwwelino_RGBselectColor" id="AX.;Tjd4)X*FOUay63g%">
+                    <field name="COLOR">#000000</field>
+                  </shadow>
+                  <block type="variables_get" id="nPafAFJsc7Ggg{IQ.wAt">
+                    <field name="VAR">colourLED</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_compare" id="VHm%o!N)BdI~^q7xCul;">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="ZJCnk`bf}Q2S^dlXUFzz">
+                    <field name="VAR">valeurB</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="@gC@4USpLso3h_yF}D/~">
+                    <field name="NUM">2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="kniwwelino_RGBsetColorEffect" id="~scofJiTe`4!kx-2,9.!">
+                <field name="EFFECT">RGB_FLASH</field>
+                <value name="COLOR">
+                  <shadow type="kniwwelino_RGBselectColor" id="AX.;Tjd4)X*FOUay63g%">
+                    <field name="COLOR">#000000</field>
+                  </shadow>
+                  <block type="variables_get" id="m!p-2)^ssb(p*eS{uSBG">
+                    <field name="VAR">colourLED</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF3">
+              <block type="logic_compare" id="do@cBn^H`|FrGaUO]AYr">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="d?.nm-OVdm=`Ku3Opxx(">
+                    <field name="VAR">valeurB</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="z~yIX+Af}vCWGaRRc1R/">
+                    <field name="NUM">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO3">
+              <block type="kniwwelino_RGBclear" id="J4/eEw1CA:KisY}2SZTg"></block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_functions_loop" id="_pZ4M}z9CRWmop+O]897" x="27" y="198">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="{eoDgMXpY`6f`%?P`(:@">
+        <value name="IF0">
+          <block type="kniwwelino_BUTTONclicked" id="h~Yfv5GOL0*:b;oq(wQN">
+            <field name="BUTTON">A</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="math_change" id="tf}PWjePM`x1gd=ofMj`">
+            <field name="VAR">valeurA</field>
+            <value name="DELTA">
+              <block type="math_number" id="9NX%YM#r?z*6sS}V#(SP">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="a!=Q-;#8SeWel*PU3Ar1">
+                <value name="IF0">
+                  <block type="logic_compare" id="O9*+ekAjxQhhxwV)0FDp">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="`s^Ji)x]o)pk@UvWYx%0">
+                        <field name="VAR">valeurA</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="9Ye6.5q2SSV:?C@kP?Z|">
+                        <field name="NUM">6</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="variables_set" id="r(CLQ}c%26:b*30!{BD9">
+                    <field name="VAR">valeurA</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="(uYA9L2u,AUrMx~YuoyR">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="procedures_callnoreturn" id="88F[[8O*d;2xs8n2.m@(">
+                    <mutation name="set color and effect"></mutation>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="LHYeM/_s,X8HA%,V)cQm">
+            <value name="IF0">
+              <block type="kniwwelino_BUTTONclicked" id="j/,Bk,.}07/9{q.:k+_U">
+                <field name="BUTTON">B</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="math_change" id="r|+wa03Y9k-Nk5)OJ-[=">
+                <field name="VAR">valeurB</field>
+                <value name="DELTA">
+                  <block type="math_number" id="ZH+:mXDI5LpL,L}Tdfg+">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="-DWh?KVBxs#?7d%7g}[T">
+                    <value name="IF0">
+                      <block type="logic_compare" id="/*aYC_B}WK=NV%z{.+HF">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="2DXl0A5e!@|wi-DRA*~3">
+                            <field name="VAR">valeurB</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="},-/AKC#*QIlk{L-6;Xe">
+                            <field name="NUM">4</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="variables_set" id="Dmrdaf=NX*#Xd%m_^07e">
+                        <field name="VAR">valeurB</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="K.k)Z5[Z=8xbs|ZGzqbF">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="procedures_callnoreturn" id="WYV+b-49eA=Ljhm/4_U9">
+                        <mutation name="set color and effect"></mutation>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
