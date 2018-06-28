@@ -1,0 +1,303 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_setup" id="?BB?Xr-naD*BHwlyZC[i" x="40" y="65">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="M[vJuQP?u^b2M4h2s%-d">
+        <field name="VAR">angle</field>
+        <value name="VALUE">
+          <block type="math_number" id=":0rVadd2bV^`zn9WjALF">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="q;.Pc[,|JAo#0WYu5qx*">
+            <field name="VAR">newAngle</field>
+            <value name="VALUE">
+              <block type="math_number" id="v`URYwl}gx9AC^{,!~^W">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="kniwwelino_MQTTsubscribePublic" id="[lvxlq?Fujo;Az85rA_v" x="41" y="175">
+    <field name="VAR">temp</field>
+    <value name="TOPIC">
+      <block type="kniwwelino_WeatherTopicChooser" id="@?ITP7HD],?8^2ZTbTj8">
+        <field name="WEATHER_PAR">temp</field>
+        <field name="LOCATION">luxembourg</field>
+      </block>
+    </value>
+  </block>
+  <block type="kniwwelino_MQTTsubscribePublic" id="%_w2S3Or+w]hZ5S`]=lX" x="42" y="222">
+    <field name="VAR">weather</field>
+    <value name="TOPIC">
+      <block type="kniwwelino_WeatherTopicChooser" id="x5n9#)?dTm4dVAZuO~U=">
+        <field name="WEATHER_PAR">weather</field>
+        <field name="LOCATION">luxembourg</field>
+      </block>
+    </value>
+  </block>
+  <block type="arduino_functions_loop" id="AkCLc5r|}(FO#r+xw:!O" x="43" y="274">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="DPNg^ve?-3a0q`0vY@~*">
+        <value name="IF0">
+          <block type="kniwwelino_BUTTONclicked" id="DeWCBDlGz:m=ZqY4XPLC">
+            <field name="BUTTON">A</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="kniwwelino_MATRIXwrite" id="ZR?8lzKphsT]mdwm5C0a">
+            <field name="TYPE">WAIT</field>
+            <value name="TEXT">
+              <shadow type="text" id="T3[5!BMA_Qw0HNtYS`F|">
+                <field name="TEXT">Hello Kniwwelino</field>
+              </shadow>
+              <block type="variables_get" id="*UYmO)2!DLx72K.9W).]">
+                <field name="VAR">temp</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="pLzXGF;{X0F^D[1),[Ye">
+            <mutation elseif="5"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="x@LhOJPp851*l=91U6eI">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="d`}84MIu:v~{QjyGX@.m">
+                    <field name="VAR">weather</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="kniwwelino_WeatherConstChooser" id="nTsBklnQZ?of`RdYzMz7">
+                    <field name="WEATHER_CONST">snow</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="ODW|ULA.uk6pk06!iAhM">
+                <field name="VAR">newAngle</field>
+                <value name="VALUE">
+                  <block type="math_number" id="+xqPMXIP.Ds37L=|8yeN">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="fjj/hU%@DCQKoa@|KmOv">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="?FPI1J-Bae`15Lsq%2N-">
+                    <field name="VAR">weather</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="kniwwelino_WeatherConstChooser" id="{V%AuI2d*LtRx4J-@@=.">
+                    <field name="WEATHER_CONST">thunderstorm</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="variables_set" id="khLhpkj+gZ_P?#Gz5i,-">
+                <field name="VAR">newAngle</field>
+                <value name="VALUE">
+                  <block type="math_number" id="p,#AUOfyVW_}6%:T*+bE">
+                    <field name="NUM">30</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_operation" id="YX0rM.{HChJ#^%jfK.?b">
+                <field name="OP">OR</field>
+                <value name="A">
+                  <block type="logic_compare" id=".cc^k9(]]H.#^D}t=@GM">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="q+@e:q2:c1H:||+1t#DK">
+                        <field name="VAR">weather</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="kniwwelino_WeatherConstChooser" id="Fc.-{xb#q/o:t5Lyu=lq">
+                        <field name="WEATHER_CONST">rain</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="/C|ghV/h`T88!Gyv,d6?">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="80DfE9u,UT@5o@RJ%n)f">
+                        <field name="VAR">weather</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="kniwwelino_WeatherConstChooser" id="5gMp?r]sG/x9`FLNk#(u">
+                        <field name="WEATHER_CONST">drizzle</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="variables_set" id="6)C#GPTm-.vuk;BLxW4J">
+                <field name="VAR">newAngle</field>
+                <value name="VALUE">
+                  <block type="math_number" id="W7~VsrK~+7T,K(INH?Z(">
+                    <field name="NUM">60</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF3">
+              <block type="logic_operation" id="XkD8:+=Zs2AR{hY1mmpF">
+                <field name="OP">OR</field>
+                <value name="A">
+                  <block type="logic_compare" id="ErpfF|9?_U3o7a/dvU^-">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="b|N1P}t/fJbyDdv()]X*">
+                        <field name="VAR">weather</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="kniwwelino_WeatherConstChooser" id="Tg8M5`f5Hu671UExnPEJ">
+                        <field name="WEATHER_CONST">fog</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id="wbl=RL#`fUgq|];OK/u)">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="HRan!RqWpcU:T1=%oqeN">
+                        <field name="VAR">weather</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="kniwwelino_WeatherConstChooser" id="8m=DI92lHktL9@Ts;lAW">
+                        <field name="WEATHER_CONST">mist</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO3">
+              <block type="variables_set" id="Ze35z.j%5So3+vff%38Z">
+                <field name="VAR">newAngle</field>
+                <value name="VALUE">
+                  <block type="math_number" id="w{c8Ed!ewXZv|yW]r;~U">
+                    <field name="NUM">90</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF4">
+              <block type="logic_compare" id="g*Xi@TMfxu7qPu}_/MD-">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="+1+wQe1}fY=O+G7J}9FP">
+                    <field name="VAR">weather</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="kniwwelino_WeatherConstChooser" id="`r:dP.RU+6G-u)|J|H=A">
+                    <field name="WEATHER_CONST">clouds</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO4">
+              <block type="variables_set" id="fCr5{N4|.eQ2l4{j_=x1">
+                <field name="VAR">newAngle</field>
+                <value name="VALUE">
+                  <block type="math_number" id="ka38J{tzPE+HdS~XpXHX">
+                    <field name="NUM">120</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF5">
+              <block type="logic_compare" id="RiNn=Vr{)8:yItr)-/Qe">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id=".0zj3*K1uiuoVUoS0uJm">
+                    <field name="VAR">weather</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="kniwwelino_WeatherConstChooser" id="nVXQeF..:?|`|@}?Ik,S">
+                    <field name="WEATHER_CONST">clear</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO5">
+              <block type="variables_set" id="qzXsCC1Nf8olP/z?g.p!">
+                <field name="VAR">newAngle</field>
+                <value name="VALUE">
+                  <block type="math_number" id="dwC._HETu*=:M71!-%.;">
+                    <field name="NUM">160</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="aox3EL~V.K.7#^EyEbuv">
+                <value name="IF0">
+                  <block type="logic_compare" id="ZBF-dA~WY0.wz6RUr0K-">
+                    <field name="OP">NEQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="N*7hf4oa0]rE!M.?*[_X">
+                        <field name="VAR">newAngle</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="bmW,T|!rtM_0J,hyr%Pl">
+                        <field name="VAR">angle</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="servo_write" id="Vo.(UALr#CZmVweXT|X;">
+                    <field name="SERVO_PIN">D6</field>
+                    <value name="SERVO_ANGLE">
+                      <shadow type="math_number" id="5EiH}EB[!%XGW^Wd(mcT">
+                        <field name="NUM">90</field>
+                      </shadow>
+                      <block type="variables_get" id="]?KT^ej=,+2M(M+qIo9g">
+                        <field name="VAR">newAngle</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="/r{_Z3;OkpG+}:2WVm+i">
+                        <field name="VAR">angle</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="Lp(ne_X5;3ZY=n=Hfr[C">
+                            <field name="VAR">newAngle</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
