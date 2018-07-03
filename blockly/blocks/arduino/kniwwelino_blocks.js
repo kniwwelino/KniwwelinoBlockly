@@ -134,6 +134,28 @@ Blockly.Blocks['kniwwelino_getTime'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_getTimeInt'] = {
+		  init: function() {
+			  this.appendDummyInput()
+			    .appendField(Blockly.Msg.KNIWWELINO_GET_TIMEINT)
+			    .appendField(new Blockly.FieldDropdown(
+			    [
+			    	[Blockly.Msg.KNIWWELINO_TIME_YEAR,"YEAR"],
+			    	[Blockly.Msg.KNIWWELINO_TIME_MONTH,"MONTH"],
+			    	[Blockly.Msg.KNIWWELINO_TIME_DAY,"DAY"],
+			    	[Blockly.Msg.KNIWWELINO_TIME_HOUR,"HOUR"],
+			    	[Blockly.Msg.KNIWWELINO_TIME_MINUTE,"MINUTE"],
+			    	[Blockly.Msg.KNIWWELINO_TIME_SECOND,"SECOND"]
+			    ]), "FORMAT");
+		    this.setOutput(true, Blockly.Types.TEXT.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_GET_TIME);
+		    this.setColour("#f9d831");
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'time');
+		  },getBlockType: function() {
+			    return Blockly.Types.TEXT;
+		  }
+};
+
 Blockly.Blocks['kniwwelino_log'] = {
 		   init: function() {
 				 this.setInputsInline(true);
