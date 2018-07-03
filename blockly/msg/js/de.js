@@ -681,12 +681,16 @@ Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton aus an Pin"
 
 // DATE TIME
 Blockly.Msg.KNIWWELINO_GET_TIME = "Datum/Zeit im Format:"
+Blockly.Msg.KNIWWELINO_GET_TIMEINT = "Datum/Zeit Feld als Zahl:"
 Blockly.Msg.KNIWWELINO_TIME_DATETIME = "HH:mm:ss dd.MM.YYYY"
 Blockly.Msg.KNIWWELINO_TIME_DATE = "dd.MM.YYYY"
 Blockly.Msg.KNIWWELINO_TIME_TIME = "HH:mm:ss"
 Blockly.Msg.KNIWWELINO_TIME_HOUR = "Stunde"
 Blockly.Msg.KNIWWELINO_TIME_MINUTE = "Minute"
 Blockly.Msg.KNIWWELINO_TIME_SECOND = "Sekunde"
+Blockly.Msg.KNIWWELINO_TIME_YEAR = "Jahr"
+Blockly.Msg.KNIWWELINO_TIME_MONTH = "Monat"
+Blockly.Msg.KNIWWELINO_TIME_DAY = "Tag"
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "an";

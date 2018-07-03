@@ -100,6 +100,26 @@ Blockly.Arduino['kniwwelino_getTime'] = function(block) {
 	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['kniwwelino_getTimeInt'] = function(block) {
+	kniwwelinoBaseCode();
+	var value = block.getFieldValue('FORMAT');
+	var codeStr = "";
+	if (value == 'YEAR')  {
+		codeStr = 'year()';
+	} else if (value == 'MONTH')  {
+		codeStr = 'month()';
+	} else if (value == 'DAY')  {
+		codeStr = 'day()';
+	} else if (value == 'HOUR')  {
+		codeStr = 'hour()';
+	} else if (value == 'MINUTE')  {
+		codeStr = 'minute()';
+	} else if (value == 'SECOND')  {
+		codeStr = 'second()';
+	}
+	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
 	kniwwelinoBaseCode();
 

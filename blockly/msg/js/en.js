@@ -682,13 +682,16 @@ Blockly.Msg.KNIWWELINO_AUDIO_PIN = "on Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Turn tone off on pin"
 // DATE TIME
 Blockly.Msg.KNIWWELINO_GET_TIME = "get the current Date/Time in format:"
+Blockly.Msg.KNIWWELINO_GET_TIMEINT = "get the current Date/Time as Number:"
 Blockly.Msg.KNIWWELINO_TIME_DATETIME = "HH:mm:ss dd.MM.YYYY"
 Blockly.Msg.KNIWWELINO_TIME_DATE = "dd.MM.YYYY"
 Blockly.Msg.KNIWWELINO_TIME_TIME = "HH:mm:ss"
 Blockly.Msg.KNIWWELINO_TIME_HOUR = "HOUR"
 Blockly.Msg.KNIWWELINO_TIME_MINUTE = "MINUTE"
 Blockly.Msg.KNIWWELINO_TIME_SECOND = "SECOND"
-
+Blockly.Msg.KNIWWELINO_TIME_YEAR = "YEAR"
+Blockly.Msg.KNIWWELINO_TIME_MONTH = "MONTH"
+Blockly.Msg.KNIWWELINO_TIME_DAY = "DAY"
 
 // overwrite default labels
 //Blockly.Msg.ARD_HIGH = "on";
