@@ -352,6 +352,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_getTime"></block>' +
+'    <block type="kniwwelino_getTimeInt"></block>' +
 '    <block type="time_seconds"></block>' +
 '    <block type="time_millis"></block>' +
 //'    <block type="infinite_loop"></block>' +
