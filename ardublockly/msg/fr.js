@@ -11,6 +11,8 @@ Ardublockly.LOCALISED_TEXT = {
   documentation: "Documentation",
   reportBug: "Signaler un bug",
   examples: "Exemples",
+  simple: " simple",
+  advanced: " étendu",
   /* Settings */
   compilerLocation: "Emplacement du compilateur",
   compilerLocationDefault: "",

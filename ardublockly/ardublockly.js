@@ -17,6 +17,8 @@ Ardublockly.init = function() {
   // Inject Blockly into content_blocks and fetch additional blocks
   Ardublockly.injectBlockly(document.getElementById('content_blocks'),
                             Ardublockly.TOOLBOX_XML, '../blockly/');
+  Ardublockly.toogleToolboxSimple();
+
 
   Ardublockly.designJsInit();
   Ardublockly.initialiseIdeButtons();
@@ -92,7 +94,9 @@ Ardublockly.bindActionFunctions = function() {
   });
   Ardublockly.bindClick_('button_load_xml', Ardublockly.XmlTextareaToBlocks);
 	Ardublockly.bindClick_('download_arduino', Ardublockly.saveSketchFile);
-  Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
+
+  //Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
+  Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolboxSimple);
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
@@ -678,6 +682,13 @@ Ardublockly.renderContent = function() {
 Ardublockly.TOOLBAR_SHOWING_ = true;
 
 /**
+ * Private variable to indicate if the toolbox is in simple mode or not.
+ * @type {!boolean}
+ * @private
+ */
+Ardublockly.TOOLBAR_SHOWING_SIMPLE_ = true;
+
+/**
  * Toggles the blockly toolbox and the Ardublockly toolbox button On and Off.
  * Uses namespace member variable TOOLBAR_SHOWING_ to toggle state.
  */
@@ -689,6 +700,54 @@ Ardublockly.toogleToolbox = function() {
     Ardublockly.displayToolbox(true);
   }
   Ardublockly.TOOLBAR_SHOWING_ = !Ardublockly.TOOLBAR_SHOWING_;
+};
+
+Ardublockly.toogleToolboxSimple = function() {
+  var buttonIcon = document.getElementById('button_toggle_toolbox_icon');
+  var buttonText = document.getElementById('toggle_toolbox_text');
+  var visOn = 'fa fa-angle-down';
+  var visOff = 'fa fa-angle-right';
+  var textSimple = 'simple';
+  var textAdvanced = 'advanced';
+
+  if (Ardublockly.TOOLBAR_SHOWING_SIMPLE_) {
+    buttonIcon.className = buttonIcon.className.replace(visOn, visOff);
+    buttonText.className = buttonText.className.replace('translatable_'+textSimple, 'translatable_'+textAdvanced);
+    buttonText.innerHTML = Ardublockly.getLocalStr(textSimple);
+
+    var categories = Blockly.Xml.textToDom(Ardublockly.TOOLBOX_XML);
+    for (var i = 0; i < categories.childNodes.length; i++) {
+      var category = categories.childNodes[i];
+      if (category.nodeType == 1 && category.hasAttribute("adv")) {
+        //console.log(category.getAttribute("id"));
+        if (category.getAttribute("adv")) {
+          //console.log(categories.childNodes[i].parentNode);
+          try {
+            categories.removeChild(category);
+          } catch(err) {
+            console.log("category already removed");
+          }
+        }
+      } else {
+        for (var j = 0; j < category.childNodes.length; j++) {
+          var block = category.childNodes[j];
+          if(block.nodeType == 1 && block.hasAttribute("adv")) {
+            if (block.getAttribute("adv")) {
+              categories.childNodes[i].removeChild(block);
+            }
+          }
+        }
+      }
+    }
+
+    Ardublockly.workspace.updateToolbox(categories);
+  } else {
+    buttonIcon.className = buttonIcon.className.replace(visOff, visOn);
+    buttonText.className = buttonText.className.replace('translatable_'+textAdvanced, 'translatable_'+textSimple);
+    buttonText.innerHTML = Ardublockly.getLocalStr(textAdvanced);
+    Ardublockly.workspace.updateToolbox(Ardublockly.TOOLBOX_XML);
+  }
+  Ardublockly.TOOLBAR_SHOWING_SIMPLE_ = !Ardublockly.TOOLBAR_SHOWING_SIMPLE_;
 };
 
 /** @return {boolean} Indicates if the toolbox is currently visible. */
