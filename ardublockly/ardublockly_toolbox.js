@@ -12,18 +12,6 @@ var Ardublockly = Ardublockly || {};
 Ardublockly.TOOLBOX_XML =
 '<xml>' +
 '  <sep></sep>' +
-//'  <category id="catLogic" name="Logic">' +
-//'    <block type="controls_if"></block>' +
-//'    <block type="logic_compare"></block>' +
-//'    <block type="logic_operation"></block>' +
-//'    <block type="logic_negate"></block>' +
-//'    <block type="logic_boolean"></block>' +
-//'    <block type="logic_null"></block>' +
-//'    <block type="logic_ternary"></block>' +
-//'  </category>' +
-//'  <sep></sep>' +
-
-
 '  <category id="catMatrix" name="Matrix">' +
 '    <block type="kniwwelino_MATRIXwrite">' +
 '      <value name="TEXT">' +
@@ -221,7 +209,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="logic_negate"></block>' +
 '    <block type="logic_boolean"></block>' +
 '    <block type="logic_null"></block>' +
-'    <block type="logic_ternary"></block>' +
+'    <block type="logic_ternary" adv="true"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catVariables" name="Variables">' +
@@ -279,7 +267,7 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
-'    <block type="math_random_float"></block>' +
+'    <block type="math_random_float" adv="true"></block>' +
 '    <block type="math_change">' +
 '      <value name="DELTA">' +
 '        <block type="math_number">' +
@@ -300,9 +288,9 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="base_map"></block>' +
-'    <block type="math_single"></block>' +
-'    <block type="math_trig"></block>' +
-'    <block type="math_constant"></block>' +
+'    <block type="math_single" adv="true"></block>' +
+'    <block type="math_trig" adv="true"></block>' +
+'    <block type="math_constant" adv="true"></block>' +
 '    <block type="math_number_property"></block>' +
 '    <block type="math_round"></block>' +
 '    <block type="math_modulo"></block>' +
@@ -330,7 +318,7 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_sleep">' +
+'    <block type="kniwwelino_sleep" adv="true">' +
 '      <value name="DELAY_TIME_MILI">' +
 '        <shadow type="math_number">' +
 '          <field name="NUM">1000</field>' +
@@ -344,21 +332,21 @@ Ardublockly.TOOLBOX_XML =
 //'        </block>' +
 //'      </value>' +
 //'    </block>' +
-'    <block type="time_delaymicros">' +
+'    <block type="time_delaymicros" adv="true">' +
 '      <value name="DELAY_TIME_MICRO">' +
 '        <shadow type="math_number">' +
 '          <field name="NUM">10</field>' +
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_getTime"></block>' +
-'    <block type="kniwwelino_getTimeInt"></block>' +
+'    <block type="kniwwelino_getTime" adv="true"></block>' +
+'    <block type="kniwwelino_getTimeInt" adv="true"></block>' +
 '    <block type="time_seconds"></block>' +
-'    <block type="time_millis"></block>' +
+'    <block type="time_millis" adv="true"></block>' +
 //'    <block type="infinite_loop"></block>' +
 '  </category>' +
-'  <sep></sep>' +
-'  <category id="catInputOutput" name="Input/Output">' +
+'  <sep adv="true"></sep>' +
+'  <category id="catInputOutput" name="Input/Output" adv="true">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +
 '        <block type="logic_compare">' +
@@ -408,8 +396,9 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '  </category>' +
 //'  <sep></sep>' +
-'  <sep></sep>' +
-'  <category id="catAudio" name="Audio">' +
+'  <sep adv="true"></sep>' +
+
+'  <category id="catAudio" name="Audio" adv="true">' +
 '    <block type="kniwwelino_playNote">' +
 '      <value name="NOTE">' +
 '        <shadow type="kniwwelino_toneChooser">' +
@@ -434,8 +423,8 @@ Ardublockly.TOOLBOX_XML =
 '       <field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
 '    </block>' +
 '  </category>' +
-'  <sep></sep>' +
-'  <category id="catMotors" name="Motors">' +
+'  <sep adv="true"></sep>' +
+'  <category id="catMotors" name="Motors" adv="true">' +
 '    <block type="servo_write">' +
 '      <value name="SERVO_ANGLE">' +
 '        <shadow type="math_number">' +
@@ -480,8 +469,8 @@ Ardublockly.TOOLBOX_XML =
 //'    <block type="spi_transfer"></block>' +
 //'    <block type="spi_transfer_return"></block>' +
 //'  </category>' +
-'  <sep></sep>' +
-'  <category id="catSensors" name="Sensors">' +
+'  <sep adv="true"></sep>' +
+'  <category id="catSensors" name="Sensors" adv="true">' +
 '    <block type="kniwwelino_BME280getValue"></block>' +
 '    <block type="kniwwelino_BME680getValue"></block>' +
 '    <block type="kniwwelino_SHT30getValue"></block>' +
@@ -496,28 +485,28 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '    <block type="kniwwelino_WeatherConstChooser"></block>' +
 '  </category>' +
-'  <sep></sep>' +
-'  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
+'  <sep adv="true"></sep>' +
+'  <category id="catFunctions" name="Functions" custom="PROCEDURE" adv="true"></category>' +
 '  <sep></sep>' +
 '  <category id="catKniwwelino" name="Kniwwelino">' +
 '    <block type="arduino_functions_setup"></block>' +
 '    <block type="arduino_functions_loop"></block>' +
-'    <block type="kniwwelino_log">' +
+'    <block type="kniwwelino_log" adv="true">' +
 '      <value name="TEXT">' +
 '        <shadow type="text">""</shadow>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_logln">' +
+'    <block type="kniwwelino_logln" adv="true">' +
 '      <value name="TEXT">' +
 '        <shadow type="text">""</shadow>' +
 '      </value>' +
 '    </block>' +
-'    <block type="kniwwelino_getID"></block>' +
-'    <block type="kniwwelino_getName"></block>' +
-'    <block type="kniwwelino_getIP"></block>' +
-'    <block type="kniwwelino_getMAC"></block>' +
+'    <block type="kniwwelino_getID" adv="true"></block>' +
+'    <block type="kniwwelino_getName" adv="true"></block>' +
+'    <block type="kniwwelino_getIP" adv="true"></block>' +
+'    <block type="kniwwelino_getMAC" adv="true"></block>' +
 '  </category>' +
-'  <sep></sep>' +
-'  <category id="catOther" name="Other">' +
+'  <sep adv="true"></sep>' +
+'  <category id="catOther" name="Other" adv="true">' +
 '  </category>' +
 '</xml>';
