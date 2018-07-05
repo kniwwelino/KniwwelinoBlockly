@@ -706,7 +706,7 @@ Ardublockly.toogleToolboxSimple = function() {
   var buttonIcon = document.getElementById('button_toggle_toolbox_icon');
   var buttonText = document.getElementById('toggle_toolbox_text');
   var visOn = 'fa fa-angle-down';
-  var visOff = 'fa fa-angle-right';
+  var visOff = 'fa fa-angle-double-right';
   var textSimple = 'simple';
   var textAdvanced = 'advanced';
 
