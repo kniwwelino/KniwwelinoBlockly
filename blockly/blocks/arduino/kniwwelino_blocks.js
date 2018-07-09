@@ -201,6 +201,23 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
+Blockly.Blocks['kniwwelino_RGBselectEffect'] = {
+		init: function() {
+			this.setInputsInline(true);
+			this.appendValueInput("COLOR").setCheck(Blockly.Types.TEXT.checkList)
+			this.appendDummyInput().appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"10"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"5"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"1"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK,"20"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW,"21"]]), "EFFECT");
+			this.appendValueInput("DURATION").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_DURATION);
+			this.appendDummyInput().appendField("s");
+		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECT_EFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
+		    this.setOutput(true, Blockly.Types.TEXT.output);
+		  },getBlockType: function() {
+			    return Blockly.Types.TEXT;
+		   }
+		};
+
+
 Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 		  init: function() {
 		    this.appendValueInput("RED")
@@ -252,7 +269,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 			         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING)
 				     .setCheck(Blockly.Types.TEXT.checkList)
 		    this.appendDummyInput()
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK,"RGB_SPARK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW,"RGB_GLOW"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -266,7 +283,7 @@ Blockly.Blocks['kniwwelino_RGBsetEffect'] = {
 			this.setInputsInline(true);
 		    this.appendDummyInput()
 		    	.appendField(Blockly.Msg.KNIWWELINO_RGB_SETEFFECT)
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK,"RGB_SPARK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW,"RGB_GLOW"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -494,6 +511,26 @@ Blockly.Blocks['kniwwelino_MATRIXdrawIcon'] = {
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
 		  }
+		};
+
+Blockly.Blocks['kniwwelino_MATRIXselectIconEffect'] = {
+		init: function() {
+			this.setInputsInline(true);
+			this.appendValueInput("ICON");
+			this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_SHORT).appendField(new Blockly.FieldDropdown(
+	            [[Blockly.Msg.KNIWWELINO_PIN_ON,"0"],
+	            ["1/2Hz","3"],
+	            ["1Hz","2"],
+	            ["2Hz","1"]]), "EFFECT");
+			this.appendValueInput("DURATION").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_DURATION);
+			this.appendDummyInput().appendField("s");
+		    this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+		    this.setOutput(true, Blockly.Types.TEXT.output);
+		  },getBlockType: function() {
+			    return Blockly.Types.TEXT;
+		   }
 		};
 
 Blockly.Blocks['kniwwelino_MATRIXwrite'] = {

@@ -168,6 +168,14 @@ Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
 	return ['"'+block.getFieldValue('COLOR').replace("#","").toUpperCase()+'"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['kniwwelino_RGBselectEffect'] = function(block) {
+	kniwwelinoBaseCode();
+	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX).replace('"',"").replace('"',"");
+	var effect = block.getFieldValue('EFFECT');
+	var duration = Blockly.Arduino.valueToCode(block, 'DURATION', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return ['"'+color+':'+effect+':'+duration+'"', Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['kniwwelino_RGBsetRGB'] = function(block) {
 	kniwwelinoBaseCode();
 	var r = Blockly.Arduino.valueToCode(block, 'RED', Blockly.Arduino.ORDER_ATOMIC);
@@ -192,7 +200,7 @@ Blockly.Arduino['kniwwelino_RGBsetEffect'] = function(block) {
 Blockly.Arduino['kniwwelino_RGBsetColorFromString'] = function(block) {
 	kniwwelinoBaseCode();
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
-	return  'Kniwwelino.RGBsetColor(String('+color+'));\n';
+	return  'Kniwwelino.RGBsetColorEffect(String('+color+'));\n';
 };
 
 Blockly.Arduino['kniwwelino_RGBsetBrightness'] = function(block) {
@@ -250,6 +258,14 @@ Blockly.Arduino['kniwwelino_MATRIXdrawIcon'] = function(block) {
 	kniwwelinoBaseCode();
 	var icon =  Blockly.Arduino.valueToCode(block, 'ICON', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	return 'Kniwwelino.MATRIXdrawIcon(' + icon + ');\n';
+};
+
+Blockly.Arduino['kniwwelino_MATRIXselectIconEffect'] = function(block) {
+	kniwwelinoBaseCode();
+	var icon = Blockly.Arduino.valueToCode(block, 'ICON', Blockly.Arduino.ORDER_UNARY_POSTFIX).replace('String(',"").replace(')',"").replace('"',"").replace('"',"");
+	var effect = block.getFieldValue('EFFECT');
+	var duration = Blockly.Arduino.valueToCode(block, 'DURATION', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return ['"'+icon+':'+effect+':'+duration+'"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_MATRIXwrite'] = function(block) {
