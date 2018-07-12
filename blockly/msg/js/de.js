@@ -697,8 +697,6 @@ Blockly.Msg.KNIWWELINO_TIME_MONTH = "Monat"
 Blockly.Msg.KNIWWELINO_TIME_DAY = "Tag"
 
 // overwrite default labels
-//Blockly.Msg.ARD_HIGH = "an";
-//Blockly.Msg.ARD_LOW = "aus";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "wiederhole dauerhaft:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "mache beim Start:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "Wert";
@@ -709,3 +707,17 @@ Blockly.Msg.ARD_MAP_SMIN = "Wert von ["
 Blockly.Msg.ARD_MAP_SMAX = "-"
 Blockly.Msg.ARD_MAP_DMIN = "] ab auf ["
 Blockly.Msg.ARD_MAP_DMAX = "-"
+
+	Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Neopixel LED Strip with size";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "on pin";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT = "set strip to effect:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR = "set strip to color:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR = "set pixel";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "to color:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "set effect speed to";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "set brightness to";
+

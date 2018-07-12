@@ -228,6 +228,10 @@ Blockly.Arduino.finish = function(code) {
 	  code = code + '\nKniwwelino.loop(); // do background stuff...';
   }
   
+  if (allDefs.includes("WS2812FX.h")) {
+	  code = code + '\nws2812fx.service(); // handle Neopixel Effect';
+  }
+  
   var loop =  'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';  
   
   return allDefs + setup + loop + received + "\n\n" ;
