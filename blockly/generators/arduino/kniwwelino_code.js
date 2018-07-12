@@ -173,6 +173,7 @@ Blockly.Arduino['kniwwelino_RGBselectEffect'] = function(block) {
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX).replace('"',"").replace('"',"");
 	var effect = block.getFieldValue('EFFECT');
 	var duration = Blockly.Arduino.valueToCode(block, 'DURATION', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	if (duration <=0) duration = -1;
 	return ['"'+color+':'+effect+':'+duration+'"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -257,6 +258,7 @@ Blockly.Arduino['kniwwelino_MATRIXIconChooser'] = function(block) {
 Blockly.Arduino['kniwwelino_MATRIXdrawIcon'] = function(block) {
 	kniwwelinoBaseCode();
 	var icon =  Blockly.Arduino.valueToCode(block, 'ICON', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	if (icon == '') icon = 'String("")';
 	return 'Kniwwelino.MATRIXdrawIcon(' + icon + ');\n';
 };
 
@@ -265,6 +267,7 @@ Blockly.Arduino['kniwwelino_MATRIXselectIconEffect'] = function(block) {
 	var icon = Blockly.Arduino.valueToCode(block, 'ICON', Blockly.Arduino.ORDER_UNARY_POSTFIX).replace('String(',"").replace(')',"").replace('"',"").replace('"',"");
 	var effect = block.getFieldValue('EFFECT');
 	var duration = Blockly.Arduino.valueToCode(block, 'DURATION', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	if (duration <=0) duration = -1;
 	return ['"'+icon+':'+effect+':'+duration+'"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -345,7 +348,6 @@ Blockly.Arduino['kniwwelino_BUTTONclicked'] = function(block) {
 
 Blockly.Arduino['kniwwelino_MQTTsetGroup'] = function(block) {
 	kniwwelinoBaseCode();
-//	var group = Blockly.Arduino.valueToCode(block, 'GROUP',Blockly.Arduino.ORDER_UNARY_POSTFIX);
 	var group = block.getFieldValue('GROUP');
 	group = group.trim().replace(" ","_");
 	Blockly.Arduino.addSetup('kniwwelino_MQTTsetGroup','Kniwwelino.MQTTsetGroup(String("' + group + '"));', true);
@@ -573,3 +575,70 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		var freq = block.getFieldValue('NOTE');
 		return [freq, Blockly.Arduino.ORDER_ATOMIC];
 	};
+	
+
+//==== Neopixel WS2812 ==============================================
+	
+	Blockly.Arduino['kniwwelino_neopixelInit'] = function(block) {
+		kniwwelinoBaseCode();
+		var size = Blockly.Arduino.valueToCode(block, 'SIZE', Blockly.Arduino.ORDER_UNARY_POSTFIX)
+		var pin = block.getFieldValue('PIN');
+		Blockly.Arduino.addInclude('WS2812FX', '#include <WS2812FX.h>');
+		Blockly.Arduino.addDeclaration('kniwwelino_WS2812FXinit','WS2812FX ws2812fx = WS2812FX('+size+', '+pin+', NEO_GRB + NEO_KHZ800);');
+		Blockly.Arduino.addSetup('kniwwelino_WS2812FXsetup', 'ws2812fx.init();\n  ws2812fx.setBrightness(100);\n  ws2812fx.setSpeed(200);\n  ws2812fx.start();', true);
+		Blockly.Arduino.addSetup('kniwwelino_WS2812FXsetup', '//initialize neopixel strip\n  ws2812fx.init();\n//  ws2812fx.setBrightness(100);\n//  ws2812fx.setSpeed(200);\n  ws2812fx.start();', true);
+
+		return '';
+	};	
+	
+	Blockly.Arduino['kniwwelino_neopixelSetEffect'] = function(block) {
+		kniwwelinoBaseCode();
+		var effect = Blockly.Arduino.valueToCode(block, 'EFFECT', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+		if (effect == null || effect === undefined || effect == "") effect = 0;
+		
+		var code = 'ws2812fx.setMode(' + effect + '); ws2812fx.start();\n';
+		return code;
+	};
+	
+	Blockly.Arduino['kniwwelino_neopixelEffectChooser'] = function(block) {
+			kniwwelinoBaseCode();
+			var effect = block.getFieldValue('EFFECT');
+			return [effect, Blockly.Arduino.ORDER_ATOMIC];
+	};
+
+	
+	Blockly.Arduino['kniwwelino_neopixelsetStripColorFromString'] = function(block) {
+		kniwwelinoBaseCode();
+		var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+		if (color == null || color === undefined || color == "") color = 0;
+		
+		var code = 'ws2812fx.setColor(Kniwwelino.RGBhex2int(' + color + '));\n';
+		return code;
+	};
+	
+	Blockly.Arduino['kniwwelino_neopixelsetPixelColorFromString'] = function(block) {
+		kniwwelinoBaseCode();
+		
+		var pixel = Blockly.Arduino.valueToCode(block, 'PIXEL', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+		if (pixel == null || pixel === undefined || pixel == "") pixel = 0;
+		
+		var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+		if (color == null || color === undefined || color == "") color = 0;
+		
+		var code = 'if(ws2812fx.isRunning()){ws2812fx.stop();} ws2812fx.setPixelColor('+pixel+', Kniwwelino.RGBhex2int(' + color + ')); ws2812fx.show();\n';
+		return code;
+	};
+	
+	Blockly.Arduino['kniwwelino_neopixelsetSpeed'] = function(block) {
+		kniwwelinoBaseCode();
+		var speed = Blockly.Arduino.valueToCode(block, 'SPEED', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+		return  'ws2812fx.setSpeed(' + speed + ');\n';
+	};
+	
+	Blockly.Arduino['kniwwelino_neopixelsetBrightness'] = function(block) {
+		kniwwelinoBaseCode();
+		var brightness = Blockly.Arduino.valueToCode(block, 'BRIGHTNESS', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+		return  'ws2812fx.setBrightness(' + brightness + ');\n';
+	};
+	
+	
