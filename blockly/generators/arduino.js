@@ -227,19 +227,12 @@ Blockly.Arduino.finish = function(code) {
   if (allDefs.includes("Kniwwelino.h")) {
 	  code = code + '\nKniwwelino.loop(); // do background stuff...';
   }
-<<<<<<< HEAD
 
-  var loop =  'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
-
-=======
-  
   if (allDefs.includes("WS2812FX.h")) {
 	  code = code + '\nws2812fx.service(); // handle Neopixel Effect';
   }
-  
-  var loop =  'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';  
-  
->>>>>>> 339b10e4... added blocks for Neopixel
+
+  var loop =  'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
   return allDefs + setup + loop + received + "\n\n" ;
 };
 
