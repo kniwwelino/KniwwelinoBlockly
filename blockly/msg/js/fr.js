@@ -537,7 +537,7 @@ Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT = 'fixe la couleur de la LED RVB sur'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOREFFECT_TIP = 'Configure la LED RVB sur couleur et effet'
 Blockly.Msg.KNIWWELINO_RGB_SETEFFECT = 'fixe la effet de la LED RVB sur'
 Blockly.Msg.KNIWWELINO_RGB_SETEFFECT_TIP = 'Configure la LED RVB sur effet'
-Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'fixe la couleur de la LED RVB sur'
+Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING = 'fixe la LED RVB sur'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING_TIP = 'Configure la couleur de la LED RVB depuis la chaîne HEX'
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS = 'fixe la luminosité de la LED RVB sur';
 Blockly.Msg.KNIWWELINO_RGB_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la LED RVB (1-255)';
@@ -548,8 +548,11 @@ Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING = "The value must be in the range 0-25
 Blockly.Msg.KNIWWELINO_RGB_RED = "rouge";
 Blockly.Msg.KNIWWELINO_RGB_GREEN = "vert";
 Blockly.Msg.KNIWWELINO_RGB_BLUE = "bleu";
+Blockly.Msg.KNIWWELINO_RGB_DURATION = "durée";
 Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW = "glow"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK = "spark"
 Blockly.Msg.KNIWWELINO_PIN_BUTTON = "bouton externe sur pin";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
@@ -572,6 +575,7 @@ Blockly.Msg.KNIWWELINO_MATRIX_WRITE_NORMAL = 'en continu';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_WAIT = 'une fois et attendre';
 Blockly.Msg.KNIWWELINO_MATRIX_WRITE_ONCE = 'une fois';
 Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE = 'fixe la fréquence de clignotement de la matrice sur';
+Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_SHORT = 'fréq. clignotement';
 Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Configure la fréquence de clignotement de la matrice de LED (plage 0-3)';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'fixe la luminosité de la matrice sur';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la matrice de LED (0-15)';
@@ -691,8 +695,27 @@ Blockly.Msg.KNIWWELINO_TIME_MONTH = "MOIS"
 Blockly.Msg.KNIWWELINO_TIME_DAY = "JOURNÉE"
 
 // overwrite default labels
-//Blockly.Msg.ARD_HIGH = "activée";
-//Blockly.Msg.ARD_LOW = "désactivée";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "boucle continue:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "au démarrage:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "valeur";
+
+Blockly.Msg.ARD_MAP_SMIN = "de ["
+Blockly.Msg.ARD_MAP_SMAX = "-"
+Blockly.Msg.ARD_MAP_DMIN = "] valeur de ["
+Blockly.Msg.ARD_MAP_DMAX = "-"
+	
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Neopixel LED Strip with size";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "on pin";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT = "set strip to effect:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR = "set strip to color:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR = "set pixel";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "to color:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "set effect speed to";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "set brightness to";
+
+
+

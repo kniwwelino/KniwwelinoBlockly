@@ -20,12 +20,35 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
-// '    <block type="kniwwelino_MATRIXdrawIconChooser"></block>' +
 '    <block type="kniwwelino_MATRIXclear"></block>' +
 '    <block type="kniwwelino_MATRIXdrawIcon">' +
 '    <value name="ICON">' +
 '        <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
 '      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MATRIXdrawIcon" adv="true">' +
+'    	<value name="ICON">' +
+'    	<block type="kniwwelino_MATRIXselectIconEffect">' +
+'    		<value name="ICON">' +
+'    	    <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
+'    	  </value>' +
+'	 	  <value name="DURATION">' +
+'			 <shadow type="math_number">' +
+'			    <field name="NUM">3</field>' +
+'			 </shadow>' +
+'	 		</value>' +
+'   	 </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_MATRIXselectIconEffect" adv="true">' +
+'    	<value name="ICON">' +
+'        <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
+'      </value>' +
+'	   <value name="DURATION">' +
+'		 <shadow type="math_number">' +
+'		    <field name="NUM">3</field>' +
+'		 </shadow>' +
+'	 	</value>' +
 '    </block>' +
 '    <block type="kniwwelino_MATRIXIconChooser"></block>' +
 '    <block type="kniwwelino_MATRIXdrawIconCreator"></block>' +
@@ -93,7 +116,6 @@ Ardublockly.TOOLBOX_XML =
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catRGB" name="LED">' +
-//'    <block type="kniwwelino_RGBsetColor"></block>' +
 '    <block type="kniwwelino_RGBsetColorEffect">' +
 '      <value name="COLOR">' +
 '        <shadow type="kniwwelino_RGBselectColor"></shadow>' +
@@ -101,6 +123,32 @@ Ardublockly.TOOLBOX_XML =
 '  </block>' +
 '    <block type="kniwwelino_RGBclear"></block>' +
 '    <block type="kniwwelino_RGBselectColor"></block>' +
+'    <block type="kniwwelino_RGBsetColorFromString" adv="true">' +
+'       <value name="COLOR">' +
+'    		<block type="kniwwelino_RGBselectEffect">'+
+'		      <value name="COLOR">' +
+'		        <shadow type="kniwwelino_RGBselectColor">' +
+'		        </shadow>' +
+'		      </value>' +
+'		      <value name="DURATION">' +
+'		        <shadow type="math_number">' +
+'		          <field name="NUM">3</field>' +
+'		        </shadow>' +
+'		      </value>' +
+'		    </block>' +
+'		</value>' +
+'	 </block>' +
+//'	<block type="kniwwelino_RGBselectEffect" adv="true">'+
+//'		      <value name="COLOR">' +
+//'		        <shadow type="kniwwelino_RGBselectColor">' +
+//'		        </shadow>' +
+//'		      </value>' +
+//'		      <value name="DURATION">' +
+//'		        <shadow type="math_number">' +
+//'		          <field name="NUM">3</field>' +
+//'		        </shadow>' +
+//'		      </value>' +
+//'	 </block>' +
 '    <block type="kniwwelino_RGBsetColorFromString">' +
 '      <value name="COLOR">' +
 '        <shadow type="text">' +
@@ -138,6 +186,52 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_PINsetEffect"></block>' +
+
+'	<block type="kniwwelino_neopixelInit" adv="true">' +
+'      <value name="SIZE">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">10</field>' +
+'        </shadow>' +
+'      </value>' +
+'   </block>' +
+'	<block type="kniwwelino_neopixelSetEffect" adv="true">' +
+'      <value name="EFFECT">' +
+'        <block type="kniwwelino_neopixelEffectChooser">' +
+'          <field name="EFFECT">1 /*BLINK*/</field>' +
+'        </block>' +
+'      </value>' +
+'   </block>' +
+'	<block type="kniwwelino_neopixelsetStripColorFromString" adv="true">' +
+'		      <value name="COLOR">' +
+'		        <shadow type="kniwwelino_RGBselectColor">' +
+'		        </shadow>' +
+'		      </value>' +
+'   </block>' +
+'	<block type="kniwwelino_neopixelsetPixelColorFromString" adv="true">' +
+'      <value name="PIXEL">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">0</field>' +
+'        </shadow>' +
+'      </value>' +
+'		      <value name="COLOR">' +
+'		        <shadow type="kniwwelino_RGBselectColor">' +
+'		        </shadow>' +
+'		      </value>' +
+'   </block>' +
+'	<block type="kniwwelino_neopixelsetSpeed" adv="true">' +
+'		      <value name="SPEED">' +
+'     			   <shadow type="math_number">' +
+'      				    <field name="NUM">200</field>' +
+'      			  </shadow>' +
+'		      </value>' +
+'   </block>' +
+'	<block type="kniwwelino_neopixelsetBrightness" adv="true">' +
+'		      <value name="BRIGHTNESS">' +
+'     			   <shadow type="math_number">' +
+'      				    <field name="NUM">200</field>' +
+'      			  </shadow>' +
+'		      </value>' +
+'   </block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catMQTT" name="Messages">' +
@@ -288,6 +382,28 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="base_map"></block>' +
+'    <block type="enhanced_map" adv="true">' +
+'      <value name="SMIN">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">0</field>' +
+'        </shadow>' +
+'      </value>' +
+'      <value name="SMAX">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">1024</field>' +
+'        </shadow>' +
+'      </value>' +
+'      <value name="DMIN">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">0</field>' +
+'        </shadow>' +
+'      </value>' +
+'      <value name="DMAX">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">100</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
 '    <block type="math_single" adv="true"></block>' +
 '    <block type="math_trig" adv="true"></block>' +
 '    <block type="math_constant" adv="true"></block>' +

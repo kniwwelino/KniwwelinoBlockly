@@ -170,7 +170,9 @@ Blockly.Arduino['arduino_functions_setup'] = function(block) {
 Blockly.Arduino['arduino_functions_loop'] = function(block) {
   // Edited version of Blockly.Generator.prototype.statementToCode
   function statementToCodeNoTab(block, name) {
-    var targetBlock = block.getInputTargetBlock(name);
+	kniwwelinoBaseCode();
+	  
+	var targetBlock = block.getInputTargetBlock(name);
     var code = Blockly.Arduino.blockToCode(targetBlock);
     if (!goog.isString(code)) {
       throw 'Expecting code from statement block "' + targetBlock.type + '".';

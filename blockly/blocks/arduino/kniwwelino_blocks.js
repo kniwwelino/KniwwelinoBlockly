@@ -201,6 +201,23 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
+Blockly.Blocks['kniwwelino_RGBselectEffect'] = {
+		init: function() {
+			this.setInputsInline(true);
+			this.appendValueInput("COLOR").setCheck(Blockly.Types.TEXT.checkList)
+			this.appendDummyInput().appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"10"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"5"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"1"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK,"20"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW,"21"]]), "EFFECT");
+			this.appendValueInput("DURATION").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_DURATION);
+			this.appendDummyInput().appendField("s");
+		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECT_EFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
+		    this.setOutput(true, Blockly.Types.TEXT.output);
+		  },getBlockType: function() {
+			    return Blockly.Types.TEXT;
+		   }
+		};
+
+
 Blockly.Blocks['kniwwelino_RGBsetRGB'] = {
 		  init: function() {
 		    this.appendValueInput("RED")
@@ -252,7 +269,7 @@ Blockly.Blocks['kniwwelino_RGBsetColorEffect'] = {
 			         .appendField(Blockly.Msg.KNIWWELINO_RGB_SETCOLORFROMSTRING)
 				     .setCheck(Blockly.Types.TEXT.checkList)
 		    this.appendDummyInput()
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK,"RGB_SPARK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW,"RGB_GLOW"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -266,7 +283,7 @@ Blockly.Blocks['kniwwelino_RGBsetEffect'] = {
 			this.setInputsInline(true);
 		    this.appendDummyInput()
 		    	.appendField(Blockly.Msg.KNIWWELINO_RGB_SETEFFECT)
-		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"]]), "EFFECT");
+		        .appendField(new Blockly.FieldDropdown([[Blockly.Msg.KNIWWELINO_PIN_ON,"RGB_ON"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK,"RGB_BLINK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH,"RGB_FLASH"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK,"RGB_SPARK"], [Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW,"RGB_GLOW"]]), "EFFECT");
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -494,6 +511,26 @@ Blockly.Blocks['kniwwelino_MATRIXdrawIcon'] = {
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
 		  }
+		};
+
+Blockly.Blocks['kniwwelino_MATRIXselectIconEffect'] = {
+		init: function() {
+			this.setInputsInline(true);
+			this.appendValueInput("ICON");
+			this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_SHORT).appendField(new Blockly.FieldDropdown(
+	            [[Blockly.Msg.KNIWWELINO_PIN_ON,"0"],
+	            ["1/2Hz","3"],
+	            ["1Hz","2"],
+	            ["2Hz","1"]]), "EFFECT");
+			this.appendValueInput("DURATION").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_DURATION);
+			this.appendDummyInput().appendField("s");
+		    this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICON_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+		    this.setOutput(true, Blockly.Types.TEXT.output);
+		  },getBlockType: function() {
+			    return Blockly.Types.TEXT;
+		   }
 		};
 
 Blockly.Blocks['kniwwelino_MATRIXwrite'] = {
@@ -1174,3 +1211,172 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
 		  }
 		};
+
+//==== Neopixel WS2812 ==============================================
+
+Blockly.Blocks['kniwwelino_neopixelInit'] = {
+		   init: function() {
+				this.setInputsInline(true);
+				this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+			    this.appendValueInput("SIZE").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE);
+			    this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN).appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN')
+				this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+				this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP);
+				this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+		   }
+		};
+
+Blockly.Blocks['kniwwelino_neopixelSetEffect'] = {
+		   init: function() {
+			this.setInputsInline(true);
+			this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+			this.appendValueInput("EFFECT").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT);
+		    this.setPreviousStatement(true, null);
+		    this.setNextStatement(true, null);
+			this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT_TIP);
+			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+		  }
+	};
+
+
+Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
+		  init: function() {
+				this.appendDummyInput()
+				.appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"))
+		        .appendField(new Blockly.FieldDropdown([
+		        	["STATIC [0]", "0 /*STATIC*/"],
+		        	["BLINK [1]", "1 /*BLINK*/"],
+		        	["BREATH [2]", "2 /*BREATH*/"],
+		        	["COLOR_WIPE [3]", "3 /*COLOR_WIPE*/"],
+		        	["COLOR_WIPE_INV [4]", "4 /*COLOR_WIPE_INV*/"], 
+		        	["COLOR_WIPE_REV [5]", "5 /*COLOR_WIPE_REV*/"],
+		        	["COLOR_WIPE_REV_INV [6]", "6 /*COLOR_WIPE_REV_INV*/"],
+		        	["COLOR_WIPE_RANDOM [7]", "7 /*COLOR_WIPE_RANDOM*/"],
+		        	["RANDOM_COLOR [8]", "8 /*RANDOM_COLOR*/"],
+		        	["SINGLE_DYNAMIC [9]", "9 /*SINGLE_DYNAMIC*/"],
+		        	["MULTI_DYNAMIC [10]", "10 /*MULTI_DYNAMIC*/"],
+		        	["RAINBOW [11]", "11 /*RAINBOW*/"],
+		        	["RAINBOW_CYCLE [12]", "12 /*RAINBOW_CYCLE*/"],
+		        	["SCAN [13]", "13 /*SCAN*/"],
+		        	["DUAL_SCAN [14]", "14 /*DUAL_SCAN*/"],
+		        	["FADE [15]", "15 /*FADE*/"],
+		        	["THEATER_CHASE [16]", "16 /*THEATER_CHASE*/"],
+		        	["THEATER_CHASE_RAINBOW [17]", "17 /*THEATER_CHASE_RAINBOW*/"],
+		        	["RUNNING_LIGHTS [18]", "18 /*RUNNING_LIGHTS*/"],
+		        	["TWINKLE [19]", "19 /*TWINKLE*/"],
+		        	["TWINKLE_RANDOM [20]", "20 /*TWINKLE_RANDOM*/"],
+		        	["TWINKLE_FADE [21]", "21 /*TWINKLE_FADE*/"],
+		        	["TWINKLE_FADE_RANDOM [22]", "22 /*TWINKLE_FADE_RANDOM*/"],
+		        	["SPARKLE [23]", "23 /*SPARKLE*/"],
+		        	["FLASH_SPARKLE [24]", "24 /*FLASH_SPARKLE*/"],
+		        	["HYPER_SPARKLE [25]", "25 /*HYPER_SPARKLE*/"],
+		        	["STROBE [26]", "26 /*STROBE*/"],
+		        	["STROBE_RAINBOW [27]", "27 /*STROBE_RAINBOW*/"],
+		        	["MULTI_STROBE [28]", "28 /*MULTI_STROBE*/"],
+		        	["BLINK_RAINBOW [29]", "29 /*BLINK_RAINBOW*/"],
+		        	["CHASE_WHITE [30]", "30 /*CHASE_WHITE*/"],
+		        	["CHASE_COLOR [31]", "31 /*CHASE_COLOR*/"],
+		        	["CHASE_RANDOM [32]", "32 /*CHASE_RANDOM*/"],
+		        	["CHASE_RAINBOW [33]", "33 /*CHASE_RAINBOW*/"],
+		        	["CHASE_FLASH [34]", "34 /*CHASE_FLASH*/"],
+		        	["CHASE_FLASH_RANDOM [35]", "35 /*CHASE_FLASH_RANDOM*/"],
+		        	["CHASE_RAINBOW_WHITE [36]", "36 /*CHASE_RAINBOW_WHITE*/"],
+		        	["CHASE_BLACKOUT [37]", "37 /*CHASE_BLACKOUT*/"],
+		        	["CHASE_BLACKOUT_RAINBOW [38]", "38 /*CHASE_BLACKOUT_RAINBOW*/"],
+		        	["COLOR_SWEEP_RANDOM [39]", "39 /*COLOR_SWEEP_RANDOM*/"],
+		        	["RUNNING_COLOR [40]", "40 /*RUNNING_COLOR*/"],
+		        	["RUNNING_RED_BLUE [41]", "41 /*RUNNING_RED_BLUE*/"],
+		        	["RUNNING_RANDOM [42]", "42 /*RUNNING_RANDOM*/"],
+		        	["LARSON_SCANNER [43]", "43 /*LARSON_SCANNER*/"],
+		        	["COMET [44]", "44 /*COMET*/"],
+		        	["FIREWORKS [45]", "45 /*FIREWORKS*/"],
+		        	["FIREWORKS_RANDOM [46]", "46 /*FIREWORKS_RANDOM*/"],
+		        	["MERRY_CHRISTMAS [47]", "47 /*MERRY_CHRISTMAS*/"],
+		        	["FIRE_FLICKER [48]", "48 /*FIRE_FLICKER*/"],
+		        	["FIRE_FLICKER_SOFT [49]", "49 /*FIRE_FLICKER_SOFT*/"],
+		        	["FIRE_FLICKER_INTENSE [50]", "50 /*FIRE_FLICKER_INTENSE*/"],
+		        	["CIRCUS_COMBUSTUS [51]", "51 /*CIRCUS_COMBUSTUS*/"],
+		        	["HALLOWEEN [52]", "52 /*HALLOWEEN*/"],
+		        	["BICOLOR_CHASE [53]", "53 /*BICOLOR_CHASE*/"],
+		        	["TRICOLOR_CHASE [54]", "54 /*TRICOLOR_CHASE*/"],
+		        	["ICU [55]", "55 /*ICU*/"],
+		        	["CUSTOM [56]", "56 /*CUSTOM*/"]
+
+		        	])
+		        , "EFFECT");
+			this.setOutput(true, null);
+			this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_EFFECT_TIP);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+		  },
+		  getBlockType: function() {
+		    return Blockly.Types.NUMBER;
+		  }
+		};
+
+	Blockly.Blocks['kniwwelino_neopixelsetStripColorFromString'] = {
+		   init: function() {
+			 this.setInputsInline(true);
+			 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+		     this.appendValueInput("COLOR")
+		         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR)
+			     .setCheck(Blockly.Types.TEXT.checkList);
+		     this.setPreviousStatement(true, null);
+		     this.setNextStatement(true, null);
+			 this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			 this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR_TIP);
+			 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+		   }
+		};
+	
+	Blockly.Blocks['kniwwelino_neopixelsetPixelColorFromString'] = {
+			   init: function() {
+				 this.setInputsInline(true);
+				 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+			     this.appendValueInput("PIXEL")
+			     	.setCheck(Blockly.Types.NUMBER.checkList)
+			     	.appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR);
+				 this.appendValueInput("COLOR")
+			         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2)
+				     .setCheck(Blockly.Types.TEXT.checkList);
+
+			     this.setPreviousStatement(true, null);
+			     this.setNextStatement(true, null);
+				 this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+				 this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPIXELCOLOR_TIP);
+				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+			   }
+			};
+	
+	Blockly.Blocks['kniwwelino_neopixelsetSpeed'] = {
+					   init: function() {
+						 this.setInputsInline(true);
+						 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+						 this.appendValueInput("SPEED")
+				         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED)
+					     .setCheck(Blockly.Types.NUMBER.checkList);
+					     this.setPreviousStatement(true, null);
+					     this.setNextStatement(true, null);
+						 this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+						 this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED_TIP);
+						 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+					   }
+					};
+	
+	Blockly.Blocks['kniwwelino_neopixelsetBrightness'] = {
+			   init: function() {
+				 this.setInputsInline(true);
+				 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+				 this.appendValueInput("BRIGHTNESS")
+		         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS)
+			     .setCheck(Blockly.Types.NUMBER.checkList);
+			     this.setPreviousStatement(true, null);
+			     this.setNextStatement(true, null);
+				 this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+				 this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS_TIP);
+				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+			   }
+			};
+	
+
