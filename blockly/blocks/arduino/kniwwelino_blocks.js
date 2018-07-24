@@ -1217,7 +1217,7 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 Blockly.Blocks['kniwwelino_neopixelInit'] = {
 		   init: function() {
 				this.setInputsInline(true);
-				this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+				this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
 			    this.appendValueInput("SIZE").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE);
 			    this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN).appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN')
 				this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
@@ -1229,7 +1229,7 @@ Blockly.Blocks['kniwwelino_neopixelInit'] = {
 Blockly.Blocks['kniwwelino_neopixelSetEffect'] = {
 		   init: function() {
 			this.setInputsInline(true);
-			this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+			this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
 			this.appendValueInput("EFFECT").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT);
 		    this.setPreviousStatement(true, null);
 		    this.setNextStatement(true, null);
@@ -1243,13 +1243,13 @@ Blockly.Blocks['kniwwelino_neopixelSetEffect'] = {
 Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 		  init: function() {
 				this.appendDummyInput()
-				.appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"))
+				.appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"))
 		        .appendField(new Blockly.FieldDropdown([
 		        	["STATIC [0]", "0 /*STATIC*/"],
 		        	["BLINK [1]", "1 /*BLINK*/"],
 		        	["BREATH [2]", "2 /*BREATH*/"],
 		        	["COLOR_WIPE [3]", "3 /*COLOR_WIPE*/"],
-		        	["COLOR_WIPE_INV [4]", "4 /*COLOR_WIPE_INV*/"], 
+		        	["COLOR_WIPE_INV [4]", "4 /*COLOR_WIPE_INV*/"],
 		        	["COLOR_WIPE_REV [5]", "5 /*COLOR_WIPE_REV*/"],
 		        	["COLOR_WIPE_REV_INV [6]", "6 /*COLOR_WIPE_REV_INV*/"],
 		        	["COLOR_WIPE_RANDOM [7]", "7 /*COLOR_WIPE_RANDOM*/"],
@@ -1318,7 +1318,7 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 	Blockly.Blocks['kniwwelino_neopixelsetStripColorFromString'] = {
 		   init: function() {
 			 this.setInputsInline(true);
-			 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+			 this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
 		     this.appendValueInput("COLOR")
 		         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR)
 			     .setCheck(Blockly.Types.TEXT.checkList);
@@ -1329,11 +1329,11 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 			 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 		   }
 		};
-	
+
 	Blockly.Blocks['kniwwelino_neopixelsetPixelColorFromString'] = {
 			   init: function() {
 				 this.setInputsInline(true);
-				 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+				 this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
 			     this.appendValueInput("PIXEL")
 			     	.setCheck(Blockly.Types.NUMBER.checkList)
 			     	.appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR);
@@ -1348,11 +1348,11 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 			   }
 			};
-	
+
 	Blockly.Blocks['kniwwelino_neopixelsetSpeed'] = {
 					   init: function() {
 						 this.setInputsInline(true);
-						 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+						 this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
 						 this.appendValueInput("SPEED")
 				         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED)
 					     .setCheck(Blockly.Types.NUMBER.checkList);
@@ -1363,11 +1363,11 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 						 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 					   }
 					};
-	
+
 	Blockly.Blocks['kniwwelino_neopixelsetBrightness'] = {
 			   init: function() {
 				 this.setInputsInline(true);
-				 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
+				 this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
 				 this.appendValueInput("BRIGHTNESS")
 		         .appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS)
 			     .setCheck(Blockly.Types.NUMBER.checkList);
@@ -1378,5 +1378,3 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 			   }
 			};
-	
-
