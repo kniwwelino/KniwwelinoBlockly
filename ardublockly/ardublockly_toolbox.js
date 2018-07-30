@@ -187,13 +187,7 @@ Ardublockly.TOOLBOX_XML =
 '    </block>' +
 '    <block type="kniwwelino_PINsetEffect"></block>' +
 
-'	<block type="kniwwelino_neopixelInit" adv="true">' +
-'      <value name="SIZE">' +
-'        <shadow type="math_number">' +
-'          <field name="NUM">10</field>' +
-'        </shadow>' +
-'      </value>' +
-'   </block>' +
+'	<block type="kniwwelino_neopixelInit" adv="true"></block>' +
 '	<block type="kniwwelino_neopixelSetEffect" adv="true">' +
 '      <value name="EFFECT">' +
 '        <block type="kniwwelino_neopixelEffectChooser">' +
