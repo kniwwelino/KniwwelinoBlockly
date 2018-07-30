@@ -1218,7 +1218,7 @@ Blockly.Blocks['kniwwelino_neopixelInit'] = {
 		   init: function() {
 				this.setInputsInline(true);
 				this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"));
-			    this.appendValueInput("SIZE").setCheck(Blockly.Types.NUMBER.checkList).appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE);
+				this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE).appendField(new Blockly.FieldNumber(10, 0, 255, 0), 'SIZE');
 			    this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN).appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN')
 				this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 				this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP);
