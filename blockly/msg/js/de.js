@@ -554,7 +554,7 @@ Blockly.Msg.KNIWWELINO_RGB_DURATION = "dauer";
 Blockly.Msg.KNIWWELINO_PIN_ON = "an";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "aus";
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW = "glühen"
-Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK = "blitzen"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK = "glitzern"
 Blockly.Msg.KNIWWELINO_PIN_BUTTON = "externer Knopf an Pin";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
@@ -720,4 +720,3 @@ Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "to color:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "set effect speed to";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "set brightness to";
-
