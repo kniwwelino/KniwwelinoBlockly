@@ -746,7 +746,7 @@ Ardublockly.toogleToolboxSimple = function() {
     buttonText.innerHTML = Ardublockly.getLocalStr(textAdvanced);
     Ardublockly.xmlTree = Blockly.Xml.textToDom(Ardublockly.TOOLBOX_XML);
   }
-  //Ardublockly.updateToolboxLanguage();
+  Ardublockly.updateToolboxLanguage();
   Ardublockly.workspace.updateToolbox(Ardublockly.xmlTree);
   Ardublockly.TOOLBAR_SHOWING_SIMPLE_ = !Ardublockly.TOOLBAR_SHOWING_SIMPLE_;
 };
