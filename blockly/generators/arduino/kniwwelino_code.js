@@ -6,7 +6,7 @@
 
 /**
  * @fileoverview Code generator for the Kniwwelino Library.
- * Kniwwelino library docs: https://kniwwelino.github.io/en/reference/
+ * Kniwwelino library docs: https://doku.kniwwelino.lu/en/reference/
  */
 'use strict';
 
@@ -581,7 +581,7 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 
 	Blockly.Arduino['kniwwelino_neopixelInit'] = function(block) {
 		kniwwelinoBaseCode();
-		var size = Blockly.Arduino.valueToCode(block, 'SIZE', Blockly.Arduino.ORDER_UNARY_POSTFIX)
+		var size = block.getFieldValue('SIZE');
 		var pin = block.getFieldValue('PIN');
 		Blockly.Arduino.addInclude('WS2812FX', '#include <WS2812FX.h>');
 		Blockly.Arduino.addDeclaration('kniwwelino_WS2812FXinit','WS2812FX ws2812fx = WS2812FX('+size+', '+pin+', NEO_GRB + NEO_KHZ800);');
