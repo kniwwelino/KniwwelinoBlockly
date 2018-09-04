@@ -6,7 +6,7 @@
 
 /**
  * @fileoverview Blocks for for the Kniwwelino Library.
- * Kniwwelino library docs: https://kniwwelino.github.io/en/reference/
+ * Kniwwelino library docs: https://doku.kniwwelino.lu/en/reference/
  */
 'use strict';
 
@@ -1249,7 +1249,7 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 		        	["BLINK [1]", "1 /*BLINK*/"],
 		        	["BREATH [2]", "2 /*BREATH*/"],
 		        	["COLOR_WIPE [3]", "3 /*COLOR_WIPE*/"],
-		        	["COLOR_WIPE_INV [4]", "4 /*COLOR_WIPE_INV*/"], 
+		        	["COLOR_WIPE_INV [4]", "4 /*COLOR_WIPE_INV*/"],
 		        	["COLOR_WIPE_REV [5]", "5 /*COLOR_WIPE_REV*/"],
 		        	["COLOR_WIPE_REV_INV [6]", "6 /*COLOR_WIPE_REV_INV*/"],
 		        	["COLOR_WIPE_RANDOM [7]", "7 /*COLOR_WIPE_RANDOM*/"],
@@ -1329,7 +1329,7 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 			 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 		   }
 		};
-	
+
 	Blockly.Blocks['kniwwelino_neopixelsetPixelColorFromString'] = {
 			   init: function() {
 				 this.setInputsInline(true);
@@ -1348,7 +1348,7 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 			   }
 			};
-	
+
 	Blockly.Blocks['kniwwelino_neopixelsetSpeed'] = {
 					   init: function() {
 						 this.setInputsInline(true);
@@ -1363,7 +1363,7 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 						 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 					   }
 					};
-	
+
 	Blockly.Blocks['kniwwelino_neopixelsetBrightness'] = {
 			   init: function() {
 				 this.setInputsInline(true);
@@ -1378,5 +1378,3 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 			   }
 			};
-	
-

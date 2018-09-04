@@ -6,7 +6,7 @@
 
 /**
  * @fileoverview Code generator for the Kniwwelino Library.
- * Kniwwelino library docs: https://kniwwelino.github.io/en/reference/
+ * Kniwwelino library docs: https://doku.kniwwelino.lu/en/reference/
  */
 'use strict';
 
