@@ -8,6 +8,7 @@
   <title class="translatable_title">Kniwwelino</title>
 
   <!-- Materialize, Prettify, and Ardublockly CSS -->
+
   <link rel="stylesheet" href="materialize/materialize.css" media="screen,projection">
   <link rel="stylesheet" href="prettify/arduino.css">
   <link rel="stylesheet" href="ardublockly.css" media="screen,projection">
@@ -19,7 +20,7 @@
   <!-- bootstrap --><!-- TODO check sideeffect with the led matrix position! -->
   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
   <script src="./js_libs/sweetalert.min.js"></script>
 
   <!-- Ardublockly - These three files contain the compress version -->
@@ -278,6 +279,13 @@
     	<div id="listKniwwelinosModal"><span class="translatable_manageKniwwelinoAdd">add Kniwwelino first</span></div>
     </div>
     <div class="modal-footer">
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat left" id="menu_button_backupKniwwelinoDevices">
+				<span class="translatable_backup">Backup</span>
+			</a>
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices">
+        <span class="translatable_restore">Restore</span>
+      </a>
+
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">
 				<span class="translatable_return">Return</span>
 			</a>
