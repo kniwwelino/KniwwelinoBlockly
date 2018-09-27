@@ -8,6 +8,7 @@
 
 /** Create a namespace for the application. */
 var Ardublockly = Ardublockly || {};
+var timers = [];
 
 /** Initialize function for Ardublockly, to be called on page load. */
 Ardublockly.init = function() {
@@ -101,7 +102,7 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
 
-  Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.cleanKniwwelinosModal);
+  Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
 
 	Ardublockly.bindClick_('menu_button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
 	Ardublockly.bindClick_('menu_load', Ardublockly.loadUserXmlFile);
@@ -293,6 +294,9 @@ Ardublockly.getSelectedKniwwelino = function() {
 
 Ardublockly.cleanKniwwelinosModal = function() {
   console.log("cleanKniwwelinosModal");
+  timers.forEach(function (timerID) {
+    clearTimeout(timerID);
+  });
 };
 
 Ardublockly.renderKniwwelinosModal = function() {
@@ -378,30 +382,28 @@ Ardublockly.renderKniwwelinosModal = function() {
 					Ardublockly.initKniwwelinoList();
 				});
 
-        ArdublocklyServer.getJson("/id?id="+kniwwelinoJSON[i].id, function (res) {
-          for(var x in res){
-  			    var id = x;
-  			    var val = res[x];
-            //console.log(id + " : " + val);
-            for(var y in val){
-              var mac = y;
-              let val2 = val[mac];
-              //console.log(mac + " : " + val2);
-              console.log(mac + " online: " + val2.online);
-              if (val2.online) {
-                document.getElementById(id).classList.remove('offline');
-                document.getElementById(id).classList.add('online');
-              } else {
-                document.getElementById(id).classList.remove('online');
-                document.getElementById(id).classList.add('offline');
-              }
+      ArdublocklyServer.getJson("/id?id="+kniwwelinoJSON[i].id, function (res) {
+        for(var x in res){
+          var id = x;
+          var val = res[x];
+          //console.log(id + " : " + val);
+          for(var y in val){
+            var mac = y;
+            let val2 = val[mac];
+            //console.log(mac + " : " + val2);
+            console.log(mac + " online: " + val2.online);
+            if (val2.online) {
+              document.getElementById(id).classList.remove('offline');
+              document.getElementById(id).classList.add('online');
+            } else {
+              document.getElementById(id).classList.remove('online');
+              document.getElementById(id).classList.add('offline');
             }
-  				}
-          //console.log(res);
-        });
-
-
-		}
+          }
+        }
+        //console.log(res);
+      });
+    }
 	}
 
 	document.getElementById('name_addKniwwelino').addEventListener(
