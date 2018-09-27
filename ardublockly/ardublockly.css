@@ -361,6 +361,29 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 	border: none;
 }
 
+.onlineBadge {
+  position: absolute;
+  left: 10px;
+  top: 55px;
+  text-align: center;
+}
+
+span.onlineBadge.online::after {
+  content: "online";
+  padding: 0 6px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #4CAF50 !important;
+}
+
+span.onlineBadge.offline::after {
+  content: "offline";
+  padding: 0 6px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #F44336 !important;
+}
+
 #addKniwwelino {
 	border-width: 1px;
 	border-style: solid;

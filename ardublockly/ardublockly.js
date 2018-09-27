@@ -101,6 +101,8 @@ Ardublockly.bindActionFunctions = function() {
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
 
+  Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.cleanKniwwelinosModal);
+
 	Ardublockly.bindClick_('menu_button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
 	Ardublockly.bindClick_('menu_load', Ardublockly.loadUserXmlFile);
   Ardublockly.bindClick_('menu_save', Ardublockly.saveXmlFile);
@@ -289,8 +291,12 @@ Ardublockly.getSelectedKniwwelino = function() {
 	}
 };
 
+Ardublockly.cleanKniwwelinosModal = function() {
+  console.log("cleanKniwwelinosModal");
+};
+
 Ardublockly.renderKniwwelinosModal = function() {
-	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
+  var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
 
 	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
 	var kniwwelinos = document.getElementById('listKniwwelinosModal').value;
@@ -307,6 +313,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
 			kniwwelinos += '<li class="collection-item avatar">';
+      kniwwelinos += `<span class="onlineBadge offline" id="${kniwwelinoJSON[i].id}"></span>`;
 			kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
 			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
 			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
@@ -370,6 +377,30 @@ Ardublockly.renderKniwwelinosModal = function() {
 					Ardublockly.renderKniwwelinosModal();
 					Ardublockly.initKniwwelinoList();
 				});
+
+        ArdublocklyServer.getJson("/id?id="+kniwwelinoJSON[i].id, function (res) {
+          for(var x in res){
+  			    var id = x;
+  			    var val = res[x];
+            //console.log(id + " : " + val);
+            for(var y in val){
+              var mac = y;
+              let val2 = val[mac];
+              //console.log(mac + " : " + val2);
+              console.log(mac + " online: " + val2.online);
+              if (val2.online) {
+                document.getElementById(id).classList.remove('offline');
+                document.getElementById(id).classList.add('online');
+              } else {
+                document.getElementById(id).classList.remove('online');
+                document.getElementById(id).classList.add('offline');
+              }
+            }
+  				}
+          //console.log(res);
+        });
+
+
 		}
 	}
 
