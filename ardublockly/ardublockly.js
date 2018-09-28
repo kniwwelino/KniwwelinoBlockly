@@ -114,6 +114,8 @@ Ardublockly.bindActionFunctions = function() {
 
   Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
 
+  Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
+
 	Ardublockly.bindClick_('menu_button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
 	Ardublockly.bindClick_('menu_load', Ardublockly.loadUserXmlFile);
   Ardublockly.bindClick_('menu_save', Ardublockly.saveXmlFile);
