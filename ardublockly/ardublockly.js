@@ -324,6 +324,9 @@ Ardublockly.bindKniwwelinoList = function() {
 		});
 };
 
+/**
+Import the list of Kniwwelinos from a JSON file merge it into the actual list
+*/
 Ardublockly.importDeviceList = function(data) {
   let isValid = false;
   try {
