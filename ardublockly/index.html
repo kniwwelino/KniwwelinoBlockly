@@ -19,7 +19,7 @@
   <!-- bootstrap --><!-- TODO check sideeffect with the led matrix position! -->
   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
-
+  <script src="./js_libs/underscore-min.js"></script>
   <script src="./js_libs/sweetalert.min.js"></script>
 
   <!-- Ardublockly - These three files contain the compress version -->
@@ -250,7 +250,7 @@
   <!-- General Alert: Content is loaded using JavaScript to display alerts -->
   <div id="gen_alert" class="modal modal_small modal-fixed-footer">
     <div class="modal-content">
-      <h5 id="gen_alert_title">Empty Alert</h4>
+      <h5 id="gen_alert_title">Empty Alert</h5>
       <p><span id="gen_alert_body">Empty alert text</span></p>
     </div>
     <div class="modal-footer">
@@ -278,9 +278,17 @@
     	<div id="listKniwwelinosModal"><span class="translatable_manageKniwwelinoAdd">add Kniwwelino first</span></div>
     </div>
     <div class="modal-footer">
+
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat left" id="menu_button_backupKniwwelinoDevices">
+		<span class="translatable_backup">Backup</span>
+	  </a>
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices">
+        <span class="translatable_restore">Restore</span>
+      </a>
+
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " id="button_closeManageKniwwelino">
-				<span class="translatable_return">Return</span>
-			</a>
+		<span class="translatable_return">Return</span>
+	  </a>
     </div>
   </div>
 
