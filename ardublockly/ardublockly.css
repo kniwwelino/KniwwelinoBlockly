@@ -356,6 +356,10 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 	-ms-transform: translate(0%, -68px);
 }
 
+.listReload {
+  padding-left: 1px;
+}
+
 .manageKniwwelino {
 	display: inline !important;
 	border: none;

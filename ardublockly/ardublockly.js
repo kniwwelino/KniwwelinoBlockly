@@ -8,7 +8,6 @@
 
 /** Create a namespace for the application. */
 var Ardublockly = Ardublockly || {};
-var timers = [];
 
 /** Initialize function for Ardublockly, to be called on page load. */
 Ardublockly.init = function() {
@@ -75,6 +74,12 @@ Ardublockly.init = function() {
 		});
 	}
 
+  //check if managed Kniwwelinos are online
+  setInterval(() => {
+    if (document.getElementById('manageKniwwelino').style.display !== "none") {
+      document.getElementById('button_updateOnlineStatus').click();
+    }
+  }, 5000);
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -294,9 +299,9 @@ Ardublockly.getSelectedKniwwelino = function() {
 
 Ardublockly.cleanKniwwelinosModal = function() {
   console.log("cleanKniwwelinosModal");
-  timers.forEach(function (timerID) {
-    clearTimeout(timerID);
-  });
+  // timers.forEach(function (timerID) {
+  //   clearTimeout(timerID);
+  // });
 };
 
 Ardublockly.renderKniwwelinosModal = function() {
@@ -312,6 +317,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 
 		kniwwelinos = '';
 		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoManaging')+` ${kniwwelinoJSON.length} Kniwwelinos`;
+    kniwwelinos += '<a href="#!" class="btn-flat listReload"><i id="button_updateOnlineStatus" class="mdi-av-loop"></i></a>';
 
 		kniwwelinos += '<ul class="collection">';
 
@@ -382,27 +388,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 					Ardublockly.initKniwwelinoList();
 				});
 
-      ArdublocklyServer.getJson("/id?id="+kniwwelinoJSON[i].id, function (res) {
-        for(var x in res){
-          var id = x;
-          var val = res[x];
-          //console.log(id + " : " + val);
-          for(var y in val){
-            var mac = y;
-            let val2 = val[mac];
-            //console.log(mac + " : " + val2);
-            console.log(mac + " online: " + val2.online);
-            if (val2.online) {
-              document.getElementById(id).classList.remove('offline');
-              document.getElementById(id).classList.add('online');
-            } else {
-              document.getElementById(id).classList.remove('online');
-              document.getElementById(id).classList.add('offline');
-            }
-          }
-        }
-        //console.log(res);
-      });
+      Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
     }
 	}
 
@@ -415,6 +401,16 @@ Ardublockly.renderKniwwelinosModal = function() {
 				document.getElementById('button_addKniwwelino').className = 'btn-floating disabled secondary-content green';
 			}
 	});
+
+  document.getElementById('button_updateOnlineStatus').addEventListener(
+		'click',  function() {
+      if (kniwwelinoLocalStorage) {
+    		for (var i = 0; i < kniwwelinoJSON.length; i++) {
+          Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
+        }
+      }
+    }
+  );
 
 	document.getElementById('button_addKniwwelino').addEventListener(
 		'click',  function() {
@@ -479,6 +475,30 @@ Ardublockly.renderKniwwelinosModal = function() {
 		});
 	Ardublockly.LedMatrix();
 };
+
+Ardublockly.updateOnlineStatus = function(id) {
+  ArdublocklyServer.getJson("/id?id="+id, function (res) {
+    for(var x in res){
+      var id = x;
+      var val = res[x];
+      //console.log(id + " : " + val);
+      for(var y in val){
+        var mac = y;
+        let val2 = val[mac];
+        //console.log(mac + " : " + val2);
+        console.log(mac + " online: " + val2.online);
+        if (val2.online) {
+          document.getElementById(id).classList.remove('offline');
+          document.getElementById(id).classList.add('online');
+        } else {
+          document.getElementById(id).classList.remove('online');
+          document.getElementById(id).classList.add('offline');
+        }
+      }
+    }
+    //console.log(res);
+  });
+}
 
 Ardublockly.renderCopyright  = function() {
 	var xhttp = new XMLHttpRequest();
