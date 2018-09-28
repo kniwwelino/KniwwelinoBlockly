@@ -77,7 +77,9 @@ Ardublockly.init = function() {
   //check if managed Kniwwelinos are online
   setInterval(() => {
     if (document.getElementById('manageKniwwelino').style.display !== "none") {
-      document.getElementById('button_updateOnlineStatus').click();
+      if (document.getElementById('button_updateOnlineStatus')) {
+        document.getElementById('button_updateOnlineStatus').click();
+      }
     }
   }, 2500);
 };
@@ -313,6 +315,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 	if (!kniwwelinoLocalStorage) {
 		kniwwelinos = '';
 		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoZero');
+    kniwwelinos += '<a href="#!" class="btn-flat listReload"><i id="button_updateOnlineStatus" class="mdi-av-loop"></i></a>';
 	} else {
 
 		kniwwelinos = '';

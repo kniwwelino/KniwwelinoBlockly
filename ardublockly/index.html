@@ -19,7 +19,7 @@
   <!-- bootstrap --><!-- TODO check sideeffect with the led matrix position! -->
   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
-
+  <script src="./js_libs/underscore-min.js"></script>
   <script src="./js_libs/sweetalert.min.js"></script>
 
   <!-- Ardublockly - These three files contain the compress version -->
@@ -278,6 +278,12 @@
     	<div id="listKniwwelinosModal"><span class="translatable_manageKniwwelinoAdd">add Kniwwelino first</span></div>
     </div>
     <div class="modal-footer">
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat left" id="menu_button_backupKniwwelinoDevices">
+				<span class="translatable_backup">Backup</span>
+			</a>
+      <a href="#!" class="modal-action waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices">
+        <span class="translatable_restore">Restore</span>
+      </a>
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat " id="button_closeManageKniwwelino">
 				<span class="translatable_return">Return</span>
 			</a>
