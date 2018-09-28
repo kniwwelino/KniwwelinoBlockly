@@ -77,7 +77,9 @@ Ardublockly.init = function() {
   //check if managed Kniwwelinos are online
   setInterval(() => {
     if (document.getElementById('manageKniwwelino').style.display !== "none") {
-      document.getElementById('button_updateOnlineStatus').click();
+      if (document.getElementById('button_updateOnlineStatus')) {
+        document.getElementById('button_updateOnlineStatus').click();
+      }
     }
   }, 2500);
 };
@@ -106,6 +108,11 @@ Ardublockly.bindActionFunctions = function() {
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
+  Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
+  Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
+
+
+  Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
 
   Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
 
@@ -215,6 +222,68 @@ Ardublockly.bindKniwwelinoList
 };
 
 /**
+ * Loads an XML file from the users file system and adds the blocks into the
+ * Blockly workspace.
+ */
+Ardublockly.loadKniwwelinoDevicesFile = function() {
+  // Create File Reader event listener function
+  var parseInputJSONfile = function(e) {
+    var jsonFile = e.target.files[0];
+    var filename = jsonFile.name;
+    var extensionPosition = filename.lastIndexOf('.');
+    if (extensionPosition !== -1) {
+      filename = filename.substr(0, extensionPosition);
+    }
+
+Ardublockly.bindKniwwelinoList
+    var reader = new FileReader();
+    reader.onload = function() {
+      var success = Ardublockly.importDeviceList(reader.result);
+      if (success) {
+        Ardublockly.renderKniwwelinosModal();
+        Ardublockly.initKniwwelinoList();
+        Ardublockly.getSelectedKniwwelino();
+      } else {
+        Ardublockly.alertMessage(
+            Ardublockly.getLocalStr('invalidDeviceListTitle'),
+            Ardublockly.getLocalStr('invalidDeviceListBody'),
+            false);
+      }
+    };
+    reader.readAsText(jsonFile);
+  };
+
+  // Create once invisible browse button with event listener, and click it
+  var selectFile = document.getElementById('select_file');
+  if (selectFile === null) {
+    var selectFileDom = document.createElement('INPUT');
+    selectFileDom.type = 'file';
+    selectFileDom.id = 'select_file';
+
+    var selectFileWrapperDom = document.createElement('DIV');
+    selectFileWrapperDom.id = 'select_file_wrapper';
+    selectFileWrapperDom.style.display = 'none';
+    selectFileWrapperDom.appendChild(selectFileDom);
+
+    document.body.appendChild(selectFileWrapperDom);
+    selectFile = document.getElementById('select_file');
+    selectFile.addEventListener('change', parseInputJSONfile, false);
+  }
+  selectFile.click();
+};
+
+/**
+ * Creates an JSON file containing the kniwwelino devices and
+ * prompts the users to save it into their local file system.
+ */
+Ardublockly.saveKniwwelinoDevicesFile = function() {
+  Ardublockly.saveTextFileAs(
+      'KniwwelinoDevicesBackup.json',
+      localStorage.getItem("kniwwelinos"));
+};
+
+
+/**
  * Creates an XML file containing the blocks from the Blockly workspace and
  * prompts the users to save it into their local file system.
  */
@@ -254,6 +323,52 @@ Ardublockly.bindKniwwelinoList = function() {
 			Ardublockly.setSelectedKniwwelino(source.value);
 		});
 };
+
+Ardublockly.importDeviceList = function(data) {
+  let isValid = false;
+  try {
+    var kniwwelinoJSON = JSON.parse(data);
+
+    //console.log(kniwwelinoJSON);
+    if (Array.isArray(kniwwelinoJSON)) {
+      for (let jsonObj of kniwwelinoJSON) {
+        if (!("type" in jsonObj)==0 || !("id" in jsonObj)==0 || !("mac" in jsonObj)==0 || !("name" in jsonObj)==0) {
+          isValid = true;
+        } else {
+          isValid = false;
+          return isValid;
+        }
+      }
+
+      if (isValid) {
+        let oldDeviceLocalStore = localStorage.getItem("kniwwelinos");
+        if (oldDeviceLocalStore) {
+          let oldDeviceList = JSON.parse(oldDeviceLocalStore);
+
+          mergeByProperty(oldDeviceList, kniwwelinoJSON, 'id');
+          //console.log("mergedJSON: " + oldDeviceList);
+          localStorage.setItem('kniwwelinos', JSON.stringify(oldDeviceList));
+        } else {
+          localStorage.setItem('kniwwelinos', JSON.stringify(kniwwelinoJSON));
+        }
+      }
+    }
+  } catch(err) {
+    console.log("file not a valid json file. " + data);
+  }
+  return isValid;
+};
+
+function mergeByProperty(arr1, arr2, prop) {
+  _.each(arr2, function(arr2obj) {
+    var arr1obj = _.find(arr1, function(arr1obj) {
+      return arr1obj[prop] === arr2obj[prop];
+    });
+
+    //If the object already exist extend it with the new values from arr2, otherwise just add the new object to arr1
+    arr1obj ? _.extend(arr1obj, arr2obj) : arr1.push(arr2obj);
+  });
+}
 
 Ardublockly.initKniwwelinoList = function() {
 	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
@@ -313,6 +428,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 	if (!kniwwelinoLocalStorage) {
 		kniwwelinos = '';
 		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoZero');
+    kniwwelinos += '<a href="#!" class="btn-flat listReload"><i id="button_updateOnlineStatus" class="mdi-av-loop"></i></a>';
 	} else {
 
 		kniwwelinos = '';

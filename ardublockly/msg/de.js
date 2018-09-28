@@ -124,6 +124,10 @@ Ardublockly.LOCALISED_TEXT = {
 	manageKniwwelinoNameRequired: "Name nötig",
 	manageKniwwelinoNameRequired_message: "Gib ihm einen Namen.",
 	manageKniwwelinoAlreadyManaging: "Du verwaltest schon diesen Kniwwelino!",
+  restore: "Wiederherstellen",
+  backup: "Sichern",
+  invalidDeviceListTitle: "Ungültige Geräteliste",
+  invalidDeviceListBody: "Die von Dir hochgeladene Datei ist nicht gültig. Bitte wähle eine andere aus.",
 	/*ALPHA VERSION*/
 	KNIWWELINO_ALPHA_TITLE: "Beta Version!",
 	KNIWWELINO_ALPHA_MESSAGE: "Achtung: Dies ist eine Beta-Version und kann Fehler enthalten. Wenn Du ein Problem findest, versuche bitte es zu reproduzieren, bevor Du uns einen Fehlerbericht schickst. Der Dienst kann von Zeit zu Zeit nicht verfügbar sein.",
