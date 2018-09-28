@@ -74,6 +74,12 @@ Ardublockly.init = function() {
 		});
 	}
 
+  //check if managed Kniwwelinos are online
+  setInterval(() => {
+    if (document.getElementById('manageKniwwelino').style.display !== "none") {
+      document.getElementById('button_updateOnlineStatus').click();
+    }
+  }, 2500);
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -100,6 +106,8 @@ Ardublockly.bindActionFunctions = function() {
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
+
+  Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
 
 	Ardublockly.bindClick_('menu_button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
 	Ardublockly.bindClick_('menu_load', Ardublockly.loadUserXmlFile);
@@ -289,8 +297,15 @@ Ardublockly.getSelectedKniwwelino = function() {
 	}
 };
 
+Ardublockly.cleanKniwwelinosModal = function() {
+  console.log("cleanKniwwelinosModal");
+  // timers.forEach(function (timerID) {
+  //   clearTimeout(timerID);
+  // });
+};
+
 Ardublockly.renderKniwwelinosModal = function() {
-	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
+  var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
 
 	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
 	var kniwwelinos = document.getElementById('listKniwwelinosModal').value;
@@ -302,11 +317,13 @@ Ardublockly.renderKniwwelinosModal = function() {
 
 		kniwwelinos = '';
 		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoManaging')+` ${kniwwelinoJSON.length} Kniwwelinos`;
+    kniwwelinos += '<a href="#!" class="btn-flat listReload"><i id="button_updateOnlineStatus" class="mdi-av-loop"></i></a>';
 
 		kniwwelinos += '<ul class="collection">';
 
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
 			kniwwelinos += '<li class="collection-item avatar">';
+      kniwwelinos += `<span class="onlineBadge offline" id="${kniwwelinoJSON[i].id}"></span>`;
 			kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
 			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
 			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
@@ -370,7 +387,9 @@ Ardublockly.renderKniwwelinosModal = function() {
 					Ardublockly.renderKniwwelinosModal();
 					Ardublockly.initKniwwelinoList();
 				});
-		}
+
+      Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
+    }
 	}
 
 	document.getElementById('name_addKniwwelino').addEventListener(
@@ -382,6 +401,16 @@ Ardublockly.renderKniwwelinosModal = function() {
 				document.getElementById('button_addKniwwelino').className = 'btn-floating disabled secondary-content green';
 			}
 	});
+
+  document.getElementById('button_updateOnlineStatus').addEventListener(
+		'click',  function() {
+      if (kniwwelinoLocalStorage) {
+    		for (var i = 0; i < kniwwelinoJSON.length; i++) {
+          Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
+        }
+      }
+    }
+  );
 
 	document.getElementById('button_addKniwwelino').addEventListener(
 		'click',  function() {
@@ -446,6 +475,30 @@ Ardublockly.renderKniwwelinosModal = function() {
 		});
 	Ardublockly.LedMatrix();
 };
+
+Ardublockly.updateOnlineStatus = function(id) {
+  ArdublocklyServer.getJson("/id?id="+id, function (res) {
+    for(var x in res){
+      var id = x;
+      var val = res[x];
+      //console.log(id + " : " + val);
+      for(var y in val){
+        var mac = y;
+        let val2 = val[mac];
+        //console.log(mac + " : " + val2);
+        console.log(mac + " online: " + val2.online);
+        if (val2.online) {
+          document.getElementById(id).classList.remove('offline');
+          document.getElementById(id).classList.add('online');
+        } else {
+          document.getElementById(id).classList.remove('online');
+          document.getElementById(id).classList.add('offline');
+        }
+      }
+    }
+    //console.log(res);
+  });
+}
 
 Ardublockly.renderCopyright  = function() {
 	var xhttp = new XMLHttpRequest();

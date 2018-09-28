@@ -356,9 +356,36 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 	-ms-transform: translate(0%, -68px);
 }
 
+.listReload {
+  padding-left: 1px;
+}
+
 .manageKniwwelino {
 	display: inline !important;
 	border: none;
+}
+
+.onlineBadge {
+  position: absolute;
+  left: 10px;
+  top: 55px;
+  text-align: center;
+}
+
+span.onlineBadge.online::after {
+  content: "online";
+  padding: 0 6px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #4CAF50 !important;
+}
+
+span.onlineBadge.offline::after {
+  content: "offline";
+  padding: 0 6px;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #F44336 !important;
 }
 
 #addKniwwelino {
