@@ -79,7 +79,7 @@ Ardublockly.init = function() {
     if (document.getElementById('manageKniwwelino').style.display !== "none") {
       document.getElementById('button_updateOnlineStatus').click();
     }
-  }, 5000);
+  }, 2500);
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
