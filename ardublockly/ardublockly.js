@@ -322,6 +322,52 @@ Ardublockly.bindKniwwelinoList = function() {
 		});
 };
 
+Ardublockly.importDeviceList = function(data) {
+  let isValid = false;
+  try {
+    var kniwwelinoJSON = JSON.parse(data);
+
+    //console.log(kniwwelinoJSON);
+    if (Array.isArray(kniwwelinoJSON)) {
+      for (let jsonObj of kniwwelinoJSON) {
+        if (!("type" in jsonObj)==0 || !("id" in jsonObj)==0 || !("mac" in jsonObj)==0 || !("name" in jsonObj)==0) {
+          isValid = true;
+        } else {
+          isValid = false;
+          return isValid;
+        }
+      }
+
+      if (isValid) {
+        let oldDeviceLocalStore = localStorage.getItem("kniwwelinos");
+        if (oldDeviceLocalStore) {
+          let oldDeviceList = JSON.parse(oldDeviceLocalStore);
+
+          mergeByProperty(oldDeviceList, kniwwelinoJSON, 'id');
+          //console.log("mergedJSON: " + oldDeviceList);
+          localStorage.setItem('kniwwelinos', JSON.stringify(oldDeviceList));
+        } else {
+          localStorage.setItem('kniwwelinos', JSON.stringify(kniwwelinoJSON));
+        }
+      }
+    }
+  } catch(err) {
+    console.log("file not a valid json file. " + data);
+  }
+  return isValid;
+};
+
+function mergeByProperty(arr1, arr2, prop) {
+  _.each(arr2, function(arr2obj) {
+    var arr1obj = _.find(arr1, function(arr1obj) {
+      return arr1obj[prop] === arr2obj[prop];
+    });
+
+    //If the object already exist extend it with the new values from arr2, otherwise just add the new object to arr1
+    arr1obj ? _.extend(arr1obj, arr2obj) : arr1.push(arr2obj);
+  });
+}
+
 Ardublockly.initKniwwelinoList = function() {
 	var kniwwelinoLocalStorage = localStorage.getItem("kniwwelinos");
 	var kniwwelinoJSON = JSON.parse(kniwwelinoLocalStorage);
