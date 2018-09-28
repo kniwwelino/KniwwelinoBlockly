@@ -108,6 +108,9 @@ Ardublockly.bindActionFunctions = function() {
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
+  Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
+  Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
+
 
   Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
 
@@ -215,6 +218,68 @@ Ardublockly.bindKniwwelinoList
   }
   selectFile.click();
 };
+
+/**
+ * Loads an XML file from the users file system and adds the blocks into the
+ * Blockly workspace.
+ */
+Ardublockly.loadKniwwelinoDevicesFile = function() {
+  // Create File Reader event listener function
+  var parseInputJSONfile = function(e) {
+    var jsonFile = e.target.files[0];
+    var filename = jsonFile.name;
+    var extensionPosition = filename.lastIndexOf('.');
+    if (extensionPosition !== -1) {
+      filename = filename.substr(0, extensionPosition);
+    }
+
+Ardublockly.bindKniwwelinoList
+    var reader = new FileReader();
+    reader.onload = function() {
+      var success = Ardublockly.importDeviceList(reader.result);
+      if (success) {
+        Ardublockly.renderKniwwelinosModal();
+        Ardublockly.initKniwwelinoList();
+        Ardublockly.getSelectedKniwwelino();
+      } else {
+        Ardublockly.alertMessage(
+            Ardublockly.getLocalStr('invalidDeviceListTitle'),
+            Ardublockly.getLocalStr('invalidDeviceListBody'),
+            false);
+      }
+    };
+    reader.readAsText(jsonFile);
+  };
+
+  // Create once invisible browse button with event listener, and click it
+  var selectFile = document.getElementById('select_file');
+  if (selectFile === null) {
+    var selectFileDom = document.createElement('INPUT');
+    selectFileDom.type = 'file';
+    selectFileDom.id = 'select_file';
+
+    var selectFileWrapperDom = document.createElement('DIV');
+    selectFileWrapperDom.id = 'select_file_wrapper';
+    selectFileWrapperDom.style.display = 'none';
+    selectFileWrapperDom.appendChild(selectFileDom);
+
+    document.body.appendChild(selectFileWrapperDom);
+    selectFile = document.getElementById('select_file');
+    selectFile.addEventListener('change', parseInputJSONfile, false);
+  }
+  selectFile.click();
+};
+
+/**
+ * Creates an JSON file containing the kniwwelino devices and
+ * prompts the users to save it into their local file system.
+ */
+Ardublockly.saveKniwwelinoDevicesFile = function() {
+  Ardublockly.saveTextFileAs(
+      'KniwwelinoDevicesBackup.json',
+      localStorage.getItem("kniwwelinos"));
+};
+
 
 /**
  * Creates an XML file containing the blocks from the Blockly workspace and
