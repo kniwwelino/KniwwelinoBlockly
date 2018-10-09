@@ -704,18 +704,18 @@ Blockly.Msg.ARD_MAP_SMAX = "-"
 Blockly.Msg.ARD_MAP_DMIN = "] valeur de ["
 Blockly.Msg.ARD_MAP_DMAX = "-"
 	
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Neopixel LED Strip with size";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "on pin";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Bande de LED Neopixel avec";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "sur le pin";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP = "";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT = "set strip to effect:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT = "Modifie l'effet sur la bande:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT_TIP = "";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR = "set strip to color:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR = "Modifie la couleur de la bande:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR_TIP = "";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR = "set pixel";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "to color:";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR = "Modifie la LED";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "dans la couleur:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "set effect speed to";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "set brightness to";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "Modifie la vitesse de l'effet à";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "Modifie la brillance à";
 
 
 
