@@ -447,7 +447,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
 			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
 			kniwwelinos += `<span class="mac">MAC: ${kniwwelinoJSON[i].mac}</span>`;
-			kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
+			kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'delete']);"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
 			kniwwelinos += '</li>';
 		}
 		kniwwelinos += '</ul>';
@@ -458,7 +458,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 	kniwwelinos += '<label for="name">'+Ardublockly.getLocalStr('manageKniwwelinoName')+'</label>';
 	kniwwelinos += '<input placeholder="'+Ardublockly.getLocalStr('manageKniwwelinoPlaceholder')+'" id="name_addKniwwelino" type="text" class="validate">';
 	kniwwelinos += '</div>';
-	kniwwelinos += '<a href="#!" id="button_addKniwwelino" class="btn-floating disabled secondary-content green"><i class="mdi-content-add-circle-outline"></i></a>';
+	kniwwelinos += `<a href="#!" id="button_addKniwwelino" class="btn-floating disabled secondary-content green" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'add']);"><i class="mdi-content-add-circle-outline"></i></a>`;
 	kniwwelinos += '<div class="ledmatrix-description">';
 	kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoHelp');
 	kniwwelinos += '</div>';
