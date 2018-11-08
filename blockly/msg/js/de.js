@@ -600,7 +600,7 @@ Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Gibt zurück ob der Knopf gedrückt
 Blockly.Msg.KNIWWELINO_BUTTON_A_AND_B = "A und B";
 Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B = "A oder B";
 // MQTT - MESSAGING
-Blockly.Msg.KNIWWELINO_MQTT_GROUP = "erstelle Gruppe für Nachrichten";
+Blockly.Msg.KNIWWELINO_MQTT_GROUP = "benutze Gruppe für Nachrichten";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Setzt die Gruppe für die deine Nachrichten bestimmt sind";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "verbinde RGB LED mit RGB/COLOR";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "verbindet einkommende Nachrichten mit der RGB LED";
