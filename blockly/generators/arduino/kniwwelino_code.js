@@ -585,8 +585,7 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		var pin = block.getFieldValue('PIN');
 		Blockly.Arduino.addInclude('WS2812FX', '#include <WS2812FX.h>');
 		Blockly.Arduino.addDeclaration('kniwwelino_WS2812FXinit','WS2812FX ws2812fx = WS2812FX('+size+', '+pin+', NEO_GRB + NEO_KHZ800);');
-		Blockly.Arduino.addSetup('kniwwelino_WS2812FXsetup', 'ws2812fx.init();\n  ws2812fx.setBrightness(100);\n  ws2812fx.setSpeed(200);\n  ws2812fx.start();', true);
-		Blockly.Arduino.addSetup('kniwwelino_WS2812FXsetup', '//initialize neopixel strip\n  ws2812fx.init();\n//  ws2812fx.setBrightness(100);\n//  ws2812fx.setSpeed(200);\n  ws2812fx.start();', true);
+		Blockly.Arduino.addSetup('kniwwelino_WS2812FXsetup', '//initialize neopixel strip\n  ws2812fx.init();\n  ws2812fx.start();', true);
 
 		return '';
 	};
@@ -596,7 +595,7 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		var effect = Blockly.Arduino.valueToCode(block, 'EFFECT', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 		if (effect == null || effect === undefined || effect == "") effect = 0;
 
-		var code = 'ws2812fx.setMode(' + effect + '); ws2812fx.start();\n';
+		var code = 'if(ws2812fx.getMode()!='+effect+'){ws2812fx.setMode(' + effect + ');} if(!ws2812fx.isRunning()){ws2812fx.start();}\n';
 		return code;
 	};
 
