@@ -603,7 +603,7 @@ Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP = "Is true if the button was clicked (
 Blockly.Msg.KNIWWELINO_BUTTON_A_AND_B = "A and B";
 Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B = "A or B";
 // MQTT - MESSAGING
-Blockly.Msg.KNIWWELINO_MQTT_GROUP = "create messaging group";
+Blockly.Msg.KNIWWELINO_MQTT_GROUP = "join messaging group";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Set the group for your messaging";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "connect RGB LED to topic RGB/COLOR";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connect RGB LED to messaging";
