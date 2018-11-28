@@ -89,6 +89,7 @@ Ardublockly.LOCALISED_TEXT = {
   /* Prompts */
   ok: "OK",
   okay: "Okay",
+  close: "Beenden",
   cancel: "Abbrechen",
   return: "Zurück",
   /* Cards */

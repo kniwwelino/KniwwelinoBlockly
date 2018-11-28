@@ -388,11 +388,20 @@ span.onlineBadge.offline::after {
   background-color: #F44336 !important;
 }
 
+a.backuprestore{
+  height: 24px;
+  line-height: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -10px;
+}
+
 #addKniwwelino {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #E0E0E0;
 	background-color: white;
+  margin-top: 45px;
 	padding-bottom: 50%;
 	min-height: 455px;
 }
@@ -403,6 +412,7 @@ span.onlineBadge.offline::after {
 	}
 
 	#addKniwwelino {
+    margin-top: 45px;
 		min-width: 100%;
 	}
 }
@@ -413,6 +423,7 @@ span.onlineBadge.offline::after {
 	}
 
 	#addKniwwelino {
+    margin-top: 45px;
 		width:100%
 	}
 }

@@ -108,8 +108,8 @@ Ardublockly.bindActionFunctions = function() {
 
   Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
-  Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
-  Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
+  // Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
+  // Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
 
 
   Ardublockly.bindClick_('button_closeManageKniwwelino', Ardublockly.cleanKniwwelinosModal);
@@ -432,6 +432,11 @@ Ardublockly.renderKniwwelinosModal = function() {
 		kniwwelinos = '';
 		kniwwelinos += Ardublockly.getLocalStr('manageKniwwelinoZero');
     kniwwelinos += '<a href="#!" class="btn-flat listReload"><i id="button_updateOnlineStatus" class="mdi-av-loop"></i></a>';
+    kniwwelinos += '<ul class="collection"></ul>';
+
+    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'restore']);">`;
+    kniwwelinos += '  <span class="translatable_restore">Restore</span>';
+    kniwwelinos += '</a>';
 	} else {
 
 		kniwwelinos = '';
@@ -451,7 +456,14 @@ Ardublockly.renderKniwwelinosModal = function() {
 			kniwwelinos += '</li>';
 		}
 		kniwwelinos += '</ul>';
+    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_backupKniwwelinoDevices" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'backup']);">`;
+    kniwwelinos += '  <span class="translatable_backup">'+Ardublockly.getLocalStr('backup')+'</span>';
+    kniwwelinos += '</a>';
+    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'restore']);">`;
+    kniwwelinos += '  <span class="translatable_restore">'+Ardublockly.getLocalStr('restore')+'</span>';
+    kniwwelinos += '</a>';
 	}
+
 
 	kniwwelinos += '<div id="addKniwwelino">';
 	kniwwelinos += `<div class="col s12">`;
@@ -480,6 +492,9 @@ Ardublockly.renderKniwwelinosModal = function() {
 	kniwwelinos += '</div>';
 
 	document.getElementById('listKniwwelinosModal').innerHTML = kniwwelinos;
+
+  Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
+  Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
 
 	if (kniwwelinoLocalStorage) {
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
