@@ -5,7 +5,7 @@
         <field name="TYPE">SCROLL</field>
         <value name="TEXT">
           <shadow type="text" id="{Y.kqq6mO4Zs*04BPIp6">
-            <field name="TEXT">My is Name</field>
+            <field name="TEXT">My name is</field>
           </shadow>
         </value>
       </block>
