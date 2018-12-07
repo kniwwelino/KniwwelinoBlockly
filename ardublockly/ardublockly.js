@@ -494,7 +494,9 @@ Ardublockly.renderKniwwelinosModal = function() {
 	document.getElementById('listKniwwelinosModal').innerHTML = kniwwelinos;
 
   Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
-  Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
+  if (kniwwelinoLocalStorage) {
+    Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
+  }
 
 	if (kniwwelinoLocalStorage) {
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
