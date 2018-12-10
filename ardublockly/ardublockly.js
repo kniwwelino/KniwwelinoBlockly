@@ -794,7 +794,7 @@ Ardublockly.sendCode = function() {
   };
 
   ArdublocklyServer.sendSketchToServer(
-      Ardublockly.generateArduino(), document.getElementById('sketch_name').value, Ardublockly.getSelectedKniwwelino(), sendCodeReturn);
+      Ardublockly.generateArduino(), document.getElementById('content_xml').value, document.getElementById('sketch_name').value, Ardublockly.getSelectedKniwwelino(), sendCodeReturn);
 };
 
 /** Populate the workspace blocks with the XML written in the XML text area. */
