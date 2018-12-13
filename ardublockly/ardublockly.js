@@ -454,8 +454,9 @@ Ardublockly.renderKniwwelinosModal = function() {
 			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
 			kniwwelinos += `<span class="mac">MAC: ${kniwwelinoJSON[i].mac}</span></div>`;
       kniwwelinos += `<div class="kniwwelino_sketches">
-                        <a href="?lang=${Ardublockly.LANG}&xml=/user/${kniwwelinoJSON[i].mac}/latest.xml"><i class="mdi-file-folder-open"></i>`+Ardublockly.getLocalStr('manageKniwwelinoLoadLatest')+"</a>
-                      </div>";
+                        <a href="?lang=${Ardublockly.LANG}&xml=/user/${kniwwelinoJSON[i].mac}/latest.xml">
+                        <i class="mdi-file-folder-open"></i>`+Ardublockly.getLocalStr('manageKniwwelinoLoadLatest');
+      kniwwelinos +=  "</a></div>";
                       // <a href="#!" class="waves-effect waves-light btn-small right"><i class="mdi-file-folder-open"></i></a>
                       // <span>Saved Sketches</span>
                       // <select class="kniwwelino_sketches">
