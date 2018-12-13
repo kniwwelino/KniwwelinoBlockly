@@ -406,6 +406,46 @@ a.backuprestore{
 	min-height: 455px;
 }
 
+div.kniwwelino_sketches {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+select.kniwwelino_sketches {
+  width: auto;
+  overflow: hidden;
+  height: 1.8rem;
+  border: none;
+  line-height: 1.5rem;
+  display: inline-block;
+}
+
+.btn-small {
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+}
+
+.btn-small {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 1.8rem;
+    line-height: 1.5rem;
+    outline: 0;
+    padding: 0 0.7rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
 @media only screen and (max-width: 480px) {
 	#manageKniwwelino.modal {
 	  min-width: 100%;

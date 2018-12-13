@@ -446,13 +446,23 @@ Ardublockly.renderKniwwelinosModal = function() {
 		kniwwelinos += '<ul class="collection">';
 
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
-			kniwwelinos += '<li class="collection-item avatar">';
+			kniwwelinos += `<li class="collection-item avatar" >`;
+      kniwwelinos += `<div style="padding-right: 50px;" id="select_Kniwwelino_${kniwwelinoJSON[i].id}">`;
       kniwwelinos += `<span class="onlineBadge offline" id="${kniwwelinoJSON[i].id}"></span>`;
-			kniwwelinos += '<img src="img/mascot.png" alt="" class="circle">';
+			kniwwelinos += `<img src="img/mascot.png" alt="" class="circle">`;
 			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
 			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
-			kniwwelinos += `<span class="mac">MAC: ${kniwwelinoJSON[i].mac}</span>`;
-			kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'delete']);"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
+			kniwwelinos += `<span class="mac">MAC: ${kniwwelinoJSON[i].mac}</span></div>`;
+      kniwwelinos += `<div class="kniwwelino_sketches">
+                        <a href="?lang=${Ardublockly.LANG}&xml=/user/${kniwwelinoJSON[i].mac}/latest.xml"><i class="mdi-file-folder-open"></i>`+Ardublockly.getLocalStr('manageKniwwelinoLoadLatest')+"</a>
+                      </div>";
+                      // <a href="#!" class="waves-effect waves-light btn-small right"><i class="mdi-file-folder-open"></i></a>
+                      // <span>Saved Sketches</span>
+                      // <select class="kniwwelino_sketches">
+                      //  <option value="latest">latest</option>
+                      // </select>
+
+      kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'delete']);"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
 			kniwwelinos += '</li>';
 		}
 		kniwwelinos += '</ul>';
@@ -523,6 +533,26 @@ Ardublockly.renderKniwwelinosModal = function() {
 					Ardublockly.renderKniwwelinosModal();
 					Ardublockly.initKniwwelinoList();
 				});
+
+        document.getElementById(`select_Kniwwelino_${kniwwelinoJSON[i].id}`).addEventListener(
+  				'click',  function(e) {
+  					var selectFirst = false;
+  					var source = e.target || e.srcElement;
+  					var selectThis = source.id.substr(-6);
+  					var kniwwelinoJSON = JSON.parse(localStorage.getItem("kniwwelinos"));
+
+  					for (var i = 0; i < kniwwelinoJSON.length; i++) {
+  						if(kniwwelinoJSON[i].id == selectThis) {
+                kniwwelinoJSON[i].selected = "selected";
+  						} else {
+                kniwwelinoJSON[i].selected = "";
+              }
+  					}
+  					localStorage.setItem('kniwwelinos', JSON.stringify(kniwwelinoJSON));
+  					Ardublockly.renderKniwwelinosModal();
+  					Ardublockly.initKniwwelinoList();
+            document.getElementById('button_closeManageKniwwelino').click();
+  				});
 
       Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
     }
@@ -794,7 +824,7 @@ Ardublockly.sendCode = function() {
   };
 
   ArdublocklyServer.sendSketchToServer(
-      Ardublockly.generateArduino(), document.getElementById('sketch_name').value, Ardublockly.getSelectedKniwwelino(), sendCodeReturn);
+      Ardublockly.generateArduino(), document.getElementById('content_xml').value, document.getElementById('sketch_name').value, Ardublockly.getSelectedKniwwelino(), sendCodeReturn);
 };
 
 /** Populate the workspace blocks with the XML written in the XML text area. */
