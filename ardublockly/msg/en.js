@@ -124,6 +124,7 @@ Ardublockly.LOCALISED_TEXT = {
 	manageKniwwelinoNameRequired: "Name required",
 	manageKniwwelinoNameRequired_message: "Give it a name.",
 	manageKniwwelinoAlreadyManaging: "You are already managing this Kniwwelino!",
+  manageKniwwelinoLoadLatest: "restore last sketch",
   restore: "Restore",
   backup: "Backup",
   invalidDeviceListTitle: "Invalid Device List",
