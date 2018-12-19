@@ -1,0 +1,138 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_setup" id="%Bq.F0nnAT~jTpujG28t" x="41" y="151"></block>
+  <block type="arduino_functions_loop" id="#%NlO-mma!wj%pCli?mi" x="40" y="240">
+    <statement name="LOOP_FUNC">
+      <block type="kniwwelino_RGBsetBrightnessFromVariable" id="X`9Ca[E=JwT}ws^PGL~0">
+        <value name="BRIGHTNESS">
+          <shadow type="math_number" id="o2y=|fY]Lt4xxC1q.#`+">
+            <field name="NUM">250</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="controls_if" id="wFK6?p4JB~H^0pQXr3,E">
+            <value name="IF0">
+              <block type="kniwwelino_BUTTONclicked" id="F-rdkX8r:|REEa7jhDI_">
+                <field name="BUTTON">A</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="controls_repeat_ext" id="=KSG6fvYyM(ezOuKlD9]">
+                <value name="TIMES">
+                  <block type="math_number" id="/`M0TWg4YTHfh=vPV1ap">
+                    <field name="NUM">10</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="kniwwelino_RGBsetColorEffect" id="H{@gf]`8ux^ziYIP,_an">
+                    <field name="EFFECT">RGB_ON</field>
+                    <value name="COLOR">
+                      <shadow type="kniwwelino_RGBselectColor" id="Hqh-11Zau4l/W_YXkFZ,">
+                        <field name="COLOR">#00FF00</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="kniwwelino_sleepsec" id="m0=BugyptajACLRIFJM@">
+                        <value name="DELAY_TIME_SEC">
+                          <shadow type="math_number" id="6nEjCV|Ge8WZ1Lt?y3yV">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="kniwwelino_RGBsetColorEffect" id="N~i}-;i?0]y4xOiS(BvT">
+                            <field name="EFFECT">RGB_BLINK</field>
+                            <value name="COLOR">
+                              <shadow type="kniwwelino_RGBselectColor" id="24LamvBV:5T%YdWFt@^Z">
+                                <field name="COLOR">#ff0000</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="kniwwelino_sleepsec" id="WJD1*dHXZ{YhF,K^Tz9J">
+                                <value name="DELAY_TIME_SEC">
+                                  <shadow type="math_number" id="O#|)ZjHq3+dYX7R5f9{#">
+                                    <field name="NUM">5</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="JfdT,.d;w_1bT8C|QD4y">
+                <value name="IF0">
+                  <block type="kniwwelino_BUTTONclicked" id="}nyAab4~yT;P*yd3[N-7">
+                    <field name="BUTTON">B</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="controls_repeat_ext" id="IrbiLIN~,{OFDHK8(cwG">
+                    <value name="TIMES">
+                      <block type="math_number" id="]4|nvvSk]Tm]e;_y9tsX">
+                        <field name="NUM">10</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="kniwwelino_RGBsetColorEffect" id="Sk(`YVN[jjo[Hcs*jF).">
+                        <field name="EFFECT">RGB_FLASH</field>
+                        <value name="COLOR">
+                          <shadow type="kniwwelino_RGBselectColor" id="=-GHwz;,S(.DP`O]2J]p">
+                            <field name="COLOR">#3366ff</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="kniwwelino_sleepsec" id="8o[*i?HI^j+:@D{PFRhF">
+                            <value name="DELAY_TIME_SEC">
+                              <shadow type="math_number" id="q*Z=T#?u4C,GFbO8:pTW">
+                                <field name="NUM">5</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="kniwwelino_RGBsetColorEffect" id="ie#/l=[kVY2VmiqUxnh}">
+                                <field name="EFFECT">RGB_GLOW</field>
+                                <value name="COLOR">
+                                  <shadow type="kniwwelino_RGBselectColor" id="e_Dq|I1frI:B{-f*II;P">
+                                    <field name="COLOR">#cc33cc</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="kniwwelino_sleepsec" id="Him#sp*g^/_gSx#t/s=l">
+                                    <value name="DELAY_TIME_SEC">
+                                      <shadow type="math_number" id="yV?vihO;,~]QEelbbO+b">
+                                        <field name="NUM">5</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="+[K!l;=xw;Qxrhd5Xu@c">
+                    <value name="IF0">
+                      <block type="kniwwelino_BUTTONclicked" id="Dxki-NDI707p=SWGudJz">
+                        <field name="BUTTON">AandB</field>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="kniwwelino_RGBclear" id="8:D[nAE-gn#8EjH7dWN_"></block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

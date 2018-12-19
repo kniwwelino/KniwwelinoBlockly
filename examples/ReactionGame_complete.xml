@@ -1,0 +1,296 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_loop" id="B1iOC{nD)35=!~q4iyYM" x="286" y="-268">
+    <statement name="LOOP_FUNC">
+      <block type="variables_set" id="EFli2#QkJux!xz./O@tB">
+        <field name="VAR">valeur</field>
+        <value name="VALUE">
+          <block type="math_random_int" id="OB)l*X%sk![3T=Ora8.g">
+            <value name="FROM">
+              <block type="math_number" id="[/.SSnsz9Eh.wn:IIN?!">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="xzr2QBl2e`!Gk)vnO)aC">
+                <field name="NUM">2</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="math_change" id="4P1y:eRcE}?.q0pm}((1">
+            <field name="VAR">NombreEssais</field>
+            <value name="DELTA">
+              <block type="math_number" id="c@V~INab0Hbt/8rfomx{">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_if" id="V(@m^P@+a2JD~v,YQE?R">
+                <mutation elseif="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="Ri)]aiJIYL]iB6iwueeA">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="n@XTdantDXFF#l~;XM9y">
+                        <field name="VAR">valeur</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="3HYst*~xBsDN7OHr5r?o">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="kniwwelino_MATRIXdrawIcon" id="pB*j_eHwc4|J/`[^|:#]">
+                    <value name="ICON">
+                      <block type="kniwwelino_MATRIXdrawIconCreator" id="g_zAz5`~661,D7Q@+:4t">
+                        <field name="1_1">FALSE</field>
+                        <field name="1_2">FALSE</field>
+                        <field name="1_3">FALSE</field>
+                        <field name="1_4">FALSE</field>
+                        <field name="1_5">FALSE</field>
+                        <field name="2_1">TRUE</field>
+                        <field name="2_2">FALSE</field>
+                        <field name="2_3">FALSE</field>
+                        <field name="2_4">FALSE</field>
+                        <field name="2_5">FALSE</field>
+                        <field name="3_1">TRUE</field>
+                        <field name="3_2">FALSE</field>
+                        <field name="3_3">FALSE</field>
+                        <field name="3_4">FALSE</field>
+                        <field name="3_5">FALSE</field>
+                        <field name="4_1">TRUE</field>
+                        <field name="4_2">FALSE</field>
+                        <field name="4_3">FALSE</field>
+                        <field name="4_4">FALSE</field>
+                        <field name="4_5">FALSE</field>
+                        <field name="5_1">FALSE</field>
+                        <field name="5_2">FALSE</field>
+                        <field name="5_3">FALSE</field>
+                        <field name="5_4">FALSE</field>
+                        <field name="5_5">FALSE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="kniwwelino_sleepsec" id=")%Ml%HVVxh~DGE0I0t_[">
+                        <value name="DELAY_TIME_SEC">
+                          <shadow type="math_number" id="aT((PulRH+onFx~o`R)L">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="YC`2Ry*^A/X-^lRr7:m/">
+                            <mutation else="1"></mutation>
+                            <value name="IF0">
+                              <block type="kniwwelino_BUTTONclicked" id="S/rayj7-pPeNv:v!Ql+]">
+                                <field name="BUTTON">A</field>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="math_change" id="1{GVc`3Clu-{gz!R6#d2">
+                                <field name="VAR">Score</field>
+                                <value name="DELTA">
+                                  <block type="math_number" id="Wo0sfuNY2ayEvhz[hMF7">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="kniwwelino_MATRIXdrawIcon" id="OO%aXJfKteA~JEPr*SNk">
+                                    <value name="ICON">
+                                      <block type="kniwwelino_MATRIXIconChooser" id="J0}~crzZ~G/ev#aM!sNJ">
+                                        <field name="ICON_CHOOSER">ICON_SMILE</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="kniwwelino_MATRIXdrawIcon" id="3}#1jWsrkBGe_qb#-i:3">
+                                <value name="ICON">
+                                  <block type="kniwwelino_MATRIXIconChooser" id="~HRp6328^Ncg]Ud/^z#C">
+                                    <field name="ICON_CHOOSER">ICON_SAD</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <value name="IF1">
+                  <block type="logic_compare" id="|Ib9Gx#V]Yuk6@1-TKCz">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="tAamCqESR2|Q[Ne^L}OX">
+                        <field name="VAR">valeur</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="{2k1NJlMe;?fIRnQ+kcx">
+                        <field name="NUM">2</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO1">
+                  <block type="kniwwelino_MATRIXdrawIcon" id="#;|fx:u)6~l:0swb2kk|">
+                    <value name="ICON">
+                      <block type="kniwwelino_MATRIXdrawIconCreator" id="x(orxrL(wl}vxADrhZ9o">
+                        <field name="1_1">FALSE</field>
+                        <field name="1_2">FALSE</field>
+                        <field name="1_3">FALSE</field>
+                        <field name="1_4">FALSE</field>
+                        <field name="1_5">FALSE</field>
+                        <field name="2_1">FALSE</field>
+                        <field name="2_2">FALSE</field>
+                        <field name="2_3">FALSE</field>
+                        <field name="2_4">FALSE</field>
+                        <field name="2_5">TRUE</field>
+                        <field name="3_1">FALSE</field>
+                        <field name="3_2">FALSE</field>
+                        <field name="3_3">FALSE</field>
+                        <field name="3_4">FALSE</field>
+                        <field name="3_5">TRUE</field>
+                        <field name="4_1">FALSE</field>
+                        <field name="4_2">FALSE</field>
+                        <field name="4_3">FALSE</field>
+                        <field name="4_4">FALSE</field>
+                        <field name="4_5">TRUE</field>
+                        <field name="5_1">FALSE</field>
+                        <field name="5_2">FALSE</field>
+                        <field name="5_3">FALSE</field>
+                        <field name="5_4">FALSE</field>
+                        <field name="5_5">FALSE</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="kniwwelino_sleepsec" id="jFnZ74ObD_qo|LQhrB]5">
+                        <value name="DELAY_TIME_SEC">
+                          <shadow type="math_number" id="sSxjz(,W#^;m}fA*S}^|">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="V:_|Zx*WR^uTHNfHAz1h">
+                            <mutation else="1"></mutation>
+                            <value name="IF0">
+                              <block type="kniwwelino_BUTTONclicked" id="kYRrOA;J95u??7mO8S%[">
+                                <field name="BUTTON">B</field>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="math_change" id="s^%nyv.*@iZ5S^;Xy8q`">
+                                <field name="VAR">Score</field>
+                                <value name="DELTA">
+                                  <block type="math_number" id="3:W=84:VhNxs8rUX.l7V">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="kniwwelino_MATRIXdrawIcon" id="}c,A),(~2TZzGDqWjn}:">
+                                    <value name="ICON">
+                                      <block type="kniwwelino_MATRIXIconChooser" id=";yOcjuFoog^i8rh:utbE">
+                                        <field name="ICON_CHOOSER">ICON_SMILE</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="kniwwelino_MATRIXdrawIcon" id=".NslLJCL.UTe!F/X8(;|">
+                                <value name="ICON">
+                                  <block type="kniwwelino_MATRIXIconChooser" id="AaFjr~lH;DmriUCt=~i4">
+                                    <field name="ICON_CHOOSER">ICON_SAD</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="kniwwelino_sleepsec" id="595;?#VoN29Ry(h{x;]W">
+                    <value name="DELAY_TIME_SEC">
+                      <shadow type="math_number" id="b-xDELFob5vetw=zO_sV">
+                        <field name="NUM">2</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="}gMo(~eA]EB6-kxioAfm">
+                        <value name="IF0">
+                          <block type="kniwwelino_BUTTONclicked" id="/31dw-Z,xt)v`8W4X{nj">
+                            <field name="BUTTON">AandB</field>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="kniwwelino_MATRIXwrite" id="o9,8/,{gO4=OngIB4,XR">
+                            <field name="TYPE">WAIT</field>
+                            <value name="TEXT">
+                              <shadow type="text" id="B#8rxcKSbSq4tlswr-J3">
+                                <field name="TEXT">Hello Kniwwelino</field>
+                              </shadow>
+                              <block type="text_join" id="bKJQOjU;l9S(R3K]c9Lw">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="variables_get" id="!NW~YHdDVYX`ZxxQ=Sf`">
+                                    <field name="VAR">Score</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="text" id="05oRghc~B~nWz-^1e9zG">
+                                    <field name="TEXT">/</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="variables_get" id="9)aH2pFTY]cB;tOL09JP">
+                                    <field name="VAR">NombreEssais</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="arduino_functions_setup" id="7hG7*CH-+2!/m`t+gFew" x="17" y="41">
+    <statement name="SETUP_FUNC">
+      <block type="variables_set" id="yHDEs=T+x4LFcKFiNWy|">
+        <field name="VAR">Score</field>
+        <value name="VALUE">
+          <block type="math_number" id="[{/NT3)c%)nf*RrJn.,m">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="984{,+s#}7FZrQhk.ymU">
+            <field name="VAR">NombreEssais</field>
+            <value name="VALUE">
+              <block type="math_number" id="J0XhX|ig8Us:,SpBmYk=">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
