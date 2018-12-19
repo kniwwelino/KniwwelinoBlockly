@@ -1,0 +1,55 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="arduino_functions_setup" id="%Bq.F0nnAT~jTpujG28t" x="41" y="151"></block>
+  <block type="arduino_functions_loop" id="#%NlO-mma!wj%pCli?mi" x="40" y="240">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id="wFK6?p4JB~H^0pQXr3,E">
+        <value name="IF0">
+          <block type="kniwwelino_BUTTONclicked" id="F-rdkX8r:|REEa7jhDI_">
+            <field name="BUTTON">A</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="kniwwelino_RGBsetColorEffect" id="H{@gf]`8ux^ziYIP,_an">
+            <field name="EFFECT">RGB_ON</field>
+            <value name="COLOR">
+              <shadow type="kniwwelino_RGBselectColor" id="Hqh-11Zau4l/W_YXkFZ,">
+                <field name="COLOR">#00FF00</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="JfdT,.d;w_1bT8C|QD4y">
+            <value name="IF0">
+              <block type="kniwwelino_BUTTONclicked" id="}nyAab4~yT;P*yd3[N-7">
+                <field name="BUTTON">B</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="kniwwelino_RGBsetColorEffect" id="N~i}-;i?0]y4xOiS(BvT">
+                <field name="EFFECT">RGB_ON</field>
+                <value name="COLOR">
+                  <shadow type="kniwwelino_RGBselectColor" id="24LamvBV:5T%YdWFt@^Z">
+                    <field name="COLOR">#ff0000</field>
+                  </shadow>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="controls_if" id="+[K!l;=xw;Qxrhd5Xu@c">
+                <value name="IF0">
+                  <block type="kniwwelino_BUTTONclicked" id="Dxki-NDI707p=SWGudJz">
+                    <field name="BUTTON">AandB</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="kniwwelino_RGBclear" id="8:D[nAE-gn#8EjH7dWN_"></block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
