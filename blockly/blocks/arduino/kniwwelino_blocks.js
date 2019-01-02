@@ -891,7 +891,13 @@ Blockly.Blocks['kniwwelino_BME280getValue'] = {
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_HUM,"HUMIDITY"],
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE,"PRESSURE"],
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT,"HEIGHT"]
-					    ]), "VALUE");
+					    ]), "VALUE")
+			  .appendField(Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
+			  .appendField(new Blockly.FieldDropdown(
+					    [
+					    	["0x76","0x76"],
+					    	["0x77","0x77"]
+					    ]), "ADDRESS");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
@@ -912,7 +918,13 @@ Blockly.Blocks['kniwwelino_BME680getValue'] = {
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_GAS,"GAS"],
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_PRESSURE,"PRESSURE"],
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_HEIGHT,"HEIGHT"]
-					    ]), "VALUE");
+					    ]), "VALUE")
+						  .appendField(Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
+						  .appendField(new Blockly.FieldDropdown(
+								    [
+								    	["0x76","0x76"],
+								    	["0x77","0x77"]
+								    ]), "ADDRESS");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
@@ -930,7 +942,13 @@ Blockly.Blocks['kniwwelino_SHT30getValue'] = {
 					    [
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_TEMP,"TEMPERATURE"],
 					    	[Blockly.Msg.KNIWWELINO_SENSOR_HUM,"HUMIDITY"],
-					    ]), "VALUE");
+					    ]), "VALUE")
+						  .appendField(Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
+						  .appendField(new Blockly.FieldDropdown(
+								    [
+								    	["0x44","0x44"],
+								    	["0x45","0x45"]
+								    ]), "ADDRESS");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
@@ -943,7 +961,13 @@ Blockly.Blocks['kniwwelino_SHT30getValue'] = {
 Blockly.Blocks['kniwwelino_BH1750getLightLevel'] = {
 		  init: function() {
 			  this.appendDummyInput()
-			    .appendField("BH1750" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL);
+			    .appendField("BH1750" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL)
+			  .appendField(Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
+			  .appendField(new Blockly.FieldDropdown(
+					    [
+					    	["0x23","0x23"],
+					    	["0x5c","0x5c"]
+					    ]), "ADDRESS");
 		    this.setOutput(true, Blockly.Types.NUMBER.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
 		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);

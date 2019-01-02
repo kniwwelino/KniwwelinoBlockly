@@ -641,7 +641,9 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "Weißanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "Rotanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "Grünanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
+Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS = "an Adresse"
 
+	
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Für"
 Blockly.Msg.KNIWWELINO_LOCATION_GET = "empfange"

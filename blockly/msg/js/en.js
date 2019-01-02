@@ -643,6 +643,7 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "white level"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "red level"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "green level"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "blue level"
+Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS = "at address"
 
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "For"
