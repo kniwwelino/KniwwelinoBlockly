@@ -639,6 +639,8 @@ Blockly.Msg.KNIWWELINO_SENSOR_WHITE = "composante blanche"
 Blockly.Msg.KNIWWELINO_SENSOR_RED = "composante rouge"
 Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "composante verte"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "composante bleue"
+Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS = "à l'adresse"
+
 
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Pour"
