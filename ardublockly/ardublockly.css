@@ -402,8 +402,11 @@ a.backuprestore{
 	border-color: #E0E0E0;
 	background-color: white;
   margin-top: 45px;
-	padding-bottom: 50%;
 	min-height: 455px;
+}
+
+#addKniwwelinoForm {
+  margin-top: 345px;
 }
 
 div.kniwwelino_sketches {
