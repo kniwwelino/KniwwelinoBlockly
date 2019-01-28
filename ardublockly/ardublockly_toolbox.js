@@ -309,6 +309,8 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="variables_set_type"></block>' +
+'    <block type="text"></block>' +
+'    <block type="math_number"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catLoops" name="Loops">' +
