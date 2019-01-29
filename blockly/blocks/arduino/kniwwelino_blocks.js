@@ -961,8 +961,7 @@ Blockly.Blocks['kniwwelino_SHT30getValue'] = {
 Blockly.Blocks['kniwwelino_BH1750getLightLevel'] = {
 		  init: function() {
 			  this.appendDummyInput()
-			    .appendField("BH1750" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL)
-			  .appendField(Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
+			    .appendField("BH1750" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_SENSOR_LIGHTLEVEL + Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
 			  .appendField(new Blockly.FieldDropdown(
 					    [
 					    	["0x23","0x23"],
