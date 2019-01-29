@@ -449,10 +449,10 @@ Ardublockly.renderKniwwelinosModal = function() {
 			kniwwelinos += `<li class="collection-item avatar" >`;
       kniwwelinos += `<div style="padding-right: 50px;" id="select_Kniwwelino_${kniwwelinoJSON[i].id}">`;
       kniwwelinos += `<span class="onlineBadge offline" id="${kniwwelinoJSON[i].id}"></span>`;
-			kniwwelinos += `<img src="img/mascot.png" alt="" class="circle">`;
-			kniwwelinos += `<span class="title">${kniwwelinoJSON[i].name}</span><br>`;
-			kniwwelinos += `<span class="id">ID: ${kniwwelinoJSON[i].id}</span><br>`;
-			kniwwelinos += `<span class="mac">MAC: ${kniwwelinoJSON[i].mac}</span></div>`;
+			kniwwelinos += `<img src="img/mascot.png" alt="" class="circle" id="dummy_${kniwwelinoJSON[i].id}">`;
+			kniwwelinos += `<span class="title" id="dummy_${kniwwelinoJSON[i].id}">${kniwwelinoJSON[i].name}</span><br>`;
+			kniwwelinos += `<span class="id" id="dummy_${kniwwelinoJSON[i].id}">ID: ${kniwwelinoJSON[i].id}</span><br>`;
+			kniwwelinos += `<span class="mac" id="dummy_${kniwwelinoJSON[i].id}">MAC: ${kniwwelinoJSON[i].mac}</span></div>`;
       kniwwelinos += `<div class="kniwwelino_sketches">
                         <a href="?lang=${Ardublockly.LANG}&xml=/user/${kniwwelinoJSON[i].mac}/latest.xml">
                         <i class="mdi-file-folder-open"></i>`+Ardublockly.getLocalStr('manageKniwwelinoLoadLatest');
