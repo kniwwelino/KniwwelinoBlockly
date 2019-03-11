@@ -412,13 +412,13 @@ Blockly.Arduino['kniwwelino_BME280getValue'] = function(block) {
 	kniwwelinoBaseCode();
 	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
 	Blockly.Arduino.addInclude('Adafruit_BME280', '#include "Adafruit_BME280.h"');
-	
+
 	var address = block.getFieldValue('ADDRESS');
-	
+
 	Blockly.Arduino.addDeclaration('Adafruit_BME280_'+address+'', 'Adafruit_BME280 bme280_'+address+';');
 	Blockly.Arduino.addSetup('BME280init_'+address+'', 'if(bme280_'+address+'.begin('+address+')) Kniwwelino.logln("BME-280 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-280 Sensor"); ', true);
 
-	
+
 	var value = block.getFieldValue('VALUE');
 	if (value == 'TEMPERATURE')  {
 		return ['bme280_'+address+'.readTemperature()', Blockly.Arduino.ORDER_ATOMIC];
@@ -437,9 +437,9 @@ Blockly.Arduino['kniwwelino_BME680getValue'] = function(block) {
 	kniwwelinoBaseCode();
 	Blockly.Arduino.addInclude('Adafruit_Sensor', '#include "Adafruit_Sensor.h"');
 	Blockly.Arduino.addInclude('Adafruit_BME680', '#include "Adafruit_BME680.h"');
-	
+
 	var address = block.getFieldValue('ADDRESS');
-	
+
 	Blockly.Arduino.addDeclaration('Adafruit_BME680_'+address+'', 'Adafruit_BME680 bme680_'+address+';');
 	Blockly.Arduino.addSetup('BME680init_'+address+'', 'if(bme680_'+address+'.begin('+address+')) Kniwwelino.logln("BME-680 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BME-680 Sensor"); ', true);
 
@@ -462,9 +462,9 @@ Blockly.Arduino['kniwwelino_BME680getValue'] = function(block) {
 Blockly.Arduino['kniwwelino_SHT30getValue'] = function(block) {
 	kniwwelinoBaseCode();
 	Blockly.Arduino.addInclude('SHT3X', '#include <WEMOS_SHT3X.h>');
-	
+
 	var address = block.getFieldValue('ADDRESS');
-	
+
 	Blockly.Arduino.addDeclaration('SHT3X_'+address+'', 'SHT3X sht30_'+address+'('+address+');');
 	Blockly.Arduino.addSetup('SHT3Xinit_'+address+'', 'if(sht30.get()==0) Kniwwelino.logln("SHT30 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize SHT30 Sensor"); ', true);
 
@@ -480,12 +480,12 @@ Blockly.Arduino['kniwwelino_SHT30getValue'] = function(block) {
 Blockly.Arduino['kniwwelino_BH1750getLightLevel'] = function(block) {
 	kniwwelinoBaseCode();
 	Blockly.Arduino.addInclude('BH1750', '#include <BH1750.h>');
-	
+
 	var address = block.getFieldValue('ADDRESS');
-	
+
 	Blockly.Arduino.addDeclaration('BH1750_'+address+'', 'BH1750 bh1750_'+address+'('+address+');');
 	Blockly.Arduino.addSetup('BH1750init_'+address+'', 'if(bh1750_'+address+'.begin()) Kniwwelino.logln("BH1750 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize BH1750 Sensor"); ', true);
-	return ['bh1750_'+address+'.readLightLevel()', Blockly.Arduino.ORDER_ATOMIC];
+	return ['bh1750_'+address+'.readLightLevel(true)', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_ADPS9960getValue'] = function(block) {
