@@ -958,6 +958,20 @@ Blockly.Blocks['kniwwelino_SHT30getValue'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_DS18B20getValue'] = {
+		  init: function() {
+			  this.appendDummyInput()
+			    .appendField("DS18B20" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_WEATHER_TEMP + " " + Blockly.Msg.KNIWWELINO_AUDIO_PIN)
+					.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN');
+		    this.setOutput(true, Blockly.Types.NUMBER.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/extothersensor');
+		  },getBlockType: function() {
+			    return Blockly.Types.NUMBER;
+		  }
+};
+
 Blockly.Blocks['kniwwelino_BH1750getLightLevel'] = {
 		  init: function() {
 			  this.appendDummyInput()
