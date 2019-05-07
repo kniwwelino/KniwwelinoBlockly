@@ -82,6 +82,7 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
+'    <block type="kniwwelino_MATRIXsetScrollSpeed"></block>' +
 '    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
 '  </category>' +
 '  <sep></sep>' +

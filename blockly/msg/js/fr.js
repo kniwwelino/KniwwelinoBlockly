@@ -580,6 +580,9 @@ Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Configure la fréquence de cligno
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'fixe la luminosité de la matrice sur';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Configure la Luminosité de la matrice de LED (0-15)';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT = 'Valeur hors de la plage (0-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED = 'fixe la vitesse de défilement de la matrice sur';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_TIP = 'Configure  la vitesse de défilement de la matrice de LED (1-10)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_ALERT = 'Valeur hors de la plage (0-10)';
 Blockly.Msg.KNIWWELINO_MATRIX_CLEAR = 'efface la matrice';
 Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP = 'Supprimer le contenu de la matrice de LED';
 Blockly.Msg.KNIWWELINO_DRAWICON_HEART = "coeur"
@@ -705,7 +708,7 @@ Blockly.Msg.ARD_MAP_SMIN = "de ["
 Blockly.Msg.ARD_MAP_SMAX = "-"
 Blockly.Msg.ARD_MAP_DMIN = "] valeur de ["
 Blockly.Msg.ARD_MAP_DMAX = "-"
-	
+
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Bande de LED Neopixel avec";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "sur le pin";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP = "";
@@ -718,6 +721,3 @@ Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "dans la couleur:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "Modifie la vitesse de l'effet à";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "Modifie la brillance à";
-
-
-
