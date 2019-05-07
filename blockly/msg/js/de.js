@@ -582,6 +582,9 @@ Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Setzt die Blinkrate für die LED 
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'setze Matrix Helligkeit auf';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Setze die Helligkeitder LED Matrix (1-15)';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT = 'Wert ausserhalb des Bereichs: 1-15';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED = 'setze Matrix Scrollgeschwindikeit auf';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_TIP = 'Setze die Scrollgeschwindikeit der LED Matrix (1-10)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_ALERT = 'Wert ausserhalb des Bereichs: 0-10';
 Blockly.Msg.KNIWWELINO_MATRIX_CLEAR = 'lösche Matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP = 'Löscht den Inhalt der LED Matrix';
 Blockly.Msg.KNIWWELINO_DRAWICON_HEART = "Herz";
@@ -643,7 +646,7 @@ Blockly.Msg.KNIWWELINO_SENSOR_GREEN = "Grünanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_BLUE = "Blauanteil"
 Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS = "an Adresse"
 
-	
+
 // WEATHER
 Blockly.Msg.KNIWWELINO_LOCATION_FOR = "Für"
 Blockly.Msg.KNIWWELINO_LOCATION_GET = "empfange"
