@@ -585,6 +585,9 @@ Blockly.Msg.KNIWWELINO_MATRIX_BLINKRATE_TIP = 'Set blink rate of LED matrix (ran
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS = 'set matrix brightness to';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_TIP = 'Set the brightness of the LED matrix (1-15)';
 Blockly.Msg.KNIWWELINO_MATRIX_SETBRIGHTNESS_ALERT = 'Value out of range (0-15)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED = 'set scroll speed of LED matrix';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_TIP = 'Set the scroll speed of the LED matrix (1-10)';
+Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_ALERT = 'Value out of range (0-10)';
 Blockly.Msg.KNIWWELINO_MATRIX_CLEAR = 'clear matrix';
 Blockly.Msg.KNIWWELINO_MATRIX_CLEAR_TIP = 'Clear the content of the LED matrix';
 Blockly.Msg.KNIWWELINO_DRAWICON_HEART = "Heart";
@@ -711,7 +714,7 @@ Blockly.Msg.ARD_MAP_SMIN = "value from ["
 Blockly.Msg.ARD_MAP_SMAX = "-"
 Blockly.Msg.ARD_MAP_DMIN = "] to ["
 Blockly.Msg.ARD_MAP_DMAX = "-"
-	
+
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Neopixel LED Strip with size";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "on pin";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP = "";

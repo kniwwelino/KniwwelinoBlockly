@@ -307,6 +307,12 @@ Blockly.Arduino['kniwwelino_MATRIXsetBrightness'] = function(block) {
 	return  'Kniwwelino.MATRIXsetBrightness(' + brightness + ');\n';
 };
 
+Blockly.Arduino['kniwwelino_MATRIXsetScrollSpeed'] = function(block) {
+	kniwwelinoBaseCode();
+	var speed = block.getFieldValue('SPEED');
+	return  'Kniwwelino.MATRIXsetScrollSpeed(' + speed + ');\n';
+};
+
 Blockly.Arduino['kniwwelino_MATRIXsetBlinkRate'] = function(block) {
 	kniwwelinoBaseCode();
 	var blinkrate = block.getFieldValue('RATE');

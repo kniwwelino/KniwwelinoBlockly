@@ -658,6 +658,33 @@ Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
 
 };
 
+Blockly.Blocks['kniwwelino_MATRIXsetScrollSpeed'] = {
+   init: function() {
+     this.appendDummyInput()
+         .appendField(Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED)
+         .appendField(new Blockly.FieldNumber(10, 0, 10, 0), 'SPEED');
+     this.setPreviousStatement(true, null);
+     this.setNextStatement(true, null);
+     this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_TIP);
+     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+   },
+
+   onchange: function() {
+     if (this.getFieldValue('SPEED') < 1 | this.getFieldValue('SPEED') > 10) {
+       this.setWarningText(Blockly.Msg.KNIWWELINO_MATRIX_SETSCROLLSPEED_ALERT);
+       if (this.getFieldValue('SPEED') < 1) {
+         this.setFieldValue(1, 'SPEED');
+       } else if (this.getFieldValue('SPEED') > 10) {
+         this.setFieldValue(10, 'SPEED');
+       }
+     } else {
+       this.setWarningText(null);
+     }
+   }
+
+};
+
 Blockly.Blocks['kniwwelino_MATRIXsetBlinkRate'] = {
 		   init: function() {
 		     this.appendDummyInput()
