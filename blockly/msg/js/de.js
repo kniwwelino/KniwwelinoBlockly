@@ -725,5 +725,5 @@ Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "auf Farbe:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "setze Effektgeschwindigkeit auf";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "setze Helligkeit auf";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP = "Effekt auf Strifen stoppen";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP_TIP = "Effekt auf Strifen stoppen";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP = "Effekt auf Streifen stoppen";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP_TIP = "Effekt auf Streifen stoppen";

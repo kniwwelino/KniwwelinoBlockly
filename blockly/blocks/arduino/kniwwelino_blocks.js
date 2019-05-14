@@ -1446,7 +1446,7 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 	Blockly.Blocks['kniwwelino_neopixelStop'] = {
 			   init: function() {
 				 this.setInputsInline(true);
-				 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"))
+				 this.appendDummyInput().appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"))
 				 		.appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP);
 
 			     this.setPreviousStatement(true, null);
