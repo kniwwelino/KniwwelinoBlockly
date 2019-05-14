@@ -670,3 +670,8 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		var brightness = Blockly.Arduino.valueToCode(block, 'BRIGHTNESS', Blockly.Arduino.ORDER_UNARY_POSTFIX);
 		return  'ws2812fx.setBrightness(' + brightness + ');\n';
 	};
+
+	Blockly.Arduino['kniwwelino_neopixelStop'] = function(block) {
+		kniwwelinoBaseCode();
+		return  'ws2812fx.stop();\n';
+	};

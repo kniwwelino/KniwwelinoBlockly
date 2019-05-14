@@ -1442,3 +1442,17 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 			   }
 			};
+
+	Blockly.Blocks['kniwwelino_neopixelStop'] = {
+			   init: function() {
+				 this.setInputsInline(true);
+				 this.appendDummyInput().appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/neopixel.svg", 15, 15, "*"))
+				 		.appendField(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP);
+
+			     this.setPreviousStatement(true, null);
+			     this.setNextStatement(true, null);
+				 this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+				 this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP_TIP);
+				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
+			   }
+			};
