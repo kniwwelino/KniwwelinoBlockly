@@ -727,3 +727,5 @@ Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "to color:";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "set effect speed to";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "set brightness to";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP = "stop strip effect";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP_TIP = "stop strip effect";

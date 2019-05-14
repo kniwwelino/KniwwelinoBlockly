@@ -227,6 +227,7 @@ Ardublockly.TOOLBOX_XML =
 '      			  </shadow>' +
 '		      </value>' +
 '   </block>' +
+'	<block type="kniwwelino_neopixelStop" adv="true"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catMQTT" name="Messages">' +
