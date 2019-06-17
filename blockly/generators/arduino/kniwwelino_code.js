@@ -673,5 +673,5 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 
 	Blockly.Arduino['kniwwelino_neopixelStop'] = function(block) {
 		kniwwelinoBaseCode();
-		return  'ws2812fx.stop();\n';
+		return  'ws2812fx.strip_off();\n';
 	};
