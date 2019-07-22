@@ -700,6 +700,7 @@ Blockly.Msg.KNIWWELINO_TIME_SECOND = "Sekunde"
 Blockly.Msg.KNIWWELINO_TIME_YEAR = "Jahr"
 Blockly.Msg.KNIWWELINO_TIME_MONTH = "Monat"
 Blockly.Msg.KNIWWELINO_TIME_DAY = "Tag"
+Blockly.Msg.KNIWWELINO_TIME_SINCE1970 = "Millisekunden seit 1.1.1970"
 
 // overwrite default labels
 Blockly.Msg.ARD_FUN_RUN_LOOP = "wiederhole dauerhaft:";

@@ -145,7 +145,8 @@ Blockly.Blocks['kniwwelino_getTimeInt'] = {
 			    	[Blockly.Msg.KNIWWELINO_TIME_DAY,"DAY"],
 			    	[Blockly.Msg.KNIWWELINO_TIME_HOUR,"HOUR"],
 			    	[Blockly.Msg.KNIWWELINO_TIME_MINUTE,"MINUTE"],
-			    	[Blockly.Msg.KNIWWELINO_TIME_SECOND,"SECOND"]
+			    	[Blockly.Msg.KNIWWELINO_TIME_SECOND,"SECOND"],
+					[Blockly.Msg.KNIWWELINO_TIME_SINCE1970,"SINCE1970"]
 			    ]), "FORMAT");
 		    this.setOutput(true, Blockly.Types.TEXT.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_GET_TIME);

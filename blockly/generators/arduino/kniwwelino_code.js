@@ -96,7 +96,7 @@ Blockly.Arduino['kniwwelino_getTime'] = function(block) {
 		codeStr = 'String(minute())';
 	} else if (value == 'SECOND')  {
 		codeStr = 'String(second())';
-	}
+	} 
 	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -116,6 +116,8 @@ Blockly.Arduino['kniwwelino_getTimeInt'] = function(block) {
 		codeStr = 'minute()';
 	} else if (value == 'SECOND')  {
 		codeStr = 'second()';
+	} else if (value == 'SINCE1970')  {
+		codeStr = '(long)now()';
 	}
 	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
 };
