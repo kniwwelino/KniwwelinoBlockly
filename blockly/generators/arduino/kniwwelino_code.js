@@ -565,6 +565,7 @@ Blockly.Arduino['kniwwelino_WeatherConstChooser'] = function(block) {
 Blockly.Arduino['kniwwelino_playNote'] = function(block) {
 	  var pin = block.getFieldValue('TONEPIN');
 	  var freq = Blockly.Arduino.valueToCode(block, 'NOTE', Blockly.Arduino.ORDER_ATOMIC);
+    //var octave = Blockly.Arduino.valueToCode(block, 'OCTAVE', Blockly.Arduino.ORDER_ATOMIC);
 	  var dur  = Blockly.Arduino.valueToCode(block, 'NOTE_DURATION', Blockly.Arduino.ORDER_ATOMIC);
 	  Blockly.Arduino.reservePin(
 	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
@@ -579,6 +580,7 @@ Blockly.Arduino['kniwwelino_playNote'] = function(block) {
 Blockly.Arduino['kniwwelino_playTone'] = function(block) {
 	  var pin = block.getFieldValue('TONEPIN');
 	  var freq = Blockly.Arduino.valueToCode(block, 'NOTE', Blockly.Arduino.ORDER_ATOMIC);
+    //var octave = Blockly.Arduino.valueToCode(block, 'OCTAVE', Blockly.Arduino.ORDER_ATOMIC);
 	  Blockly.Arduino.reservePin(
 	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
 
@@ -605,8 +607,22 @@ Blockly.Arduino['kniwwelino_toneOff'] = function(block) {
 
 Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		kniwwelinoBaseCode();
+    var isPause = block.getField('NOTE').getText().toLowerCase()==="pause"?true:false;
 		var freq = block.getFieldValue('NOTE');
-		return [freq, Blockly.Arduino.ORDER_ATOMIC];
+    var octave = block.getFieldValue('OCTAVE');
+
+    if (octave === '0') {
+      if (freq !== 'NOTE_B') {
+        octave = 1;
+      }
+    } else if (octave === '8') {
+      if (freq === 'NOTE_C' | freq === 'NOTE_CS' | freq === 'NOTE_D' | freq === 'NOTE_DS') {
+      } else {
+        octave = 7;
+      }
+    }
+
+		return [freq+(isPause?"":octave), Blockly.Arduino.ORDER_ATOMIC];
 	};
 
 

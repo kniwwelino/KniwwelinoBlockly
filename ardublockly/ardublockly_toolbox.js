@@ -516,7 +516,8 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_playNote">' +
 '      <value name="NOTE">' +
 '        <shadow type="kniwwelino_toneChooser">' +
-'       	<field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'       	<field name="NOTE">NOTE_C</field>' +
+'         <field name="OCTAVE">4</field>' +
 '        </shadow>' +
 '      </value>' +
 '      <value name="NOTE_DURATION">' +
@@ -528,13 +529,15 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_playTone">' +
 '      <value name="NOTE">' +
 '        <shadow type="kniwwelino_toneChooser">' +
-'       	<field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'       	<field name="NOTE">NOTE_C</field>' +
+'         <field name="OCTAVE">4</field>' +
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_toneOff"></block>' +
 '    <block type="kniwwelino_toneChooser">' +
-'       <field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'       <field name="NOTE">NOTE_C</field>' +
+'       <field name="OCTAVE">4</field>' +
 '    </block>' +
 '  </category>' +
 '  <sep adv="true"></sep>' +

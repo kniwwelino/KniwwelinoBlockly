@@ -685,6 +685,8 @@ Blockly.Msg.KNIWWELINO_AUDIO_PLAY_TONE = "joue le son"
 Blockly.Msg.KNIWWELINO_AUDIO_NOTE_DURATION = "de durée 1/"
 Blockly.Msg.KNIWWELINO_AUDIO_PIN = "sur pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "arrête le son sur pin"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE_WARN_HIGHNOTES = "Seule la note C8, CS8, CS8, D8 ou DS8 est autorisée"
+Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE_WARN_LOWNOTES = "Seule la note B0 est autorisée"
 
 // DATE TIME
 Blockly.Msg.KNIWWELINO_GET_TIME = "retourne la date/heure actuelle en format:"
