@@ -41,7 +41,7 @@ Blockly.Arduino.addReservedWords(
     'noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,' +
     'min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,' +
     'lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,' +
-    'detachInterrupt,interrupts,noInterrupts');
+    'detachInterrupt,interrupts,noInterrupts,time,date');
 
 /** Order of operation ENUMs. */
 Blockly.Arduino.ORDER_ATOMIC = 0;         // 0 "" ...
