@@ -152,7 +152,7 @@ Blockly.Blocks['kniwwelino_getTimeInt'] = {
 		    this.setColour("#f9d831");
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'time');
 		  },getBlockType: function() {
-			    return Blockly.Types.TEXT;
+			    return Blockly.Types.Number;
 		  }
 };
 
