@@ -623,6 +623,6 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_getMAC" adv="true"></block>' +
 '  </category>' +
 '  <sep adv="true"></sep>' +
-'  <category id="catOther" name="Other" adv="true">' +
-'  </category>' +
+//'  <category id="catOther" name="Other" adv="true">' +
+//'  </category>' +
 '</xml>';
