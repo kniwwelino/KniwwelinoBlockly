@@ -201,6 +201,30 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   }
 		};
 
+Blockly.Blocks['kniwwelino_HUEselectColor'] = {
+       init: function() {
+         this.appendValueInput("HUE")
+     		     .setCheck("Number")
+             .appendField(Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR);
+         this.appendDummyInput();
+         this.setOutput(true, Blockly.Types.TEXT.output);
+         this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP);
+         this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
+       }, getBlockType: function() {
+ 				 return Blockly.Types.TEXT;
+ 			 }, onchange: function(ev) {
+ 		    var hue = Blockly.Arduino.valueToCode(this, 'HUE', Blockly.Arduino.ORDER_ATOMIC);
+ 				if (hue < 0 || hue > 255) {
+ 				  swal({
+ 						title: Blockly.Msg.KNIWWELINO_WARNING,
+ 						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+ 						className: "kniwwelino-bg"
+ 					});
+ 		    }
+      }
+};
+
 Blockly.Blocks['kniwwelino_RGBselectEffect'] = {
 		init: function() {
 			this.setInputsInline(true);
