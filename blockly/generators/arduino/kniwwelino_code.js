@@ -170,6 +170,13 @@ Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
 	return ['"'+block.getFieldValue('COLOR').replace("#","").toUpperCase()+'"', Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['kniwwelino_HUEselectColor'] = function(block) {
+	kniwwelinoBaseCode();
+  var hue = Blockly.Arduino.valueToCode(block, 'HUE', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+
+	return ['Kniwwelino.RGBhue2Hex('+hue+')', Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['kniwwelino_RGBselectEffect'] = function(block) {
 	kniwwelinoBaseCode();
 	var color = Blockly.Arduino.valueToCode(block, 'COLOR', Blockly.Arduino.ORDER_UNARY_POSTFIX).replace('"',"").replace('"',"");

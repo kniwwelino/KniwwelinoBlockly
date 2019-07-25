@@ -124,6 +124,13 @@ Ardublockly.TOOLBOX_XML =
 '  </block>' +
 '    <block type="kniwwelino_RGBclear"></block>' +
 '    <block type="kniwwelino_RGBselectColor"></block>' +
+'    <block type="kniwwelino_HUEselectColor">' +
+'		      <value name="HUE">' +
+'		        <shadow type="math_number">' +
+'		          <field name="NUM">0</field>' +
+'		        </shadow>' +
+'		      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_RGBsetColorFromString" adv="true">' +
 '       <value name="COLOR">' +
 '    		<block type="kniwwelino_RGBselectEffect">'+

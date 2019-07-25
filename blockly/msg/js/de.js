@@ -531,6 +531,7 @@ Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "blinken"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "blitzen"
 Blockly.Msg.KNIWWELINO_TIME_SEC = "Sekunden";
 // RGB Led
+Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR = 'hue'
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Select a Color and return it as HEX String'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'setze RGB LED Farbe auf'
