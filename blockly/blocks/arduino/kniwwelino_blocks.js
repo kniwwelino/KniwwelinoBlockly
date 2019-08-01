@@ -1277,6 +1277,7 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
         let notes = new Blockly.FieldDropdown([
           ["Pause","0 /*Silence*/"],
+
           [Blockly.Msg.KNIWWELINO_NOTE_C,"NOTE_C"],
           [Blockly.Msg.KNIWWELINO_NOTE_CS,"NOTE_CS"],
           [Blockly.Msg.KNIWWELINO_NOTE_D,"NOTE_D"],
