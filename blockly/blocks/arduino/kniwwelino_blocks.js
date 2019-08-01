@@ -1226,7 +1226,7 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
           ["8","8"]
         ]);
 				this.appendDummyInput()
-				.appendField(new Blockly.FieldImage("../ardublockly/font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
+				.appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
 		        .appendField(notes, "NOTE")
             .appendField(octaves, "OCTAVE");
 				this.setOutput(true, null);
