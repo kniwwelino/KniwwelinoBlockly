@@ -531,7 +531,8 @@ Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'fixe la LED externe '
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Configure le Pin IO sur ON/Clignoter/Flasher'
 Blockly.Msg.KNIWWELINO_TIME_SEC = "seconde";
 // RGB Led
-Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR = 'hue'
+Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR = 'teinte (hue)'
+Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR_TIP = "Définir la teinte d'une couleur. [0-255]"
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR = ''
 Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP = 'Selectionne une couleur et la convertir en chaîne HEX'
 Blockly.Msg.KNIWWELINO_RGB_SETCOLOR = 'fixe la couleur de la LED RVB sur'
