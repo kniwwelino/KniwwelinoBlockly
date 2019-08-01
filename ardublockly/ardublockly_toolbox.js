@@ -491,7 +491,11 @@ Ardublockly.TOOLBOX_XML =
 //'        <block type="io_highlow"></block>' +
 //'      </value>' +
 //'    </block>' +
-'    <block type="io_analogwrite"></block>' +
+'    <block type="io_analogwrite">' +
+'      <value name="NUM">' +
+'        <block type="math_number">255</block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="io_analogread"></block>' +
 '    <block type="io_highlow"></block>' +
 '    <block type="io_pulsein">' +
