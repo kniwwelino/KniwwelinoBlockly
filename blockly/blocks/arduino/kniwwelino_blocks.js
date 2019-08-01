@@ -209,7 +209,7 @@ Blockly.Blocks['kniwwelino_HUEselectColor'] = {
          this.appendDummyInput();
          this.setOutput(true, Blockly.Types.TEXT.output);
          this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
-         this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR_TIP);
          this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
        }, getBlockType: function() {
  				 return Blockly.Types.TEXT;
