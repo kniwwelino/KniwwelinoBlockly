@@ -562,7 +562,7 @@ Ardublockly.renderKniwwelinosModal = function() {
 	document.getElementById('name_addKniwwelino').addEventListener(
 		'keyup', function() {
 	    let val = document.getElementById('name_addKniwwelino').value;
-	    if (val.length > 3) {
+	    if (val.length >= 3) {
 				document.getElementById('button_addKniwwelino').className = 'btn-floating secondary-content green';
 			} else {
 				document.getElementById('button_addKniwwelino').className = 'btn-floating disabled secondary-content green';
