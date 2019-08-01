@@ -395,19 +395,19 @@ Blockly.Msg.PROCEDURES_DEFRETURN_COMMENT = Blockly.Msg.PROCEDURES_DEFNORETURN_CO
 
 // Ardublockly strings
 Blockly.Msg.ARD_ANALOGREAD = "lies analogen Pin";
-Blockly.Msg.ARD_ANALOGREAD_TIP = "Gibt einen Wert zwischen 0 and 1024 zurück";  
+Blockly.Msg.ARD_ANALOGREAD_TIP = "Gibt einen Wert zwischen 0 and 1024 zurück";
 Blockly.Msg.ARD_ANALOGWRITE = "setze Pin";
 Blockly.Msg.ARD_ANALOGWRITE_TO = "auf analogen Wert";
-Blockly.Msg.ARD_ANALOGWRITE_TIP = "Schreibt einen analogen Wert 0 und 255 auf den angegebenen PWM Pin";  
+Blockly.Msg.ARD_ANALOGWRITE_TIP = "Schreibt einen analogen Wert 0 und 255 auf den angegebenen PWM Pin";
 Blockly.Msg.ARD_BUILTIN_LED = "setze eingebaute LED";
 Blockly.Msg.ARD_BUILTIN_LED_TIP = "Light on or off for the built-in LED of the Arduino";  // untranslated
 Blockly.Msg.ARD_COMPONENT_WARN1 = "A %1 configuration block with the same %2 name must be added to use this block!";  // untranslated
 Blockly.Msg.ARD_DEFINE = "Define";  // untranslated
 Blockly.Msg.ARD_DIGITALREAD = "lies digitalen Pin";
-Blockly.Msg.ARD_DIGITALREAD_TIP = "Liest den digitalen Wert an einem Pin: HIGH oder LOW";  
+Blockly.Msg.ARD_DIGITALREAD_TIP = "Liest den digitalen Wert an einem Pin: HIGH oder LOW";
 Blockly.Msg.ARD_DIGITALWRITE = "setze Pin";
 Blockly.Msg.ARD_DIGITALWRITE_to = "setze digitalen Pin auf";
-Blockly.Msg.ARD_DIGITALWRITE_TIP = "Schreibt digitalen Wert HIGH oder LOW auf den angegebenen Pin";  
+Blockly.Msg.ARD_DIGITALWRITE_TIP = "Schreibt digitalen Wert HIGH oder LOW auf den angegebenen Pin";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "Arduino loop forever:";  // untranslated
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Arduino run first:";  // untranslated
 Blockly.Msg.ARD_FUN_RUN_TIP = "Defines the Arduino setup() and loop() functions.";  // untranslated
@@ -693,6 +693,18 @@ Blockly.Msg.KNIWWELINO_AUDIO_PIN = "an Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_TONEOFF = "Schalte Ton aus an Pin"
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE_WARN_HIGHNOTES = "Nur die Noten C8, CS8, D8 oder DS8 ist erlaubt"
 Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE_WARN_LOWNOTES = "Nur die Note B0 ist erlaubt"
+Blockly.Msg.KNIWWELINO_NOTE_C = "C"
+Blockly.Msg.KNIWWELINO_NOTE_CS = "C#"
+Blockly.Msg.KNIWWELINO_NOTE_D = "D"
+Blockly.Msg.KNIWWELINO_NOTE_DS = "D#"
+Blockly.Msg.KNIWWELINO_NOTE_E = "E"
+Blockly.Msg.KNIWWELINO_NOTE_F = "F"
+Blockly.Msg.KNIWWELINO_NOTE_FS = "F#"
+Blockly.Msg.KNIWWELINO_NOTE_G = "G"
+Blockly.Msg.KNIWWELINO_NOTE_GS = "G#"
+Blockly.Msg.KNIWWELINO_NOTE_A = "A"
+Blockly.Msg.KNIWWELINO_NOTE_AS = "A#"
+Blockly.Msg.KNIWWELINO_NOTE_B = "H"
 
 // DATE TIME
 Blockly.Msg.KNIWWELINO_GET_TIME = "Datum/Zeit im Format:"

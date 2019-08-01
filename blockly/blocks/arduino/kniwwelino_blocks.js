@@ -1201,18 +1201,18 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
         let notes = new Blockly.FieldDropdown([
           ["Pause","0 /*Silence*/"],
-          ["C","NOTE_C"],
-          ["CS","NOTE_CS"],
-          ["D","NOTE_D"],
-          ["DS","NOTE_DS"],
-          ["E","NOTE_E"],
-          ["F","NOTE_F"],
-          ["FS","NOTE_FS"],
-          ["G","NOTE_G"],
-          ["GS","NOTE_GS"],
-          ["A","NOTE_A"],
-          ["AS","NOTE_AS"],
-          ["B","NOTE_B"]
+          [KNIWWELINO_NOTE_C,"NOTE_C"],
+          [KNIWWELINO_NOTE_CS,"NOTE_CS"],
+          [KNIWWELINO_NOTE_D,"NOTE_D"],
+          [KNIWWELINO_NOTE_DS,"NOTE_DS"],
+          [KNIWWELINO_NOTE_E,"NOTE_E"],
+          [KNIWWELINO_NOTE_F,"NOTE_F"],
+          [KNIWWELINO_NOTE_FS,"NOTE_FS"],
+          [KNIWWELINO_NOTE_G,"NOTE_G"],
+          [KNIWWELINO_NOTE_GS,"NOTE_GS"],
+          [KNIWWELINO_NOTE_A,"NOTE_A"],
+          [KNIWWELINO_NOTE_AS,"NOTE_AS"],
+          [KNIWWELINO_NOTE_B,"NOTE_B"]
         ]);
         let octaves = new Blockly.FieldDropdown([
           ["0","0"],
