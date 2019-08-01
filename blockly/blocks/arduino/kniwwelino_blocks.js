@@ -1201,18 +1201,18 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
         let notes = new Blockly.FieldDropdown([
           ["Pause","0 /*Silence*/"],
-          [KNIWWELINO_NOTE_C,"NOTE_C"],
-          [KNIWWELINO_NOTE_CS,"NOTE_CS"],
-          [KNIWWELINO_NOTE_D,"NOTE_D"],
-          [KNIWWELINO_NOTE_DS,"NOTE_DS"],
-          [KNIWWELINO_NOTE_E,"NOTE_E"],
-          [KNIWWELINO_NOTE_F,"NOTE_F"],
-          [KNIWWELINO_NOTE_FS,"NOTE_FS"],
-          [KNIWWELINO_NOTE_G,"NOTE_G"],
-          [KNIWWELINO_NOTE_GS,"NOTE_GS"],
-          [KNIWWELINO_NOTE_A,"NOTE_A"],
-          [KNIWWELINO_NOTE_AS,"NOTE_AS"],
-          [KNIWWELINO_NOTE_B,"NOTE_B"]
+          [Blockly.Msg.KNIWWELINO_NOTE_C,"NOTE_C"],
+          [Blockly.Msg.KNIWWELINO_NOTE_CS,"NOTE_CS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_D,"NOTE_D"],
+          [Blockly.Msg.KNIWWELINO_NOTE_DS,"NOTE_DS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_E,"NOTE_E"],
+          [Blockly.Msg.KNIWWELINO_NOTE_F,"NOTE_F"],
+          [Blockly.Msg.KNIWWELINO_NOTE_FS,"NOTE_FS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_G,"NOTE_G"],
+          [Blockly.Msg.KNIWWELINO_NOTE_GS,"NOTE_GS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_A,"NOTE_A"],
+          [Blockly.Msg.KNIWWELINO_NOTE_AS,"NOTE_AS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_B,"NOTE_B"]
         ]);
         let octaves = new Blockly.FieldDropdown([
           ["0","0"],
