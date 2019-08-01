@@ -543,6 +543,13 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_playTone">' +
+'      <value name="NOTE">' +
+'        <shadow type="math_number">' +
+'       	<field name="NUM">440</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_toneOff"></block>' +
 '    <block type="kniwwelino_toneChooser">' +
 '       <field name="NOTE">NOTE_C</field>' +
