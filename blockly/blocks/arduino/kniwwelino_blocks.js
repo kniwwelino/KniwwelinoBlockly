@@ -1213,7 +1213,10 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
           [Blockly.Msg.KNIWWELINO_NOTE_A,"NOTE_A"],
           [Blockly.Msg.KNIWWELINO_NOTE_AS,"NOTE_AS"],
           [Blockly.Msg.KNIWWELINO_NOTE_B,"NOTE_B"]
-        ]);
+        ], function(option) {
+          var hasPause = (option == '0 /*Silence*/');
+          this.sourceBlock_.updateShape_(hasPause);
+        });
         let octaves = new Blockly.FieldDropdown([
           ["0","0"],
           ["1","1"],
@@ -1225,8 +1228,9 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
           ["7","7"],
           ["8","8"]
         ]);
+
 				this.appendDummyInput()
-				.appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
+				    .appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
 		        .appendField(notes, "NOTE")
             .appendField(octaves, "OCTAVE");
 				this.setOutput(true, null);
@@ -1250,6 +1254,26 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
          } else {
              this.setWarningText(null);
          }
+       },
+       mutationToDom: function() {
+         var container = document.createElement('mutation');
+         var hasPause = (this.getFieldValue('NOTE') == '0 /*Silence*/');
+         container.setAttribute('haspause', hasPause);
+         return container;
+       },
+       domToMutation: function(xmlElement) {
+         var hasPause = (xmlElement.getAttribute('haspause') == 'true');
+         console.log(hasPause);
+         this.updateShape_(hasPause);
+       },
+       updateShape_: function(isPause) {
+         // Add or remove a Value Input.
+         if (!isPause) {
+           this.getField('OCTAVE').setVisible(true);
+         } else if (isPause) {
+           this.getField('OCTAVE').setVisible(false);
+         }
+         //this.getField('OCTAVE').updateWidth(); enable after migrate to later version of Blockly
        }
 		};
 
