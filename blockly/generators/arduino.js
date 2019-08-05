@@ -41,7 +41,7 @@ Blockly.Arduino.addReservedWords(
     'noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,' +
     'min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,' +
     'lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,' +
-    'detachInterrupt,interrupts,noInterrupts');
+    'detachInterrupt,interrupts,noInterrupts,time,date');
 
 /** Order of operation ENUMs. */
 Blockly.Arduino.ORDER_ATOMIC = 0;         // 0 "" ...
@@ -111,6 +111,7 @@ Blockly.Arduino.init = function(workspace) {
   Blockly.Arduino.kniwwelino_subs_ = Object.create(null);
   Blockly.Arduino.kniwwelino_vartypes_ = Object.create(null);
   Blockly.Arduino.kniwwelino_loop_ = Object.create(null);
+  Blockly.Arduino.kniwwelino_wrappers_ = Object.create(null);
 
   if (!Blockly.Arduino.variableDB_) {
     Blockly.Arduino.variableDB_ =
@@ -141,7 +142,7 @@ Blockly.Arduino.init = function(workspace) {
  */
 Blockly.Arduino.finish = function(code) {
   // Convert the includes, definitions, and functions dictionaries into lists
-  var includes = [], definitions = [], variables = [], functions = [];
+  var includes = [], definitions = [], variables = [], functions = [], kniwwelino_wrappers = [];
   for (var name in Blockly.Arduino.includes_) {
     includes.push(Blockly.Arduino.includes_[name]);
   }
@@ -168,6 +169,12 @@ Blockly.Arduino.finish = function(code) {
   }
   if (functions.length) {
     functions.push('\n');
+  }
+  for (var name in Blockly.Arduino.kniwwelino_wrappers_) {
+    kniwwelino_wrappers.push(Blockly.Arduino.kniwwelino_wrappers_[name]);
+  }
+  if (kniwwelino_wrappers.length) {
+    kniwwelino_wrappers.push('\n');
   }
 
   //kniwwelino mqtt subscription stuff
@@ -212,9 +219,10 @@ Blockly.Arduino.finish = function(code) {
   // kniwwelino mqtt subscription stuff
   delete Blockly.Arduino.kniwwelino_subs_;
   delete Blockly.Arduino.kniwwelino_vartypes_;
+  delete Blockly.Arduino.kniwwelino_wrappers_;
 
   var allDefs = includes.join('\n') + variables.join('\n') +
-      definitions.join('\n') + functions.join('\n\n');
+      definitions.join('\n') + functions.join('\n\n') + kniwwelino_wrappers.join('\n\n');
   var setup = 'void setup() {' + setups.join('\n  ') + '\n}\n\n';
 
   //kniwwelino If Loop element shown, generate only elements in Loop Element.
@@ -244,6 +252,10 @@ Blockly.Arduino.addLoop = function(loop, code) {
 
 Blockly.Arduino.addKniwwelinoSub = function(subscr, code) {
 	Blockly.Arduino.kniwwelino_subs_[subscr] = code;
+};
+
+Blockly.Arduino.addKniwwelinoWrapperFunctions = function(subscr, code) {
+  Blockly.Arduino.kniwwelino_wrappers_[subscr] = code;
 };
 
 function createMQTTSubstriptions() {

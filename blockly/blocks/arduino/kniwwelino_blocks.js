@@ -153,7 +153,7 @@ Blockly.Blocks['kniwwelino_getTimeInt'] = {
 		    this.setColour("#f9d831");
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'time');
 		  },getBlockType: function() {
-			    return Blockly.Types.TEXT;
+			    return Blockly.Types.NUMBER;
 		  }
 };
 
@@ -201,6 +201,30 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 			    return Blockly.Types.TEXT;
 		   }
 		};
+
+Blockly.Blocks['kniwwelino_HUEselectColor'] = {
+       init: function() {
+         this.appendValueInput("HUE")
+     		     .setCheck("Number")
+             .appendField(Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR);
+         this.appendDummyInput();
+         this.setOutput(true, Blockly.Types.TEXT.output);
+         this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR_TIP);
+         this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'led');
+       }, getBlockType: function() {
+ 				 return Blockly.Types.TEXT;
+ 			 }, onchange: function(ev) {
+ 		    var hue = Blockly.Arduino.valueToCode(this, 'HUE', Blockly.Arduino.ORDER_ATOMIC);
+ 				if (hue < 0 || hue > 255) {
+ 				  swal({
+ 						title: Blockly.Msg.KNIWWELINO_WARNING,
+ 						text: Blockly.Msg.KNIWWELINO_RGB_SETRGB_WARNING,
+ 						className: "kniwwelino-bg"
+ 					});
+ 		    }
+      }
+};
 
 Blockly.Blocks['kniwwelino_RGBselectEffect'] = {
 		init: function() {
@@ -1175,106 +1199,82 @@ Blockly.Blocks['kniwwelino_toneOff'] = {
 
 Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
+        let notes = new Blockly.FieldDropdown([
+          ["Pause","0 /*Silence*/"],
+          [Blockly.Msg.KNIWWELINO_NOTE_C,"NOTE_C"],
+          [Blockly.Msg.KNIWWELINO_NOTE_CS,"NOTE_CS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_D,"NOTE_D"],
+          [Blockly.Msg.KNIWWELINO_NOTE_DS,"NOTE_DS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_E,"NOTE_E"],
+          [Blockly.Msg.KNIWWELINO_NOTE_F,"NOTE_F"],
+          [Blockly.Msg.KNIWWELINO_NOTE_FS,"NOTE_FS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_G,"NOTE_G"],
+          [Blockly.Msg.KNIWWELINO_NOTE_GS,"NOTE_GS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_A,"NOTE_A"],
+          [Blockly.Msg.KNIWWELINO_NOTE_AS,"NOTE_AS"],
+          [Blockly.Msg.KNIWWELINO_NOTE_B,"NOTE_B"]
+        ], function(option) {
+          var hasPause = (option == '0 /*Silence*/');
+          this.sourceBlock_.updateShape_(hasPause);
+        });
+        let octaves = new Blockly.FieldDropdown([
+          ["0","0"],
+          ["1","1"],
+          ["2","2"],
+          ["3","3"],
+          ["4","4"],
+          ["5","5"],
+          ["6","6"],
+          ["7","7"],
+          ["8","8"]
+        ]);
+
 				this.appendDummyInput()
-				.appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
-		        .appendField(new Blockly.FieldDropdown([
-		        	["Pause 0Hz","0 /*Silence*/"],
-		        	["B0 31Hz","NOTE_B0 /*31Hz*/"],
-		        	["C1 33Hz","NOTE_C1 /*33Hz*/"],
-		        	["CS1 35Hz","NOTE_CS1 /*35Hz*/"],
-		        	["D1 37Hz","NOTE_D1 /*37Hz*/"],
-		        	["DS1 39Hz","NOTE_DS1 /*39Hz*/"],
-		        	["E1 41Hz","NOTE_E1 /*41Hz*/"],
-		        	["F1 44Hz","NOTE_F1 /*44Hz*/"],
-		        	["FS1 46Hz","NOTE_FS1 /*46Hz*/"],
-		        	["G1 49Hz","NOTE_G1 /*49Hz*/"],
-		        	["GS1 52Hz","NOTE_GS1 /*52Hz*/"],
-		        	["A1 55Hz","NOTE_A1 /*55Hz*/"],
-		        	["AS1 58Hz","NOTE_AS1 /*58Hz*/"],
-		        	["B1 62Hz","NOTE_B1 /*62Hz*/"],
-		        	["C2 65Hz","NOTE_C2 /*65Hz*/"],
-		        	["CS2 69Hz","NOTE_CS2 /*69Hz*/"],
-		        	["D2 73Hz","NOTE_D2 /*73Hz*/"],
-		        	["DS2 78Hz","NOTE_DS2 /*78Hz*/"],
-		        	["E2 82Hz","NOTE_E2 /*82Hz*/"],
-		        	["F2 87Hz","NOTE_F2 /*87Hz*/"],
-		        	["FS2 93Hz","NOTE_FS2 /*93Hz*/"],
-		        	["G2 98Hz","NOTE_G2 /*98Hz*/"],
-		        	["GS2 104Hz","NOTE_GS2 /*104Hz*/"],
-		        	["A2 110Hz","NOTE_A2 /*110Hz*/"],
-		        	["AS2 117Hz","NOTE_AS2 /*117Hz*/"],
-		        	["B2 123Hz","NOTE_B2 /*123Hz*/"],
-		        	["C3 131Hz","NOTE_C3 /*131Hz*/"],
-		        	["CS3 139Hz","NOTE_CS3 /*139Hz*/"],
-		        	["D3 147Hz","NOTE_D3 /*147Hz*/"],
-		        	["DS3 156Hz","NOTE_DS3 /*156Hz*/"],
-		        	["E3 165Hz","NOTE_E3 /*165Hz*/"],
-		        	["F3 175Hz","NOTE_F3 /*175Hz*/"],
-		        	["FS3 185Hz","NOTE_FS3 /*185Hz*/"],
-		        	["G3 196Hz","NOTE_G3 /*196Hz*/"],
-		        	["GS3 208Hz","NOTE_GS3 /*208Hz*/"],
-		        	["A3 220Hz","NOTE_A3 /*220Hz*/"],
-		        	["AS3 233Hz","NOTE_AS3 /*233Hz*/"],
-		        	["B3 247Hz","NOTE_B3 /*247Hz*/"],
-		        	["C4 262Hz","NOTE_C4 /*262Hz*/"],
-		        	["CS4 277Hz","NOTE_CS4 /*277Hz*/"],
-		        	["D4 294Hz","NOTE_D4 /*294Hz*/"],
-		        	["DS4 311Hz","NOTE_DS4 /*311Hz*/"],
-		        	["E4 330Hz","NOTE_E4 /*330Hz*/"],
-		        	["F4 349Hz","NOTE_F4 /*349Hz*/"],
-		        	["FS4 370Hz","NOTE_FS4 /*370Hz*/"],
-		        	["G4 392Hz","NOTE_G4 /*392Hz*/"],
-		        	["GS4 415Hz","NOTE_GS4 /*415Hz*/"],
-		        	["A4 440Hz","NOTE_A4 /*440Hz*/"],
-		        	["AS4 466Hz","NOTE_AS4 /*466Hz*/"],
-		        	["B4 494Hz","NOTE_B4 /*494Hz*/"],
-		        	["C5 523Hz","NOTE_C5 /*523Hz*/"],
-		        	["CS5 554Hz","NOTE_CS5 /*554Hz*/"],
-		        	["D5 587Hz","NOTE_D5 /*587Hz*/"],
-		        	["DS5 622Hz","NOTE_DS5 /*622Hz*/"],
-		        	["E5 659Hz","NOTE_E5 /*659Hz*/"],
-		        	["F5 698Hz","NOTE_F5 /*698Hz*/"],
-		        	["FS5 740Hz","NOTE_FS5 /*740Hz*/"],
-		        	["G5 784Hz","NOTE_G5 /*784Hz*/"],
-		        	["GS5 831Hz","NOTE_GS5 /*831Hz*/"],
-		        	["A5 880Hz","NOTE_A5 /*880Hz*/"],
-		        	["AS5 932Hz","NOTE_AS5 /*932Hz*/"],
-		        	["B5 988Hz","NOTE_B5 /*988Hz*/"],
-		        	["C6 1047Hz","NOTE_C6 /*1047Hz*/"],
-		        	["CS6 1109Hz","NOTE_CS6 /*1109Hz*/"],
-		        	["D6 1175Hz","NOTE_D6 /*1175Hz*/"],
-		        	["DS6 1245Hz","NOTE_DS6 /*1245Hz*/"],
-		        	["E6 1319Hz","NOTE_E6 /*1319Hz*/"],
-		        	["F6 1397Hz","NOTE_F6 /*1397Hz*/"],
-		        	["FS6 1480Hz","NOTE_FS6 /*1480Hz*/"],
-		        	["G6 1568Hz","NOTE_G6 /*1568Hz*/"],
-		        	["GS6 1661Hz","NOTE_GS6 /*1661Hz*/"],
-		        	["A6 1760Hz","NOTE_A6 /*1760Hz*/"],
-		        	["AS6 1865Hz","NOTE_AS6 /*1865Hz*/"],
-		        	["B6 1976Hz","NOTE_B6 /*1976Hz*/"],
-		        	["C7 2093Hz","NOTE_C7 /*2093Hz*/"],
-		        	["CS7 2217Hz","NOTE_CS7 /*2217Hz*/"],
-		        	["D7 2349Hz","NOTE_D7 /*2349Hz*/"],
-		        	["DS7 2489Hz","NOTE_DS7 /*2489Hz*/"],
-		        	["E7 2637Hz","NOTE_E7 /*2637Hz*/"],
-		        	["F7 2794Hz","NOTE_F7 /*2794Hz*/"],
-		        	["FS7 2960Hz","NOTE_FS7 /*2960Hz*/"],
-		        	["G7 3136Hz","NOTE_G7 /*3136Hz*/"],
-		        	["GS7 3322Hz","NOTE_GS7 /*3322Hz*/"],
-		        	["A7 3520Hz","NOTE_A7 /*3520Hz*/"],
-		        	["AS7 3729Hz","NOTE_AS7 /*3729Hz*/"],
-		        	["B7 3951Hz","NOTE_B7 /*3951Hz*/"],
-		        	["C8 4186Hz","NOTE_C8 /*4186Hz*/"],
-		        	["CS8 4435Hz","NOTE_CS8 /*4435Hz*/"],
-		        	["D8 4699Hz","NOTE_D8 /*4699Hz*/"],
-		        	["DS8 4978Hz","NOTE_DS8 /*4978Hz*/"]
-		        	])
-		        , "NOTE");
+				    .appendField(new Blockly.FieldImage("../font/font-awesome-4.7.0/music.svg", 15, 15, "*"))
+		        .appendField(notes, "NOTE")
+            .appendField(octaves, "OCTAVE");
 				this.setOutput(true, null);
 		    this.setColour(Blockly.Blocks.kniwwelino_AUDIO.HUE);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCHOOSER_TIP);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/audio');
-		  }
+		  },
+      onchange: function(ev) {
+         if (this.getFieldValue('OCTAVE') === '0') {
+           if (this.getFieldValue('NOTE') !== 'NOTE_B' && this.getField('NOTE').getText().toLowerCase() !== "pause") {
+             this.setWarningText(Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE_WARN_LOWNOTES);
+           } else {
+             this.setWarningText(null);
+           }
+         } else if (this.getFieldValue('OCTAVE') === '8') {
+           if (this.getFieldValue('NOTE') === 'NOTE_C' | this.getFieldValue('NOTE') === 'NOTE_CS' | this.getFieldValue('NOTE') === 'NOTE_D' | this.getFieldValue('NOTE') === 'NOTE_DS' | this.getField('NOTE').getText().toLowerCase() === "pause") {
+             this.setWarningText(null);
+           } else {
+             this.setWarningText(Blockly.Msg.KNIWWELINO_AUDIO_PLAY_NOTE_WARN_HIGHNOTES);
+           }
+         } else {
+             this.setWarningText(null);
+         }
+       },
+       mutationToDom: function() {
+         var container = document.createElement('mutation');
+         var hasPause = (this.getFieldValue('NOTE') == '0 /*Silence*/');
+         container.setAttribute('haspause', hasPause);
+         return container;
+       },
+       domToMutation: function(xmlElement) {
+         var hasPause = (xmlElement.getAttribute('haspause') == 'true');
+         console.log(hasPause);
+         this.updateShape_(hasPause);
+       },
+       updateShape_: function(isPause) {
+         // Add or remove a Value Input.
+         if (!isPause) {
+           this.getField('OCTAVE').setVisible(true);
+         } else if (isPause) {
+           this.getField('OCTAVE').setVisible(false);
+         }
+         //this.getField('OCTAVE').updateWidth(); enable after migrate to later version of Blockly
+       }
 		};
 
 //==== Neopixel WS2812 ==============================================

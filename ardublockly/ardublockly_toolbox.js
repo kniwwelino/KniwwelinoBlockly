@@ -124,6 +124,13 @@ Ardublockly.TOOLBOX_XML =
 '  </block>' +
 '    <block type="kniwwelino_RGBclear"></block>' +
 '    <block type="kniwwelino_RGBselectColor"></block>' +
+'    <block type="kniwwelino_HUEselectColor">' +
+'		      <value name="HUE">' +
+'		        <shadow type="math_number">' +
+'		          <field name="NUM">0</field>' +
+'		        </shadow>' +
+'		      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_RGBsetColorFromString" adv="true">' +
 '       <value name="COLOR">' +
 '    		<block type="kniwwelino_RGBselectEffect">'+
@@ -486,7 +493,11 @@ Ardublockly.TOOLBOX_XML =
 //'        <block type="io_highlow"></block>' +
 //'      </value>' +
 //'    </block>' +
-'    <block type="io_analogwrite"></block>' +
+'    <block type="io_analogwrite">' +
+'      <value name="NUM">' +
+'        <block type="math_number">255</block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="io_analogread"></block>' +
 '    <block type="io_highlow"></block>' +
 '    <block type="io_pulsein">' +
@@ -516,7 +527,8 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_playNote">' +
 '      <value name="NOTE">' +
 '        <shadow type="kniwwelino_toneChooser">' +
-'       	<field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'       	<field name="NOTE">NOTE_C</field>' +
+'         <field name="OCTAVE">4</field>' +
 '        </shadow>' +
 '      </value>' +
 '      <value name="NOTE_DURATION">' +
@@ -528,13 +540,22 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_playTone">' +
 '      <value name="NOTE">' +
 '        <shadow type="kniwwelino_toneChooser">' +
-'       	<field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'       	<field name="NOTE">NOTE_C</field>' +
+'         <field name="OCTAVE">4</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_playTone">' +
+'      <value name="NOTE">' +
+'        <shadow type="math_number">' +
+'       	<field name="NUM">440</field>' +
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_toneOff"></block>' +
 '    <block type="kniwwelino_toneChooser">' +
-'       <field name="NOTE">NOTE_A4 /*440Hz*/</field>' +
+'       <field name="NOTE">NOTE_C</field>' +
+'       <field name="OCTAVE">4</field>' +
 '    </block>' +
 '  </category>' +
 '  <sep adv="true"></sep>' +
@@ -622,6 +643,6 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_getMAC" adv="true"></block>' +
 '  </category>' +
 '  <sep adv="true"></sep>' +
-'  <category id="catOther" name="Other" adv="true">' +
-'  </category>' +
+// '  <category id="catOther" name="Other" adv="true">' +
+// '  </category>' +
 '</xml>';

@@ -96,7 +96,7 @@ Blockly.Arduino['kniwwelino_getTime'] = function(block) {
 		codeStr = 'String(minute())';
 	} else if (value == 'SECOND')  {
 		codeStr = 'String(second())';
-	} 
+	}
 	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
 };
 
@@ -168,6 +168,13 @@ Blockly.Arduino['kniwwelino_PINbuttonClicked'] = function(block) {
 Blockly.Arduino['kniwwelino_RGBselectColor'] = function(block) {
 	kniwwelinoBaseCode();
 	return ['"'+block.getFieldValue('COLOR').replace("#","").toUpperCase()+'"', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['kniwwelino_HUEselectColor'] = function(block) {
+	kniwwelinoBaseCode();
+  var hue = Blockly.Arduino.valueToCode(block, 'HUE', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+
+	return ['Kniwwelino.RGBhue2Hex('+hue+')', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_RGBselectEffect'] = function(block) {
@@ -492,9 +499,9 @@ Blockly.Arduino['kniwwelino_DS18B20getValue'] = function(block) {
 	Blockly.Arduino.addInclude('DS18B20', '#include <DS18B20.h> //requires https://github.com/RobTillaart/Arduino/tree/master/libraries/DS18B20');
 	Blockly.Arduino.addDeclaration('OneWire_'+pin, 'OneWire oneWire_'+pin+'('+pin+');');
 	Blockly.Arduino.addDeclaration('DS18B20_'+pin, 'DS18B20 ds18B20_'+pin+'(&oneWire_'+pin+');');
-	Blockly.Arduino.addSetup('DS18B20_'+pin, 'ds18B20_'+pin+'.begin();');
-	Blockly.Arduino.addSetup('DS18B20_'+pin+'request', 'ds18B20_'+pin+'.requestTemperatures();');
-	return ['ds18B20_'+pin+'.getTempC();\nds18B20_'+pin+'.requestTemperatures()', Blockly.Arduino.ORDER_ATOMIC];
+  Blockly.Arduino.addKniwwelinoWrapperFunctions('ds18B20_'+pin+'_wrapper', 'float ds18B20_'+pin+'_wrapper() {\n  ds18B20_'+pin+'.requestTemperatures();\n  return ds18B20_'+pin+'.getTempC();\n}');
+  Blockly.Arduino.addSetup('ds18B20_'+pin+'_begin','ds18B20_'+pin+'.begin();');
+  return ['ds18B20_'+pin+'_wrapper()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_BH1750getLightLevel'] = function(block) {
@@ -565,6 +572,7 @@ Blockly.Arduino['kniwwelino_WeatherConstChooser'] = function(block) {
 Blockly.Arduino['kniwwelino_playNote'] = function(block) {
 	  var pin = block.getFieldValue('TONEPIN');
 	  var freq = Blockly.Arduino.valueToCode(block, 'NOTE', Blockly.Arduino.ORDER_ATOMIC);
+    //var octave = Blockly.Arduino.valueToCode(block, 'OCTAVE', Blockly.Arduino.ORDER_ATOMIC);
 	  var dur  = Blockly.Arduino.valueToCode(block, 'NOTE_DURATION', Blockly.Arduino.ORDER_ATOMIC);
 	  Blockly.Arduino.reservePin(
 	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
@@ -579,6 +587,7 @@ Blockly.Arduino['kniwwelino_playNote'] = function(block) {
 Blockly.Arduino['kniwwelino_playTone'] = function(block) {
 	  var pin = block.getFieldValue('TONEPIN');
 	  var freq = Blockly.Arduino.valueToCode(block, 'NOTE', Blockly.Arduino.ORDER_ATOMIC);
+    //var octave = Blockly.Arduino.valueToCode(block, 'OCTAVE', Blockly.Arduino.ORDER_ATOMIC);
 	  Blockly.Arduino.reservePin(
 	      block, pin, Blockly.Arduino.PinTypes.OUTPUT, 'Tone Pin');
 
@@ -605,8 +614,22 @@ Blockly.Arduino['kniwwelino_toneOff'] = function(block) {
 
 Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		kniwwelinoBaseCode();
+    var isPause = block.getField('NOTE').getText().toLowerCase()==="pause"?true:false;
 		var freq = block.getFieldValue('NOTE');
-		return [freq, Blockly.Arduino.ORDER_ATOMIC];
+    var octave = block.getFieldValue('OCTAVE');
+
+    if (octave === '0') {
+      if (freq !== 'NOTE_B') {
+        octave = 1;
+      }
+    } else if (octave === '8') {
+      if (freq === 'NOTE_C' | freq === 'NOTE_CS' | freq === 'NOTE_D' | freq === 'NOTE_DS') {
+      } else {
+        octave = 7;
+      }
+    }
+
+		return [freq+(isPause?"":octave), Blockly.Arduino.ORDER_ATOMIC];
 	};
 
 
