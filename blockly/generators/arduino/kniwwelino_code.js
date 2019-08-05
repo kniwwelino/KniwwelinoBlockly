@@ -499,12 +499,10 @@ Blockly.Arduino['kniwwelino_DS18B20getValue'] = function(block) {
 	Blockly.Arduino.addInclude('DS18B20', '#include <DS18B20.h> //requires https://github.com/RobTillaart/Arduino/tree/master/libraries/DS18B20');
 	Blockly.Arduino.addDeclaration('OneWire_'+pin, 'OneWire oneWire_'+pin+'('+pin+');');
 	Blockly.Arduino.addDeclaration('DS18B20_'+pin, 'DS18B20 ds18B20_'+pin+'(&oneWire_'+pin+');');
-<<<<<<< HEAD
   Blockly.Arduino.addKniwwelinoWrapperFunctions('ds18B20_'+pin+'_wrapper', 'float ds18B20_'+pin+'_wrapper() {\n  ds18B20_'+pin+'.requestTemperatures();\n  return ds18B20_'+pin+'.getTempC();\n}');
-=======
   Blockly.Arduino.addSetup('ds18B20_'+pin+'_begin','ds18B20_'+pin+'.begin();');
 	Blockly.Arduino.addSetup('ds18B20_'+pin+'_handle','ds18B20_'+pin+'.requestTemperatures();');
-  return ['ds18B20_'+pin+'_handle()', Blockly.Arduino.ORDER_ATOMIC];
+  return ['ds18B20_'+pin+'_wrapper()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_BH1750getLightLevel'] = function(block) {
