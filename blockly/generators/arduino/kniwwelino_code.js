@@ -550,6 +550,23 @@ Blockly.Arduino['kniwwelino_HCSR04getValue'] = function(block) {
 	return ['hcsr04.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['kniwwelino_HCSR04getValue1Pin'] = function(block) {
+  var pin = block.getFieldValue('PIN');
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('HCSR04', '#include <HCSR04.h>');
+	Blockly.Arduino.addDeclaration('HCSR04_'+pin, 'UltraSonicDistanceSensor hcsr04_'+pin+'('+pin+', '+pin+');');
+	return ['hcsr04_'+pin+'.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['kniwwelino_HCSR04getValue2Pin'] = function(block) {
+  var pinTrig = block.getFieldValue('PIN_TRIG');
+  var pinEcho = block.getFieldValue('PIN_ECHO');
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('HCSR04', '#include <HCSR04.h>');
+	Blockly.Arduino.addDeclaration('HCSR04_'+pinTrig+pinEcho, 'UltraSonicDistanceSensor hcsr04_'+pinTrig+pinEcho+'('+pinTrig+', '+pinEcho+');');
+	return ['hcsr04_'+pinTrig+pinEcho+'.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
+};
+
 //==== WEATHER ============================================
 
 Blockly.Arduino['kniwwelino_WeatherTopicChooser'] = function(block) {

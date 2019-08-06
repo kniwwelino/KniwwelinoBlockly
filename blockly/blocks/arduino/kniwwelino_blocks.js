@@ -1077,6 +1077,36 @@ Blockly.Blocks['kniwwelino_HCSR04getValue'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_HCSR04getValue1Pin'] = {
+		  init: function() {
+			  this.appendDummyInput()
+			    .appendField("HC-SR04" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_SENSOR_DISTANCE + Blockly.Msg.KNIWWELINO_SENSOR_CM + " " + Blockly.Msg.KNIWWELINO_AUDIO_PIN)
+          .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN');
+		    this.setOutput(true, Blockly.Types.NUMBER.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/extothersensor');
+		  },getBlockType: function() {
+			    return Blockly.Types.NUMBER;
+		  }
+};
+
+Blockly.Blocks['kniwwelino_HCSR04getValue2Pin'] = {
+		  init: function() {
+			  this.appendDummyInput()
+			    .appendField("HC-SR04" + Blockly.Msg.KNIWWELINO_SENSOR_READ + Blockly.Msg.KNIWWELINO_SENSOR_DISTANCE + Blockly.Msg.KNIWWELINO_SENSOR_CM + " " + Blockly.Msg.KNIWWELINO_SENSOR_TRIGGER)
+          .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN_TRIG')
+          .appendField(Blockly.Msg.KNIWWELINO_SENSOR_ECHO)
+          .appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN_ECHO');
+		    this.setOutput(true, Blockly.Types.NUMBER.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/extothersensor');
+		  },getBlockType: function() {
+			    return Blockly.Types.NUMBER;
+		  }
+};
+
 //==== WEATHER ============================================
 
 Blockly.Blocks['kniwwelino_WeatherTopicChooser'] = {
