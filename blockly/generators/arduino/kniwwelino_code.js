@@ -545,26 +545,26 @@ Blockly.Arduino['kniwwelino_ADPS9960getValue'] = function(block) {
 
 Blockly.Arduino['kniwwelino_HCSR04getValue'] = function(block) {
 	kniwwelinoBaseCode();
-	Blockly.Arduino.addInclude('HCSR04', '#include <HCSR04.h>');
-	Blockly.Arduino.addDeclaration('HCSR04', 'UltraSonicDistanceSensor hcsr04(D0, D5);');
-	return ['hcsr04.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
+	Blockly.Arduino.addInclude('HCSR04', '#include <NewPing.h> //https://bitbucket.org/teckel12/arduino-new-ping/');
+	Blockly.Arduino.addDeclaration('HCSR04', 'NewPing hcsr04(D0, D5, 200);');
+	return ['hcsr04.ping_cm()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_HCSR04getValue1Pin'] = function(block) {
   var pin = block.getFieldValue('PIN');
 	kniwwelinoBaseCode();
-	Blockly.Arduino.addInclude('HCSR04', '#include <HCSR04.h>');
-	Blockly.Arduino.addDeclaration('HCSR04_'+pin, 'UltraSonicDistanceSensor hcsr04_'+pin+'('+pin+', '+pin+');');
-	return ['hcsr04_'+pin+'.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
+	Blockly.Arduino.addInclude('HCSR04', '#include <NewPing.h> //https://bitbucket.org/teckel12/arduino-new-ping/');
+	Blockly.Arduino.addDeclaration('HCSR04_'+pin+pin, 'NewPing hcsr04_'+pin+pin+'('+pin+', '+pin+', 200);');
+	return ['hcsr04_'+pin+pin+'.ping_cm()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['kniwwelino_HCSR04getValue2Pin'] = function(block) {
   var pinTrig = block.getFieldValue('PIN_TRIG');
   var pinEcho = block.getFieldValue('PIN_ECHO');
 	kniwwelinoBaseCode();
-	Blockly.Arduino.addInclude('HCSR04', '#include <HCSR04.h>');
-	Blockly.Arduino.addDeclaration('HCSR04_'+pinTrig+pinEcho, 'UltraSonicDistanceSensor hcsr04_'+pinTrig+pinEcho+'('+pinTrig+', '+pinEcho+');');
-	return ['hcsr04_'+pinTrig+pinEcho+'.measureDistanceCm()', Blockly.Arduino.ORDER_ATOMIC];
+	Blockly.Arduino.addInclude('HCSR04', '#include <NewPing.h> //https://bitbucket.org/teckel12/arduino-new-ping/');
+	Blockly.Arduino.addDeclaration('HCSR04_'+pinTrig+pinEcho, 'NewPing hcsr04_'+pinTrig+pinEcho+'('+pinTrig+', '+pinEcho+', 200);');
+	return ['hcsr04_'+pinTrig+pinEcho+'.ping_cm()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
 //==== WEATHER ============================================
