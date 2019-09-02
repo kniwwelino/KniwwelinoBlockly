@@ -1,6 +1,28 @@
 
 var id = "000000";
 
+Ardublockly.setLedMatrixID = function(id) {
+	id = id;
+	var $leds = $('#leds');
+	function hexInputToLeds() {
+		for (var i = 1; i < 7; i++) {
+				var byte = id.substr(i-1, 1);
+				console.log(byte);
+
+				byte = parseInt(byte, 16);
+				for (var j = 1; j < 5; j++) {
+						var active = !!(byte & 1 << (j - 1));
+						$leds.find('td[data-row=' + (i) + '][data-col=' + (5-j) + '] ').toggleClass('active', active);
+				}
+				for (var j = 1; j < 5; j++) {
+						var active = !!(byte & 1 << (j - 1));
+						$leds.find('td[data-row=' + (5-j) + '][data-col=' + 5 + '] ').toggleClass('active', active);
+				}
+		}
+	}
+	hexInputToLeds();
+}
+
 Ardublockly.getLedMatrixID = function() {
 	console.log(`ID ${id} requested`);
 	return id;
@@ -64,15 +86,19 @@ Ardublockly.LedMatrix = function () {
 				id = out.join('').toUpperCase();
     }
 
-    function hexInputToLeds() {
-      var val = getInputHexValue();
-      for (var i = 1; i < 6; i++) {
-          var byte = val.substr(-2 * i, 2);
+		function hexInputToLeds() {
+      for (var i = 1; i < 7; i++) {
+          var byte = id.substr(i-1, 1);
+					console.log(byte);
 
           byte = parseInt(byte, 16);
-          for (var j = 1; j < 9; j++) {
+          for (var j = 1; j < 5; j++) {
               var active = !!(byte & 1 << (j - 1));
-              $leds.find('td[data-row=' + (6-i) + '][data-col=' + (9-j) + '] ').toggleClass('active', active);
+              $leds.find('td[data-row=' + (i) + '][data-col=' + (5-j) + '] ').toggleClass('active', active);
+          }
+					for (var j = 1; j < 5; j++) {
+              var active = !!(byte & 1 << (j - 1));
+              $leds.find('td[data-row=' + (5-j) + '][data-col=' + 5 + '] ').toggleClass('active', active);
           }
       }
     }
