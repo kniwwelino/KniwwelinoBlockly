@@ -54,8 +54,17 @@ Ardublockly.init = function() {
     console.log(xml);
 	}
 
+  var managePara = location.search.match(new RegExp('[?&]' + 'add' + '=([^&]+)'));
+  if(managePara) {
+    console.log('manage parameter:' + managePara[1]);
+    document.getElementById('button_manageKniwwelino').click();
+    Ardublockly.setLedMatrixID(managePara[1]);
+    document.getElementById('addKniwwelino').scrollIntoView(true);
+    document.getElementById('name_addKniwwelino').focus();
+  }
+
 	//check if at least one Kniwwelino is managed
-	if (document.getElementById('button_ide_large').className.includes('disabled')) {
+	if (document.getElementById('button_ide_large').className.includes('disabled') && !managePara) {
   	swal({
 			title: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_TITLE'),
 			text: Ardublockly.getLocalStr('KNIWWELINO_ADDKNIWWELINO_MESSAGE'),
