@@ -406,7 +406,7 @@ Blockly.Msg.ARD_DEFINE = "Define";  // untranslated
 Blockly.Msg.ARD_DIGITALREAD = "lies digitalen Pin";
 Blockly.Msg.ARD_DIGITALREAD_TIP = "Liest den digitalen Wert an einem Pin: HIGH oder LOW";
 Blockly.Msg.ARD_DIGITALWRITE = "setze Pin";
-Blockly.Msg.ARD_DIGITALWRITE_to = "setze digitalen Pin auf";
+Blockly.Msg.ARD_DIGITALWRITE_TO = "auf digitalen Wert";
 Blockly.Msg.ARD_DIGITALWRITE_TIP = "Schreibt digitalen Wert HIGH oder LOW auf den angegebenen Pin";
 Blockly.Msg.ARD_FUN_RUN_LOOP = "Arduino loop forever:";  // untranslated
 Blockly.Msg.ARD_FUN_RUN_SETUP = "Arduino run first:";  // untranslated
@@ -631,7 +631,7 @@ Blockly.Msg.KNIWWELINO_LOG_LINE = "logge Zeile"
 Blockly.Msg.KNIWWELINO_LOG_TIP 	= "loggt den gegebenen String auf die serielle Konsole und den MQTT Log."
 
 // SENSORS
-Blockly.Msg.KNIWWELINO_SENSOR_READ = " messe "
+Blockly.Msg.KNIWWELINO_SENSOR_READ = " miss "
 Blockly.Msg.KNIWWELINO_SENSOR_TIP = "Verwendet den Sensor um den gewählten Parameter zu messen";
 Blockly.Msg.KNIWWELINO_SENSOR_DISTANCE = "Entfernung"
 Blockly.Msg.KNIWWELINO_SENSOR_CM = " [cm]"
