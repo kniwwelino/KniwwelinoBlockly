@@ -240,7 +240,7 @@ Blockly.Msg.MATH_RANDOM_INT_TITLE = "entier aléatoire entre %1 et %2";
 Blockly.Msg.MATH_RANDOM_INT_TOOLTIP = "Renvoyer un entier aléatoire entre les deux limites spécifiées, incluses.";
 Blockly.Msg.MATH_ROUND_HELPURL = "https://en.wikipedia.org/wiki/Rounding";
 Blockly.Msg.MATH_ROUND_OPERATOR_ROUND = "arrondir";
-Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDDOWN = "arrondir vars le bas";
+Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDDOWN = "arrondir vers le bas";
 Blockly.Msg.MATH_ROUND_OPERATOR_ROUNDUP = "arrondir vers le haut";
 Blockly.Msg.MATH_ROUND_TOOLTIP = "Arrondir un nombre au-dessus ou au-dessous.";
 Blockly.Msg.MATH_SINGLE_HELPURL = "https://fr.wikipedia.org/wiki/Racine_carree";
@@ -414,7 +414,7 @@ Blockly.Msg.ARD_FUN_RUN_TIP = "Definition de la configuration de l'Arduino: fonc
 Blockly.Msg.ARD_HIGH = "HAUT";
 Blockly.Msg.ARD_HIGHLOW_TIP = " Configuration d'un signal à l'état HAUT ou BAS";
 Blockly.Msg.ARD_LOW = "BAS";
-Blockly.Msg.ARD_MAP = "convertis";
+Blockly.Msg.ARD_MAP = "configure";
 Blockly.Msg.ARD_MAP_TIP = "Convertis un nombre de la plage [0-1024].";
 Blockly.Msg.ARD_MAP_VAL = "valeur de [0-";
 Blockly.Msg.ARD_NOTONE = "Eteindre la tonalité du signal #";
@@ -434,7 +434,7 @@ Blockly.Msg.ARD_SERIAL_PRINT_WARN = "Un bloc de configuration pour %1 doit être
 Blockly.Msg.ARD_SERIAL_SETUP = "Configuration";
 Blockly.Msg.ARD_SERIAL_SETUP_TIP = "Choisir la vitesse d'un périphérique série";
 Blockly.Msg.ARD_SERIAL_SPEED = ":  vitesse";
-Blockly.Msg.ARD_SERVO_READ = "mesure le signal du servomoteur";
+Blockly.Msg.ARD_SERVO_READ = "mesure le signal du servomoteur du port";
 Blockly.Msg.ARD_SERVO_READ_TIP = "Lecture d'un angle du servomoteur";
 Blockly.Msg.ARD_SERVO_WRITE = "fixe le servomoteur du port";
 Blockly.Msg.ARD_SERVO_WRITE_DEG_180 = "degrés (0~180)";
@@ -529,6 +529,10 @@ Blockly.Msg.KNIWWELINO_GETMAC = 'Adresse WIFI MAC'
 Blockly.Msg.KNIWWELINO_GETMAC_TIP = "Retourne l'adresse MAC WIFI du périphérique"
 Blockly.Msg.KNIWWELINO_PIN_EFFECT = 'fixe la LED externe '
 Blockly.Msg.KNIWWELINO_PIN_EFFECT_TIP = 'Configure le Pin IO sur ON/Clignoter/Flasher'
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_BLINK = "clignotée"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_FLASH = "flash"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW = "brillée"
+Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK = "scintillée"
 Blockly.Msg.KNIWWELINO_TIME_SEC = "secondes";
 // RGB Led
 Blockly.Msg.KNIWWELINO_HUE_SELECTCOLOR = 'teinte (hue)'
@@ -555,8 +559,7 @@ Blockly.Msg.KNIWWELINO_RGB_BLUE = "bleu";
 Blockly.Msg.KNIWWELINO_RGB_DURATION = "durée";
 Blockly.Msg.KNIWWELINO_PIN_ON = "activée";
 Blockly.Msg.KNIWWELINO_PIN_OFF = "désactivée";
-Blockly.Msg.KNIWWELINO_PIN_EFFECT_GLOW = "brillée"
-Blockly.Msg.KNIWWELINO_PIN_EFFECT_SPARK = "scintillée"
+
 Blockly.Msg.KNIWWELINO_PIN_BUTTON = "bouton externe sur port";
 // MATRIX
 Blockly.Msg.KNIWWELINO_MATRIX_DRAWICONCREATOR = '';
@@ -607,20 +610,20 @@ Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B = "A ou B";
 // MQTT - MESSAGING
 Blockly.Msg.KNIWWELINO_MQTT_GROUP = "pour les messages, utilise le groupe ";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Configure le groupe pour tous les messages";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "connecte la LED RVB à RGB/COLOR";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connecte la LED RVB à RGB/COLOR du message";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "connecte la matrice à MATRIX/TEXT et MATRIX/ICON";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connecte la matrice à MATRIX/TEXT et MATRIX/ICON du message";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "connecte la LED RVB à à la rubique RGB/COLOR";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connecte la LED RVB à la rubique RGB/COLOR du message";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "connecte la matrice aux rubiques MATRIX/TEXT et MATRIX/ICON";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connecte la matrice aux rubiques MATRIX/TEXT et MATRIX/ICON du message";
 Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE = "envoie";
-Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Envoie le message donné au thème spécifié";///////////
-Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "au thème du groupe";
-Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "au thème public";
+Blockly.Msg.KNIWWELINO_MQTT_SENTMESSAGE_TIP = "Envoie le dessin dans la rubrique spécifiée";///////////
+Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "au groupe dans la rubrique";
+Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "à la rubrique publique";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "relie la variable";
-Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relie la variable sélectionné au thème spécifié";
+Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relie la variable sélectionnée à la rubrique spécifiée";
 //logic
 Blockly.Msg.KNIWWELINO_IS = "est";
 //times
-Blockly.Msg.KNIWWELINO_TIME_SECONDS = "temps écoulé  (secondes)";
+Blockly.Msg.KNIWWELINO_TIME_SECONDS = "temps écoulé (secondes)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Renvoie le temps en secondes depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un chiffre entier long positif";
 
 //Log
@@ -724,19 +727,19 @@ Blockly.Msg.ARD_FUN_RUN_LOOP = "boucle continue:";
 Blockly.Msg.ARD_FUN_RUN_SETUP = "au démarrage:";
 Blockly.Msg.VARIABLES_DEFAULT_NAME = "valeur";
 
-Blockly.Msg.ARD_MAP_SMIN = "de ["
+Blockly.Msg.ARD_MAP_SMIN = "de la valeur ["
 Blockly.Msg.ARD_MAP_SMAX = "-"
-Blockly.Msg.ARD_MAP_DMIN = "] valeur de ["
+Blockly.Msg.ARD_MAP_DMIN = "] à ["
 Blockly.Msg.ARD_MAP_DMAX = "-"
 
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Bande de LED Neopixel avec";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SIZE = "Bande LED Neopixel avec";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_PIN = "sur le port";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_INIT_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT = "Modifie l'effet sur la bande :";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETEFFECT_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR = "Modifie la couleur de la bande :";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSTRIPCOLOR_TIP = "";
-Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR = "Modifie la LED";
+Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR = "Modifie le pixel";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR2 = "dans la couleur :";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETPIXELCOLOR_TIP = "";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "Modifie la vitesse de l'effet à";
