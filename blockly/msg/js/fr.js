@@ -610,7 +610,7 @@ Blockly.Msg.KNIWWELINO_BUTTON_A_OR_B = "A ou B";
 // MQTT - MESSAGING
 Blockly.Msg.KNIWWELINO_MQTT_GROUP = "pour les messages, utilise le groupe ";
 Blockly.Msg.KNIWWELINO_MQTT_GROUP_TIP = "Configure le groupe pour tous les messages";
-Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "connecte la LED RVB à à la rubrique RGB/COLOR";
+Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB = "connecte la LED RVB à la rubrique RGB/COLOR";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_RGB_TIP = "Connecte la LED RVB à la rubrique RGB/COLOR du message";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX = "connecte la matrice aux rubriques MATRIX/TEXT et MATRIX/ICON";
 Blockly.Msg.KNIWWELINO_MQTT_CONNECT_MATRIX_TIP = "Connecte la matrice aux rubriques MATRIX/TEXT et MATRIX/ICON du message";
