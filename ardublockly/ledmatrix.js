@@ -1,8 +1,8 @@
 
 var id = "000000";
 
-Ardublockly.setLedMatrixID = function(id) {
-	id = id;
+Ardublockly.setLedMatrixID = function(kid) {
+	id = kid;
 	var $leds = $('#leds');
 	function hexInputToLeds() {
 		for (var i = 1; i < 7; i++) {
