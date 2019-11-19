@@ -490,6 +490,22 @@ Blockly.Arduino['kniwwelino_SHT30getValue'] = function(block) {
 	return ""
 };
 
+Blockly.Arduino['kniwwelino_HTU21DgetValue'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('HTU21D', '#include <Adafruit_HTU21DF.h>');
+
+	Blockly.Arduino.addDeclaration('HTU21D', 'Adafruit_HTU21DF htu = Adafruit_HTU21DF();');
+	Blockly.Arduino.addSetup('HTU21D', 'if (htu.begin()) Kniwwelino.logln("HTU21D Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize HTU21D Sensor"); ', true);
+
+	var value = block.getFieldValue('VALUE');
+	if (value == 'TEMPERATURE')  {
+		return ['htu.readTemperature()', Blockly.Arduino.ORDER_ATOMIC];
+	} else if (value == 'HUMIDITY')  {
+		return ['htu.readHumidity()', Blockly.Arduino.ORDER_ATOMIC];
+	}
+	return ""
+};
+
 Blockly.Arduino['kniwwelino_DS18B20getValue'] = function(block) {
 	kniwwelinoBaseCode();
 	var pin = block.getFieldValue('PIN');
