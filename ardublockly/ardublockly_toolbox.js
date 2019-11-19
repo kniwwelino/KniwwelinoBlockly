@@ -609,6 +609,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_BME280getValue"></block>' +
 '    <block type="kniwwelino_BME680getValue"></block>' +
 '    <block type="kniwwelino_SHT30getValue"></block>' +
+'    <block type="kniwwelino_HTU21DgetValue"></block>' +
 '    <block type="kniwwelino_DS18B20getValue"></block>' +
 '    <block type="kniwwelino_BH1750getLightLevel"></block>' +
 '    <block type="kniwwelino_ADPS9960getValue"></block>' +
