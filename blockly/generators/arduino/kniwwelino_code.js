@@ -300,6 +300,12 @@ Blockly.Arduino['kniwwelino_MATRIXdrawPixel'] = function(block) {
 	return 'Kniwwelino.MATRIXsetPixel(' + x + ', ' + y + ', ' + state + ');\n';
 };
 
+Blockly.Arduino['kniwwelino_MATRIXshowPixels'] = function(block) {
+	kniwwelinoBaseCode();
+	var n = Blockly.Arduino.valueToCode(block, 'n', Blockly.Arduino.ORDER_UNARY_POSTFIX);
+	return 'Kniwwelino.MATRIXsetStatus(' + n + ');\n';
+};
+
 Blockly.Arduino['kniwwelino_MATRIXreadPixel'] = function(block) {
 	kniwwelinoBaseCode();
 	var x = Blockly.Arduino.valueToCode(block, 'X', Blockly.Arduino.ORDER_UNARY_POSTFIX);

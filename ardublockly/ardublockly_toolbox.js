@@ -69,6 +69,13 @@ Ardublockly.TOOLBOX_XML =
 '        </block>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_MATRIXshowPixels">' +
+'    <value name="n">' +
+'        <block type="math_number">' +
+'          <field name="n">25</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
 '    <block type="kniwwelino_MATRIXreadPixel">' +
 '    <value name="X">' +
 '        <block type="math_number">' +
