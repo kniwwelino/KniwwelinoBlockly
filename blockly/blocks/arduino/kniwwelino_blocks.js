@@ -616,6 +616,31 @@ Blockly.Blocks['kniwwelino_MATRIXdrawPixel'] = {
   }
 };
 
+Blockly.Blocks['kniwwelino_MATRIXshowPixels'] = {
+  init: function() {
+		this.appendDummyInput()
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_SHOWPIXELS);
+    this.appendValueInput("n")
+        .setCheck("Number");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+		this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+		this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_SHOWPIXELS_TIP);
+		this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+  },
+	onchange: function(ev) {
+    var n = Blockly.Arduino.valueToCode(this, 'n', Blockly.Arduino.ORDER_ATOMIC);
+		if (n < 0 || n > 25) {
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_SHOWPIXELS_WARNING,
+				className: "kniwwelino-bg"
+			});
+    }
+  }
+};
+
 Blockly.Blocks['kniwwelino_MATRIXreadPixel'] = {
 		  init: function() {
 				this.appendDummyInput()
