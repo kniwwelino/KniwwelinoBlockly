@@ -388,6 +388,13 @@ span.onlineBadge.offline::after {
   background-color: #F44336 !important;
 }
 
+select option{
+  font-family: 'FontAwesome', "Roboto"
+}
+select {
+  font-family: 'FontAwesome', "Roboto"
+}
+
 a.backuprestore{
   height: 24px;
   line-height: 24px;
