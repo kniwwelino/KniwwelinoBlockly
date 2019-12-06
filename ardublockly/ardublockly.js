@@ -9,8 +9,6 @@
 /** Create a namespace for the application. */
 var Ardublockly = Ardublockly || {};
 
-Ardublockly.updateList = false;
-
 /** Initialize function for Ardublockly, to be called on page load. */
 Ardublockly.init = function() {
   // Lang init must run first for the rest of the page to pick the right msgs
@@ -84,7 +82,14 @@ Ardublockly.init = function() {
 			};
 		});
 	}
-
+  //check if managed Kniwwelinos are online
+  setInterval(() => {
+    if (document.getElementById('manageKniwwelino').style.display !== "none") {
+      if (document.getElementById('button_updateOnlineStatus')) {
+        document.getElementById('button_updateOnlineStatus').click();
+      }
+    }
+  }, 2500);
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -385,22 +390,12 @@ Ardublockly.initKniwwelinoList = function() {
 		kniwwelinos += '<option value="default"><span class="translatable_manageKniwwelinoAdd">'+Ardublockly.getLocalStr('manageKniwwelinoAdd')+'</span></option>';
 	} else {
 		for (var i = 0; i < kniwwelinoJSON.length; i++) {
-			kniwwelinos += `<option value="${kniwwelinoJSON[i].mac}" ${kniwwelinoJSON[i].selected} id="select_${kniwwelinoJSON[i].id}"><span class="title">&#xf204; ${kniwwelinoJSON[i].name}</span></option>`;
+			kniwwelinos += `<option value="${kniwwelinoJSON[i].mac}" ${kniwwelinoJSON[i].selected} id="select_${kniwwelinoJSON[i].id}"><span class="title">${kniwwelinoJSON[i].name}</span></option>`;
 		}
 		Ardublockly.compileButtonEnable(true);
 	}
 	kniwwelinos += '</select></li>';
 	document.getElementById('select_kniwwelino').innerHTML = kniwwelinos;
-
-  //check if managed Kniwwelinos are online
-  if (!Ardublockly.updateList) setInterval(() => {
-    Ardublockly.updateList = true;
-    if (kniwwelinoLocalStorage) {
-      for (var i = 0; i < kniwwelinoJSON.length; i++) {
-        Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
-      }
-    }
-  }, 3500);
 };
 
 Ardublockly.setSelectedKniwwelino = function(mac) {
@@ -681,11 +676,11 @@ Ardublockly.updateOnlineStatus = function(id) {
         if (val2.online) {
           if (document.getElementById(id)) document.getElementById(id).classList.remove('offline');
           if (document.getElementById(id)) document.getElementById(id).classList.add('online');
-          document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf204","\uf205");
+          //document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf204","\uf205");
         } else {  //offline
           if (document.getElementById(id)) document.getElementById(id).classList.remove('online');
           if (document.getElementById(id)) document.getElementById(id).classList.add('offline');
-          document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf205","\uf204");
+          //document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf205","\uf204");
         }
       }
     }
