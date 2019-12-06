@@ -77,14 +77,14 @@ Ardublockly.TOOLBOX_XML =
 '      </value>' +
 '    </block>' +
 '    <block type="kniwwelino_MATRIXreadPixel">' +
-'    <value name="X">' +
+'    <value name="X_READ">' +
 '        <block type="math_number">' +
-'          <field name="X">1</field>' +
+'          <field name="NUM">0</field>' +
 '        </block>' +
 '      </value>' +
-'    <value name="Y">' +
+'    <value name="Y_READ">' +
 '        <block type="math_number">' +
-'          <field name="Y">1</field>' +
+'          <field name="NUM">0</field>' +
 '        </block>' +
 '      </value>' +
 '    </block>' +
