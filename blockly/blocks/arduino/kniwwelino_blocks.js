@@ -642,43 +642,44 @@ Blockly.Blocks['kniwwelino_MATRIXshowPixels'] = {
 };
 
 Blockly.Blocks['kniwwelino_MATRIXreadPixel'] = {
-		  init: function() {
-				this.appendDummyInput()
-		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL);
-		    this.appendValueInput("X")
-		        .setCheck("Number")
-		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X);
-		    this.appendValueInput("Y")
-		        .setCheck("Number")
-		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y);
-		    this.setInputsInline(true);
-		    //this.setPreviousStatement(true, null);
-		    //this.setNextStatement(true, null);
-		    this.setOutput(true, null);
-			this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
-			this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP);
-			this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
-		  },
-			onchange: function(ev) {
-		    var x = Blockly.Arduino.valueToCode(this, 'X', Blockly.Arduino.ORDER_ATOMIC);
-				var y = Blockly.Arduino.valueToCode(this, 'Y', Blockly.Arduino.ORDER_ATOMIC);
-				if (x < 0 || x > 4) {
-					swal({
-						title: Blockly.Msg.KNIWWELINO_WARNING,
-						text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
-						className: "kniwwelino-bg"
-					});
-		    }
-				if ( y < 0 || y > 4) {
-					swal({
-						title: Blockly.Msg.KNIWWELINO_WARNING,
-						text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
-						className: "kniwwelino-bg"
-					});
-		   }
-		 } ,getBlockType: function() {
-			    return Blockly.Types.NUMBER;
-		 }
+  init: function() {
+		this.appendDummyInput()
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL);
+    this.appendValueInput("X_READ")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_X);
+    this.appendValueInput("Y_READ")
+        .setCheck("Number")
+        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_Y);
+    this.setInputsInline(true);
+    //this.setPreviousStatement(true, null);
+    //this.setNextStatement(true, null);
+    this.setOutput(true, Blockly.Types.NUMBER.output);
+	  this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+	  this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_READPIXEL_TIP);
+	  this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+  },
+	onchange: function(ev) {
+    var x = Blockly.Arduino.valueToCode(this, 'X_READ', Blockly.Arduino.ORDER_ATOMIC);
+		var y = Blockly.Arduino.valueToCode(this, 'Y_READ', Blockly.Arduino.ORDER_ATOMIC);
+		if (x < 0 || x > 4) {
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
+				className: "kniwwelino-bg"
+			});
+    };
+		if ( y < 0 || y > 4) {
+			swal({
+				title: Blockly.Msg.KNIWWELINO_WARNING,
+				text: Blockly.Msg.KNIWWELINO_MATRIX_DRAWPIXEL_WARNING,
+				className: "kniwwelino-bg"
+			});
+    };
+  },
+  getBlockType: function() {
+    return Blockly.Types.NUMBER;
+  }
 };
 
 Blockly.Blocks['kniwwelino_MATRIXsetBrightness'] = {
