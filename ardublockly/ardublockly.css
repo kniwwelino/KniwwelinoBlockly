@@ -243,6 +243,19 @@ body {
   padding-right: 5px;
 }
 
+#catDisplay {
+  color: white;
+  background-color: #00cccc;/*#00802b; */
+}
+
+#catDisplay\.label:before {
+  content: "\f26c";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: FontAwesome;
+  left:0px;
+  padding-right: 5px;
+}
+
+
 .kniwwelino-bg {
   background-image: url("./img/mascot.png");
   background-repeat: no-repeat;

@@ -753,3 +753,17 @@ Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETSPEED = "set effect speed to";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_SETBRIGHTNESS = "set brightness to";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP = "stop strip effect";
 Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_STOP_TIP = "stop strip effect";
+
+Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780 = "HD44780 Display with";
+Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_TIP = "Setup a HD44780 Display by I2C ";
+Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_AND = " and"
+Blockly.Msg.KNIWWELINO_DISPLAY_COLS = "columns";
+Blockly.Msg.KNIWWELINO_DISPLAY_ROWS = "rows";
+Blockly.Msg.KNIWWELINO_DISPLAY_COL = "column";
+Blockly.Msg.KNIWWELINO_DISPLAY_ROW = "row";
+Blockly.Msg.KNIWWELINO_DISPLAY_SETCURSER_HD44780 = "Set curser to";
+Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_SETCURSER_TIP = "Set curser to the column and row you like to start printing on the display";
+Blockly.Msg.KNIWWELINO_DISPLAY_PRINT_HD44780 = "print on display";
+Blockly.Msg.KNIWWELINO_DISPLAY_PRINT_HD44780_TIP = "Print a line of text on your display";
+Blockly.Msg.KNIWWELINO_DISPLAY_CLEAR_HD44780 = "clear display";
+Blockly.Msg.KNIWWELINO_DISPLAY_CLEAR_HD44780_TIP = "Clears your display from the cursor position";

@@ -17,6 +17,7 @@ goog.provide('Blockly.Blocks.kniwwelino_BUTTONS');
 goog.provide('Blockly.Blocks.kniwwelino_MQTT');
 goog.provide('Blockly.Blocks.kniwwelino_SENSOR');
 goog.provide('Blockly.Blocks.kniwwelino_AUDIO');
+goog.provide('Blockly.Blocks.kniwwelino_DISPLAY');
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly.Types');
@@ -29,6 +30,7 @@ Blockly.Blocks.kniwwelino_BUTTONS.HUE = "#88c542";
 Blockly.Blocks.kniwwelino_MQTT.HUE = "#f3a530";
 Blockly.Blocks.kniwwelino_SENSOR.HUE = "#4b709a";
 Blockly.Blocks.kniwwelino_AUDIO.HUE = "#a577bb";
+Blockly.Blocks.kniwwelino_DISPLAY.HUE = "#00cccc";
 
 //==== Kniwwelino functions===================================================
 
@@ -1443,9 +1445,9 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 
 		        	])
 		        , "EFFECT");
-			this.setOutput(true, null);
-			this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
-			this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_EFFECT_TIP);
+			  this.setOutput(true, null);
+			  this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
+			  this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_NEOPIXEL_EFFECT_TIP);
 		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 		  },
 		  getBlockType: function() {
@@ -1530,3 +1532,67 @@ Blockly.Blocks['kniwwelino_neopixelEffectChooser'] = {
 				 this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/neopixel');
 			   }
 			};
+
+      //===============================DISPLAY=================================
+
+      Blockly.Blocks['kniwwelino_HD44780_setup'] = {
+        init: function() {
+         this.setInputsInline(true);
+         this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780)
+          .appendField(new Blockly.FieldNumber(16, 0, 40, 0), 'LCD_COLS')
+          .appendField(Blockly.Msg.KNIWWELINO_DISPLAY_COLS + Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_AND);
+        this.appendDummyInput()
+           .appendField(new Blockly.FieldNumber(2, 0, 4, 0), 'LCD_ROWS')
+         this.appendDummyInput()
+          .appendField( Blockly.Msg.KNIWWELINO_DISPLAY_ROWS+ " " +Blockly.Msg.KNIWWELINO_SENSOR_AT_ADDRESS)
+          .appendField(new Blockly.FieldTextInput('0x27'), 'ADDRESS');
+          // .appendField(new Blockly.FieldDropdown(
+          //      [
+          //        ["0x27","0x27"],
+          //        ["0x3F","0x3F"]
+          //      ]), "ADDRESS");
+         this.setColour(Blockly.Blocks.kniwwelino_DISPLAY.HUE);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_TIP);
+         this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
+        }
+      };
+
+      Blockly.Blocks['kniwwelino_HD44780_setCurser'] = {
+        init: function() {
+         this.setInputsInline(true);
+         this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_DISPLAY_SETCURSER_HD44780 +' '+ Blockly.Msg.KNIWWELINO_DISPLAY_COL);
+         this.appendValueInput("LCD_COL");
+         this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_AND + ' ' + Blockly.Msg.KNIWWELINO_DISPLAY_ROW);
+         this.appendValueInput("LCD_ROW")
+         this.setPreviousStatement(true, null);
+		     this.setNextStatement(true, null);
+         this.setColour(Blockly.Blocks.kniwwelino_DISPLAY.HUE);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_DISPLAY_INIT_HD44780_SETCURSER_TIP);
+         this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
+        }
+      };
+
+      Blockly.Blocks['kniwwelino_HD44780_print'] = {
+        init: function() {
+         this.setInputsInline(true);
+         this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_DISPLAY_PRINT_HD44780)
+         this.appendValueInput("TEXT");
+         this.setPreviousStatement(true, null);
+		     this.setNextStatement(true, null);
+         this.setColour(Blockly.Blocks.kniwwelino_DISPLAY.HUE);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_DISPLAY_PRINT_HD44780_TIP);
+         this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
+        }
+      };
+
+      Blockly.Blocks['kniwwelino_HD44780_clear'] = {
+        init: function() {
+         this.setInputsInline(true);
+         this.appendDummyInput().appendField(Blockly.Msg.KNIWWELINO_DISPLAY_CLEAR_HD44780)
+         this.setPreviousStatement(true, null);
+		     this.setNextStatement(true, null);
+         this.setColour(Blockly.Blocks.kniwwelino_DISPLAY.HUE);
+         this.setTooltip(Blockly.Msg.KNIWWELINO_DISPLAY_CLEAR_HD44780_TIP);
+         this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
+        }
+      };
