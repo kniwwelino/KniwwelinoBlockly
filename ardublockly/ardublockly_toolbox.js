@@ -653,6 +653,27 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_getMAC" adv="true"></block>' +
 '  </category>' +
 '  <sep adv="true"></sep>' +
-// '  <category id="catOther" name="Other" adv="true">' +
-// '  </category>' +
+//'  <category id="catOther" name="Other" adv="true">' +
+//'  </category>' +
+'  <category id="catDisplay" name="Display" adv="true">' +
+'    <block type="kniwwelino_HD44780_setup"></block>' +
+'    <block type="kniwwelino_HD44780_setCurser">' +
+'      <value name="LCD_COL">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">0</field>' +
+'        </shadow>' +
+'      </value>' +
+'      <value name="LCD_ROW">' +
+'        <shadow type="math_number">' +
+'          <field name="NUM">0</field>' +
+'        </shadow>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_HD44780_print">' +
+'      <value name="TEXT">' +
+'        <shadow type="text">""</shadow>' +
+'      </value>' +
+'    </block>' +
+'    <block type="kniwwelino_HD44780_clear"></block>' +
+'  </category>' +
 '</xml>';
