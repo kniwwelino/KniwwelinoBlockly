@@ -334,6 +334,12 @@ Blockly.Arduino['kniwwelino_MATRIXsetBlinkRate'] = function(block) {
 	return 'Kniwwelino.MATRIXsetBlinkRate(' + blinkrate + ');\n';
 };
 
+Blockly.Arduino['kniwwelino_MATRIXsetRotation'] = function(block) {
+	kniwwelinoBaseCode();
+	var rot = block.getFieldValue('ROTATION');
+	return 'Kniwwelino.MATRIXsetRotation(' + rot + ');\n';
+};
+
 Blockly.Arduino['kniwwelino_MATRIXclear'] = function(block) {
 	kniwwelinoBaseCode();
 	return  'Kniwwelino.MATRIXclear();\n';
@@ -372,6 +378,16 @@ Blockly.Arduino['kniwwelino_MQTTsetGroup'] = function(block) {
 	var group = block.getFieldValue('GROUP');
 	group = group.trim().replace(" ","_");
 	Blockly.Arduino.addSetup('kniwwelino_MQTTsetGroup','Kniwwelino.MQTTsetGroup(String("' + group + '"));', true);
+	return '';
+};
+
+Blockly.Arduino['kniwwelino_MQTTsetUserBroker'] = function(block) {
+	kniwwelinoBaseCode();
+	var broker = block.getFieldValue('BROKER');
+  var port = block.getFieldValue('PORT');
+  var user = block.getFieldValue('USER');
+  var password = block.getFieldValue('PASSWORD');
+	Blockly.Arduino.addSetup('kniwwelino_MQTTUserSetup','Kniwwelino.MQTTUserSetup("'+broker+'", '+port+', "'+user+'", "'+password+'");', true);
 	return '';
 };
 
@@ -681,7 +697,7 @@ Blockly.Arduino['kniwwelino_toneChooser'] = function(block) {
 		Blockly.Arduino.addInclude('WS2812FX', '#include <WS2812FX.h>');
 		Blockly.Arduino.addDeclaration('kniwwelino_WS2812FXinit','WS2812FX ws2812fx = WS2812FX('+size+', '+pin+', NEO_GRB + NEO_KHZ800);');
 		Blockly.Arduino.addSetup('kniwwelino_WS2812FXsetup', '//initialize neopixel strip\n  ws2812fx.init();\n  ws2812fx.start();', true);
-
+    Blockly.Arduino.addKniwwelinoBGTask('kniwwelino_WS2812FX', "ws2812fx.service(); // handle Neopixel Effect");
 		return '';
 	};
 

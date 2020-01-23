@@ -91,6 +91,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MATRIXsetBrightness"></block>' +
 '    <block type="kniwwelino_MATRIXsetScrollSpeed"></block>' +
 '    <block type="kniwwelino_MATRIXsetBlinkRate"></block>' +
+'    <block type="kniwwelino_MATRIXsetRotation" adv="true"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catButtons" name="Buttons">' +
@@ -304,6 +305,7 @@ Ardublockly.TOOLBOX_XML =
 '        </shadow>' +
 '      </value>' +
 '    </block>' +
+'    <block type="kniwwelino_MQTTsetUserBroker" adv="true"></block>' +
 '  </category>' +
 '  <sep></sep>' +
 '  <category id="catLogic" name="Logic">' +

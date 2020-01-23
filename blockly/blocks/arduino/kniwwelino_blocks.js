@@ -755,6 +755,23 @@ Blockly.Blocks['kniwwelino_MATRIXsetBlinkRate'] = {
 		   }
 		};
 
+  Blockly.Blocks['kniwwelino_MATRIXsetRotation'] = {
+    		 init: function() {
+    		     this.appendDummyInput()
+    		        .appendField(Blockly.Msg.KNIWWELINO_MATRIX_ROTATION)
+    		        .appendField(new Blockly.FieldDropdown(
+    		            [["0","0"],
+    		            ["90","1"],
+    		            ["180","2"],
+    		            ["270","3"]]), "ROTATION");
+    		     this.setPreviousStatement(true, null);
+    		     this.setNextStatement(true, null);
+    		     this.setColour(Blockly.Blocks.kniwwelino_MATRIX.HUE);
+    		     this.setTooltip(Blockly.Msg.KNIWWELINO_MATRIX_ROTATION_TIP);
+    		     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'matrix');
+    		  }
+    };
+
 Blockly.Blocks['kniwwelino_MATRIXclear'] = {
    init: function() {
      this.appendDummyInput()
@@ -811,6 +828,27 @@ Blockly.Blocks['kniwwelino_BUTTONclicked'] = {
 
 //==== IOT functions ==============================================
 
+Blockly.Blocks['kniwwelino_MQTTsetUserBroker'] = {
+		   init: function() {
+				 this.setInputsInline(true);
+			     this.appendDummyInput()
+			         .appendField(Blockly.Msg.KNIWWELINO_MQTT_USERBROKER)
+			         .appendField(new Blockly.FieldTextInput('myBroker'), 'BROKER')
+               .appendField(Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPORT)
+               .appendField(new Blockly.FieldTextInput('1883'), 'PORT')
+               .appendField(Blockly.Msg.KNIWWELINO_MQTT_USERBROKERUSER)
+			         .appendField(new Blockly.FieldTextInput('myUser'), 'USER')
+               .appendField(Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPASSWORD)
+               .appendField(new Blockly.FieldTextInput('myPassword'), 'PASSWORD')
+			     this.setColour(Blockly.Blocks.kniwwelino_MQTT.HUE);
+			     this.setTooltip(Blockly.Msg.KNIWWELINO_MQTT_USERBROKER_TIP);
+			     this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'messages');
+		   },
+				/** @return {!string} Type of the block, text block always a string. */
+				getBlockType: function() {
+				  return Blockly.Types.TEXT;
+				}
+		};
 
 Blockly.Blocks['kniwwelino_MQTTsetGroup'] = {
 		   init: function() {

@@ -604,6 +604,8 @@ Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP = "Arrow up";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN = "Arrow down";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT = "Arrow left";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT = "Arrow right";
+Blockly.Msg.KNIWWELINO_MATRIX_ROTATION = "rotate the matrix by";
+Blockly.Msg.KNIWWELINO_MATRIX_ROTATION_TIP = "Rotates the display on the LED maxtrix by the given degrees";
 // BUTTONS
 Blockly.Msg.KNIWWELINO_BUTTON = "button";
 Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "is pressed";
@@ -625,6 +627,11 @@ Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "to group topic";
 Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "to public topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "attach variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Attach the selected variable to the specified message topic";
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKER = "Use MQTT broker at host:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPORT = "port:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERUSER = "username:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPASSWORD = "password:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKER_TIP = "Specify your own MQTT server to be used for all Messages. ATTENTION! Please create separate credentials for the Kniwwelino, as the username and password will be transfered to the Kniwwelino server while programming the board.!"
 //logic
 Blockly.Msg.KNIWWELINO_IS = "is";
 //times
