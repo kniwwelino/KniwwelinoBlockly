@@ -622,6 +622,11 @@ Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "an Gruppen-Topic";
 Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "an öffentliche Topic";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "verbinde Variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Verbinde die gewählte Variable (String) mit einem bestimmten Nachrichten-Thema (Topic)";
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKER = "Benutze MQTT Broker mit Hostname:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPORT = "Port:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERUSER = "Benutzername:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPASSWORD = "Passwort:"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKER_TIP = "Verwenden sie ihren eigenen MQTT Server für alle Nachrichten. VORSICHT! Bitte erstellen sie eigene Login Credentials für den Kniwwelino, da Benutzername und Password an den Kniwwelino Server übertragen werden wenn das Board programmiert wird."
 //logic
 Blockly.Msg.KNIWWELINO_IS = "ist";
 //times

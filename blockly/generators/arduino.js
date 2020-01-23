@@ -112,6 +112,7 @@ Blockly.Arduino.init = function(workspace) {
   Blockly.Arduino.kniwwelino_vartypes_ = Object.create(null);
   Blockly.Arduino.kniwwelino_loop_ = Object.create(null);
   Blockly.Arduino.kniwwelino_wrappers_ = Object.create(null);
+  Blockly.Arduino.kniwwelino_bgtasks_ = Object.create(null);
 
   if (!Blockly.Arduino.variableDB_) {
     Blockly.Arduino.variableDB_ =
@@ -180,8 +181,11 @@ Blockly.Arduino.finish = function(code) {
   //kniwwelino mqtt subscription stuff
   var received = createMQTTSubstriptions();
 
+  var bgTask = createBGTasks();
+
   // userSetupCode added at the end of the setup function without leading spaces
   var setups = [''], userSetupCode= '';
+
   if (Blockly.Arduino.setups_['userSetupCode'] !== undefined) {
     userSetupCode = '\n' + Blockly.Arduino.setups_['userSetupCode'];
     delete Blockly.Arduino.setups_['userSetupCode'];
@@ -206,6 +210,11 @@ Blockly.Arduino.finish = function(code) {
     setups.push(userSetupCode);
   }
 
+  if (bgTask !==  "") {
+    setups.push("\n  Kniwwelino.setBGTask(BackgroundTask);");
+  }
+
+
   // Clean up temporary data
   delete Blockly.Arduino.includes_;
   delete Blockly.Arduino.definitions_;
@@ -220,6 +229,7 @@ Blockly.Arduino.finish = function(code) {
   delete Blockly.Arduino.kniwwelino_subs_;
   delete Blockly.Arduino.kniwwelino_vartypes_;
   delete Blockly.Arduino.kniwwelino_wrappers_;
+  delete Blockly.Arduino.kniwwelino_bgtasks_;
 
   var allDefs = includes.join('\n') + variables.join('\n') +
       definitions.join('\n') + functions.join('\n\n') + kniwwelino_wrappers.join('\n\n');
@@ -236,15 +246,13 @@ Blockly.Arduino.finish = function(code) {
 	  code = code + '\nKniwwelino.loop(); // do background stuff...';
   }
 
-  if (allDefs.includes("WS2812FX.h")) {
-	  code = code + '\nws2812fx.service(); // handle Neopixel Effect';
-  }
-
-
+  //if (allDefs.includes("WS2812FX.h")) {
+	//  code = code + '\nws2812fx.service(); // handle Neopixel Effect';
+  //}
 
   var loop =  'void loop() {\n  ' + code.replace(/\n/g, '\n  ') + '\n}';
 
-  return allDefs + setup + loop + received + "\n\n" ;
+  return allDefs + setup + loop + received + bgTask + "\n\n" ;
 };
 
 
@@ -255,6 +263,10 @@ Blockly.Arduino.addLoop = function(loop, code) {
 
 Blockly.Arduino.addKniwwelinoSub = function(subscr, code) {
 	Blockly.Arduino.kniwwelino_subs_[subscr] = code;
+};
+
+Blockly.Arduino.addKniwwelinoBGTask = function(task, code) {
+	Blockly.Arduino.kniwwelino_bgtasks_[task] = code;
 };
 
 Blockly.Arduino.addKniwwelinoWrapperFunctions = function(subscr, code) {
@@ -286,6 +298,20 @@ function createMQTTSubstriptions() {
     		'\n}\n';
 }
 
+function createBGTasks() {
+	var tasks = "";
+	var cond = '  if ';
+	for(var task in Blockly.Arduino.kniwwelino_bgtasks_) {
+    tasks += '    ' + Blockly.Arduino.kniwwelino_bgtasks_[task] + '\n';
+	}
+
+  if (tasks.length == 0){
+    return '';
+  }
+	return '\n\nvoid BackgroundTask() {\n'+
+    		tasks +
+    		'}\n';
+}
 
 
 /**

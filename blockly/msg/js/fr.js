@@ -602,6 +602,9 @@ Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_UP = "flèche haut";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_DOWN = "flèche bas";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_LEFT = "flèche gauche";
 Blockly.Msg.KNIWWELINO_DRAWICON_ARROW_RIGHT = "flèche droite";
+Blockly.Msg.KNIWWELINO_MATRIX_ROTATION = "faire pivoter la matrice de" ;
+Blockly.Msg.KNIWWELINO_MATRIX_ROTATION_TIP = "fait pivoter l'affichage de la matrice de LED par les degrés donnés" ;
+
 // BUTTONS
 Blockly.Msg.KNIWWELINO_BUTTON = "bouton";
 Blockly.Msg.KNIWWELINO_BUTTON_DOWN = "est appuyé";
@@ -623,6 +626,12 @@ Blockly.Msg.KNIWWELINO_MQTT_TOTOPIC = "au groupe dans la rubrique";
 Blockly.Msg.KNIWWELINO_MQTT_TOPUBLICTOPIC = "à la rubrique publique";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH = "relie la variable";
 Blockly.Msg.KNIWWELINO_MQTT_ATTACH_TIP = "Relie la variable sélectionnée à la rubrique spécifiée";
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKER = "Utiliser le courtier MQTT chez l'hôte :"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPORT = "port :"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERUSER = "nom d'utilisateur :"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKERPASSWORD = "mot de passe :"
+Blockly.Msg.KNIWWELINO_MQTT_USERBROKER_TIP = "Spécifiez votre propre serveur MQTT à utiliser pour tous les messages. ATTENTION ! Veuillez créer des identifiants séparés pour le Kniwwelino, car le nom d'utilisateur et le mot de passe seront transférés au serveur Kniwwelino lors de la programmation du carte Kniwwelino !"
+
 //logic
 Blockly.Msg.KNIWWELINO_IS = "est";
 //times
