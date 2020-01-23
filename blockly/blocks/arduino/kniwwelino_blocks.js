@@ -1310,7 +1310,6 @@ Blockly.Blocks['kniwwelino_toneOff'] = {
 		  }
 };
 
-
 Blockly.Blocks['kniwwelino_toneChooser'] = {
 		  init: function() {
         let notes = new Blockly.FieldDropdown([
@@ -1330,7 +1329,8 @@ Blockly.Blocks['kniwwelino_toneChooser'] = {
         ], function(option) {
           var hasPause = (option == '0 /*Silence*/');
           this.sourceBlock_.updateShape_(hasPause);
-        ]);
+        });
+
         let octaves = new Blockly.FieldDropdown([
           ["0","0"],
           ["1","1"],
