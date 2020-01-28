@@ -503,7 +503,7 @@ Blockly.Arduino['kniwwelino_SHT30getValue'] = function(block) {
 	var address = block.getFieldValue('ADDRESS');
 
 	Blockly.Arduino.addDeclaration('SHT3X_'+address+'', 'SHT3X sht30_'+address+'('+address+');');
-	Blockly.Arduino.addSetup('SHT3Xinit_'+address+'', 'if(sht30.get()==0) Kniwwelino.logln("SHT30 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize SHT30 Sensor"); ', true);
+	Blockly.Arduino.addSetup('SHT3Xinit_'+address+'', 'if(sht30_'+address+'.get()==0) Kniwwelino.logln("SHT30 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize SHT30 Sensor"); ', true);
 
 	var value = block.getFieldValue('VALUE');
 	if (value == 'TEMPERATURE')  {
