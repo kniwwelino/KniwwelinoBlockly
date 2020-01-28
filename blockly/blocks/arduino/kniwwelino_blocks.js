@@ -84,6 +84,17 @@ Blockly.Blocks['kniwwelino_getMAC'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_getSSID'] = {
+		  init: function() {
+		    this.appendDummyInput()
+		    	.appendField(Blockly.Msg.KNIWWELINO_GETSSID);
+		    this.setOutput(true, Blockly.Types.TEXT.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_GETSSID_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_Kniwwelino.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + 'kniwwelino');
+		  }
+};
+
 Blockly.Blocks['kniwwelino_sleepsec'] = {
 		init: function() {
 		    this.appendValueInput('DELAY_TIME_SEC')

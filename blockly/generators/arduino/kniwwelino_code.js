@@ -51,6 +51,11 @@ Blockly.Arduino['kniwwelino_getMAC'] = function(block) {
 	return ['Kniwwelino.getMAC()', Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['kniwwelino_getSSID'] = function(block) {
+	kniwwelinoBaseCode();
+	return ['WiFi.SSID()', Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['kniwwelino_log'] = function(block) {
 	kniwwelinoBaseCode();
 	var text = Blockly.Arduino.valueToCode(block, 'TEXT', Blockly.Arduino.ORDER_UNARY_POSTFIX);
