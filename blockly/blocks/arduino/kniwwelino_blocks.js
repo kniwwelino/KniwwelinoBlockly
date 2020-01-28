@@ -403,7 +403,7 @@ Blockly.Blocks['kniwwelino_PINbuttonDown'] = {
 		  init: function() {
 		    this.appendDummyInput()
 		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_BUTTON)
-		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN')
+		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
 		    	.appendField(Blockly.Msg.KNIWWELINO_BUTTON_DOWN);
 		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_DOWN_TIP);
@@ -418,7 +418,7 @@ Blockly.Blocks['kniwwelino_PINbuttonClicked'] = {
 		  init: function() {
 		    this.appendDummyInput()
 		    	.appendField(Blockly.Msg.KNIWWELINO_PIN_BUTTON)
-		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.interrupt), 'PIN')
+		    	.appendField(new Blockly.FieldDropdown(Blockly.Arduino.Boards.selected.digitalPins), 'PIN')
 		    	.appendField(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED);
 		    this.setOutput(true, Blockly.Types.BOOLEAN.output);
 		    this.setTooltip(Blockly.Msg.KNIWWELINO_BUTTON_CLICKED_TIP);

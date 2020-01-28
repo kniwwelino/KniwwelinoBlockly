@@ -203,6 +203,12 @@ Blockly.Arduino.finish = function(code) {
 	 delete Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'];
   }
 
+  //kniwwelino MQTT set user broker second
+  if (Blockly.Arduino.setups_['kniwwelino_MQTTUserSetup'] !== undefined) {
+	 setups.push(Blockly.Arduino.setups_['kniwwelino_MQTTUserSetup']);
+	 delete Blockly.Arduino.setups_['kniwwelino_MQTTUserSetup'];
+  }
+
   for (var name in Blockly.Arduino.setups_) {
     setups.push(Blockly.Arduino.setups_[name]);
   }
