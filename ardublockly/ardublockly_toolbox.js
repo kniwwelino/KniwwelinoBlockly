@@ -651,6 +651,7 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_getName" adv="true"></block>' +
 '    <block type="kniwwelino_getIP" adv="true"></block>' +
 '    <block type="kniwwelino_getMAC" adv="true"></block>' +
+'    <block type="kniwwelino_getSSID" adv="true"></block>' +
 '  </category>' +
 '  <sep adv="true"></sep>' +
 //'  <category id="catOther" name="Other" adv="true">' +
