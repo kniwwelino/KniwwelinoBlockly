@@ -1,5 +1,5 @@
 
-# KniwwelinoBlockly
+# KniwwelinoBlockly -- NUSTEM fork for conNecT
 
 KniwwelinoBlockly is the visual programming language to program Kniwwelino&reg; micro-controller boards. You can use it online by visiting https://code.kniwwelino.lu or use the offline version provided on https://doku.kniwwelino.lu
 
