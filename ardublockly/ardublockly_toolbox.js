@@ -94,6 +94,11 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="kniwwelino_MATRIXsetRotation" adv="true"></block>' +
 '  </category>' +
 '  <sep></sep>' +
+// TODO: THIS IS WHERE CONNECT STUFF GOES
+'  <category id = "catConnect" name="conNecT">' +
+    '<block type="connect_test_block"></block>' +
+'  </category>' +
+'  <sep></sep>' +
 '  <category id="catButtons" name="Buttons">' +
 '    <block type="controls_if">' +
 '      <value name="IF0">' +

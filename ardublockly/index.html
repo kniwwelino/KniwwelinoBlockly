@@ -37,6 +37,7 @@
   <script src="../blockly/blocks/variables.js"></script>
   <script src="../blockly/blocks/procedures.js"></script>
   <script src="../blockly/blocks/arduino/kniwwelino_blocks.js"></script>
+  <script src="../blockly/blocks/arduino/connect_blocks.js"></script>
   <script src="../blockly/blocks/arduino/io.js"></script>
   <script src="../blockly/blocks/arduino/map.js"></script>
   <script src="../blockly/blocks/arduino/procedures.js"></script>
@@ -50,6 +51,7 @@
   <script src="../blockly/generators/arduino.js"></script>
   <script src="../blockly/generators/arduino/boards.js"></script>
   <script src="../blockly/generators/arduino/kniwwelino_code.js"></script>
+  <script src="../blockly/generators/arduino/connect_code.js"></script>;
   <script src="../blockly/generators/arduino/io.js"></script>
   <script src="../blockly/generators/arduino/lists.js"></script>
   <script src="../blockly/generators/arduino/logic.js"></script>
@@ -71,6 +73,7 @@
   <script src="msg/en.js"></script>
   <!--<script src="../blockly/msg/js/en_kniwwelino.js"></script>-->
 
+  <!-- TODO: examine this, work out whether to remove -->
   <script type="text/javascript">
     if (!navigator.doNotTrack || navigator.doNotTrack === null) {
       <!-- Matomo -->
@@ -125,6 +128,7 @@
 
 	<ul id="slide-out" class="side-nav">
     <li class="logo"><img src="img/sidenav_header.png" alt="Kniwwelino block image"></li>
+    <!-- TODO: Technically an HTML bug here, seems to render OK (next li isn't closed) -->
     <li class="no-padding">
       <ul>
         <li id="menu_load"><a href="#" onclick="_paq.push(['trackEvent', 'SideMenu', 'load_xml']);"><span class="translatable_open">Open</span><i class="mdi-file-file-upload left"></i></a></li>
