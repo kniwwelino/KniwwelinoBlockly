@@ -69,6 +69,22 @@ body {
   padding-right: 5px;
 }
 
+/* conNecT changes */
+
+#catConnect {
+  color: white;
+  background-color: #de6739;
+}
+
+#catConnect\.label:before {
+  content: "\f520"; ?* TODO: Fix this reference (should be bird https://fontawesome.com/icons/crow?style=solid)
+  font-family: FontAwesome;
+  left: 0px;
+  padding-right: 10px;
+}
+
+/* End conNecT changes */
+
 #catRGB {
   color: white;
   background-color: #30499b;
