@@ -28,6 +28,8 @@ Ardublockly.init = function() {
   Ardublockly.bindActionFunctions();
   Ardublockly.bindBlocklyEventListeners();
 
+  Ardublockly.bindDragEvents();
+
   Blockly.HSV_SATURATION =  0.87; //0.70;
   Blockly.HSV_VALUE = 0.83; //0.47; //0.70;
 
@@ -132,6 +134,69 @@ Ardublockly.bindActionFunctions = function() {
 	Ardublockly.bindClick_('copyright', Ardublockly.renderCopyright);
 
 	Ardublockly.bindKniwwelinoList();
+};
+
+Ardublockly.bindDragEvents = function() {
+  window.addEventListener('dragenter', function(e) {
+    Ardublockly.HighlightDragArea('fill:#e0FFe0;');
+  });
+
+  document.getElementById('content_blocks').addEventListener('dragenter',  Ardublockly.allowDrag);
+  document.getElementById('content_blocks').addEventListener('dragover',  Ardublockly.allowDrag);
+  document.getElementById('content_blocks').addEventListener('dragleave', function(e) {
+    Ardublockly.HighlightDragArea('fill:#fafafa;');
+  });
+
+  document.getElementById('content_blocks').addEventListener('drop', Ardublockly.handleDrop);
+};
+
+Ardublockly.HighlightDragArea = function(style) {
+  var elements = document.getElementsByClassName('blocklyMainBackground');
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style = style;
+  }
+};
+
+Ardublockly.allowDrag = function(e) {
+    if (true) {
+        e.dataTransfer.dropEffect = 'copy';
+        e.preventDefault();
+    }
+};
+
+Ardublockly.handleDrop = function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    var files = event.dataTransfer.files;
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      if (file.type == "text/xml") {
+        //generate filename 2 display as sketch_name
+        var filename = file.name;
+        var extensionPosition = filename.lastIndexOf('.');
+        if (extensionPosition !== -1) {
+          filename = filename.substr(0, extensionPosition);
+        }
+        //read the dropped file
+        var reader = new FileReader();
+        reader.onload = function() {
+          var success = Ardublockly.replaceBlocksfromXml(reader.result);
+          if (success) {
+            Ardublockly.renderContent();
+            Ardublockly.sketchNameSet(filename);
+          } else {
+            //Alert in case of non Kniwwelino or brocken xml was dropped
+            Ardublockly.alertMessage(
+                Ardublockly.getLocalStr('invalidXmlTitle'),
+                Ardublockly.getLocalStr('invalidXmlBody'),
+                false);
+          }
+        };
+        reader.readAsText(file);
+      }
+    }
+
+    Ardublockly.HighlightDragArea('fill:#fafafa;');
 };
 
 /** Sets the Ardublockly server IDE setting to upload and sends the code. */
