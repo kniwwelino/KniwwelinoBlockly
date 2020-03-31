@@ -86,7 +86,14 @@ Ardublockly.init = function() {
 			};
 		});
 	}
-
+  //check if managed Kniwwelinos are online
+  setInterval(() => {
+    if (document.getElementById('manageKniwwelino').style.display !== "none") {
+      if (document.getElementById('button_updateOnlineStatus')) {
+        document.getElementById('button_updateOnlineStatus').click();
+      }
+    }
+  }, 2500);
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -456,15 +463,7 @@ Ardublockly.initKniwwelinoList = function() {
 	}
 	kniwwelinos += '</select></li>';
 	document.getElementById('select_kniwwelino').innerHTML = kniwwelinos;
-  //check if managed Kniwwelinos are online
-  if (!Ardublockly.updateList) setInterval(() => {
-    Ardublockly.updateList = true;
-    if (kniwwelinoLocalStorage) {
-      for (var i = 0; i < kniwwelinoJSON.length; i++) {
-        Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
-      }
-    }
-  }, 3500);
+
 };
 
 Ardublockly.setSelectedKniwwelino = function(mac) {
