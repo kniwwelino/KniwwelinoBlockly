@@ -106,12 +106,16 @@ Ardublockly.loadXmlBlockFile = function(xmlFile, cbSuccess, cbError) {
     if (request.readyState == 4) {
       if (request.status == 200) {
 				var success = Ardublockly.replaceBlocksfromXml(request.responseText);
-        cbSuccess(success);
-      } else {
-        cbError();
+        if(cbSuccess){
+			    cbSuccess(success);
+		      }
+        } else {
+		      if(cbError){
+			      cbError();
+		      }
+        }
       }
-    }
-  };
+    };
   try {
     request.open('GET', xmlFile, true);
     request.onreadystatechange = requestCb;

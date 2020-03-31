@@ -35,7 +35,7 @@ table.leds td {
     border-radius: 30%;
     box-shadow: inset 0 0 1px #666666;
 		transform: rotate3d(0, 0, 1, 45deg);
-    /* background: lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%); */ */
+    /* background: lightgrey radial-gradient(ellipse at center, lightgrey 0%, white 50%, lightgrey 100%); */
 }
 
 table.leds td.active {

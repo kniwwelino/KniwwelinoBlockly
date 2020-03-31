@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+@import '../js_libs/intro.js-1.1.1/introjs.css';
+
+/* introJs fix */
+.introjs-helperNumberLayer {
+    box-sizing: initial;
+}
+
+#tutorialMenuList img {
+    width: 7rem;
+    border: 0px solid #FFFFFF;
+    display: inline-block;
+}
+
+#tutorialMenuList div {
+    background-color: #E8F4F4;
+    width: 100%;
+    min-height: 7rem;
+    margin: 2rem 0 1rem 0;
+}
+
+#tutorialMenu h4 {
+    font-size: 2rem;
+}
+
+#tutorialMenuList h5 {
+    vertical-align: top;
+    margin: 2vmax 2vmax 0 2vmax;
+    font-size: 1.5rem;
+    display: inline-block;
+    max-width: 75%;
+    color: black;
+}
+
+#tutoSidebar {
+    position: relative;
+    padding: 10px;
+}
+
+#tuto_area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#tuto_area i.mdi-social-school {
+    line-height: 1.75rem;
+    font-size: 1.75rem;
+}
+
+#tuto_area h5 {
+    margin-top: 0px;
+}
+
+#tutoStep {
+    height: calc(100% - 80px);
+    padding-top: 0.75rem;
+    overflow: auto;
+}
+
+#waitingLoopModal {
+    border-radius: 8px;
+    background-color: gray;
+    height: 150px !important;
+    width: 150px !important;
+    top: 30% !important;
+}
+
+#waitingLoopModal .modal-content, #waitingLoop {
+    height: 100%;
+}
+
+#tutorialAnalysisResult {
+    max-width: 550px;
+    max-height: 300px;
+}
+
+#tutoButtonValidate {
+    position: absolute;
+    right: 15px;
+    top: -27px;
+    width: 55px;
+    height: 55px;
+    width: 55px;
+}
+
+#tutoButtonValidate i {
+    font-size: 2.4rem !important;
+    line-height: 55px;
+}
+
+.tutoNavButton {
+    width: 40px;
+    height: 40px;
+}
+
+.tutoNavButton.disabled {
+    cursor: inherit;
+}
+
+#tutoStepTitle {
+    display: inline-block;
+    margin: 0 0.75rem;
+}
+
+.tutoNavButton i {
+    font-size: 2.0rem !important;
+    line-height: 40px;
+}
+
+.tutoButton i {
+    color: white;
+}
+
+.tutoButton:hover:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.25);
+    transition: all .3s linear;
+}
+
+#tutoAnalysisGotoTutoList {
+    display: inline-block;
+    font-size: 1.8rem !important;
+    color: #444;
+    vertical-align: bottom;
+    margin-left: 1rem;
+}
+
+#tutoAnalysisGotoNextStep {
+    margin-left: 1rem;
+}
+
+#expandTutoButton {
+    display: none;
+}
+
+.blocklyPathLight.tutoOk, .blocklyPath.tutoOk, .blocklySelected .blocklyPath.tutoOk
+    {
+    stroke: lime;
+    stroke-width: 3;
+}
+
+.blocklyPathLight.tutoOkPartialNoChild, .blocklyPath.tutoOkPartialNoChild,
+    .blocklySelected .blocklyPath.tutoOkPartialNoChild {
+    stroke: lime;
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+}
+
+.blocklyPathLight.tutoOkPartialWithChild, .blocklyPath.tutoOkPartialWithChild,
+    .blocklySelected .blocklyPath.tutoOkPartialWithChild {
+    stroke: lime;
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+}

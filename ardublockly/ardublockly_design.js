@@ -202,7 +202,7 @@ Ardublockly.resizeBlocklyWorkspace = function() {
   var wrapperPanelSize =
       Ardublockly.getBBox_(document.getElementById('blocks_panel'));
 
-  contentBlocks.style.top = wrapperPanelSize.y + 'px';
+  //contentBlocks.style.top = wrapperPanelSize.y + 'px';
   contentBlocks.style.left = wrapperPanelSize.x + 'px';
   // Height and width need to be set, read back, then set again to
   // compensate for scrollbars.

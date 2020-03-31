@@ -9,6 +9,8 @@
 /** Create a namespace for the application. */
 var Ardublockly = Ardublockly || {};
 
+Ardublockly.updateList = false;
+
 /** Initialize function for Ardublockly, to be called on page load. */
 Ardublockly.init = function() {
   // Lang init must run first for the rest of the page to pick the right msgs
@@ -84,14 +86,7 @@ Ardublockly.init = function() {
 			};
 		});
 	}
-  //check if managed Kniwwelinos are online
-  setInterval(() => {
-    if (document.getElementById('manageKniwwelino').style.display !== "none") {
-      if (document.getElementById('button_updateOnlineStatus')) {
-        document.getElementById('button_updateOnlineStatus').click();
-      }
-    }
-  }, 2500);
+
 };
 
 /** Binds functions to each of the buttons, nav links, and related. */
@@ -116,7 +111,7 @@ Ardublockly.bindActionFunctions = function() {
   //Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolbox);
   Ardublockly.bindClick_('button_toggle_toolbox', Ardublockly.toogleToolboxSimple);
 
-  Ardublockly.bindClick_('expandCodeButtons', Ardublockly.toggleSourceCodeVisibility);
+  Ardublockly.bindClick_('expandSourceCodeButton', Ardublockly.toggleSidebarElement);
 	Ardublockly.bindClick_('button_manageKniwwelino', Ardublockly.renderKniwwelinosModal);
   // Ardublockly.bindClick_('menu_button_restoreKniwwelinoDevices', Ardublockly.loadKniwwelinoDevicesFile);
   // Ardublockly.bindClick_('menu_button_backupKniwwelinoDevices', Ardublockly.saveKniwwelinoDevicesFile);
@@ -461,6 +456,15 @@ Ardublockly.initKniwwelinoList = function() {
 	}
 	kniwwelinos += '</select></li>';
 	document.getElementById('select_kniwwelino').innerHTML = kniwwelinos;
+  //check if managed Kniwwelinos are online
+  if (!Ardublockly.updateList) setInterval(() => {
+    Ardublockly.updateList = true;
+    if (kniwwelinoLocalStorage) {
+      for (var i = 0; i < kniwwelinoJSON.length; i++) {
+        Ardublockly.updateOnlineStatus(kniwwelinoJSON[i].id);
+      }
+    }
+  }, 3500);
 };
 
 Ardublockly.setSelectedKniwwelino = function(mac) {
@@ -507,7 +511,7 @@ Ardublockly.renderKniwwelinosModal = function() {
     kniwwelinos += '<a href="#!" class="btn-flat listReload"><i id="button_updateOnlineStatus" class="mdi-av-loop"></i></a>';
     kniwwelinos += '<ul class="collection"></ul>';
 
-    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'restore']);">`;
+    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices" onclick="if(_paq)_paq.push(['trackEvent', 'ManageKniwwelino', 'restore']);">`;
     kniwwelinos += '  <span class="translatable_restore">Restore</span>';
     kniwwelinos += '</a>';
 	} else {
@@ -536,14 +540,14 @@ Ardublockly.renderKniwwelinosModal = function() {
                       //  <option value="latest">latest</option>
                       // </select>
 
-      kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'delete']);"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
+      kniwwelinos += `<a href="#!" class="btn-floating btn secondary-content" onclick="if(_paq)_paq.push(['trackEvent', 'ManageKniwwelino', 'delete']);"><i id="delete_addKniwwelino_${kniwwelinoJSON[i].id}" class="mdi-content-remove-circle-outline red"></i></a>`;
 			kniwwelinos += '</li>';
 		}
 		kniwwelinos += '</ul>';
-    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_backupKniwwelinoDevices" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'backup']);">`;
+    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_backupKniwwelinoDevices" onclick="if(_paq)_paq.push(['trackEvent', 'ManageKniwwelino', 'backup']);">`;
     kniwwelinos += '  <span class="translatable_backup">'+Ardublockly.getLocalStr('backup')+'</span>';
     kniwwelinos += '</a>';
-    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'restore']);">`;
+    kniwwelinos += `<a href="#!" class="backuprestore waves-effect waves-green btn-flat left" id="menu_button_restoreKniwwelinoDevices" onclick="if(_paq)_paq.push(['trackEvent', 'ManageKniwwelino', 'restore']);">`;
     kniwwelinos += '  <span class="translatable_restore">'+Ardublockly.getLocalStr('restore')+'</span>';
     kniwwelinos += '</a>';
 	}
@@ -571,7 +575,7 @@ Ardublockly.renderKniwwelinosModal = function() {
   kniwwelinos += '<label for="name">'+Ardublockly.getLocalStr('manageKniwwelinoName')+'</label>';
   kniwwelinos += '<input placeholder="'+Ardublockly.getLocalStr('manageKniwwelinoPlaceholder')+'" id="name_addKniwwelino" type="text" class="validate">';
   kniwwelinos += '</div>';
-  kniwwelinos += `<a href="#!" id="button_addKniwwelino" class="btn-floating disabled secondary-content green" onclick="_paq.push(['trackEvent', 'ManageKniwwelino', 'add']);"><i class="mdi-content-add-circle-outline"></i></a>`;
+  kniwwelinos += `<a href="#!" id="button_addKniwwelino" class="btn-floating disabled secondary-content green" onclick="if(_paq)_paq.push(['trackEvent', 'ManageKniwwelino', 'add']);"><i class="mdi-content-add-circle-outline"></i></a>`;
 
 	kniwwelinos += '</div>';
 
@@ -741,11 +745,11 @@ Ardublockly.updateOnlineStatus = function(id) {
         if (val2.online) {
           if (document.getElementById(id)) document.getElementById(id).classList.remove('offline');
           if (document.getElementById(id)) document.getElementById(id).classList.add('online');
-          //document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf204","\uf205");
+          document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf204","\uf205");
         } else {  //offline
           if (document.getElementById(id)) document.getElementById(id).classList.remove('online');
           if (document.getElementById(id)) document.getElementById(id).classList.add('offline');
-          //document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf205","\uf204");
+          document.getElementById('select_'+id).innerHTML=document.getElementById('select_'+id).innerHTML.replace("\uf205","\uf204");
         }
       }
     }
@@ -927,19 +931,71 @@ Ardublockly.XmlTextareaToBlocks = function() {
         false);
   }
 };
+/**
+ * Show sidebar element
+ *
+ * @param {HTMLElement} element Sidebar element to show
+ *
+ * @return {void} Nothing
+ */
+Ardublockly.sidebarShowElement = function(element){
+    let sidebar = document.getElementById('sidebar');
+    //hide children
+    Array.from(sidebar.children).filter(function(el){
+        if(el.tagName == "DIV"){
+            return true;
+        }
+    }).forEach(function(el){
+        el.style.display = "none";
+    });
+    element.style.display = "block";
+    Ardublockly.sidebarShow();
+    //update side button
+    $('#expandCodeButtons').find('i').removeClass("fa-chevron-up").addClass("fa-chevron-right");
+    $('#expandCodeButtons').find('a[data-side-target-id="'+element.id+'"] i').removeClass("fa-chevron-right").addClass("fa-chevron-up");
+    Ardublockly.contentWidthToggle();
+}
 
-Ardublockly.toggleSourceCodeVisibility = function() {
-  if (document.getElementById('codesidebar').style.visibility == "hidden") {
-    document.getElementById('blocks_workspace').style.width = "65%";
-		document.getElementById('codesidebar').style.width = "35%";
-    document.getElementById('codesidebar').style.visibility = "visible";
-		document.getElementById('codesidebar').style.display = "";
-  } else {
-    document.getElementById('blocks_workspace').style.width = "100%";
-    document.getElementById('codesidebar').style.visibility = "hidden";
-		document.getElementById('codesidebar').style.display = "none";
-  }
-   Ardublockly.contentWidthToggle();
+/**
+ * Show the sidebar
+ *
+ * @return {void} Nothing
+ */
+Ardublockly.sidebarShow = function(){
+    let sidebar = document.getElementById('sidebar');
+    document.getElementById('blocks_workspace').style.width = "calc(65% - 0.75rem)";
+    sidebar.style.width = "35%";
+    sidebar.style.display = "block";
+}
+
+/**
+ * Toggle a sidebar element on user interaction
+ *
+ * @param {HTMLElement} element Sidebar element to show
+ *
+ * @return {void} Nothing
+ */
+Ardublockly.toggleSidebarElement = function(event){
+    let sidebar = document.getElementById('sidebar');
+    let element = document.getElementById(event.target.closest('[data-side-target-id]').dataset.sideTargetId);
+    let hideSidebar = function(){
+        document.getElementById('blocks_workspace').style.width = "calc(100% - 0.75rem)";
+        sidebar.style.display = "none";
+        $('#expandCodeButtons').find('i').removeClass("fa-chevron-up").addClass("fa-chevron-right");
+    };
+
+    if (!sidebar.style.display || sidebar.style.display == "none") {
+        // sidebar closed
+        Ardublockly.sidebarShowElement(element);
+    }else{
+        // sidebar opened
+        if (!element.style.display || element.style.display == "none") {
+            Ardublockly.sidebarShowElement(element);
+        }else{
+            hideSidebar();
+        }
+    }
+    Ardublockly.contentWidthToggle();
 }
 
 /**
@@ -1103,7 +1159,7 @@ Ardublockly.bindClick_ = function(el, func) {
   var propagateOnce = function(e) {
     e.stopPropagation();
     e.preventDefault();
-    func();
+    func(e);
   };
   el.addEventListener('ontouchend', propagateOnce);
   el.addEventListener('click', propagateOnce);

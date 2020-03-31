@@ -1,0 +1,30 @@
+{
+	"paths": {
+		"text": "js_libs/requirejs/text",
+		"json": "js_libs/requirejs/plugins/json",
+		"helpers": "js_libs/helpers/common",
+		"sprintf": "js_libs/sprintf.min",
+		"tutorial": "tutorial/tutorial",
+		"runner": "tutorial/runner",
+		"canvasloader": "js_libs/canvasloader/heartcode-canvasloader-min-0.9.1",
+		"zlib_and_gzip": "js_libs/zlib.js-develop/bin/zlib_and_gzip.min",
+		"tutorials": "tutorial/model",
+		"vkBeautify": "js_libs/vkBeautify/vkbeautify",
+		"introjs": "js_libs/intro.js-1.1.1/intro"
+	},
+	"shim": {
+		"vkBeautify": {
+			"exports": "vkbeautify"
+		},
+		"canvasloader": {
+			"exports": "CanvasLoader"
+		},
+		"zlib_and_gzip": {
+			"exports": "Zlib"
+		},
+		"xml-js": {
+			"exports": "xml2js",
+			"init": "return {xml2js:xml2js, xml2json:xml2json};"
+		}
+	}
+}
