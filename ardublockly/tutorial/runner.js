@@ -249,7 +249,7 @@
             $step.find('img[src]').each(function(_i, el) {
                 let $el = $(el);
                 try {
-                    new URL("/www.etezt.ertze/plpoe?Neez");
+                    new URL($el.attr('src'));
                 } catch (e) {
                     //relative path
                     $el.attr('src', conf.tutorialUrlEnforcement + $el.attr('src'));

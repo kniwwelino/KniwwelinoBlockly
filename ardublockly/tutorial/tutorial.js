@@ -133,7 +133,13 @@
                 let urlBase = new URL(conf.tutorialSitemap);
                 tutorials.forEach(function(tuto) {
                     // go absolute
-                    let imageSrc = (new URL(tuto.imageSrc, urlBase)).href;
+                    let imageSrc = tuto.imageSrc;
+                    try {
+                        new URL($el.attr('src'));
+                    } catch (e) {
+                        //relative path
+                        imageSrc = conf.tutorialUrlEnforcement + imageSrc;
+                    }
                     // create link to trigger tutorial based on tuto path
                     let url = new URL(w.location.href);
                     let params = new URLSearchParams(url.search);
@@ -195,7 +201,7 @@
              */
             function startWaiting() {
                 let $waitingLoop = $('#waitingLoopModal');
-                if($waitingLoop.css('display') == "block"){
+                if ($waitingLoop.css('display') == "block") {
                     h.log("already waiting");
                     return;
                 }
