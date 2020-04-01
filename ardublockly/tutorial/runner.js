@@ -31,7 +31,7 @@
          * 
          * @return {void} Nothing
          */
-        function init(data, readyCb, fatalCb) { 
+        function init(data, readyCb, fatalCb) {
             // clean up ?
             if (ranOnce) {
                 close();
@@ -244,10 +244,16 @@
             $('#tutoStepIndex').text(stepIndex + 1);
             // get step
             let $step = step['$html'].find('body').clone().children();
+            console.log(step);
             // relative link goes absolute
             $step.find('img[src]').each(function(_i, el) {
                 let $el = $(el);
-                $el.attr('src', new URL($el.attr('src'), step.url));
+                try {
+                    new URL("/www.etezt.ertze/plpoe?Neez");
+                } catch (e) {
+                    //relative path
+                    $el.attr('src', conf.tutorialUrlEnforcement + $el.attr('src'));
+                }
             });
             // build display
             let $tutoStep = $('#tutoStep');
@@ -505,7 +511,7 @@
                 if ((stepIndex + 1) >= _data['steps'].length) {
                     msg += getLocalStr("tutoTutoEnded") + "<br />";
                     let endTutoBt = `<a id="tutoAnalysisGotoTutoList" href="#"><i class="mdi-social-school left"></i></a>`;
-                    msg += getLocalStr("tutoTutoEndedNextOne")+ endTutoBt;
+                    msg += getLocalStr("tutoTutoEndedNextOne") + endTutoBt;
                 } else {
                     // not the last step
                     msg += getLocalStr("tutoStepEnded") + "<br />";

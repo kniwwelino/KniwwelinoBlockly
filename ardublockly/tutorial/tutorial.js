@@ -195,6 +195,10 @@
              */
             function startWaiting() {
                 let $waitingLoop = $('#waitingLoopModal');
+                if($waitingLoop.css('display') == "block"){
+                    h.log("already waiting");
+                    return;
+                }
                 $waitingLoop.data("waitingLoop").show();
                 $waitingLoop.openModal({ dismissible: false });
             }

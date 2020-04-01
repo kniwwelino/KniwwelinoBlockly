@@ -106,12 +106,10 @@
             function onSitemapFetched(data, ajaxCtx, returnDeferred) {
                 let $sitemapXml = $((new TextDecoder()).decode((new zlib.Gunzip(new Uint8Array(data))).decompress()));
                 let tree = {};
-                let urlBase = new URL(ajaxCtx.url).pathname;
                 // extract hierarchy
                 $sitemapXml.find('loc').each(function(_i, el) {
                     let url = new URL($(el).text());
-                    let pathname = url.pathname.replace(urlBase, '');
-                    let path = pathname.split('/');
+                    let path = url.pathname.substring(1).split('/');
                     let current = tree;
                     let localPath = [];
                     path.forEach(function(part) {
@@ -480,15 +478,12 @@
             function onTutoElementsFetched(tuto, returnDeferred) {
                 let deferreds = [];
                 // preload images
-                let urlBase = new URL(conf.tutorialSitemap);
                 tuto.steps.forEach(function(step) {
                     step.$html.find("img[src]").each(function() {
                         let imgDeferred = $.Deferred();
                         let $img = $('<img />');
-                        $img.on("load", function() {
-                            imgDeferred.resolve();
-                        });
-                        $img.attr('src', (new URL($(this).attr('src'), urlBase)).href);
+                        $img.on("load", () => imgDeferred.resolve()).error(e => imgDeferred.reject($(e.currentTarget).attr("src")));
+                        $img.attr('src', conf.tutorialUrlEnforcement + $(this).attr('src'));
                         if (step.nb == 1) {
                             deferreds.push(imgDeferred);
                         }
@@ -497,8 +492,8 @@
                 let done = function() {
                     returnDeferred.resolve(tuto);
                 };
-                let fail = function() {
-                    returnDeferred.reject(sprintf.sprintf('preloading images failed: %s', this.url));
+                let fail = function(msg) {
+                    returnDeferred.reject(sprintf.sprintf('preloading images failed: %s', msg));
                 };
                 $.when.apply($, deferreds).then(done, fail);
             }
