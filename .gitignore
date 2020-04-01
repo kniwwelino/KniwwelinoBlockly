@@ -19,6 +19,9 @@ $RECYCLE.BIN/
 .idea/
 npp.session
 .editorconfig
+#eclipse
+.project
+.settings
 
 ##########
 # Python #
