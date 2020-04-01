@@ -244,7 +244,6 @@
             $('#tutoStepIndex').text(stepIndex + 1);
             // get step
             let $step = step['$html'].find('body').clone().children();
-            console.log(step);
             // relative link goes absolute
             $step.find('img[src]').each(function(_i, el) {
                 let $el = $(el);

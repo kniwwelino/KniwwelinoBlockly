@@ -121,27 +121,29 @@
                     });
                 });
                 // extract tutorials
-                let path = [];
                 // find dedicated namespace
-                let namespacePart = ardublockly.LANG;
-                if (!(namespacePart in tree)) {
-                    namespacePart = 'en';
-                    if (!(namespacePart in tree)) {
-                        returnDeferred.reject(sprintf.sprintf('namespacePart not found: %s', namespacePart));
-                        return;
+                let hasPathInTree = function(path, tree) {
+                    for (let i = 0; i < path.length; i++) {
+                        if (path[i] in tree) {
+                            tree = tree[path[i]];
+                            continue;
+                        }
+                        return null;
+                    }
+                    return tree;
+                };
+                let path = [ardublockly.LANG, 'tutorial'];
+                let treePart = hasPathInTree(path, tree);
+                if (!treePart) {
+                    // fallback to english
+                    path = ['en', 'tutorial'];
+                    treePart = hasPathInTree(path, tree);
+                    if (!treePart) {
+                        returnDeferred.reject(sprintf.sprintf('namespacePart not found: en/tutorial'));
                     }
                 }
-                path.push(namespacePart);
-                tree = tree[namespacePart];
-                namespacePart = 'tutorial';
-                if (!(namespacePart in tree)) {
-                    returnDeferred.reject(sprintf.sprintf('namespacePart not found: %s', namespacePart));
-                    return;
-                }
-                path.push(namespacePart);
-                tree = tree[namespacePart];
                 // deal with tutorials in root
-                collectTutorials(tree, path);
+                collectTutorials(treePart, path);
                 returnDeferred.resolve();
             }
             /**
