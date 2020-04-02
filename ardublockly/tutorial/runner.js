@@ -481,10 +481,6 @@
          * @return {void} Nothing
          */
         function feedbackAuto(report) {
-
-            // @TODO
-            let sameBlocksIds = report.$sameBlocks.toArray().map(Mb => Mb.id);
-
             // pop-up
             if (report.strictSameBlocks.length == report.$solutionBlocks.length) {
                 feedBackMessageGood(report);
@@ -520,13 +516,13 @@
                     msg += getLocalStr("tutoStepEndedNextOne") + nextStepBt;
                 }
             }
-            ardublockly.alertMessage(getLocalStr('tutoGoodAnswer'), msg);
+            displayAnalysisMessage(getLocalStr('tutoGoodAnswer'), msg);
             $("#tutoAnalysisGotoTutoList").click(_e => {
-                $('#gen_alert').closeModal();
+                $('#tutorialAnalysisResult').closeModal();
                 $('#tutorialMenu').openModal();
             });
             $("#tutoAnalysisGotoNextStep").click(_e => {
-                $('#gen_alert').closeModal();
+                $('#tutorialAnalysisResult').closeModal();
                 next();
             });
         }
@@ -555,6 +551,14 @@
             }
             displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), msg);
         }
+        /**
+         * Display a message in the modal analysis result message box
+         * 
+         * @param {string} title Title of the message
+         * @param {mixed} body body of the message, Type: htmlString or Element or Text or Array or jQuery (see jQuery.append) 
+         * 
+         * @return {void} Nothing
+         */
         function displayAnalysisMessage(title, body) {
             $('#tutorialAnalysisResult_title').text(title);
             $('#tutorialAnalysisResult_body').text('').append(body);
