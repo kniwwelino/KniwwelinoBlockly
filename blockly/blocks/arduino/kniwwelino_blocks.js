@@ -205,7 +205,7 @@ Blockly.Blocks['kniwwelino_RGBselectColor'] = {
 		   init: function() {
 		     this.appendDummyInput()
 		         .appendField(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR)
-		         .appendField(new Blockly.FieldColour("#00FF00"), "COLOR");
+		         .appendField(new Blockly.FieldColour("#00ff00"), "COLOR");
 		     this.setOutput(true, Blockly.Types.TEXT.output);
 		     this.setColour(Blockly.Blocks.kniwwelino_RGB.HUE);
 		     this.setTooltip(Blockly.Msg.KNIWWELINO_RGB_SELECTCOLOR_TIP);

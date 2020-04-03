@@ -10,6 +10,7 @@ Please note that there are submodules in the repository that need initialisation
 git clone https://github.com/kniwwelino/kniwwelinoblockly.git
 cd kniwwelinoblockly
 git submodule update --init --recursive
+patch -r - -p0 -i patches/colorpicker.patch
 ```
 
 

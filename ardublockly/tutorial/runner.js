@@ -16,6 +16,7 @@
         const STYLE_CLASS_OK = "tutoOk";
         const STYLE_CLASS_PARTIAL_OK_NO_CHILD = "tutoOkPartialNoChild";
         const STYLE_CLASS_PARTIAL_OK_WITH_CHILD = "tutoOkPartialWithChild";
+        const AUTO_VALIDATION = false;
         let ranOnce = false;
         let paused = false;
         let fatal = function() {
@@ -74,6 +75,10 @@
          * @return {void} Nothing
          */
         function validateAuto() {
+            if (!AUTO_VALIDATION) {
+                resetBlockHighlighting();
+                return;
+            }
             if (!_data) {
                 return;
             }
@@ -368,7 +373,7 @@
                         });
                     }
                 }
-                // Partial validation
+                // Partial validation (block values validation, not nested blocks)
                 let partialBlocksToParse = Array.from(strictExtraBlocks);
                 let partialExtraBlocks = Array.from(strictExtraBlocks);
                 let partialMissingBlocks = Array.from(strictMissingBlocks);
@@ -503,16 +508,21 @@
             } else {
                 // perfect
                 // is last step ?
+                let compileBt = `<a id="tutoAnalysisCompile" 
+                    class="button_ide_large waves-effect waves-light waves-circle z-depth-1-half arduino_orange tutoButton tutoButtonValidate disabled grey">
+                    <i class="mdi-av-play-arrow"></i></a>`;
                 if ((stepIndex + 1) >= _data['steps'].length) {
                     msg += getLocalStr("tutoTutoEnded") + "<br />";
+                    msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
                     let endTutoBt = `<a id="tutoAnalysisGotoTutoList" href="#"><i class="mdi-social-school left"></i></a>`;
                     msg += getLocalStr("tutoTutoEndedNextOne") + endTutoBt;
                 } else {
                     // not the last step
                     msg += getLocalStr("tutoStepEnded") + "<br />";
+                    msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
                     let nextStepBt = `<a id="tutoAnalysisGotoNextStep" 
-                    class="button_ide_large waves-effect waves-light waves-circle z-depth-1-half tutoButton arduino_orange tutoNavButton">
-                     <i class="mdi-navigation-chevron-right"></i></a>`;
+                        class="button_ide_large waves-effect waves-light waves-circle z-depth-1-half arduino_orange tutoButton tutoNavButton">
+                        <i class="mdi-navigation-chevron-right"></i></a>`;
                     msg += getLocalStr("tutoStepEndedNextOne") + nextStepBt;
                 }
             }
@@ -524,6 +534,13 @@
             $("#tutoAnalysisGotoNextStep").click(_e => {
                 $('#tutorialAnalysisResult').closeModal();
                 next();
+            });
+            $("#tutoAnalysisCompile").filter((_i, _el) => {
+                let bt = $("#button_ide_large");
+                return !(bt.hasClass('grey') || bt.hasClass('disabled'));
+            }).removeClass("grey disabled").click(_e => {
+                $("#button_ide_large i").click();
+                $('#tutorialAnalysisResult').closeModal();
             });
         }
         /**

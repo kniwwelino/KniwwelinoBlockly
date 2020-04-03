@@ -480,7 +480,7 @@
                 <field name="EFFECT">RGB_BLINK</field>
                 <value name="COLOR">
                   <shadow type="kniwwelino_RGBselectColor" id="5i!v%Cna08cb}8dnFiUp">
-                    <field name="COLOR">#00FF00</field>
+                    <field name="COLOR">#00ff00</field>
                   </shadow>
                 </value>
               </block>

@@ -149,7 +149,7 @@
         <block type="kniwwelino_RGBsetColorFromString">
             <value name="COLOR">
                 <shadow type="text">
-                    <field name="TEXT">00FF00</field>
+                    <field name="TEXT">00ff00</field>
                 </shadow>
             </value>
         </block>

@@ -13,7 +13,7 @@
             <field name="EFFECT">RGB_ON</field>
             <value name="COLOR">
               <shadow type="kniwwelino_RGBselectColor" id="Hqh-11Zau4l/W_YXkFZ,">
-                <field name="COLOR">#00FF00</field>
+                <field name="COLOR">#00ff00</field>
               </shadow>
             </value>
           </block>
