@@ -15,6 +15,8 @@ Ardublockly.LOCALISED_TEXT = {
   simple: " simple",
   advanced: " advanced",
   /* Tutorial */
+  tutorialBrowserSupportErrorTitle: "Your browser is not supported!",
+  tutorialBrowserSupportError: "Your browser seems too old, please upgrade it or try another one",
   tutorialMenuTitle: "Select a tutorial",
   tutorialMenuListLoading: "loading list…",
   tutorialError: "An unexpected error occured",

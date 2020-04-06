@@ -22,6 +22,9 @@
              */
             function init() {
 
+                //check silently (i.e. via the console)
+                getMissingFeatures();
+
                 $list = $("#tutorialMenuList");
 
                 // build waiting loop
@@ -55,6 +58,26 @@
                     return;
                 }
                 onConfReady();
+            }
+            /**
+             * Get missing features of the browser
+             * 
+             * @return {Array[string]} List of missing feature names
+             */
+            function getMissingFeatures() {
+                let featuresAvailability = {
+                    es6: (function() {
+                        try { new Function("(a = 0) => a"); }
+                        catch (err) { return false; }
+                        return true;
+                    })(),
+                    shadowDom: (typeof window.document.getElementsByTagName("html")[0].attachShadow === typeof function() { })
+                };
+                let missingFeatures = Object.getOwnPropertyNames(featuresAvailability).filter(function(name) { return !featuresAvailability[name]; });
+                if (missingFeatures.length) {
+                    console.log("missing features", missingFeatures);
+                }
+                return missingFeatures;
             }
             /**
              * Shortcut to get local string
@@ -225,6 +248,14 @@
              */
             function loadTutoPage() {
                 if (!_tutoId) {
+                    return;
+                }
+                // check missing browser features
+                if (getMissingFeatures().length) {
+                    if ($("#gen_alert").css("display") == "block") {
+                        return;
+                    }
+                    ardublockly.alertMessage(getLocalStr("tutorialBrowserSupportErrorTitle"), getLocalStr("tutorialBrowserSupportError"));
                     return;
                 }
                 startWaiting();
