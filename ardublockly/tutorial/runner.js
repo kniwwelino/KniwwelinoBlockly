@@ -444,6 +444,8 @@
                     clazz = STYLE_CLASS_OK;
                 } else {
                     let partial = report.partialSameBlocks.find(Mb => Mb.id == b.id);
+                    // deactivate partial
+                    partial = false;
                     if (partial) {
                         clazz = (partial.nestedLen) ? STYLE_CLASS_PARTIAL_OK_WITH_CHILD : STYLE_CLASS_PARTIAL_OK_NO_CHILD;
                     }
