@@ -7,6 +7,10 @@
     box-sizing: initial;
 }
 
+.introjs-skipbutton{
+    color: #333;
+}
+
 #tutorialMenuList img {
     width: 7rem;
     border: 0px solid #FFFFFF;

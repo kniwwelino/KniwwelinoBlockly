@@ -312,7 +312,8 @@
                     doneLabel: getLocalStr('tutoIntroTooltipDone'),
                     prevLabel: '&larr; ' + getLocalStr('tutoIntroTooltipBack'),
                     nextLabel: getLocalStr('tutoIntroTooltipNext') + ' &rarr;',
-                    skipLabel: getLocalStr('tutoIntroTooltipSkip')
+                    skipLabel: getLocalStr('tutoIntroTooltipSkip'),
+                    disableInteraction: true
                 }).onafterchange(function() {
                     ardublockly.contentWidthToggle();
                 }).start();
