@@ -15,7 +15,6 @@
 	<!-- led matrix editor -->
 	<link rel="stylesheet" href="ledmatrix.css">
   <link rel="stylesheet" href="tutorial/tutorial.css">
-
 	<!-- <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script> -->
   <!-- bootstrap --><!-- TODO check sideeffect with the led matrix position! -->
   <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
@@ -94,7 +93,27 @@
 </head>
 
 <body>
-  <!-- Horizontal Navigation bar -->
+<script>
+    // browser minimum requirements
+    let featuresAvailability = {
+        es6: (function() {
+            try { new Function("(a = 0) => a"); }
+            catch (err) { return false; }
+            return true;
+        })()
+    };
+    let missingFeatures = Object.getOwnPropertyNames(featuresAvailability).filter(function(name) { return !featuresAvailability[name]; });
+    if (missingFeatures.length) {
+        console.log("missing features", missingFeatures);
+        var msg = "Your browser is not supported!\nYour browser seems too old, please upgrade it or try another one";
+        alert(msg);
+        document.write("<style>body * { display: none; } #min_requirements_failed_error_msg{ display: block !important; }  </style>");
+        var p = document.createElement('p');
+        p.appendChild(document.createTextNode(msg));
+        p.id="min_requirements_failed_error_msg";
+        document.querySelector('body').appendChild(p);
+    }
+</script>  <!-- Horizontal Navigation bar -->
   <nav class="nav-fixed page-header">
     <div class="nav-wrapper container">
 			<a class="button-collapse" href="#" data-activates="slide-out" id="button-collapse" onclick="if(_paq)_paq.push(['trackEvent', 'SideMenu', 'toggle']);"><i class="mdi-navigation-menu left"></i></a>
