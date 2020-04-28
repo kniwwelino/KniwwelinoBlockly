@@ -178,6 +178,11 @@
                     returnDeferred.reject(sprintf.sprintf('no title found for: %s', ajaxCtx.url));
                     return;
                 }
+                // get description
+                tuto.description = $htmlDom.find('p').first().text();
+                if (!tuto.description) {
+                    h.log(sprintf.sprintf('no description set for tuto %s', ajaxCtx.url));
+                }
                 // get image
                 let $images = $htmlDom.find('img[src]');
                 if (!$images.length) {

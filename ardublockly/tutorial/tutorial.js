@@ -169,7 +169,7 @@
                     params.set(URL_PARAM_KEY_TUTO, tuto.value._path.join('/'));
                     url.search = params.toString();
                     // add element to DOM
-                    let item = $(sprintf.sprintf('<a href="%s"><div><img src="%s" /><h5>%s</h5></div></a>', url.href, imageSrc, tuto.title));
+                    let item = $(sprintf.sprintf('<a href="%s"><div class="tutoListItem"><img class="snap" src="%s" /><div class="tutoListItemRight"><img class="lvl" src="./tutorial/img/level%s.png"><h5>%s</h5><p>%s</p></div></div></a>', url.href, imageSrc, tuto.level, tuto.title, tuto.description));
                     $list.append(item);
                     ardublockly.bindClick_(item.get(0), onTutoSelected);
                 });

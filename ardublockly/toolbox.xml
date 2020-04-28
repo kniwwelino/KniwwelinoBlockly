@@ -41,6 +41,7 @@
             </value>
         </block>
         <block type="kniwwelino_MATRIXIconChooser"></block>
+        <block type="kniwwelino_MATRIXdrawIcon"></block>
         <block type="kniwwelino_MATRIXdrawIconCreator"></block>
         <block type="kniwwelino_MATRIXdrawPixel">
             <value name="X">

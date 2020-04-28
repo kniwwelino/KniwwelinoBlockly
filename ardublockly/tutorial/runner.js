@@ -310,9 +310,20 @@
                 $b0.find("block, statement, value, field").remove();
                 return $b0.get(0);
             };
+            let getBlockPath = function(el) {
+                if (typeof el == "string") {
+                    return document.evaluate(el, document, null, 0, null);
+                }
+                if (!el || el.nodeType != 1) {
+                    return '';
+                }
+                let getTagName = (el) => el.tagName + (el.hasAttribute("type") ? "[@type='" + el.getAttribute("type") + "']" : '');
+                let sames = [].filter.call(el.parentNode.children, function(x) { return getTagName(x) == getTagName(el) });
+                return getBlockPath(el.parentNode) + '/' + getTagName(el) + (sames.length > 1 ? '[' + ([].indexOf.call(sames, el) + 1) + ']' : '');
+            };
             let getPreparedMetaBlocks = function(xml) {
                 return $(vkBeautify.xmlmin(xml, true)).find("block").map((_i, b) => {
-                    return { id: $(b).attr("id"), b: getCleanBlock(b), original: b, b0: getCleanBlock0(b), nestedLen: $(b).find("block").length };
+                    return { id: $(b).attr("id"), b: getCleanBlock(b), original: b, b0: getCleanBlock0(b), nestedLen: $(b).find("block").length, blockPath: getBlockPath(b) };
                 });
             };
             let $responseBlocks = getPreparedMetaBlocks(new w.XMLSerializer().serializeToString(xmlDom));
@@ -390,6 +401,10 @@
                         partialExtraBlocks.splice(partialExtraBlocks.findIndex(Mb => Mb.id == currentBlock.id), 1);
                     }
                 }
+                // well ordered ?
+                let solutionDomPaths = $solutionBlocks.toArray().map(Mb => Mb.blockPath);
+                let responseOrderedBlocks = $responseBlocks.toArray().filter(Mb => solutionDomPaths.includes(Mb.blockPath));
+
                 results.push({
                     $responseBlocks: $responseBlocks,
                     $solutionBlocks: $solutionBlocks,
@@ -403,8 +418,13 @@
                     partialSameBlocks: partialSameBlocks,
                     partialMissingBlocks: partialMissingBlocks,
                     partialExtraBlocks: partialExtraBlocks,
+                    responseOrderedBlocks: responseOrderedBlocks
                 });
             }
+            console.log(results[0]);
+            console.log(sprintf.sprintf("correct blocks: %s/%s", results[0].sameBlocksOnlyType.length, results[0].$solutionBlocks.length));
+            console.log("correct order: %s", (results[0].responseOrderedBlocks.length == $responseBlocks.length));
+            console.log("correct settings: %s/%s", undefined, results[0].$solutionBlocks.length);
             return results;
         }
         /**
@@ -503,6 +523,7 @@
          */
         function feedBackMessageGood(report) {
             let msg = "";
+            let actionBtId = null;
             // extra block
             if (report.strictExtraBlocks.length) {
                 let format = (report.strictExtraBlocks.length == 1) ? 'tutoAnalyseResultStillExtraBlocks1' : 'tutoAnalyseResultStillExtraBlocks';
@@ -514,27 +535,23 @@
                     class="button_ide_large waves-effect waves-light waves-circle z-depth-1-half arduino_orange tutoButton tutoButtonValidate disabled grey">
                     <i class="mdi-av-play-arrow"></i></a>`;
                 if ((stepIndex + 1) >= _data['steps'].length) {
+                    actionBtId = 'tutoTutoEndedNextOne';
                     msg += getLocalStr("tutoTutoEnded") + "<br />";
                     msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
-                    let endTutoBt = `<a id="tutoAnalysisGotoTutoList" href="#"><i class="mdi-social-school left"></i></a>`;
-                    msg += getLocalStr("tutoTutoEndedNextOne") + endTutoBt;
                 } else {
                     // not the last step
+                    actionBtId = 'tutoStepEndedNextOne';
                     msg += getLocalStr("tutoStepEnded") + "<br />";
                     msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
-                    let nextStepBt = `<a id="tutoAnalysisGotoNextStep" 
-                        class="button_ide_large waves-effect waves-light waves-circle z-depth-1-half arduino_orange tutoButton tutoNavButton">
-                        <i class="mdi-navigation-chevron-right"></i></a>`;
-                    msg += getLocalStr("tutoStepEndedNextOne") + nextStepBt;
                 }
             }
-            displayAnalysisMessage(getLocalStr('tutoGoodAnswer'), msg);
-            $("#tutoAnalysisGotoTutoList").click(_e => {
-                $('#tutorialAnalysisResult').closeModal();
+            displayAnalysisMessage(getLocalStr('tutoGoodAnswer'), './img/mascot.png', msg, actionBtId);
+            $("#tutoTutoEndedNextOne").click(_e => {
+                //$('#tutorialAnalysisResult').closeModal();
                 $('#tutorialMenu').openModal();
             });
-            $("#tutoAnalysisGotoNextStep").click(_e => {
-                $('#tutorialAnalysisResult').closeModal();
+            $("#tutoStepEndedNextOne").click(_e => {
+                //$('#tutorialAnalysisResult').closeModal();
                 next();
             });
             $("#tutoAnalysisCompile").filter((_i, _el) => {
@@ -561,24 +578,35 @@
             let msg = "";
             let format = (report.$solutionBlocks.length <= 1) ? 'tutoAnalyseResultSolutionNbOfBlocks1' : 'tutoAnalyseResultSolutionNbOfBlocks';
             msg += sprintf.sprintf(getLocalStr(format), report.$solutionBlocks.length);
-            msg += "<br /><br />" + getLocalStr('tutoAnalyseResultResponseIntro');
+            msg += "<br />" + getLocalStr('tutoAnalyseResultResponseIntro');
             format = (report.strictSameBlocks.length <= 1) ? 'tutoAnalyseResultResponseNbOfCorrect1' : 'tutoAnalyseResultResponseNbOfCorrect';
             msg += "<br />" + sprintf.sprintf(getLocalStr(format), report.strictSameBlocks.length);
             if (report.partialSameBlocks.length) {
                 format = (report.partialSameBlocks.length <= 1) ? 'tutoAnalyseResultResponseNbOfPartial1' : 'tutoAnalyseResultResponseNbOfPartial';
                 msg += "<br />" + sprintf.sprintf(getLocalStr(format), report.partialSameBlocks.length);
             }
-            displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), msg);
+            displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), './tutorial/img/mascot_thinking.png', msg, null);
         }
         /**
          * Display a message in the modal analysis result message box
          * 
          * @param {string} title Title of the message
+         * @param {string} titleImg Image path
          * @param {mixed} body body of the message, Type: htmlString or Element or Text or Array or jQuery (see jQuery.append) 
+         * @param {string} actionBtId Id of the action button
          * 
          * @return {void} Nothing
          */
-        function displayAnalysisMessage(title, body) {
+        function displayAnalysisMessage(title, titleImg, body, actionBtId) {
+            // hide buttons
+            $("#tutoStepEndedNextOne, #tutoTutoEndedNextOne").hide();
+            if (actionBtId) {
+                $("#" + actionBtId).show();
+            }
+            $('#tutorialAnalysisResult .tutorialAnalysisResultTitleImg').remove();
+            if (titleImg) {
+                $('#tutorialAnalysisResult .modal-content').prepend(sprintf.sprintf('<img class="tutorialAnalysisResultTitleImg" src="%s" />', titleImg));
+            }
             $('#tutorialAnalysisResult_title').text(title);
             $('#tutorialAnalysisResult_body').text('').append(body);
             $('#tutorialAnalysisResult').openModal();
