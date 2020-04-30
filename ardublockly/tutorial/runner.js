@@ -17,6 +17,7 @@
         const STYLE_CLASS_PARTIAL_OK_NO_CHILD = "tutoOkPartialNoChild";
         const STYLE_CLASS_PARTIAL_OK_WITH_CHILD = "tutoOkPartialWithChild";
         const AUTO_VALIDATION = false;
+        const FEEDBACK_COLOR = false;
         let ranOnce = false;
         let paused = false;
         let fatal = function() {
@@ -83,7 +84,7 @@
                 return;
             }
             let bestSolution = selectBestSolution(analyseResponse());
-            //feedbackColor(bestSolution);
+            feedbackColor(bestSolution);
             feedbackAuto(bestSolution);
         }
         /**
@@ -444,8 +445,8 @@
                     partialMissingBlocks: partialMissingBlocks,
                     partialExtraBlocks: partialExtraBlocks,
                     responseOrderedBlocks: responseOrderedBlocks,
-                    // OK when 0 or 1 block in the solution, either NOK
-                    orderOk: (responseOrderedBlocks.length == $responseBlocks.length) && ($responseBlocks.length > 1 || $responseBlocks.length == $solutionBlocks.length),
+                    orderOk: (responseOrderedBlocks.length >= $solutionBlocks.length)
+                        || (responseOrderedBlocks.length == $responseBlocks.length),
                     settingsOkBlocks: settingsOkBlocks,
                     settingsNOkBlocks: settingsNOkBlocks
                 });
@@ -459,7 +460,7 @@
          */
         function validate() {
             let bestSolution = selectBestSolution(analyseResponse());
-            //feedbackColor(bestSolution);
+            feedbackColor(bestSolution);
             feedbackMessage(bestSolution);
         }
         /**
@@ -481,6 +482,9 @@
          * @return {void} Nothing
          */
         function feedbackColor(report) {
+            if (!FEEDBACK_COLOR) {
+                return;
+            }
             resetBlockHighlighting();
             let strictIds = report.strictSameBlocks.map(Mb => Mb.id);
             ardublockly.workspace.getAllBlocks(false).forEach(function(b) {
@@ -556,26 +560,20 @@
         function feedBackMessageGood(report) {
             let msg = "";
             let actionBtId = null;
-            // extra block
-            if (report.strictExtraBlocks.length) {
-                let format = (report.strictExtraBlocks.length == 1) ? 'tutoAnalyseResultStillExtraBlocks1' : 'tutoAnalyseResultStillExtraBlocks';
-                msg += sprintf.sprintf(getLocalStr(format), report.strictExtraBlocks.length) + "<br />";
-            } else {
-                // perfect
-                // is last step ?
-                let compileBt = `<a id="tutoAnalysisCompile" 
+            // perfect
+            // is last step ?
+            let compileBt = `<a id="tutoAnalysisCompile" 
                     class="button_ide_large waves-effect waves-light waves-circle z-depth-1-half arduino_orange tutoButton tutoButtonValidate disabled grey">
                     <i class="mdi-av-play-arrow"></i></a>`;
-                if ((stepIndex + 1) >= _data['steps'].length) {
-                    actionBtId = 'tutoTutoEndedNextOne';
-                    msg += getLocalStr("tutoTutoEnded") + "<br />";
-                    msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
-                } else {
-                    // not the last step
-                    actionBtId = 'tutoStepEndedNextOne';
-                    msg += getLocalStr("tutoStepEnded") + "<br />";
-                    msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
-                }
+            if ((stepIndex + 1) >= _data['steps'].length) {
+                actionBtId = 'tutoTutoEndedNextOne';
+                msg += getLocalStr("tutoTutoEnded") + "<br />";
+                msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
+            } else {
+                // not the last step
+                actionBtId = 'tutoStepEndedNextOne';
+                msg += getLocalStr("tutoStepEnded") + "<br />";
+                msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
             }
             displayAnalysisMessage(getLocalStr('tutoGoodAnswer'), './img/mascot.png', msg, actionBtId);
             $("#tutoTutoEndedNextOne").click(_e => {
@@ -606,7 +604,8 @@
             let correctBlocks = (report.sameBlocksOnlyType.length == report.$solutionBlocks.length);
             let correctOrder = report.orderOk;
             let correctSettings = (report.settingsOkBlocks.length == report.$solutionBlocks.length);
-            if (correctBlocks && correctOrder && correctSettings) {
+            let additionnalBlocks = report.extraBlocksOnlyType.length;
+            if (correctBlocks && correctOrder && correctSettings && !additionnalBlocks) {
                 feedBackMessageGood(report);
                 return;
             }
@@ -621,6 +620,9 @@
             msg += icon + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultFeedbackCorrectOrder"), getLocalStr(orderLocal)) + "</span><br />";
             icon = correctSettings ? iconGood : iconFalse;
             msg += icon + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultFeedbackCorrectSettings"), report.settingsOkBlocks.length, report.$solutionBlocks.length) + "</span>";
+            if (additionnalBlocks) {
+                msg += "<br />" + iconFalse + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultStillExtraBlocks"), report.extraBlocksOnlyType.length) + "</span>";
+            }
             displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), './tutorial/img/mascot_thinking.png', msg, null);
         }
         /**

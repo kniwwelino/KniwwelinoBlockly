@@ -91,8 +91,8 @@
 }
 
 #tutorialAnalysisResult {
-    max-width: 610px;
-    max-height: 320px;
+    max-width: 40rem;
+    max-height: 23rem;
 }
 
 #tutorialAnalysisResult .modal-content {
@@ -107,6 +107,10 @@
     vertical-align: top;
     margin: 2rem;
     display: inline-block;
+}
+
+#tutorialAnalysisResult_title p:first-of-type {
+    margin-bottom: 0px;
 }
 
 #tutorialAnalysisResult_body span {
