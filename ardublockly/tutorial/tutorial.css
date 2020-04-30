@@ -109,6 +109,25 @@
     display: inline-block;
 }
 
+#tutorialAnalysisResult_body span {
+    vertical-align: 0.2rem;
+    line-height: 1rem;
+}
+
+#tutorialAnalysisResult .tutorialAnalysisResult_icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.4rem;
+}
+
+#tutorialAnalysisResult .tutorialAnalysisResult_iconGood {
+    color: green;
+}
+
+#tutorialAnalysisResult .tutorialAnalysisResult_iconFalse {
+    color: red;
+}
+
 #tutoButtonValidate {
     position: absolute;
     right: 15px;

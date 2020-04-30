@@ -278,8 +278,8 @@
                         solutions: solutions,
                         value: where[key]
                     });
-
                 }
+                steps.sort((a, b) => (a.number - b.number));
                 return steps;
             }
             /**
@@ -355,7 +355,8 @@
                         value: where[key]
                     });
                 }
-            }
+                tutorials.sort((a, b) => (a.number  - b.number));
+}
             /**
              * parse the step description
              * 
@@ -367,149 +368,149 @@
              * @return {void} Nothing
              */
             function onStepDescription(data, step, ajaxCtx, returnDeferred) {
-                // register url
-                step.url = ajaxCtx.url;
-                // exclude not found
-                let $htmlDom = $(new DOMParser().parseFromString(data, 'text/html'));
-                if ($htmlDom.find('#this_topic_does_not_exist_yet').length) {
-                    returnDeferred.reject(sprintf.sprintf('page not found: %s', ajaxCtx.url));
-                    return;
-                }
-                // register html
-                step.$html = $htmlDom;
+    // register url
+    step.url = ajaxCtx.url;
+    // exclude not found
+    let $htmlDom = $(new DOMParser().parseFromString(data, 'text/html'));
+    if ($htmlDom.find('#this_topic_does_not_exist_yet').length) {
+        returnDeferred.reject(sprintf.sprintf('page not found: %s', ajaxCtx.url));
+        return;
+    }
+    // register html
+    step.$html = $htmlDom;
+}
+/**
+ * parse the solution
+ * 
+ * @param {string} data Ajax response data: a XML solution
+ * @param {Object} step Step Object to populate
+ * @param {Object} ajaxCtx Ajax context/settings
+ * @param {jQuery.Deferred} returnDeferred jQuery deferred in case of failure
+ * 
+ * @return {void} Nothing
+ */
+function onSolution(data, step, ajaxCtx, returnDeferred) {
+    if (!data) {
+        returnDeferred.reject(sprintf.sprintf('empty solution: %s', ajaxCtx.url));
+        return;
+    }
+    let solutionKey = 'solutionsXml';
+    if (!(solutionKey in step)) {
+        step[solutionKey] = [];
+    }
+    // validate
+    if (new DOMParser().parseFromString(data, 'text/xml').documentElement.nodeName == "parsererror") {
+        returnDeferred.reject(sprintf.sprintf('invalid xml: %s', ajaxCtx.url));
+        return;
+    }
+    step[solutionKey].push(data);
+}
+/**
+ * Fetch tutorial elements
+ * 
+ * @param {string} tutoId Tutorial identifier: relative path to the tutorial in dokuwiki
+ * 
+ * @return {jQuery.Deferred} returnDeferred a jQuery deferred object
+ */
+function fetchTutoElements(tutoId) {
+    let returnDeferred = $.Deferred();
+    // get tuto
+    let tuto = tutorials.find(t => (t.value._path.join('/') == tutoId));
+    if (!tuto) {
+        returnDeferred.reject(sprintf.sprintf('tuto not found: %s', tutoId));
+        return;
+    }
+    // load all related elements
+    let deferreds = [];
+    // description
+    let deferred = null;
+    if (('deferred' in tuto) && ('description' in tuto['deferred'])) {
+        deferred = tuto['deferred']['description'];
+    } else {
+        deferred = getDeferredDescription(tuto, returnDeferred);
+    }
+    deferreds.push(deferred);
+    // get steps
+    tuto.steps.forEach(function(step) {
+        let stepUrl = new URL(buildTutoUrl(step['value']['_path']));
+        // get description
+        let url = stepUrl + 'description?do=export_html';
+        let done = function(data) {
+            onStepDescription(data, step, this, returnDeferred);
+        };
+        deferreds.push($.ajax({
+            type: "GET",
+            url: url,
+            dataType: 'html',
+            headers: {
+                Accept: "text/html"
             }
-            /**
-             * parse the solution
-             * 
-             * @param {string} data Ajax response data: a XML solution
-             * @param {Object} step Step Object to populate
-             * @param {Object} ajaxCtx Ajax context/settings
-             * @param {jQuery.Deferred} returnDeferred jQuery deferred in case of failure
-             * 
-             * @return {void} Nothing
-             */
-            function onSolution(data, step, ajaxCtx, returnDeferred) {
-                if (!data) {
-                    returnDeferred.reject(sprintf.sprintf('empty solution: %s', ajaxCtx.url));
-                    return;
-                }
-                let solutionKey = 'solutionsXml';
-                if (!(solutionKey in step)) {
-                    step[solutionKey] = [];
-                }
-                // validate
-                if (new DOMParser().parseFromString(data, 'text/xml').documentElement.nodeName == "parsererror") {
-                    returnDeferred.reject(sprintf.sprintf('invalid xml: %s', ajaxCtx.url));
-                    return;
-                }
-                step[solutionKey].push(data);
-            }
-            /**
-             * Fetch tutorial elements
-             * 
-             * @param {string} tutoId Tutorial identifier: relative path to the tutorial in dokuwiki
-             * 
-             * @return {jQuery.Deferred} returnDeferred a jQuery deferred object
-             */
-            function fetchTutoElements(tutoId) {
-                let returnDeferred = $.Deferred();
-                // get tuto
-                let tuto = tutorials.find(t => (t.value._path.join('/') == tutoId));
-                if (!tuto) {
-                    returnDeferred.reject(sprintf.sprintf('tuto not found: %s', tutoId));
-                    return;
-                }
-                // load all related elements
-                let deferreds = [];
-                // description
-                let deferred = null;
-                if (('deferred' in tuto) && ('description' in tuto['deferred'])) {
-                    deferred = tuto['deferred']['description'];
-                } else {
-                    deferred = getDeferredDescription(tuto, returnDeferred);
-                }
-                deferreds.push(deferred);
-                // get steps
-                tuto.steps.forEach(function(step) {
-                    let stepUrl = new URL(buildTutoUrl(step['value']['_path']));
-                    // get description
-                    let url = stepUrl + 'description?do=export_html';
-                    let done = function(data) {
-                        onStepDescription(data, step, this, returnDeferred);
-                    };
-                    deferreds.push($.ajax({
-                        type: "GET",
-                        url: url,
-                        dataType: 'html',
-                        headers: {
-                            Accept: "text/html"
-                        }
-                    }).done(done));
-                    // get solutions
-                    step.solutions.forEach(function(solution) {
-                        url = stepUrl + solution + '?do=export_raw';
-                        done = function(data, _msg, jqXhr) {
-                            if (jqXhr.getResponseHeader("content-type").indexOf('html') != -1) {
-                                returnDeferred.reject(sprintf.sprintf('loading failed: %s', this.url));
-                                return;
-                            };
-                            onSolution(data, step, this, returnDeferred);
-                        };
-                        deferreds.push($.ajax({
-                            type: "GET",
-                            url: url,
-                            dataType: 'text',
-                            headers: {
-                                Accept: "text/plain"
-                            }
-                        }).done(done));
-                    });
-                });
-                let done = function() {
-                    onTutoElementsFetched(tuto, returnDeferred);
-                };
-                let fail = function() {
+        }).done(done));
+        // get solutions
+        step.solutions.forEach(function(solution) {
+            url = stepUrl + solution + '?do=export_raw';
+            done = function(data, _msg, jqXhr) {
+                if (jqXhr.getResponseHeader("content-type").indexOf('html') != -1) {
                     returnDeferred.reject(sprintf.sprintf('loading failed: %s', this.url));
+                    return;
                 };
-                $.when.apply($, deferreds).then(done, fail);
-                return returnDeferred;
-            }
-            /**
-             * when tutorial elements are fetched correctly: preload images
-             * 
-             * @param {Objet} tuto Step Object to populate
-             * @param {jQuery.Deferred} returnDeferred jQuery deferred object to resolve
-             * 
-             * @return {void} Nothing
-             */
-            function onTutoElementsFetched(tuto, returnDeferred) {
-                let deferreds = [];
-                // preload images
-                tuto.steps.forEach(function(step) {
-                    step.$html.find("img[src]").each(function() {
-                        let imgDeferred = $.Deferred();
-                        let $img = $('<img />');
-                        $img.on("load", () => imgDeferred.resolve()).error(e => imgDeferred.reject($(e.currentTarget).attr("src")));
-                        $img.attr('src', conf.tutorialUrlEnforcement + $(this).attr('src'));
-                        if (step.nb == 1) {
-                            deferreds.push(imgDeferred);
-                        }
-                    });
-                });
-                let done = function() {
-                    returnDeferred.resolve(tuto);
-                };
-                let fail = function(msg) {
-                    returnDeferred.reject(sprintf.sprintf('preloading images failed: %s', msg));
-                };
-                $.when.apply($, deferreds).then(done, fail);
-            }
-            // API
-            return {
-                fetch: fetch,
-                fetchTutorialsBasics: fetchTutorialsBasics,
-                getTutorials: getTutorials,
-                fetchTutoElements: fetchTutoElements
+                onSolution(data, step, this, returnDeferred);
             };
+            deferreds.push($.ajax({
+                type: "GET",
+                url: url,
+                dataType: 'text',
+                headers: {
+                    Accept: "text/plain"
+                }
+            }).done(done));
         });
-})(this);
+    });
+    let done = function() {
+        onTutoElementsFetched(tuto, returnDeferred);
+    };
+    let fail = function() {
+        returnDeferred.reject(sprintf.sprintf('loading failed: %s', this.url));
+    };
+    $.when.apply($, deferreds).then(done, fail);
+    return returnDeferred;
+}
+/**
+ * when tutorial elements are fetched correctly: preload images
+ * 
+ * @param {Objet} tuto Step Object to populate
+ * @param {jQuery.Deferred} returnDeferred jQuery deferred object to resolve
+ * 
+ * @return {void} Nothing
+ */
+function onTutoElementsFetched(tuto, returnDeferred) {
+    let deferreds = [];
+    // preload images
+    tuto.steps.forEach(function(step) {
+        step.$html.find("img[src]").each(function() {
+            let imgDeferred = $.Deferred();
+            let $img = $('<img />');
+            $img.on("load", () => imgDeferred.resolve()).error(e => imgDeferred.reject($(e.currentTarget).attr("src")));
+            $img.attr('src', conf.tutorialUrlEnforcement + $(this).attr('src'));
+            if (step.nb == 1) {
+                deferreds.push(imgDeferred);
+            }
+        });
+    });
+    let done = function() {
+        returnDeferred.resolve(tuto);
+    };
+    let fail = function(msg) {
+        returnDeferred.reject(sprintf.sprintf('preloading images failed: %s', msg));
+    };
+    $.when.apply($, deferreds).then(done, fail);
+}
+// API
+return {
+    fetch: fetch,
+    fetchTutorialsBasics: fetchTutorialsBasics,
+    getTutorials: getTutorials,
+    fetchTutoElements: fetchTutoElements
+};
+        });
+}) (this);

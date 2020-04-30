@@ -307,6 +307,7 @@
                 $('div.blocklyToolboxDiv').attr("data-intro", getLocalStr("tutoIntroStepToolbox")).attr("data-position", "right").attr("data-step", stepCounter++);
                 $('#content_blocks').attr("data-intro", getLocalStr("tutoIntroStepWorkspace")).attr("data-position", "right").attr("data-step", stepCounter++);
                 $('#tutoButtonValidate').attr("data-intro", getLocalStr("tutoIntroStepAnalysis")).attr("data-position", "left").attr("data-step", stepCounter++);
+                $('#button_ide_large').attr("data-intro", getLocalStr("tutoIntroStepCompile")).attr("data-position", "left").attr("data-step", stepCounter++);
 
                 introjs().setOptions({
                     doneLabel: getLocalStr('tutoIntroTooltipDone'),

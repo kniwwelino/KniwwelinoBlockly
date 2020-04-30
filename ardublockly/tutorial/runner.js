@@ -83,7 +83,7 @@
                 return;
             }
             let bestSolution = selectBestSolution(analyseResponse());
-            feedbackColor(bestSolution);
+            //feedbackColor(bestSolution);
             feedbackAuto(bestSolution);
         }
         /**
@@ -259,6 +259,8 @@
                     $el.attr('src', conf.tutorialUrlEnforcement + $el.attr('src'));
                 }
             });
+            // remove TOC
+            $step.find('#dw__toc').remove();
             // build display
             let $tutoStep = $('#tutoStep');
             let shadowRoot = $tutoStep.get(0).shadowRoot;
@@ -310,6 +312,11 @@
                 $b0.find("block, statement, value, field").remove();
                 return $b0.get(0);
             };
+            let getCleanBlock00 = function(b) {
+                let $b0 = $(getCleanBlock(b));
+                $b0.find("block").map((_i, b) => ((b.parentElement && !b.parentElement.isSameNode($b0.get(0))) ? b.parentElement : b)).remove();
+                return $b0.get(0);
+            };
             let getBlockPath = function(el) {
                 if (typeof el == "string") {
                     return document.evaluate(el, document, null, 0, null);
@@ -323,7 +330,7 @@
             };
             let getPreparedMetaBlocks = function(xml) {
                 return $(vkBeautify.xmlmin(xml, true)).find("block").map((_i, b) => {
-                    return { id: $(b).attr("id"), b: getCleanBlock(b), original: b, b0: getCleanBlock0(b), nestedLen: $(b).find("block").length, blockPath: getBlockPath(b) };
+                    return { id: $(b).attr("id"), b: getCleanBlock(b), original: b, b0: getCleanBlock0(b), nestedLen: $(b).find("block").length, b00: getCleanBlock00(b), blockPath: getBlockPath(b) };
                 });
             };
             let $responseBlocks = getPreparedMetaBlocks(new w.XMLSerializer().serializeToString(xmlDom));
@@ -405,6 +412,24 @@
                 let solutionDomPaths = $solutionBlocks.toArray().map(Mb => Mb.blockPath);
                 let responseOrderedBlocks = $responseBlocks.toArray().filter(Mb => solutionDomPaths.includes(Mb.blockPath));
 
+                // good settings ? use b00
+                let settingsToParse = $responseBlocks.toArray();
+                let settingsMissingBlocks = $solutionBlocks.toArray();
+                let settingsOkBlocks = [];
+                let settingsNOkBlocks = [];
+                while (currentBlock = settingsToParse.pop()) {
+                    let sameIndex = settingsMissingBlocks.findIndex(Mb => Mb.b00.isEqualNode(currentBlock.b00));
+                    if (sameIndex != -1) {
+                        // add to same blocks
+                        settingsOkBlocks.push(currentBlock);
+                        // remove from missing
+                        settingsMissingBlocks.splice(sameIndex, 1);
+                        // remove from extra with id
+                        partialExtraBlocks.splice(partialExtraBlocks.findIndex(Mb => Mb.id == currentBlock.id), 1);
+                    } else {
+                        settingsNOkBlocks.push(currentBlock);
+                    }
+                }
                 results.push({
                     $responseBlocks: $responseBlocks,
                     $solutionBlocks: $solutionBlocks,
@@ -418,13 +443,13 @@
                     partialSameBlocks: partialSameBlocks,
                     partialMissingBlocks: partialMissingBlocks,
                     partialExtraBlocks: partialExtraBlocks,
-                    responseOrderedBlocks: responseOrderedBlocks
+                    responseOrderedBlocks: responseOrderedBlocks,
+                    // OK when 0 or 1 block in the solution, either NOK
+                    orderOk: (responseOrderedBlocks.length == $responseBlocks.length) && ($responseBlocks.length > 1 || $responseBlocks.length == $solutionBlocks.length),
+                    settingsOkBlocks: settingsOkBlocks,
+                    settingsNOkBlocks: settingsNOkBlocks
                 });
             }
-            console.log(results[0]);
-            console.log(sprintf.sprintf("correct blocks: %s/%s", results[0].sameBlocksOnlyType.length, results[0].$solutionBlocks.length));
-            console.log("correct order: %s", (results[0].responseOrderedBlocks.length == $responseBlocks.length));
-            console.log("correct settings: %s/%s", undefined, results[0].$solutionBlocks.length);
             return results;
         }
         /**
@@ -434,7 +459,7 @@
          */
         function validate() {
             let bestSolution = selectBestSolution(analyseResponse());
-            feedbackColor(bestSolution);
+            //feedbackColor(bestSolution);
             feedbackMessage(bestSolution);
         }
         /**
@@ -485,11 +510,18 @@
          */
         function selectBestSolution(results) {
             results.sort(function(a, b) {
-                // sort by same blocks
-                let aAfterIfpositive = a.strictSameBlocks.length - b.strictSameBlocks.length;
+                // by matching used blocks
+                let aAfterIfpositive;
+                aAfterIfpositive = a.sameBlocksOnlyType.length - b.sameBlocksOnlyType.length;
                 if (aAfterIfpositive == 0) {
-                    // select one with less missing
-                    aAfterIfpositive = b.strictMissingBlocks.length - a.strictMissingBlocks.length;
+                    // same size of blocks with good type
+                    // use order
+                    aAfterIfpositive = a.responseOrderedBlocks.length - b.$solutionBlocks.length;
+                }
+                if (aAfterIfpositive == 0) {
+                    // same size, same order
+                    // check settings
+                    aAfterIfpositive = a.settingsOkBlocks.length - b.settingsOkBlocks.length;
                 }
                 if (aAfterIfpositive == 0) {
                     // select shorter solution
@@ -571,20 +603,24 @@
          */
         function feedbackMessage(report) {
             // pop-up
-            if (report.strictSameBlocks.length == report.$solutionBlocks.length) {
+            let correctBlocks = (report.sameBlocksOnlyType.length == report.$solutionBlocks.length);
+            let correctOrder = report.orderOk;
+            let correctSettings = (report.settingsOkBlocks.length == report.$solutionBlocks.length);
+            if (correctBlocks && correctOrder && correctSettings) {
                 feedBackMessageGood(report);
                 return;
             }
             let msg = "";
-            let format = (report.$solutionBlocks.length <= 1) ? 'tutoAnalyseResultSolutionNbOfBlocks1' : 'tutoAnalyseResultSolutionNbOfBlocks';
-            msg += sprintf.sprintf(getLocalStr(format), report.$solutionBlocks.length);
-            msg += "<br />" + getLocalStr('tutoAnalyseResultResponseIntro');
-            format = (report.strictSameBlocks.length <= 1) ? 'tutoAnalyseResultResponseNbOfCorrect1' : 'tutoAnalyseResultResponseNbOfCorrect';
-            msg += "<br />" + sprintf.sprintf(getLocalStr(format), report.strictSameBlocks.length);
-            if (report.partialSameBlocks.length) {
-                format = (report.partialSameBlocks.length <= 1) ? 'tutoAnalyseResultResponseNbOfPartial1' : 'tutoAnalyseResultResponseNbOfPartial';
-                msg += "<br />" + sprintf.sprintf(getLocalStr(format), report.partialSameBlocks.length);
-            }
+            let iconGood = '<i class="mdi-navigation-check tutorialAnalysisResult_icon tutorialAnalysisResult_iconGood"></i>';
+            let iconFalse = '<i class="mdi-navigation-close tutorialAnalysisResult_icon tutorialAnalysisResult_iconFalse"></i>';
+            let icon = iconGood;
+            icon = correctBlocks ? iconGood : iconFalse;
+            msg += icon + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultFeedbackRightBlocks"), report.sameBlocksOnlyType.length, report.$solutionBlocks.length) + "</span><br />";
+            icon = correctOrder ? iconGood : iconFalse;
+            let orderLocal = report.orderOk ? "tutoAnalyseResultFeedbackCorrectOrderYes" : "tutoAnalyseResultFeedbackCorrectOrderNo";
+            msg += icon + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultFeedbackCorrectOrder"), getLocalStr(orderLocal)) + "</span><br />";
+            icon = correctSettings ? iconGood : iconFalse;
+            msg += icon + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultFeedbackCorrectSettings"), report.settingsOkBlocks.length, report.$solutionBlocks.length) + "</span>";
             displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), './tutorial/img/mascot_thinking.png', msg, null);
         }
         /**
