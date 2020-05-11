@@ -575,13 +575,13 @@
                 msg += getLocalStr("tutoStepEnded") + "<br />";
                 msg += getLocalStr("tutoStepHardwareTest") + compileBt + "<br />";
             }
-            displayAnalysisMessage(getLocalStr('tutoGoodAnswer'), './img/mascot.png', msg, actionBtId);
+            displayAnalysisMessage(getLocalStr('tutoGoodAnswer'), './img/mascot.png', msg);
+            $("#" + actionBtId).show();
             $("#tutoTutoEndedNextOne").click(_e => {
                 //$('#tutorialAnalysisResult').closeModal();
                 $('#tutorialMenu').openModal();
             });
             $("#tutoStepEndedNextOne").click(_e => {
-                //$('#tutorialAnalysisResult').closeModal();
                 next();
             });
             $("#tutoAnalysisCompile").filter((_i, _el) => {
@@ -623,7 +623,7 @@
             if (additionnalBlocks) {
                 msg += "<br />" + iconFalse + "<span>" + sprintf.sprintf(getLocalStr("tutoAnalyseResultStillExtraBlocks"), report.extraBlocksOnlyType.length) + "</span>";
             }
-            displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), './tutorial/img/mascot_thinking.png', msg, null);
+            displayAnalysisMessage(getLocalStr('tutoAnalyseResultTitle') + getLocalStr('tutoAnalyseResultIncomplete'), './tutorial/img/mascot_thinking.png', msg);
         }
         /**
          * Display a message in the modal analysis result message box
@@ -635,12 +635,8 @@
          * 
          * @return {void} Nothing
          */
-        function displayAnalysisMessage(title, titleImg, body, actionBtId) {
-            // hide buttons
-            $("#tutoStepEndedNextOne, #tutoTutoEndedNextOne").hide();
-            if (actionBtId) {
-                $("#" + actionBtId).show();
-            }
+        function displayAnalysisMessage(title, titleImg, body) {
+            $('.optionalActionBt').hide().off();
             $('#tutorialAnalysisResult .tutorialAnalysisResultTitleImg').remove();
             if (titleImg) {
                 $('#tutorialAnalysisResult .modal-content').prepend(sprintf.sprintf('<img class="tutorialAnalysisResultTitleImg" src="%s" />', titleImg));
