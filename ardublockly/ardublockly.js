@@ -140,7 +140,11 @@ Ardublockly.bindActionFunctions = function() {
 
 Ardublockly.bindDragEvents = function() {
   window.addEventListener('dragenter', function(e) {
-    Ardublockly.HighlightDragArea('fill:#e0FFe0;');
+    var tutoElement = document.getElementById('tutoSidebar');
+    console.log(tutoElement.style.display);
+    if (!Boolean(tutoElement.style.display)) {
+      Ardublockly.HighlightDragArea('fill:#e0FFe0;');
+    }
   });
 
   document.getElementById('content_blocks').addEventListener('dragenter',  Ardublockly.allowDrag);
