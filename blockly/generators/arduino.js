@@ -197,16 +197,16 @@ Blockly.Arduino.finish = function(code) {
 	delete Blockly.Arduino.setups_['kniwwelinoBegin'];
   }
 
-  //kniwwelino MQTT set Group second
-  if (Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'] !== undefined) {
-	 setups.push(Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup']);
-	 delete Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'];
-  }
-
   //kniwwelino MQTT set user broker second
   if (Blockly.Arduino.setups_['kniwwelino_MQTTUserSetup'] !== undefined) {
 	 setups.push(Blockly.Arduino.setups_['kniwwelino_MQTTUserSetup']);
 	 delete Blockly.Arduino.setups_['kniwwelino_MQTTUserSetup'];
+  }
+
+  //kniwwelino MQTT set Group second
+  if (Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'] !== undefined) {
+	 setups.push(Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup']);
+	 delete Blockly.Arduino.setups_['kniwwelino_MQTTsetGroup'];
   }
 
   for (var name in Blockly.Arduino.setups_) {
