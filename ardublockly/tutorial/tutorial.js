@@ -166,7 +166,7 @@
                     // create link to trigger tutorial based on tuto path
                     let url = new URL(w.location.href);
                     let params = new URLSearchParams(url.search);
-                    params.set(URL_PARAM_KEY_TUTO, tuto.value._path.join('/'));
+                    params.set(URL_PARAM_KEY_TUTO, tuto.pathName);
                     url.search = params.toString();
                     // add element to DOM
                     let item = $(sprintf.sprintf('<a href="%s"><div class="tutoListItem"><img class="snap" src="%s" /><div class="tutoListItemRight"><img class="lvl" src="./tutorial/img/level%s.png"><h5>%s</h5><p>%s</p></div></div></a>', url.href, imageSrc, tuto.level, tuto.title, tuto.description));
@@ -270,7 +270,6 @@
                 }).fail(function(msg) {
                     fatal(msg, getLocalStr('tutorialError'), getLocalStr('tutorialDataAccessError'));
                 });
-                return;
             }
             /**
              * When tutorial model elements are loaded

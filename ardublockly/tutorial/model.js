@@ -140,10 +140,11 @@
                     treePart = hasPathInTree(path, tree);
                     if (!treePart) {
                         returnDeferred.reject(sprintf.sprintf('namespacePart not found: en/tutorial'));
+                        return;
                     }
                 }
                 // deal with tutorials in root
-                collectTutorials(treePart, path);
+                collectTutorials(treePart);
                 returnDeferred.resolve();
             }
             /**
@@ -325,7 +326,7 @@
              * 
              * @return {void} Nothing
              */
-            function collectTutorials(where, root) {
+            function collectTutorials(where) {
                 tutorials = [];
                 let regex = /^\s*tutorial\s*0*(\d+)\s*$/i;
                 for (let key in where) {
@@ -344,11 +345,8 @@
                         h.log('no step');
                         continue;
                     }
-                    // clone the original path
-                    let tutoPath = root.slice();
-                    // create path
-                    tutoPath.push(key);
                     tutorials.push({
+                        pathName : key,
                         number: match[1],
                         level: getTutoLevel(tuto),
                         steps: steps,
@@ -415,10 +413,9 @@ function onSolution(data, step, ajaxCtx, returnDeferred) {
 function fetchTutoElements(tutoId) {
     let returnDeferred = $.Deferred();
     // get tuto
-    let tuto = tutorials.find(t => (t.value._path.join('/') == tutoId));
+    let tuto = tutorials.find(t => (t.pathName == tutoId));
     if (!tuto) {
-        returnDeferred.reject(sprintf.sprintf('tuto not found: %s', tutoId));
-        return;
+        return returnDeferred.reject(sprintf.sprintf('tuto not found: %s', tutoId));
     }
     // load all related elements
     let deferreds = [];

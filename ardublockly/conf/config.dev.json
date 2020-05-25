@@ -1,7 +1,7 @@
 {
-    "tutorialUrlEnforcement": "http://kniwwelinoblockly.github.172.16.42.3.xip.io:8086/doku",
-    "tutorialSitemap": "http://kniwwelinoblockly.github.172.16.42.3.xip.io:8086/doku/?do=sitemap",
-    "tutoWikiCss": "http://kniwwelinoblockly.github.172.16.42.3.xip.io:8086/doku/lib/exe/css.php?t=dokuwiki",
+    "tutorialUrlEnforcement": "http://kniwwelinoblockly.github.172.16.42.2.xip.io:8086/doku",
+    "tutorialSitemap": "http://kniwwelinoblockly.github.172.16.42.2.xip.io:8086/doku/?do=sitemap",
+    "tutoWikiCss": "http://kniwwelinoblockly.github.172.16.42.2.xip.io:8086/doku/lib/exe/css.php?t=dokuwiki",
     "url-mapping": {
         "https://doku.kniwwelino.lu/en/instructions/wristband":"http://wiki.kniwwelinoblockly.127.0.0.2.xip.io:8086/dokuwiki/doku.php?id=start"
     }
