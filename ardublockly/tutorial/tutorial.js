@@ -1,7 +1,7 @@
 /**
  * @license Licensed under the Apache License, Version 2.0 (the "License"):
  *          http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * @fileoverview General javaScript for Arduino Tutorial.
  */
 (function(w) {
@@ -17,7 +17,7 @@
             let doTutoIntro = true;
             /**
              * Entry point
-             * 
+             *
              * @return {void} Nothing
              */
             function init() {
@@ -57,11 +57,24 @@
                     });
                     return;
                 }
+                if (h.getUrlParameter('local') !== false) {
+                    h.log("@tutorial-local");
+                    // load dev conf
+                    w.require(['json!conf/config.local.json'], function(conf_dev) {
+                        // update conf
+                        $.extend(conf, conf_dev);
+                        // remove unload msg
+                        w.onbeforeunload = null;
+                        // normal behavior
+                        onConfReady();
+                    });
+                    return;
+                }
                 onConfReady();
             }
             /**
              * Get missing features of the browser
-             * 
+             *
              * @return {Array[string]} List of missing feature names
              */
             function getMissingFeatures() {
@@ -81,9 +94,9 @@
             }
             /**
              * Shortcut to get local string
-             * 
+             *
              * @param {string} id Identifier of the string
-             * 
+             *
              * @return {string} Matched local string
              */
             function getLocalStr(id) {
@@ -91,7 +104,7 @@
             }
             /**
              * When configuration is available
-             * 
+             *
              * @return {void} Nothing
              */
             function onConfReady() {
@@ -128,7 +141,7 @@
             }
             /**
              * Sidebar observer
-             * 
+             *
              * @return {void} Nothing
              */
             function observeSidebar() {
@@ -147,7 +160,7 @@
             }
             /**
              * When tutorial basics are available
-             * 
+             *
              * @return {void} Nothing
              */
             function onTutorialsBasics() {
@@ -176,9 +189,9 @@
             }
             /**
              * Get mapping of an URL
-             * 
+             *
              * @param {string} url     An URL for which a mapping could be available
-             * 
+             *
              * @return {string} Mapped URL
              */
             function getMappedUrl(url) {
@@ -190,7 +203,7 @@
             }
             /**
              * find the tutorial identifier from the address bar and load the related tutorials
-             * 
+             *
              * @return {void} Nothing
              */
             function findTutoInUrl() {
@@ -202,9 +215,9 @@
             }
             /**
              * When tutorial is selected by the user
-             * 
+             *
              * @param {Event} event     Event trigger by user selection
-             * 
+             *
              * @return {void} Nothing
              */
             function onTutoSelected(evt) {
@@ -219,7 +232,7 @@
             }
             /**
              * Start waiting animation
-             * 
+             *
              * @return {void} Nothing
              */
             function startWaiting() {
@@ -233,7 +246,7 @@
             }
             /**
              * Stop waiting animation
-             * 
+             *
              * @return {void} Nothing
              */
             function stopWaiting() {
@@ -243,7 +256,7 @@
             }
             /**
              * Load the tutorial model elements
-             * 
+             *
              * @return {void} Nothing
              */
             function loadTutoPage() {
@@ -273,9 +286,9 @@
             }
             /**
              * When tutorial model elements are loaded
-             * 
+             *
              * @param {Object} tuto     Tutorial object
-             * 
+             *
              * @return {void} Nothing
              */
             function onTutoPageLoaded(tuto) {
@@ -283,7 +296,7 @@
             }
             /**
              * When runner is ready i.e. tutorial loaded by the runner
-             * 
+             *
              * @return {void} Nothing
              */
             function onRunnerReady() {
@@ -296,7 +309,7 @@
             }
             /**
              * Start the step by step tutorial introduction
-             * 
+             *
              * @return {void} Nothing
              */
             function startTutorialIntro() {
@@ -322,12 +335,12 @@
             }
             /**
              * when a fatal error occured
-             * 
+             *
              * @param {string} log     The technical log
              * @param {string} errorMsgTitle     Log title for user
              * @param {string} errorMsg      Log message for user
              * @throws {Error} En error
-             * 
+             *
              * @return {void} Nothing
              */
             function fatal(log, errorMsgTitle, errorMsg) {
@@ -346,7 +359,7 @@
             }
             /**
              * Close the tutorial module: clean-up
-             * 
+             *
              * @return {void} Nothing
              */
             function close() {
@@ -355,7 +368,7 @@
             }
             /**
              * When the user ask for the tutorial list
-             * 
+             *
              * @return {void} Nothing
              */
             function onClickForMenu() {
