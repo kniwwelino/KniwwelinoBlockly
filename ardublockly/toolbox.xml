@@ -146,7 +146,7 @@
                 </block>
             </value>
         </block>
-        <!-- <block type="kniwwelino_RGBselectEffect" adv="true"> <value name="COLOR"> <shadow type="kniwwelino_RGBselectColor"> 
+        <!-- <block type="kniwwelino_RGBselectEffect" adv="true"> <value name="COLOR"> <shadow type="kniwwelino_RGBselectColor">
             </shadow> </value> <value name="DURATION"> <shadow type="math_number"> <field name="NUM">3</field> </shadow> </value> </block> -->
         <block type="kniwwelino_RGBsetColorFromString">
             <value name="COLOR">
@@ -438,7 +438,7 @@
                 </shadow>
             </value>
         </block>
-        <!-- <block type="time_delay"> <value name="DELAY_TIME_MILI"> <block type="math_number"> <field name="NUM">1000</field> 
+        <!-- <block type="time_delay"> <value name="DELAY_TIME_MILI"> <block type="math_number"> <field name="NUM">1000</field>
             </block> </value> </block> -->
         <block type="time_delaymicros" adv="true">
             <value name="DELAY_TIME_MICRO">
@@ -556,19 +556,20 @@
             </value>
         </block>
         <block type="servo_read"></block>
-        <!-- <block type="stepper_config"> <field name="STEPPER_NUMBER_OF_PINS">2</field> <field name="STEPPER_PIN1">1</field> 
-            <field name="STEPPER_PIN2">2</field> <value name="STEPPER_STEPS"> <block type="math_number"> <field name="NUM">100</field> 
-            </block> </value> <value name="STEPPER_SPEED"> <block type="math_number"> <field name="NUM">10</field> </block> </value> 
-            </block> <block type="stepper_step"> <value name="STEPPER_STEPS"> <block type="math_number"> <field name="NUM">10</field> 
+        <!-- <block type="stepper_config"> <field name="STEPPER_NUMBER_OF_PINS">2</field> <field name="STEPPER_PIN1">1</field>
+            <field name="STEPPER_PIN2">2</field> <value name="STEPPER_STEPS"> <block type="math_number"> <field name="NUM">100</field>
+            </block> </value> <value name="STEPPER_SPEED"> <block type="math_number"> <field name="NUM">10</field> </block> </value>
+            </block> <block type="stepper_step"> <value name="STEPPER_STEPS"> <block type="math_number"> <field name="NUM">10</field>
             </block> </value> </block> -->
     </category>
-    <!-- <sep></sep> <category id="catComms" name="Comms"> <block type="serial_setup"></block> <block type="serial_print"></block> 
-        <block type="text_prompt_ext"> <value name="TEXT"> <block type="text"></block> </value> </block> <block type="spi_setup"></block> 
+    <!-- <sep></sep> <category id="catComms" name="Comms"> <block type="serial_setup"></block> <block type="serial_print"></block>
+        <block type="text_prompt_ext"> <value name="TEXT"> <block type="text"></block> </value> </block> <block type="spi_setup"></block>
         <block type="spi_transfer"></block> <block type="spi_transfer_return"></block> </category> -->
     <sep adv="true"></sep>
     <category id="catSensors" name="Sensors" adv="true">
         <block type="kniwwelino_BME280getValue"></block>
         <block type="kniwwelino_BME680getValue"></block>
+        <block type="kniwwelino_SGP30getValue"></block>
         <block type="kniwwelino_SHT30getValue"></block>
         <block type="kniwwelino_HTU21DgetValue"></block>
         <block type="kniwwelino_DS18B20getValue"></block>

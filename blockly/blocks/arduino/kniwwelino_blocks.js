@@ -1105,6 +1105,24 @@ Blockly.Blocks['kniwwelino_HTU21DgetValue'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_SGP30getValue'] = {
+		  init: function() {
+			  this.appendDummyInput()
+			    .appendField("SGP30" + Blockly.Msg.KNIWWELINO_SENSOR_READ)
+		        .appendField(new Blockly.FieldDropdown(
+					    [
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_VOC,"VOC"],
+					    	[Blockly.Msg.KNIWWELINO_SENSOR_ECO2,"eCO2"],
+					    ]), "VALUE");
+		    this.setOutput(true, Blockly.Types.NUMBER.output);
+		    this.setTooltip(Blockly.Msg.KNIWWELINO_SENSOR_TIP);
+		    this.setColour(Blockly.Blocks.kniwwelino_SENSOR.HUE);
+		    this.setHelpUrl(Blockly.Msg.KNIWWELINO_HELPURL + '../extensions/exti2csensor');
+		  },getBlockType: function() {
+			    return Blockly.Types.NUMBER;
+		  }
+};
+
 Blockly.Blocks['kniwwelino_DS18B20getValue'] = {
 		  init: function() {
 			  this.appendDummyInput()

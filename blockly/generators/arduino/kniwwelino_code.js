@@ -545,6 +545,22 @@ Blockly.Arduino['kniwwelino_HTU21DgetValue'] = function(block) {
 	return ""
 };
 
+Blockly.Arduino['kniwwelino_SGP30getValue'] = function(block) {
+	kniwwelinoBaseCode();
+	Blockly.Arduino.addInclude('Adafruit_SGP30', '#include <Adafruit_SGP30.h> //requires https://github.com/kniwwelino/Adafruit_SGP30');
+
+	Blockly.Arduino.addDeclaration('Adafruit_SGP30', 'Adafruit_SGP30 sgp30;');
+	Blockly.Arduino.addSetup('SGP30init', 'if(sgp30.begin()) Kniwwelino.logln("SGP-30 Sensor Ready"); \n  else Kniwwelino.logln("failed to initialize SGP-30 Sensor"); ', true);
+
+	var value = block.getFieldValue('VALUE');
+	if (value == 'VOC')  {
+		return ['sgp30.readTVOC()', Blockly.Arduino.ORDER_ATOMIC];
+	} else if (value == 'eCO2')  {
+		return ['sgp30.readECO2()', Blockly.Arduino.ORDER_ATOMIC];
+	}
+	return ""
+};
+
 Blockly.Arduino['kniwwelino_DS18B20getValue'] = function(block) {
 	kniwwelinoBaseCode();
 	var pin = block.getFieldValue('PIN');
