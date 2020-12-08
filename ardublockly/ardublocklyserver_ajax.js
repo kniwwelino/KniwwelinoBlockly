@@ -337,6 +337,7 @@ ArdublocklyServer.setIdeOptions = function(ide_option, callback) {
  *     have one argument to receive the JSON response.
  */
 ArdublocklyServer.sendSketchToServer = function(code, xml, name, mac, callback) {
+  const cleanXML = xml.replace(/[\s]+(?![^><]*>)/gm, '');
   ArdublocklyServer.sendRequest(
-      `/compile?mac=${mac}`, 'POST', 'application/json', {"sketch_code": code, "sketch_xml": xml, "sketch_name": name}, callback);
+      `/compile?mac=${mac}`, 'POST', 'application/json', {"sketch_code": code, "sketch_xml": cleanXML, "sketch_name": name}, callback);
 };
