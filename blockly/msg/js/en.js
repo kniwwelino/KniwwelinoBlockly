@@ -639,7 +639,7 @@ Blockly.Msg.KNIWWELINO_IS = "is";
 //times
 Blockly.Msg.KNIWWELINO_TIME_SECONDS = "current elapsed time (seconds)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";
-
+Blockly.Msg.KNIWWELINO_TIME_EVERY = "Every"
 // Log
 Blockly.Msg.KNIWWELINO_LOG 		= "Log"
 Blockly.Msg.KNIWWELINO_LOG_LINE = "Log line"
