@@ -639,6 +639,7 @@ Blockly.Msg.KNIWWELINO_IS = "est";
 //times
 Blockly.Msg.KNIWWELINO_TIME_SECONDS = "temps écoulé (secondes)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Renvoie le temps en secondes depuis le lancement de ce programme sur la carte Kniwwelino. Doit être stocké dans un chiffre entier long positif";
+Blockly.Msg.KNIWWELINO_TIME_EVERY = "Chaque"
 
 //Log
 Blockly.Msg.KNIWWELINO_LOG 		= "Log"

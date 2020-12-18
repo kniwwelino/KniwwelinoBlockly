@@ -127,6 +127,27 @@ Blockly.Arduino['kniwwelino_getTimeInt'] = function(block) {
 	return [codeStr, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino["kniwwelino_conditional_delay"]=function(block){
+	let uid = ((Math.random()*352334).toString(36)).slice(-3);
+	var _u=block.getFieldValue("UNIT");
+	var delay_time=Blockly.Arduino.valueToCode(block, "DELAY_TIME", Blockly.Arduino.ORDER_ATOMIC);
+	var innerCode=Blockly.Arduino.statementToCode(block, "EXEC");
+	var last="last_byID_"+uid;
+	Blockly.Arduino.definitions_["temporisation"+uid]="long "+last+"=0 ;";
+	switch (_u) {
+		case "u":
+			var code="if ((micros()-"+last+")>=" + delay_time + ") {\n  "+innerCode+"}\n"+last+"=micros();\n";
+			break;
+		case "m":
+			var code="if ((millis()-"+last+")>=" + delay_time + ") {\n  "+innerCode+"}\n"+last+"=millis();\n";
+			break;
+		case "s":
+			code="if ((millis()-"+last+")>=" + delay_time + "*1000) {\n  "+innerCode+"}\n"+last+"=millis();\n";
+			break
+	};
+	return code
+};
+
 Blockly.Arduino['kniwwelino_PINsetEffect'] = function(block) {
 	kniwwelinoBaseCode();
 

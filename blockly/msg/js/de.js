@@ -478,7 +478,7 @@ Blockly.Msg.ARD_STEPPER_STEPS = "steps";  // untranslated
 Blockly.Msg.ARD_STEPPER_STEP_TIP = "Turns the stepper motor a specific number of steps.";  // untranslated
 Blockly.Msg.ARD_STEPPER_TWO_PINS = "2";  // untranslated
 Blockly.Msg.ARD_TIME_DELAY = "warte";
-Blockly.Msg.ARD_TIME_DELAY_MICROS = "microseconds";  // untranslated
+Blockly.Msg.ARD_TIME_DELAY_MICROS = "Mikrosekunden";
 Blockly.Msg.ARD_TIME_DELAY_MICRO_TIP = "Wait specific time in microseconds";  // untranslated
 Blockly.Msg.ARD_TIME_DELAY_TIP = "Wait specific time in milliseconds";  // untranslated
 Blockly.Msg.ARD_TIME_INF = "wait forever (end program)";  // untranslated
@@ -634,6 +634,7 @@ Blockly.Msg.KNIWWELINO_IS = "ist";
 //times
 Blockly.Msg.KNIWWELINO_TIME_SECONDS = "aktuell verstrichene Zeit (Sekunden)";
 Blockly.Msg.KNIWWELINO_TIME_SECONDS_TIP = "Returns the number of seconds since the Kniwwelino board began running the current program. Has to be stored in a positive long integer";   // untranslated
+Blockly.Msg.KNIWWELINO_TIME_EVERY = "Jede"
 
 //Log
 Blockly.Msg.KNIWWELINO_LOG 		= "logge"
