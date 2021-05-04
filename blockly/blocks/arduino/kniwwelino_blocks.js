@@ -170,6 +170,24 @@ Blockly.Blocks['kniwwelino_getTimeInt'] = {
 		  }
 };
 
+Blockly.Blocks['kniwwelino_conditional_delay']={
+	init:function() {
+	  this.appendValueInput("DELAY_TIME", "Number").setCheck("Number").appendField(Blockly.Msg.KNIWWELINO_TIME_EVERY);
+		this.appendDummyInput().appendField(new Blockly.FieldDropdown(
+			[
+				[Blockly.Msg.ARD_TIME_MS,"m"],
+				[Blockly.Msg.KNIWWELINO_TIME_SEC,"s"],
+				[Blockly.Msg.ARD_TIME_DELAY_MICROS,"u"],
+			]), "UNIT");
+		this.setPreviousStatement(true, null);
+		this.setNextStatement(true, null)
+	  this.appendStatementInput("EXEC").appendField(Blockly.Msg.CONTROLS_REPEAT_INPUT_DO);
+	  this.setInputsInline(true);
+	  this.setColour(Blockly.Blocks.time.HUE);
+	  this.setTooltip("");
+	  }
+  }; 
+
 Blockly.Blocks['kniwwelino_log'] = {
 		   init: function() {
 				 this.setInputsInline(true);
