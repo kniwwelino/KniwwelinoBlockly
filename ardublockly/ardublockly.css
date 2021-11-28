@@ -64,7 +64,8 @@ body {
 
 #catKniwwelino\.label:before {
   content: "\f2db";  /* this is your text. You can also use UTF-8 character codes as I do here */
-  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900px
   left:0px;
   padding-right: 5px;
 }
@@ -77,10 +78,37 @@ body {
 }
 
 #catConnect\.label:before {
-  content: "\f520"; ?* TODO: Fix this reference (should be bird https://fontawesome.com/icons/crow?style=solid)
-  font-family: FontAwesome;
+  /* TODO: Fix this reference (should be bird https://fontawesome.com/icons/crow?style=solid) @done*/
+  font-family: "FontAwesome";
+  font-weight: 900;
+  content: "\f520";
   left: 0px;
-  padding-right: 10px;
+  padding-right: 5px;
+}
+
+#catConnectServos {
+  color: white;
+  background-color: #207720;
+}
+
+#catConnectServos\.label:before {
+  content: "\f085";  /* this is your text. You can also use UTF-8 character codes as I do here */
+  font-family: "FontAwesome";
+  left: 0px;
+  padding-right: 5px;
+}
+
+#catConnectSetup {
+  color: white;
+  background-color: #353535;
+}
+
+#catConnectSetup\.label:before {
+  content: "\f1de";
+  font-family: "FontAwesome";
+  left: 0px;
+  padding-right: 5px;
+  font-weight: 100;
 }
 
 /* End conNecT changes */
@@ -371,6 +399,13 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
     line-height: 80px;
     color: black;
 }
+
+/* Connect change: force render size for logo image in header */
+.nav-wrapper img {
+  width: 200px;
+  height: 80px;
+}
+
 
 #button_manageKniwwelino {
 
@@ -1069,7 +1104,10 @@ ul.side-nav li.side-menu-end {
 .sketch_name_wrapper {
   display: inline-block;
   padding-left: 5px;
+  /* Connect change: sort baseline shift, hackily */
+  transform: translate(0, 18px);
 }
+
 .sketch_name_icon {
   display: inline !important;
   font-size: 1.2rem !important;
@@ -1079,8 +1117,11 @@ ul.side-nav li.side-menu-end {
 .sketch_name {
   width: auto !important;
   max-width: 400px;
-  line-height: 80px;
+  /* Connect change - fixes cropped sketch name by commenting out next line */
+  /* line-height: 80px; */
   height: 3rem !important;
+  /* Connect change; text field width fix  */
+  width: 150px !important;
   font-size: 1.5rem !important;
   border-bottom: 0px solid #EEE !important;
   font-style: italic;
