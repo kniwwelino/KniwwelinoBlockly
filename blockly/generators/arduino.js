@@ -288,6 +288,8 @@ function createMQTTSubstriptions() {
 		subs += cond+'(topic==' + Blockly.Arduino.kniwwelino_subs_[variable] +') {\n';
 		if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'float') {
 			subs += '    ' + variable + ' = payload.toFloat();\n';
+		} else if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'long') {
+			subs += '    ' + variable + ' = payload.toInt();\n';
 		} else if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'int') {
 			subs += '    ' + variable + ' = payload.toInt();\n';
 		} else {
