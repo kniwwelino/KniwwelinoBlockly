@@ -136,13 +136,13 @@ Blockly.Arduino["kniwwelino_conditional_delay"]=function(block){
 	Blockly.Arduino.definitions_["temporisation"+uid]="long "+last+"=0 ;";
 	switch (_u) {
 		case "u":
-			var code="if ((micros()-"+last+")>=" + delay_time + ") {\n  "+innerCode+"}\n"+last+"=micros();\n";
+			var code="if ((micros()-"+last+")>=" + delay_time + ") {\n  "+innerCode+"\n"+last+"=micros();\n}";
 			break;
 		case "m":
-			var code="if ((millis()-"+last+")>=" + delay_time + ") {\n  "+innerCode+"}\n"+last+"=millis();\n";
+			var code="if ((millis()-"+last+")>=" + delay_time + ") {\n  "+innerCode+"\n"+last+"=millis();\n}";
 			break;
 		case "s":
-			code="if ((millis()-"+last+")>=" + delay_time + "*1000) {\n  "+innerCode+"}\n"+last+"=millis();\n";
+			code="if ((millis()-"+last+")>=" + delay_time + "*1000) {\n  "+innerCode+"\n"+last+"=millis();\n}";
 			break
 	};
 	return code
