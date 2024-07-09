@@ -292,6 +292,8 @@ function createMQTTSubstriptions() {
 			subs += '    ' + variable + ' = payload.toInt();\n';
 		} else if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'int') {
 			subs += '    ' + variable + ' = payload.toInt();\n';
+		} else if (Blockly.Arduino.kniwwelino_vartypes_[variable] == 'char') {
+			subs += '    ' + variable + ' = payload.toInt();\n';
 		} else {
 			subs += '    ' + variable + ' = payload;\n';
 		}
